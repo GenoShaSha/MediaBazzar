@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using System.IO;
 
 
 namespace Waterfall_PRJ
 {
     public partial class Form3 : Form
     {
+        SignIn newSignIn;
         public Form3()
         {
             InitializeComponent();
@@ -21,26 +22,39 @@ namespace Waterfall_PRJ
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-/*            try
-            {
-                string con = "Server=studmysql01.fhict.local;Uid=dbi450080;Database=dbi450080;Pwd=WortelSoulution;";
-                string que = "INSERT INTO employees(EmployeeID,Username,Password,EmployeeType) VALUES('" + this.tbUsrname.Text + "','" + this.tbFName.Text + "','" + this.tbLName.Text + "','" + this.tbFName.Text + "','" + this.tbDoB.Text + "','" + this.tbBSN.Text + "','" + this.tbRelationship.Text + "','" + this.tbEmail.Text + "','" + this.tbPNumber.Text + "','" + this.tbAddress.Text + "','" + this.tbPostalCode.Text + "','" + this.tbCity.Text + "','" + this.tbCountry.Text + "'); ";
-                MySqlConnection myCon = new MySqlConnection(con);
-                MySqlCommand myCommand = new MySqlCommand(que, myCon);
-                MySqlDataReader dataReader;
-                myCon.Open();
-                dataReader = myCommand.ExecuteReader();
-                MessageBox.Show("Data have been saved");
-                while (dataReader.Read())
-                {
+            string newUsr = tbUsrname.Text;
+            string newPass = tbPswd.Text;
+            string lgnType = string.Empty;
 
-                }
-                myCon.Close();
-            }
-            catch (Exception ex)
+            if (rbAdmin.Checked == true)
             {
-                MessageBox.Show(ex.Message);
-            }*/
+                lgnType = "Administrator";
+            }
+            else
+            {
+                lgnType = "Manager";
+            }
+
+            newSignIn = new SignIn(newUsr, newPass, lgnType);
+
+            if (newSignIn.GetIdentity() == true)
+            {
+                if (rbAdmin.Checked)
+                {
+                    MessageBox.Show("Ur in to Admin page");
+                }
+                else if (rbMgr.Checked)
+                {
+                    MessageBox.Show("Ur in to Manager page");
+                }
+
+            }
+            else if (newSignIn.GetIdentity() == false)
+            {
+                MessageBox.Show("Put the right username or password!");
+            }
+            tbUsrname.Text = string.Empty;
+            tbPswd.Text = string.Empty;
         }
     }
 }

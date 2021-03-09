@@ -4,45 +4,55 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-
+using System.IO;
 
 namespace Waterfall_PRJ
 {
-    class SignIn
+    public class SignIn
     {
-        string con = @"Server=studmysql01.fhict.local;Database=dbi450080;UsrId=dbi450080;Pswd=WortelSoulution;";
+        private string username;
+        private string password;
+        private string loginType;
 
-/*        private string usrName;
-        private string psWrd;
-        private string employeeType;
-
-        public SignIn (string usrName, string psWrd, string employeeType)
+        public SignIn(string username, string password, string loginType)
         {
-            this.usrName = usrName;
-            this.psWrd = psWrd;
-            this.employeeType = employeeType;
+            this.username = username;
+            this.password = password;
+            this.loginType = loginType;
         }
-        public bool GetEmployeeType()
+
+        public bool GetIdentity()
         {
-            if(this.employeeType == "Administrator")
+            if (this.loginType == "Manager")
             {
-                //harusnya si read database//
-                if(this.usrName == && this.psWrd == )
+                string path = System.AppDomain.CurrentDomain.BaseDirectory;
+                string[] lines = System.IO.File.ReadAllLines(@path + "Database/Manager/IdAndPass(Mgr).txt");
+
+                foreach (string line in lines)
                 {
-                    return true;
+                    string[] steps = line.Split('#');
+                    if (this.username == steps[0] && this.password == steps[1])
+                    {
+                        return true;
+                    }
                 }
             }
-            else if(this.employeeType == "Manager")
+            else if (this.loginType == "Administrator")
             {
-                //harusnya si read database//
-                if (this.usrName == && this.psWrd ==)
+                string paths = System.AppDomain.CurrentDomain.BaseDirectory;
+                string[] ndLines = System.IO.File.ReadAllLines(@paths + "Database/Admin/IdAndPass(Admin).txt");
+
+                foreach (string line in ndLines)
                 {
-                    return true;
+                    string[] step = line.Split('#');
+                    if (this.username == step[0] && this.password == step[1])
+                    {
+                        return true;
+                    }
                 }
             }
             return false;
-        }*/
+        }
 
     }
 }
