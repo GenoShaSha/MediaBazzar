@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Syncfusion.SfCalendar.XForms;
+using Xamarin.Forms;
 
 namespace Waterfall_PRJ
 {
     public partial class Form1 : Form
     {
+        SfCalendar calendar;
         public Form1()
         {
             InitializeComponent();
+            calendar = new SfCalendar();
         }
     }
 }

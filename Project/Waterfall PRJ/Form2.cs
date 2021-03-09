@@ -21,6 +21,7 @@ namespace Waterfall_PRJ
 
         private void button3_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
             employees.AddPerson(new Administrator(textBox1.Text, textBox2.Text, comboBox3.SelectedItem.ToString(), dateTimePicker1.Value, textBox4.Text, comboBox2.SelectedItem.ToString(), textBox5.Text, textBox6.Text, textBox7.Text, textBox8.Text, textBox9.Text, textBox10.Text));
             foreach(Person p in employees.GetPersons())
             {

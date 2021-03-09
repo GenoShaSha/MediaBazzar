@@ -59,7 +59,6 @@ namespace Waterfall_PRJ
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
@@ -117,7 +116,7 @@ namespace Waterfall_PRJ
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(31, 119);
+            this.groupBox1.Location = new System.Drawing.Point(445, 113);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(336, 204);
             this.groupBox1.TabIndex = 26;
@@ -208,7 +207,7 @@ namespace Waterfall_PRJ
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(31, 329);
+            this.groupBox2.Location = new System.Drawing.Point(445, 323);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(336, 204);
             this.groupBox2.TabIndex = 27;
@@ -224,7 +223,7 @@ namespace Waterfall_PRJ
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(68, 136);
+            this.textBox9.Location = new System.Drawing.Point(68, 137);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(247, 22);
             this.textBox9.TabIndex = 37;
@@ -314,26 +313,26 @@ namespace Waterfall_PRJ
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(31, 541);
+            this.comboBox1.Location = new System.Drawing.Point(445, 535);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(336, 24);
+            this.comboBox1.Size = new System.Drawing.Size(148, 24);
             this.comboBox1.TabIndex = 28;
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(396, 103);
+            this.listBox1.Location = new System.Drawing.Point(24, 113);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(262, 388);
+            this.listBox1.Size = new System.Drawing.Size(355, 468);
             this.listBox1.TabIndex = 29;
             this.listBox1.DoubleClick += new System.EventHandler(this.listBox1_DoubleClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(31, 571);
+            this.button1.Location = new System.Drawing.Point(617, 535);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(336, 39);
+            this.button1.Size = new System.Drawing.Size(164, 24);
             this.button1.TabIndex = 30;
             this.button1.Text = "UPDATE";
             this.button1.UseVisualStyleBackColor = true;
@@ -342,26 +341,17 @@ namespace Waterfall_PRJ
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Impact", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(38, 81);
+            this.label12.Location = new System.Drawing.Point(452, 75);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(96, 35);
             this.label12.TabIndex = 31;
             this.label12.Text = "UPDATE";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(396, 557);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(262, 37);
-            this.button2.TabIndex = 32;
-            this.button2.Text = "REMOVE";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(396, 510);
+            this.button3.Location = new System.Drawing.Point(647, 623);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(262, 39);
+            this.button3.Size = new System.Drawing.Size(134, 36);
             this.button3.TabIndex = 33;
             this.button3.Text = "ADD";
             this.button3.UseVisualStyleBackColor = true;
@@ -381,9 +371,8 @@ namespace Waterfall_PRJ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 622);
+            this.ClientSize = new System.Drawing.Size(803, 671);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox1);
@@ -433,7 +422,6 @@ namespace Waterfall_PRJ
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label13;

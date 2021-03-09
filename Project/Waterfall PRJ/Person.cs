@@ -19,7 +19,7 @@ namespace Waterfall_PRJ
         protected string phonenumber;
         protected string address;
         protected string postalcode;
-        protected string city;
+        protected string city;  
         protected string country;
 
         protected Person(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship,string email, string phonenumber, string address, string postalcode, string city, string country)
@@ -46,7 +46,7 @@ namespace Waterfall_PRJ
         }
         public virtual string ShowAll()
         {
-            string infostring= $"Name : {this.firstname} {this.lastname}* Gender: {this.gender}* Birthdate: {this.birthdate}* BSN : {this.BSN}* Status : {this.relationship}* Email: {this.email}* Address: {this.address}* Postalcode: {this.postalcode}* City: {this.city}* Country: {this.country}";
+            string infostring= $"Name : {this.firstname} {this.lastname}* Gender: {this.gender}* Birthdate: {this.birthdate.ToShortDateString()}* BSN : {this.BSN}* Status : {this.relationship}* Email: {this.email}* Address: {this.address}* Postalcode: {this.postalcode}* City: {this.city}* Country: {this.country}";
             string newstring = infostring.Replace("*", "\n");
             return newstring;
         
