@@ -26,7 +26,7 @@ namespace Waterfall_PRJ
             if (this.loginType == "Manager")
             {
                 string path = System.AppDomain.CurrentDomain.BaseDirectory;
-                string[] lines = System.IO.File.ReadAllLines(@path + "Database/Manager/IdAndPass(Mgr).txt");
+                string[] lines = System.IO.File.ReadAllLines(@path + "Database/Users/Manager/IdAndPass(Mgr).txt");
 
                 foreach (string line in lines)
                 {
@@ -40,7 +40,7 @@ namespace Waterfall_PRJ
             else if (this.loginType == "Administrator")
             {
                 string paths = System.AppDomain.CurrentDomain.BaseDirectory;
-                string[] ndLines = System.IO.File.ReadAllLines(@paths + "Database/Admin/IdAndPass(Admin).txt");
+                string[] ndLines = System.IO.File.ReadAllLines(@paths + "Database/Users/Admin/IdAndPass(Admin).txt");
 
                 foreach (string line in ndLines)
                 {
