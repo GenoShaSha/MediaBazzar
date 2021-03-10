@@ -84,6 +84,7 @@ namespace Waterfall_PRJ
             this.btnSignIn.TabIndex = 4;
             this.btnSignIn.Text = "SIGN IN";
             this.btnSignIn.UseVisualStyleBackColor = true;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click_1);
             // 
             // pictureBox2
             // 
