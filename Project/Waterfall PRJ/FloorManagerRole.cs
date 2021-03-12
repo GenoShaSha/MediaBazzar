@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Waterfall_PRJ
 {
-    public class Administrator : Person
+    public class FloorManagerRole : Person
     {
-        private string adminusername;
-        private string adminpass;
-
-        public Administrator(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email, string phonenumber, string address, string postalcode, string city, string country) : base(firstname,lastname,gender,birthdate,BSN,relationship,email,phonenumber,address,postalcode,city,country)
+        private string managerusername;
+        private string managerpass;
+        public FloorManagerRole(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email, string phonenumber, string address, string postalcode, string city, string country) : base(firstname, lastname, gender, birthdate, BSN, relationship, email, phonenumber, address, postalcode, city, country)
         {
             this.firstname = firstname;
             this.lastname = lastname;
@@ -28,11 +27,11 @@ namespace Waterfall_PRJ
         }
         public override string ToString()
         {
-            return $"{this.firstname} {this.lastname} ({this.employeeID}) : Administrator";
+            return $"{this.firstname} {this.lastname} ({this.employeeID}) : Floor Manager";
         }
         public string Username
-        { get { return this.adminusername; } set { this.adminusername = value; } }
+        { get { return this.managerusername; } set { this.managerusername = value; } }
         public string Password
-        { get { return this.adminpass; } set { this.adminpass= value; } }
+        { get { return this.managerpass; } set { this.managerpass = value; } }
     }
 }

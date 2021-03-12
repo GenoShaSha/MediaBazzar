@@ -8,7 +8,8 @@ namespace Waterfall_PRJ
 {
     public abstract class Person
     {
-        protected static long ID = 999;
+        protected long employeeID;
+        protected static long nextID = 1000;
         protected string firstname;
         protected string lastname;
         protected string gender;
@@ -24,7 +25,8 @@ namespace Waterfall_PRJ
 
         protected Person(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship,string email, string phonenumber, string address, string postalcode, string city, string country)
         {
-            ID += 1;
+            this.employeeID = Person.nextID;
+            Person.nextID += 1;
             this.firstname = firstname;
             this.lastname = lastname;
             this.gender = gender;
@@ -32,17 +34,82 @@ namespace Waterfall_PRJ
             this.BSN = BSN;
             this.relationship = relationship;
             this.email = email;
+            this.phonenumber = phonenumber;
             this.address = address;
             this.postalcode = postalcode;
             this.city = city;
             this.country = country;
         }
+
+        public string FirstName
+        {
+            get { return this.firstname; }
+            set { this.firstname = value; }
+        }
+        public string LastName
+        {
+            get { return this.lastname; }
+            set { this.lastname= value; }
+        }
+
+        public string Gender
+        {
+            get { return this.gender; }
+            set { this.gender = value; }
+        }
+        public DateTime Birthdate
+        {
+            get { return this.birthdate; }
+            set { this.birthdate= value; }
+        }
+        public string BSN_Num
+        {
+            get { return this.BSN; }
+            set { this.BSN = value; }
+        }
+        public string Relationship
+        {
+            get { return this.relationship; }
+            set { this.relationship= value; }
+        }
+        public string Email
+        {
+            get { return this.email; }
+            set { this.email= value; }
+        }
+        public string PhoneNumber
+        {
+            get { return this.phonenumber; }
+            set { this.phonenumber = value; }
+        }
+        public string Address
+        {
+            get { return this.address; }
+            set { this.address= value; }
+        }
+
+        public string Postal
+        {
+            get { return this.postalcode; }
+            set { this.postalcode = value; }
+        }
+        public string City
+        {
+            get { return this.city; }
+            set { this.city = value; }
+        }
+
+        public string Country
+        {
+            get { return this.country; }
+            set { this.country = value; }
+        }
         public long EmployeeID
-        { get { return ID; } }
+        { get { return this.employeeID; } }
         
         public override string ToString()
         {
-            return $"{this.firstname} {this.lastname} ({ID})";
+            return $"{this.firstname} {this.lastname} ({this.employeeID})";
         }
         public virtual string ShowAll()
         {

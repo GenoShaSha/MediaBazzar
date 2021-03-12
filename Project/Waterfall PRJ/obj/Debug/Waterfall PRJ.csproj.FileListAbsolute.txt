@@ -27,27 +27,12 @@ C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debu
 C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Waterfall PRJ.exe
 C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Waterfall PRJ.pdb
 C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.csprojAssemblyReference.cache
-C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.Form1.resources
-C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.Form2.resources
-C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.Form3.resources
-C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.Form4.resources
 C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.Properties.Resources.resources
 C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.csproj.GenerateResource.cache
 C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.csproj.CoreCompileInputs.cache
 C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.exe
 C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.pdb
-C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Core.XForms.dll
 C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Licensing.dll
-C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.SfCalendar.XForms.dll
-C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Xamarin.Forms.Core.dll
-C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Xamarin.Forms.Platform.dll
-C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Xamarin.Forms.Xaml.dll
-C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Core.XForms.xml
-C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.SfCalendar.XForms.xml
-C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Xamarin.Forms.Core.pdb
-C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Xamarin.Forms.Core.xml
-C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Xamarin.Forms.Xaml.pdb
-C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Xamarin.Forms.Xaml.xml
 C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.csproj.CopyComplete
 C:\Users\jordy\Source\Repos\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Waterfall PRJ.exe.config
 C:\Users\jordy\Source\Repos\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Waterfall PRJ.exe
@@ -73,3 +58,12 @@ C:\Users\jordy\Source\Repos\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Wat
 C:\Users\jordy\Source\Repos\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.ManagementForm.resources
 C:\Users\jordy\Source\Repos\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.LoginForm.resources
 C:\Users\jordy\Source\Repos\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.EmployeeInfoForm.resources
+C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.ManagementForm.resources
+C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.LoginForm.resources
+C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.EmployeeInfoForm.resources
+C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Core.WinForms.dll
+C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.SfInput.WinForms.dll
+C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Shared.Base.dll
+C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Core.WinForms.xml
+C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.SfInput.WinForms.xml
+C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Shared.Base.xml
