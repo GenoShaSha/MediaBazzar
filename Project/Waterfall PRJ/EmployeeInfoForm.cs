@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace Waterfall_PRJ
 {
-    public partial class Form3 : Form
+    public partial class EmployeeInfoForm : Form
     {
-        public Form3()
+        public EmployeeInfoForm(Person person)
         {
             InitializeComponent();
+            textBox1.Text = person.ShowAll();
         }
     }
 }

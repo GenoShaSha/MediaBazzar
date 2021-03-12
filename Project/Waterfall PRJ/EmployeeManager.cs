@@ -19,7 +19,6 @@ namespace Waterfall_PRJ
         {
             persons.Add(person);
         }
-
         public void RemovePerson(Person person)
         {
             persons.Remove(person);

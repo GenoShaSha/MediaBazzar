@@ -1,7 +1,7 @@
 ﻿
 namespace Waterfall_PRJ
 {
-    partial class Form4
+    partial class EmployeeInfoForm
     {
         /// <summary>
         /// Required designer variable.
@@ -36,29 +36,32 @@ namespace Waterfall_PRJ
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(163, 22);
+            this.label1.Location = new System.Drawing.Point(129, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 17);
+            this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Information";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(166, 75);
+            this.textBox1.Location = new System.Drawing.Point(11, 36);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(414, 279);
+            this.textBox1.Size = new System.Drawing.Size(312, 227);
             this.textBox1.TabIndex = 2;
             // 
-            // Form4
+            // EmployeeInfoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(334, 277);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Name = "Form4";
-            this.Text = "Form4";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "EmployeeInfoForm";
+            this.Text = "Employee Information";
             this.ResumeLayout(false);
             this.PerformLayout();
 
