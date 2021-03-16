@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Syncfusion.WinForms.Input;
+using System.Threading;
 
 namespace Waterfall_PRJ
 {
@@ -15,6 +16,7 @@ namespace Waterfall_PRJ
     {
         EmployeeManager employees;
         ShiftManager shifts;
+        Thread th;
         public ManagementForm()
         {
             InitializeComponent();
@@ -26,7 +28,20 @@ namespace Waterfall_PRJ
             ContractCB.SelectedIndex = 0;
             ManagementTabControl.SelectedTab = EmployeeManagePage;
         }
-        private void UpdateEmployeeManagementListbox()
+
+        public ManagementForm(EmployeeManager employees, ShiftManager shifts)
+        {
+            InitializeComponent();
+            this.employees = employees;
+            this.shifts = shifts;
+            GenderCB.SelectedIndex = 0;
+            relationshipStatusCB.SelectedIndex = 0;
+            RoleCB.SelectedIndex = 0;
+            ContractCB.SelectedIndex = 0;
+            ManagementTabControl.SelectedTab = EmployeeManagePage;
+            UpdateEmployeeManagementListbox();
+        }
+        public void UpdateEmployeeManagementListbox()
         {
             employeesLB.Items.Clear();
             foreach (Person p in employees.GetPersons())
@@ -68,39 +83,14 @@ namespace Waterfall_PRJ
 
         private void addBTN_Click(object sender, EventArgs e)
         {
-            
-            try
-            {
-                if(RoleCB.SelectedIndex == 0)
-                {
-                    employees.AddPerson(new Administrator(firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text));
-                }
-                else if (RoleCB.SelectedIndex == 1)
-                {
-                    employees.AddPerson(new FloorManagerRole(firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text));
-                }
-                else if (RoleCB.SelectedIndex == 2)
-                {
-                    if (ContractCB.SelectedIndex == 0)
-                    {
-                        employees.AddPerson(new EmployeeRole(firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, 40));
-                    }
-                    else if (ContractCB.SelectedIndex == 1)
-                    {
-                        employees.AddPerson(new EmployeeRole(firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, 30));
-                    }
-                    else
-                    {
-                        employees.AddPerson(new EmployeeRole(firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, 20));
-                    }
-
-                }
-            }
-            catch (NullReferenceException ex)
-            {
-                MessageBox.Show($"Missing reference : {ex.ToString()}" );
-            }
-            UpdateEmployeeManagementListbox();
+            this.Close();
+            th = new Thread(OpenNewForm);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
+        private void OpenNewForm(object obj)
+        {
+            Application.Run(new EmployeeAddingForm(employees, shifts));
         }
 
         private void employeesLB_MouseClick_1(object sender, MouseEventArgs e)
@@ -160,6 +150,7 @@ namespace Waterfall_PRJ
             p.City = cityTB.Text;
             p.Country = countryTB.Text;
             MessageBox.Show($"User ID {p.EmployeeID} information updated!");
+            UpdateEmployeeManagementListbox();
         }
 
         private void RoleCB_SelectedIndexChanged(object sender, EventArgs e)
@@ -176,11 +167,6 @@ namespace Waterfall_PRJ
             {
                 ContractCB.Enabled = true;
             }
-        }
-
-        private void RefreshBtn_Click(object sender, EventArgs e)
-        {
-            UpdateEmployeeManagementListbox();
         }
 
         private void ShiftManagementPage_Enter(object sender, EventArgs e)
@@ -227,6 +213,12 @@ namespace Waterfall_PRJ
                 {
                    NightShiftLB.Items.Add(emp);
                 }
+            }
+            if(morningshifts == null && eveningshifts == null && nightshifts == null)
+            {
+                MorningShiftLB.Items.Clear();
+                EveningShiftLB.Items.Clear();
+                NightShiftLB.Items.Clear();
             }
 
         }

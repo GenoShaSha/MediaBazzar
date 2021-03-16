@@ -31,7 +31,6 @@ namespace Waterfall_PRJ
         {
             this.ManagementTabControl = new System.Windows.Forms.TabControl();
             this.EmployeeManagePage = new System.Windows.Forms.TabPage();
-            this.RefreshBtn = new System.Windows.Forms.Button();
             this.removeBTN = new System.Windows.Forms.Button();
             this.addBTN = new System.Windows.Forms.Button();
             this.updateBTN = new System.Windows.Forms.Button();
@@ -68,6 +67,9 @@ namespace Waterfall_PRJ
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ShiftManagementPage = new System.Windows.Forms.TabPage();
+            this.label20 = new System.Windows.Forms.Label();
+            this.workhrsLbl = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.EmployeeCalendar = new Syncfusion.WinForms.Input.SfCalendar();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.ShiftSelectorCB = new System.Windows.Forms.ComboBox();
@@ -80,9 +82,6 @@ namespace Waterfall_PRJ
             this.EveningShiftLB = new System.Windows.Forms.ListBox();
             this.MorningShiftLB = new System.Windows.Forms.ListBox();
             this.btnAddShift = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.workhrsLbl = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.ManagementTabControl.SuspendLayout();
             this.EmployeeManagePage.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -105,7 +104,6 @@ namespace Waterfall_PRJ
             // 
             // EmployeeManagePage
             // 
-            this.EmployeeManagePage.Controls.Add(this.RefreshBtn);
             this.EmployeeManagePage.Controls.Add(this.removeBTN);
             this.EmployeeManagePage.Controls.Add(this.addBTN);
             this.EmployeeManagePage.Controls.Add(this.updateBTN);
@@ -122,22 +120,12 @@ namespace Waterfall_PRJ
             this.EmployeeManagePage.Text = "Employee Management";
             this.EmployeeManagePage.UseVisualStyleBackColor = true;
             // 
-            // RefreshBtn
-            // 
-            this.RefreshBtn.Location = new System.Drawing.Point(639, 51);
-            this.RefreshBtn.Name = "RefreshBtn";
-            this.RefreshBtn.Size = new System.Drawing.Size(81, 28);
-            this.RefreshBtn.TabIndex = 44;
-            this.RefreshBtn.Text = "Refresh";
-            this.RefreshBtn.UseVisualStyleBackColor = true;
-            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
-            // 
             // removeBTN
             // 
-            this.removeBTN.Location = new System.Drawing.Point(623, 555);
+            this.removeBTN.Location = new System.Drawing.Point(525, 563);
             this.removeBTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.removeBTN.Name = "removeBTN";
-            this.removeBTN.Size = new System.Drawing.Size(97, 31);
+            this.removeBTN.Size = new System.Drawing.Size(97, 33);
             this.removeBTN.TabIndex = 43;
             this.removeBTN.Text = "REMOVE";
             this.removeBTN.UseVisualStyleBackColor = true;
@@ -145,18 +133,18 @@ namespace Waterfall_PRJ
             // 
             // addBTN
             // 
-            this.addBTN.Location = new System.Drawing.Point(492, 557);
+            this.addBTN.Location = new System.Drawing.Point(587, 0);
             this.addBTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addBTN.Name = "addBTN";
-            this.addBTN.Size = new System.Drawing.Size(103, 31);
+            this.addBTN.Size = new System.Drawing.Size(140, 41);
             this.addBTN.TabIndex = 42;
-            this.addBTN.Text = "ADD";
+            this.addBTN.Text = "Admission Form";
             this.addBTN.UseVisualStyleBackColor = true;
             this.addBTN.Click += new System.EventHandler(this.addBTN_Click);
             // 
             // updateBTN
             // 
-            this.updateBTN.Location = new System.Drawing.Point(365, 555);
+            this.updateBTN.Location = new System.Drawing.Point(113, 563);
             this.updateBTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.updateBTN.Name = "updateBTN";
             this.updateBTN.Size = new System.Drawing.Size(101, 33);
@@ -194,7 +182,7 @@ namespace Waterfall_PRJ
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(3, 321);
+            this.groupBox2.Location = new System.Drawing.Point(4, 293);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -363,7 +351,7 @@ namespace Waterfall_PRJ
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(3, 112);
+            this.groupBox1.Location = new System.Drawing.Point(4, 84);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -521,6 +509,32 @@ namespace Waterfall_PRJ
             this.ShiftManagementPage.UseVisualStyleBackColor = true;
             this.ShiftManagementPage.Enter += new System.EventHandler(this.ShiftManagementPage_Enter);
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(17, 576);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(54, 17);
+            this.label20.TabIndex = 35;
+            this.label20.Text = "Assign:";
+            // 
+            // workhrsLbl
+            // 
+            this.workhrsLbl.AutoSize = true;
+            this.workhrsLbl.Location = new System.Drawing.Point(169, 538);
+            this.workhrsLbl.Name = "workhrsLbl";
+            this.workhrsLbl.Size = new System.Drawing.Size(0, 17);
+            this.workhrsLbl.TabIndex = 34;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(17, 538);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(146, 17);
+            this.label19.TabIndex = 33;
+            this.label19.Text = "Available work hours: ";
+            // 
             // EmployeeCalendar
             // 
             this.EmployeeCalendar.Culture = new System.Globalization.CultureInfo("en-US");
@@ -651,32 +665,6 @@ namespace Waterfall_PRJ
             this.btnAddShift.UseVisualStyleBackColor = false;
             this.btnAddShift.Click += new System.EventHandler(this.btnAddShift_Click);
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(17, 538);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(146, 17);
-            this.label19.TabIndex = 33;
-            this.label19.Text = "Available work hours: ";
-            // 
-            // workhrsLbl
-            // 
-            this.workhrsLbl.AutoSize = true;
-            this.workhrsLbl.Location = new System.Drawing.Point(169, 538);
-            this.workhrsLbl.Name = "workhrsLbl";
-            this.workhrsLbl.Size = new System.Drawing.Size(0, 17);
-            this.workhrsLbl.TabIndex = 34;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(17, 576);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(54, 17);
-            this.label20.TabIndex = 35;
-            this.label20.Text = "Assign:";
-            // 
             // ManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -750,7 +738,6 @@ namespace Waterfall_PRJ
         private System.Windows.Forms.ComboBox ContractCB;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button RefreshBtn;
         private Syncfusion.WinForms.Input.SfCalendar EmployeeCalendar;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label workhrsLbl;

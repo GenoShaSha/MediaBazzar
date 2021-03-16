@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Waterfall_PRJ
 {
-    class ShiftManager
+    public class ShiftManager
     {
         List<Shift> shifts;
 
