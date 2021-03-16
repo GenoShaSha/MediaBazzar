@@ -122,7 +122,7 @@ namespace Waterfall_PRJ
             // 
             // removeBTN
             // 
-            this.removeBTN.Location = new System.Drawing.Point(525, 563);
+            this.removeBTN.Location = new System.Drawing.Point(623, 563);
             this.removeBTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.removeBTN.Name = "removeBTN";
             this.removeBTN.Size = new System.Drawing.Size(97, 33);
@@ -133,7 +133,7 @@ namespace Waterfall_PRJ
             // 
             // addBTN
             // 
-            this.addBTN.Location = new System.Drawing.Point(587, 0);
+            this.addBTN.Location = new System.Drawing.Point(365, 559);
             this.addBTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addBTN.Name = "addBTN";
             this.addBTN.Size = new System.Drawing.Size(140, 41);

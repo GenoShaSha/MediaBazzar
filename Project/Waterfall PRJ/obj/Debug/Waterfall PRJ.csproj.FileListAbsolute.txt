@@ -60,7 +60,6 @@ C:\Users\jordy\Source\Repos\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Wat
 C:\Users\jordy\Source\Repos\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.EmployeeInfoForm.resources
 C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.ManagementForm.resources
 C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.LoginForm.resources
-C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.EmployeeInfoForm.resources
 C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Core.WinForms.dll
 C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.SfInput.WinForms.dll
 C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Shared.Base.dll
@@ -87,3 +86,4 @@ C:\Users\Tobias Halomoan\Desktop\new2\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj
 C:\Users\Tobias Halomoan\Desktop\new2\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.exe
 C:\Users\Tobias Halomoan\Desktop\new2\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.pdb
 C:\Users\Tobias Halomoan\Desktop\new2\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.EmployeeAddingForm.resources
+C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.EmployeeAddingForm.resources

@@ -95,31 +95,39 @@ namespace Waterfall_PRJ
 
         private void employeesLB_MouseClick_1(object sender, MouseEventArgs e)
         {
-            Person p = (Person)employeesLB.SelectedItem;
-            firstNameTB.Text = p.FirstName;
-            lastNameTB.Text = p.LastName;
-            GenderCB.SelectedItem = p.Gender;
-            DOBPicker.Value = p.Birthdate;
-            BSN_TB.Text = p.BSN_Num;
-            relationshipStatusCB.SelectedItem = p.Relationship;
-            emailTB.Text = p.Email;
-            phoneNumberTB.Text = p.PhoneNumber;
-            addressTB.Text = p.Address;
-            postalCodeTB.Text = p.Postal;
-            cityTB.Text = p.City;
-            countryTB.Text = p.Country;
-            if(p.GetType().ToString() == "Waterfall_PRJ.Administrator")
+            try
             {
-                RoleCB.SelectedIndex = 0;
+                Person p = (Person)employeesLB.SelectedItem;
+                firstNameTB.Text = p.FirstName;
+                lastNameTB.Text = p.LastName;
+                GenderCB.SelectedItem = p.Gender;
+                DOBPicker.Value = p.Birthdate;
+                BSN_TB.Text = p.BSN_Num;
+                relationshipStatusCB.SelectedItem = p.Relationship;
+                emailTB.Text = p.Email;
+                phoneNumberTB.Text = p.PhoneNumber;
+                addressTB.Text = p.Address;
+                postalCodeTB.Text = p.Postal;
+                cityTB.Text = p.City;
+                countryTB.Text = p.Country;
+                if (p.GetType().ToString() == "Waterfall_PRJ.Administrator")
+                {
+                    RoleCB.SelectedIndex = 0;
+                }
+                else if (p.GetType().ToString() == "Waterfall_PRJ.FloorManagerRole")
+                {
+                    RoleCB.SelectedIndex = 1;
+                }
+                else if (p.GetType().ToString() == "Waterfall_PRJ.EmployeeRole")
+                {
+                    RoleCB.SelectedIndex = 2;
+                }
             }
-            else if (p.GetType().ToString() == "Waterfall_PRJ.FloorManagerRole")
+            catch (NullReferenceException)
             {
-                RoleCB.SelectedIndex = 1;
+                MessageBox.Show("Please select a user.");
             }
-            else if (p.GetType().ToString() == "Waterfall_PRJ.EmployeeRole")
-            {
-                RoleCB.SelectedIndex = 2;
-            }
+            
             //JRUT
             //Still need to make it so that the textboxes get filled if you click on an employee.
             //THAL

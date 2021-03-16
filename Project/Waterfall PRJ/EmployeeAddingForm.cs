@@ -21,6 +21,10 @@ namespace Waterfall_PRJ
             InitializeComponent();
             this.employees = e;
             this.shifts = s;
+            GenderCB.SelectedIndex = 0;
+            relationshipStatusCB.SelectedIndex = 0;
+            RoleCB.SelectedIndex = 0;
+            ContractCB.SelectedIndex = 0;
         }
 
         private void addBTN_Click(object sender, EventArgs e)
