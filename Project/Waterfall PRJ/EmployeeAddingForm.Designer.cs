@@ -30,6 +30,7 @@ namespace Waterfall_PRJ
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.CloseBtn = new System.Windows.Forms.Button();
             this.addBTN = new System.Windows.Forms.Button();
             this.ContractCB = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -60,9 +61,25 @@ namespace Waterfall_PRJ
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.CloseBtn = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblType = new System.Windows.Forms.Label();
+            this.cbxUsers = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lblRmvUsr = new System.Windows.Forms.Label();
+            this.tbxRmv = new System.Windows.Forms.TextBox();
+            this.btnRmv = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.lblUserType = new System.Windows.Forms.Label();
+            this.cbUserType = new System.Windows.Forms.ComboBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -92,6 +109,17 @@ namespace Waterfall_PRJ
             this.groupBox2.Size = new System.Drawing.Size(409, 334);
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
+            // 
+            // CloseBtn
+            // 
+            this.CloseBtn.Location = new System.Drawing.Point(221, 272);
+            this.CloseBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(153, 43);
+            this.CloseBtn.TabIndex = 44;
+            this.CloseBtn.Text = "CLOSE";
+            this.CloseBtn.UseVisualStyleBackColor = true;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
             // 
             // addBTN
             // 
@@ -386,22 +414,202 @@ namespace Waterfall_PRJ
             this.label1.TabIndex = 22;
             this.label1.Text = "First Name :";
             // 
-            // CloseBtn
+            // groupBox3
             // 
-            this.CloseBtn.Location = new System.Drawing.Point(221, 272);
-            this.CloseBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(153, 43);
-            this.CloseBtn.TabIndex = 44;
-            this.CloseBtn.Text = "CLOSE";
-            this.CloseBtn.UseVisualStyleBackColor = true;
-            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            this.groupBox3.Controls.Add(this.lblType);
+            this.groupBox3.Controls.Add(this.cbxUsers);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.lblRmvUsr);
+            this.groupBox3.Controls.Add(this.tbxRmv);
+            this.groupBox3.Controls.Add(this.btnRmv);
+            this.groupBox3.Controls.Add(this.btnClear);
+            this.groupBox3.Controls.Add(this.btnAdd);
+            this.groupBox3.Controls.Add(this.lblUserType);
+            this.groupBox3.Controls.Add(this.cbUserType);
+            this.groupBox3.Controls.Add(this.txtPassword);
+            this.groupBox3.Controls.Add(this.txtUsername);
+            this.groupBox3.Controls.Add(this.lblPassword);
+            this.groupBox3.Controls.Add(this.lblUsername);
+            this.groupBox3.Location = new System.Drawing.Point(428, 26);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(332, 427);
+            this.groupBox3.TabIndex = 40;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "USERNAME";
+            // 
+            // lblType
+            // 
+            this.lblType.AutoSize = true;
+            this.lblType.Font = new System.Drawing.Font("STXinwei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblType.Location = new System.Drawing.Point(39, 325);
+            this.lblType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(91, 17);
+            this.lblType.TabIndex = 40;
+            this.lblType.Text = "User Type :";
+            // 
+            // cbxUsers
+            // 
+            this.cbxUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxUsers.FormattingEnabled = true;
+            this.cbxUsers.Items.AddRange(new object[] {
+            "Manager",
+            "Administrator",
+            ""});
+            this.cbxUsers.Location = new System.Drawing.Point(146, 322);
+            this.cbxUsers.Margin = new System.Windows.Forms.Padding(4);
+            this.cbxUsers.Name = "cbxUsers";
+            this.cbxUsers.Size = new System.Drawing.Size(163, 24);
+            this.cbxUsers.TabIndex = 39;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("STXinwei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label12.Location = new System.Drawing.Point(17, 247);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(171, 25);
+            this.label12.TabIndex = 38;
+            this.label12.Text = "Remove Users";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("STXinwei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label14.Location = new System.Drawing.Point(17, 41);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(126, 25);
+            this.label14.TabIndex = 37;
+            this.label14.Text = "Add Users";
+            // 
+            // lblRmvUsr
+            // 
+            this.lblRmvUsr.AutoSize = true;
+            this.lblRmvUsr.Font = new System.Drawing.Font("STXinwei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblRmvUsr.Location = new System.Drawing.Point(39, 292);
+            this.lblRmvUsr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRmvUsr.Name = "lblRmvUsr";
+            this.lblRmvUsr.Size = new System.Drawing.Size(90, 17);
+            this.lblRmvUsr.TabIndex = 36;
+            this.lblRmvUsr.Text = "Username :";
+            // 
+            // tbxRmv
+            // 
+            this.tbxRmv.Location = new System.Drawing.Point(146, 292);
+            this.tbxRmv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxRmv.Name = "tbxRmv";
+            this.tbxRmv.Size = new System.Drawing.Size(163, 22);
+            this.tbxRmv.TabIndex = 35;
+            // 
+            // btnRmv
+            // 
+            this.btnRmv.Font = new System.Drawing.Font("STXinwei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnRmv.Location = new System.Drawing.Point(223, 362);
+            this.btnRmv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRmv.Name = "btnRmv";
+            this.btnRmv.Size = new System.Drawing.Size(86, 37);
+            this.btnRmv.TabIndex = 34;
+            this.btnRmv.Text = "Remove ";
+            this.btnRmv.UseVisualStyleBackColor = true;
+            this.btnRmv.Click += new System.EventHandler(this.btnRmv_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Font = new System.Drawing.Font("STXinwei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnClear.Location = new System.Drawing.Point(167, 180);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(62, 37);
+            this.btnClear.TabIndex = 33;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("STXinwei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnAdd.Location = new System.Drawing.Point(246, 180);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(62, 37);
+            this.btnAdd.TabIndex = 32;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // lblUserType
+            // 
+            this.lblUserType.AutoSize = true;
+            this.lblUserType.Font = new System.Drawing.Font("STXinwei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblUserType.Location = new System.Drawing.Point(38, 140);
+            this.lblUserType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUserType.Name = "lblUserType";
+            this.lblUserType.Size = new System.Drawing.Size(91, 17);
+            this.lblUserType.TabIndex = 31;
+            this.lblUserType.Text = "User Type :";
+            // 
+            // cbUserType
+            // 
+            this.cbUserType.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbUserType.FormattingEnabled = true;
+            this.cbUserType.Items.AddRange(new object[] {
+            "Manager",
+            "Administrator"});
+            this.cbUserType.Location = new System.Drawing.Point(145, 137);
+            this.cbUserType.Margin = new System.Windows.Forms.Padding(4);
+            this.cbUserType.Name = "cbUserType";
+            this.cbUserType.Size = new System.Drawing.Size(163, 24);
+            this.cbUserType.TabIndex = 30;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(145, 107);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(163, 22);
+            this.txtPassword.TabIndex = 29;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(145, 77);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(163, 22);
+            this.txtUsername.TabIndex = 28;
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("STXinwei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblPassword.Location = new System.Drawing.Point(39, 110);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(90, 17);
+            this.lblPassword.TabIndex = 27;
+            this.lblPassword.Text = "Password  :";
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("STXinwei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblUsername.Location = new System.Drawing.Point(39, 80);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(90, 17);
+            this.lblUsername.TabIndex = 26;
+            this.lblUsername.Text = "Username :";
             // 
             // EmployeeAddingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(445, 583);
+            this.ClientSize = new System.Drawing.Size(772, 583);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -411,6 +619,8 @@ namespace Waterfall_PRJ
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -449,5 +659,21 @@ namespace Waterfall_PRJ
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button addBTN;
         private System.Windows.Forms.Button CloseBtn;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label lblType;
+        private System.Windows.Forms.ComboBox cbxUsers;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblRmvUsr;
+        private System.Windows.Forms.TextBox tbxRmv;
+        private System.Windows.Forms.Button btnRmv;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label lblUserType;
+        private System.Windows.Forms.ComboBox cbUserType;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblUsername;
     }
 }
