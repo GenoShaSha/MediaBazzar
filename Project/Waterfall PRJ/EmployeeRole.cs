@@ -9,8 +9,7 @@ namespace Waterfall_PRJ
     public class EmployeeRole : Person
     {
         private int workhours;
-        private string contract;
-        public EmployeeRole(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email, string phonenumber, string address, string postalcode, string city, string country, int workhours,string contract) : base(firstname, lastname, gender, birthdate, BSN, relationship, email, phonenumber, address, postalcode, city, country)
+        public EmployeeRole(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email, string phonenumber, string address, string postalcode, string city, string country, int workhours) : base(firstname, lastname, gender, birthdate, BSN, relationship, email, phonenumber, address, postalcode, city, country)
         {
             this.firstname = firstname;
             this.lastname = lastname;
@@ -25,7 +24,6 @@ namespace Waterfall_PRJ
             this.city = city;
             this.country = country;
             this.workhours = workhours;
-            this.contract = contract;
         }
 
         public int Workhours
@@ -42,17 +40,13 @@ namespace Waterfall_PRJ
         public override string ToString()
         {
             string employeestring;
-            if (this.contract == "full")
+            if (this.workhours == 40)
             {
                 employeestring = $"{this.firstname} {this.lastname} ({this.employeeID}) : Full-time employee";
             }
-            else if (this.contract == "part")
-            {
-                employeestring = $"{this.firstname} {this.lastname} ({this.employeeID}) : Part-time employee";
-            }
             else
             {
-                employeestring = "";
+                employeestring = $"{this.firstname} {this.lastname} ({this.employeeID}) : Part-time employee";
             }
             return employeestring;
         }
