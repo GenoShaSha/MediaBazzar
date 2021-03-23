@@ -50,17 +50,17 @@ namespace Waterfall_PRJ
             }
         }
 
-       public void UpdateAvailableHours()
+        public void UpdateAvailableHours()
         {
             DateTime Clicked_Date = (DateTime)EmployeeCalendar.SelectedDate;
             DateTime datetime = EmployeeCalendar.SelectedDate.Value;
             DayOfWeek dow = Clicked_Date.DayOfWeek;
             Person p = (Person)AvailableEmployeesLB.SelectedItem;
             EmployeeRole e = (EmployeeRole)AvailableEmployeesLB.SelectedItem;
-            
+
             int counter1 = 0;
-            int counter2 = 0;
-            
+
+
 
             if (e != null)
             {
@@ -72,11 +72,15 @@ namespace Waterfall_PRJ
                 {
                     e.Workhours = 20;
                 }
+                else if (e.Contract == "middle")
+                {
+                    e.Workhours = 30;
+                }
             }
 
             if (dow == DayOfWeek.Monday)
             {
-                while (counter1 < 6)
+                while (counter1 < 7)
                 {
                     List<EmployeeRole> morningshifts = shifts.ShiftGetter(Clicked_Date, "morning");
                     List<EmployeeRole> eveningshifts = shifts.ShiftGetter(Clicked_Date, "evening");
@@ -89,7 +93,7 @@ namespace Waterfall_PRJ
                             {
                                 if (emp.FirstName == e.FirstName)
                                 {
-                                    e.Workhours -= 6;
+                                    e.Workhours -= 4;
                                 }
                             }
                         }
@@ -99,7 +103,7 @@ namespace Waterfall_PRJ
                             {
                                 if (emp.FirstName == e.FirstName)
                                 {
-                                    e.Workhours -= 6;
+                                    e.Workhours -= 4;
                                 }
                             }
                         }
@@ -109,7 +113,7 @@ namespace Waterfall_PRJ
                             {
                                 if (emp.FirstName == e.FirstName)
                                 {
-                                    e.Workhours -= 6;
+                                    e.Workhours -= 4;
                                 }
                             }
                         }
@@ -118,7 +122,290 @@ namespace Waterfall_PRJ
                     counter1++;
                 }
             }
+            else if (dow == DayOfWeek.Tuesday)
+            {
 
+                if (counter1 == 0)
+                {
+                    Clicked_Date = Clicked_Date.AddDays(-1);
+                } while (counter1 < 7)
+                {
+                    List<EmployeeRole> morningshifts = shifts.ShiftGetter(Clicked_Date, "morning");
+                    List<EmployeeRole> eveningshifts = shifts.ShiftGetter(Clicked_Date, "evening");
+                    List<EmployeeRole> nightshifts = shifts.ShiftGetter(Clicked_Date, "night");
+                    if (AvailableEmployeesLB.SelectedIndex > -1)
+                    {
+                        if (morningshifts != null)
+                        {
+                            foreach (EmployeeRole emp in morningshifts)
+                            {
+                                if (emp.FirstName == e.FirstName)
+                                {
+                                    e.Workhours -= 4;
+                                }
+                            }
+                        }
+                        if (eveningshifts != null)
+                        {
+                            foreach (EmployeeRole emp in eveningshifts)
+                            {
+                                if (emp.FirstName == e.FirstName)
+                                {
+                                    e.Workhours -= 4;
+                                }
+                            }
+                        }
+                        if (nightshifts != null)
+                        {
+                            foreach (EmployeeRole emp in nightshifts)
+                            {
+                                if (emp.FirstName == e.FirstName)
+                                {
+                                    e.Workhours -= 4;
+                                }
+                            }
+                        }
+                    }
+                    Clicked_Date = Clicked_Date.AddDays(1);
+                    counter1++;
+                }
+            }
+            else if (dow == DayOfWeek.Wednesday)
+            {
+                if (counter1 == 0)
+                {
+                    Clicked_Date = Clicked_Date.AddDays(-2);
+
+
+                }
+                while (counter1 < 7)
+                {
+                    List<EmployeeRole> morningshifts = shifts.ShiftGetter(Clicked_Date, "morning");
+                    List<EmployeeRole> eveningshifts = shifts.ShiftGetter(Clicked_Date, "evening");
+                    List<EmployeeRole> nightshifts = shifts.ShiftGetter(Clicked_Date, "night");
+                    if (AvailableEmployeesLB.SelectedIndex > -1)
+                    {
+                        if (morningshifts != null)
+                        {
+                            foreach (EmployeeRole emp in morningshifts)
+                            {
+                                if (emp.FirstName == e.FirstName)
+                                {
+                                    e.Workhours -= 4;
+                                }
+                            }
+                        }
+                        if (eveningshifts != null)
+                        {
+                            foreach (EmployeeRole emp in eveningshifts)
+                            {
+                                if (emp.FirstName == e.FirstName)
+                                {
+                                    e.Workhours -= 4;
+                                }
+                            }
+                        }
+                        if (nightshifts != null)
+                        {
+                            foreach (EmployeeRole emp in nightshifts)
+                            {
+                                if (emp.FirstName == e.FirstName)
+                                {
+                                    e.Workhours -= 4;
+                                }
+                            }
+                        }
+                    }
+                    Clicked_Date = Clicked_Date.AddDays(1);
+                    counter1++;
+                }
+            }
+            else if (dow == DayOfWeek.Thursday)
+            {
+                if (counter1 == 0)
+                {
+                    Clicked_Date = Clicked_Date.AddDays(-3);
+                }
+                while (counter1 < 7)
+                {
+                    List<EmployeeRole> morningshifts = shifts.ShiftGetter(Clicked_Date, "morning");
+                    List<EmployeeRole> eveningshifts = shifts.ShiftGetter(Clicked_Date, "evening");
+                    List<EmployeeRole> nightshifts = shifts.ShiftGetter(Clicked_Date, "night");
+                    if (AvailableEmployeesLB.SelectedIndex > -1)
+                    {
+                        if (morningshifts != null)
+                        {
+                            foreach (EmployeeRole emp in morningshifts)
+                            {
+                                if (emp.FirstName == e.FirstName)
+                                {
+                                    e.Workhours -= 4;
+                                }
+                            }
+                        }
+                        if (eveningshifts != null)
+                        {
+                            foreach (EmployeeRole emp in eveningshifts)
+                            {
+                                if (emp.FirstName == e.FirstName)
+                                {
+                                    e.Workhours -= 4;
+                                }
+                            }
+                        }
+                        if (nightshifts != null)
+                        {
+                            foreach (EmployeeRole emp in nightshifts)
+                            {
+                                if (emp.FirstName == e.FirstName)
+                                {
+                                    e.Workhours -= 4;
+                                }
+                            }
+                        }
+                    }
+                    Clicked_Date = Clicked_Date.AddDays(1);
+                    counter1++;
+                }
+            } else if(dow == DayOfWeek.Friday)
+            {
+                if (counter1 == 0)
+                {
+                    Clicked_Date = Clicked_Date.AddDays(-4);
+                } while (counter1 < 7)
+                {
+                    List<EmployeeRole> morningshifts = shifts.ShiftGetter(Clicked_Date, "morning");
+                    List<EmployeeRole> eveningshifts = shifts.ShiftGetter(Clicked_Date, "evening");
+                    List<EmployeeRole> nightshifts = shifts.ShiftGetter(Clicked_Date, "night");
+                    if (AvailableEmployeesLB.SelectedIndex > -1)
+                    {
+                        if (morningshifts != null)
+                        {
+                            foreach (EmployeeRole emp in morningshifts)
+                            {
+                                if (emp.FirstName == e.FirstName)
+                                {
+                                    e.Workhours -= 4;
+                                }
+                            }
+                        }
+                        if (eveningshifts != null)
+                        {
+                            foreach (EmployeeRole emp in eveningshifts)
+                            {
+                                if (emp.FirstName == e.FirstName)
+                                {
+                                    e.Workhours -= 4;
+                                }
+                            }
+                        }
+                        if (nightshifts != null)
+                        {
+                            foreach (EmployeeRole emp in nightshifts)
+                            {
+                                if (emp.FirstName == e.FirstName)
+                                {
+                                    e.Workhours -= 4;
+                                }
+                            }
+                        }
+                    }
+                    Clicked_Date = Clicked_Date.AddDays(1);
+                    counter1++;
+                }
+            } else if(dow == DayOfWeek.Saturday)
+            {
+                if (counter1 == 0)
+                {
+                    Clicked_Date = Clicked_Date.AddDays(-5);
+                } while (counter1 < 7)
+                {
+                    List<EmployeeRole> morningshifts = shifts.ShiftGetter(Clicked_Date, "morning");
+                    List<EmployeeRole> eveningshifts = shifts.ShiftGetter(Clicked_Date, "evening");
+                    List<EmployeeRole> nightshifts = shifts.ShiftGetter(Clicked_Date, "night");
+                    if (AvailableEmployeesLB.SelectedIndex > -1)
+                    {
+                        if (morningshifts != null)
+                        {
+                            foreach (EmployeeRole emp in morningshifts)
+                            {
+                                if (emp.FirstName == e.FirstName)
+                                {
+                                    e.Workhours -= 4;
+                                }
+                            }
+                        }
+                        if (eveningshifts != null)
+                        {
+                            foreach (EmployeeRole emp in eveningshifts)
+                            {
+                                if (emp.FirstName == e.FirstName)
+                                {
+                                    e.Workhours -= 4;
+                                }
+                            }
+                        }
+                        if (nightshifts != null)
+                        {
+                            foreach (EmployeeRole emp in nightshifts)
+                            {
+                                if (emp.FirstName == e.FirstName)
+                                {
+                                    e.Workhours -= 4;
+                                }
+                            }
+                        }
+                    }
+                    Clicked_Date = Clicked_Date.AddDays(1);
+                    counter1++;
+                }
+            } else if(dow == DayOfWeek.Sunday)
+            {
+                if (counter1 == 0)
+                {
+                    Clicked_Date = Clicked_Date.AddDays(-6);
+                } while (counter1 < 7)
+                {
+                    List<EmployeeRole> morningshifts = shifts.ShiftGetter(Clicked_Date, "morning");
+                    List<EmployeeRole> eveningshifts = shifts.ShiftGetter(Clicked_Date, "evening");
+                    List<EmployeeRole> nightshifts = shifts.ShiftGetter(Clicked_Date, "night");
+                    if (AvailableEmployeesLB.SelectedIndex > -1)
+                    {
+                        if (morningshifts != null)
+                        {
+                            foreach (EmployeeRole emp in morningshifts)
+                            {
+                                if (emp.FirstName == e.FirstName)
+                                {
+                                    e.Workhours -= 4;
+                                }
+                            }
+                        }
+                        if (eveningshifts != null)
+                        {
+                            foreach (EmployeeRole emp in eveningshifts)
+                            {
+                                if (emp.FirstName == e.FirstName)
+                                {
+                                    e.Workhours -= 4;
+                                }
+                            }
+                        }
+                        if (nightshifts != null)
+                        {
+                            foreach (EmployeeRole emp in nightshifts)
+                            {
+                                if (emp.FirstName == e.FirstName)
+                                {
+                                    e.Workhours -= 4;
+                                }
+                            }
+                        }
+                    }
+                    Clicked_Date = Clicked_Date.AddDays(1);
+                    counter1++;
+                }
+            }
         }
 
         private void UpdateWorkshiftManagementListbox()
@@ -260,6 +547,15 @@ namespace Waterfall_PRJ
                 Person p = (Person)AvailableEmployeesLB.SelectedItem;
 
                 workhrsLbl.Text = ((EmployeeRole)p).Workhours.ToString() + "hours";
+                if (((EmployeeRole)p).Workhours < 0)
+                {
+                    workhrsLbl.ForeColor = Color.Red;
+                }
+                else
+                {
+                    workhrsLbl.ForeColor = Color.Black;
+                }
+
             }
            
 

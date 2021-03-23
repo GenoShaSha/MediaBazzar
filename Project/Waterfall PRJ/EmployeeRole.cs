@@ -49,6 +49,9 @@ namespace Waterfall_PRJ
             else if (this.contract == "part")
             {
                 employeestring = $"{this.firstname} {this.lastname} ({this.employeeID}) : Part-time employee";
+            } else if( this.contract == "middle")
+            {
+                employeestring = $"{this.firstname} {this.lastname} ({this.employeeID}) : Part-time employee";
             }
             else
             {

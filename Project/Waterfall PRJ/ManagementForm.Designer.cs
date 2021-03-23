@@ -552,6 +552,7 @@ namespace Waterfall_PRJ
             // EmployeeCalendar
             // 
             this.EmployeeCalendar.Culture = new System.Globalization.CultureInfo("en-US");
+            this.EmployeeCalendar.FirstDayOfWeek = System.DayOfWeek.Monday;
             this.EmployeeCalendar.Location = new System.Drawing.Point(15, 75);
             this.EmployeeCalendar.Margin = new System.Windows.Forms.Padding(2);
             this.EmployeeCalendar.MinimumSize = new System.Drawing.Size(196, 196);
