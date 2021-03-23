@@ -28,18 +28,42 @@ namespace Waterfall_PRJ
         
         public void AddMorningShift(EmployeeRole employee)
         {
-            this.morningshift.Add(employee);
-            employee.Workhours -= 6;
+            try
+            {
+                this.morningshift.Add(employee);
+                //employee.Workhours -= 6;
+            }
+            catch (NullReferenceException ex)
+            {
+                System.Windows.Forms.MessageBox.Show("You haven't selected a employee");
+
+            }
         }
         public void AddEveningShift(EmployeeRole employee)
         {
-            this.eveningshift.Add(employee);
-            employee.Workhours -= 6;
+            try
+            {
+                this.eveningshift.Add(employee);
+                //employee.Workhours -= 6;
+            }
+            catch (NullReferenceException ex)
+            {
+                System.Windows.Forms.MessageBox.Show("You haven't selected a employee");
+
+            }
         }
         public void AddNightShift(EmployeeRole employee)
         {
-            this.nightshift.Add(employee);
-            employee.Workhours -= 6;
+            try
+            {
+                this.nightshift.Add(employee);
+                //employee.Workhours -= 6;
+            }
+            catch (NullReferenceException ex)
+            {
+                System.Windows.Forms.MessageBox.Show("You haven't selected a employee");
+
+            }
         }
        
         public List<EmployeeRole> ReturnShifts(string shift)

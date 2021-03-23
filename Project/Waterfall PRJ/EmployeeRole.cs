@@ -33,6 +33,12 @@ namespace Waterfall_PRJ
             get { return this.workhours; }
             set { this.workhours = value; }
         }
+
+        public string Contract
+        {
+            get { return this.contract; }
+            set { this.contract = value; }
+        }
         public override string ToString()
         {
             string employeestring;

@@ -87,3 +87,23 @@ C:\Users\Tobias Halomoan\Desktop\new2\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj
 C:\Users\Tobias Halomoan\Desktop\new2\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.pdb
 C:\Users\Tobias Halomoan\Desktop\new2\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.EmployeeAddingForm.resources
 C:\Users\Tobias Halomoan\Desktop\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.EmployeeAddingForm.resources
+C:\Users\joran\OneDrive\Bureaublad\Prj\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Waterfall PRJ.exe.config
+C:\Users\joran\OneDrive\Bureaublad\Prj\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Waterfall PRJ.exe
+C:\Users\joran\OneDrive\Bureaublad\Prj\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Waterfall PRJ.pdb
+C:\Users\joran\OneDrive\Bureaublad\Prj\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Core.WinForms.dll
+C:\Users\joran\OneDrive\Bureaublad\Prj\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Licensing.dll
+C:\Users\joran\OneDrive\Bureaublad\Prj\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.SfInput.WinForms.dll
+C:\Users\joran\OneDrive\Bureaublad\Prj\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Shared.Base.dll
+C:\Users\joran\OneDrive\Bureaublad\Prj\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Core.WinForms.xml
+C:\Users\joran\OneDrive\Bureaublad\Prj\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.SfInput.WinForms.xml
+C:\Users\joran\OneDrive\Bureaublad\Prj\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Shared.Base.xml
+C:\Users\joran\OneDrive\Bureaublad\Prj\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.csprojAssemblyReference.cache
+C:\Users\joran\OneDrive\Bureaublad\Prj\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.ManagementForm.resources
+C:\Users\joran\OneDrive\Bureaublad\Prj\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.LoginForm.resources
+C:\Users\joran\OneDrive\Bureaublad\Prj\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.EmployeeAddingForm.resources
+C:\Users\joran\OneDrive\Bureaublad\Prj\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.Properties.Resources.resources
+C:\Users\joran\OneDrive\Bureaublad\Prj\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.csproj.GenerateResource.cache
+C:\Users\joran\OneDrive\Bureaublad\Prj\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.csproj.CoreCompileInputs.cache
+C:\Users\joran\OneDrive\Bureaublad\Prj\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.csproj.CopyComplete
+C:\Users\joran\OneDrive\Bureaublad\Prj\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.exe
+C:\Users\joran\OneDrive\Bureaublad\Prj\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.pdb

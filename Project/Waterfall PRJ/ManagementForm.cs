@@ -50,6 +50,77 @@ namespace Waterfall_PRJ
             }
         }
 
+       public void UpdateAvailableHours()
+        {
+            DateTime Clicked_Date = (DateTime)EmployeeCalendar.SelectedDate;
+            DateTime datetime = EmployeeCalendar.SelectedDate.Value;
+            DayOfWeek dow = Clicked_Date.DayOfWeek;
+            Person p = (Person)AvailableEmployeesLB.SelectedItem;
+            EmployeeRole e = (EmployeeRole)AvailableEmployeesLB.SelectedItem;
+            
+            int counter1 = 0;
+            int counter2 = 0;
+            
+
+            if (e != null)
+            {
+                if (e.Contract == "full")
+                {
+                    e.Workhours = 40;
+                }
+                else if (e.Contract == "part")
+                {
+                    e.Workhours = 20;
+                }
+            }
+
+            if (dow == DayOfWeek.Monday)
+            {
+                while (counter1 < 6)
+                {
+                    List<EmployeeRole> morningshifts = shifts.ShiftGetter(Clicked_Date, "morning");
+                    List<EmployeeRole> eveningshifts = shifts.ShiftGetter(Clicked_Date, "evening");
+                    List<EmployeeRole> nightshifts = shifts.ShiftGetter(Clicked_Date, "night");
+                    if (AvailableEmployeesLB.SelectedIndex > -1)
+                    {
+                        if (morningshifts != null)
+                        {
+                            foreach (EmployeeRole emp in morningshifts)
+                            {
+                                if (emp.FirstName == e.FirstName)
+                                {
+                                    e.Workhours -= 6;
+                                }
+                            }
+                        }
+                        if (eveningshifts != null)
+                        {
+                            foreach (EmployeeRole emp in eveningshifts)
+                            {
+                                if (emp.FirstName == e.FirstName)
+                                {
+                                    e.Workhours -= 6;
+                                }
+                            }
+                        }
+                        if (nightshifts != null)
+                        {
+                            foreach (EmployeeRole emp in nightshifts)
+                            {
+                                if (emp.FirstName == e.FirstName)
+                                {
+                                    e.Workhours -= 6;
+                                }
+                            }
+                        }
+                    }
+                    Clicked_Date = Clicked_Date.AddDays(1);
+                    counter1++;
+                }
+            }
+
+        }
+
         private void UpdateWorkshiftManagementListbox()
         {
             AvailableEmployeesLB.Items.Clear();
@@ -187,17 +258,22 @@ namespace Waterfall_PRJ
             if(AvailableEmployeesLB.SelectedIndex > -1)
             {
                 Person p = (Person)AvailableEmployeesLB.SelectedItem;
+
                 workhrsLbl.Text = ((EmployeeRole)p).Workhours.ToString() + "hours";
             }
-            
+           
+
+
         }
 
         private void EmployeeCalendar_Click(object sender, EventArgs e)
         {
+           
             MorningShiftLB.Items.Clear();
             EveningShiftLB.Items.Clear();
             NightShiftLB.Items.Clear();
             DateTime Clicked_Date = (DateTime)EmployeeCalendar.SelectedDate;
+            Person p = (Person)AvailableEmployeesLB.SelectedItem;
             List<EmployeeRole> morningshifts = shifts.ShiftGetter(Clicked_Date, "morning");
             List<EmployeeRole> eveningshifts = shifts.ShiftGetter(Clicked_Date, "evening");
             List<EmployeeRole> nightshifts = shifts.ShiftGetter(Clicked_Date, "night");
@@ -228,6 +304,20 @@ namespace Waterfall_PRJ
                 EveningShiftLB.Items.Clear();
                 NightShiftLB.Items.Clear();
             }
+
+            UpdateAvailableHours();
+
+
+
+        }
+
+        private void AvailableEmployeesLB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GenderCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
