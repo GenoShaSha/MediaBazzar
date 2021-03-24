@@ -47,11 +47,11 @@ namespace Waterfall_PRJ
                     }
                     else if (ContractCB.SelectedIndex == 1)
                     {
-                        this.employees.AddPerson(new EmployeeRole(firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, 30,"middle"));
+                        this.employees.AddPerson(new EmployeeRole(firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, 30, "middle"));
                     }
                     else
                     {
-                        this.employees.AddPerson(new EmployeeRole(firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, 20 ,"part"));
+                        this.employees.AddPerson(new EmployeeRole(firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, 20, "part"));
                     }
                 }
                 MessageBox.Show("User added!");
@@ -60,7 +60,7 @@ namespace Waterfall_PRJ
             {
                 MessageBox.Show($"Missing reference : {ex.ToString()}");
             }
-            
+
             firstNameTB.Text = string.Empty;
             lastNameTB.Text = string.Empty;
             BSN_TB.Text = string.Empty;
@@ -97,6 +97,73 @@ namespace Waterfall_PRJ
             else
             {
                 ContractCB.Enabled = true;
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+            string userType = cbUserType.SelectedItem.ToString();
+
+            if (username == string.Empty)
+            {
+                MessageBox.Show("Please input Username!");
+            }
+            else if (password == string.Empty)
+            {
+                MessageBox.Show("Please input Password!");
+            }
+            else
+            {
+                Login login = new Login(username, password, userType);
+
+                bool addUser = login.AddUsers();
+
+                if (addUser == true)
+                {
+                    MessageBox.Show("Success Add");
+                }
+                else
+                {
+                    MessageBox.Show("Fail to Add");
+                }
+                txtUsername.Text = string.Empty;
+                txtPassword.Text = string.Empty;
+                cbUserType.SelectedIndex = 0;
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtUsername.Text = string.Empty;
+            txtPassword.Text = string.Empty;
+            cbUserType.SelectedIndex = 0;
+        }
+
+        private void btnRmv_Click(object sender, EventArgs e)
+        {
+            string newUsr = tbxRmv.Text;
+            string usrType = cbxUsers.SelectedItem.ToString();
+
+            if (newUsr == string.Empty)
+            {
+                MessageBox.Show("Please input Username!");
+            }
+            else
+            {
+                Login login = new Login(newUsr, string.Empty, usrType);
+                bool rmvUsers = login.RemoveUsers();
+                if (rmvUsers == true)
+                {
+                    MessageBox.Show("The user has been removed!");
+                }
+                else
+                {
+                    MessageBox.Show("Nothing happened!");
+                }
+                tbxRmv.Text = string.Empty;
+                cbxUsers.SelectedIndex = 0;
             }
         }
     }

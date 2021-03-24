@@ -42,13 +42,14 @@ namespace Waterfall_PRJ
                     MessageBox.Show("Ur in to Admin page");
                     ManagementForm mf = new ManagementForm();
                     mf.Show();
-
+                    this.Hide();
                 }
                 else if (rbManager.Checked)
                 {
                     MessageBox.Show("Ur in to Manager page");
                     ManagementForm mf = new ManagementForm();
                     mf.Show();
+                    this.Hide();
                 }
 
             }

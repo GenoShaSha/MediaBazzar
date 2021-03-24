@@ -127,3 +127,22 @@ C:\Users\Tobias Halomoan\Desktop\Git\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\
 C:\Users\Tobias Halomoan\Desktop\Git\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.csproj.CopyComplete
 C:\Users\Tobias Halomoan\Desktop\Git\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.exe
 C:\Users\Tobias Halomoan\Desktop\Git\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.pdb
+D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Waterfall PRJ.exe.config
+D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Waterfall PRJ.exe
+D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Waterfall PRJ.pdb
+D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Core.WinForms.dll
+D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Licensing.dll
+D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.SfInput.WinForms.dll
+D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Shared.Base.dll
+D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Core.WinForms.xml
+D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.SfInput.WinForms.xml
+D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Shared.Base.xml
+D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.csprojAssemblyReference.cache
+D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.ManagementForm.resources
+D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.LoginForm.resources
+D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.EmployeeAddingForm.resources
+D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.Properties.Resources.resources
+D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.csproj.GenerateResource.cache
+D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.csproj.CopyComplete
+D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.exe
+D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.pdb

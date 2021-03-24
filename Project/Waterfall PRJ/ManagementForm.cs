@@ -661,5 +661,17 @@ namespace Waterfall_PRJ
         {
 
         }
+
+        private void EmployeeManagePage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginForm lf = new LoginForm();
+            lf.Show();
+            this.Hide();
+        }
     }
 }
