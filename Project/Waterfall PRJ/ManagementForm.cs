@@ -421,8 +421,14 @@ namespace Waterfall_PRJ
         }
         private void btnAddShift_Click(object sender, EventArgs e)
         {
+            MorningShiftLB.Items.Clear();
+            EveningShiftLB.Items.Clear();
+            NightShiftLB.Items.Clear();
             DateTime Clicked_Date = (DateTime)EmployeeCalendar.SelectedDate;
             Person p = (Person)AvailableEmployeesLB.SelectedItem;
+            List<EmployeeRole> morningshifts = shifts.ShiftGetter(Clicked_Date, "morning");
+            List<EmployeeRole> eveningshifts = shifts.ShiftGetter(Clicked_Date, "evening");
+            List<EmployeeRole> nightshifts = shifts.ShiftGetter(Clicked_Date, "night");
             shifts.AddShiftTime(Clicked_Date);
             if(ShiftSelectorCB.SelectedIndex == 0)
             {
@@ -436,7 +442,30 @@ namespace Waterfall_PRJ
             {
                 shifts.AddShifts(Clicked_Date, "night", (EmployeeRole)p);
             }
+            workhrsLbl.Text = ((EmployeeRole)p).Workhours.ToString() + "hours";
+            if (morningshifts != null)
+            {
+                foreach (EmployeeRole emp in morningshifts)
+                {
+                    MorningShiftLB.Items.Add(emp);
+                }
+            }
+            if (eveningshifts != null)
+            {
+                foreach (EmployeeRole emp in eveningshifts)
+                {
+                    EveningShiftLB.Items.Add(emp);
+                }
+            }
+            if (nightshifts != null)
+            {
+                foreach (EmployeeRole emp in nightshifts)
+                {
+                    NightShiftLB.Items.Add(emp);
+                }
+            }
             AvailableEmployeesLB.SelectedIndex = -1;
+
         }
 
         private void addBTN_Click(object sender, EventArgs e)

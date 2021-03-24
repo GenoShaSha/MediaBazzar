@@ -7,8 +7,9 @@ using System.IO;
 
 namespace Waterfall_PRJ
 {
-    class Login
+    public class Login
     {
+         
         private string username;
         private string password;
         private string loginType;
@@ -170,3 +171,4 @@ namespace Waterfall_PRJ
         }
     }
 }
+
