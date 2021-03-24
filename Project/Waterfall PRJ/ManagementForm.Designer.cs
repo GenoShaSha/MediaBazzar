@@ -31,6 +31,7 @@ namespace Waterfall_PRJ
         {
             this.ManagementTabControl = new System.Windows.Forms.TabControl();
             this.EmployeeManagePage = new System.Windows.Forms.TabPage();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.removeBTN = new System.Windows.Forms.Button();
             this.addBTN = new System.Windows.Forms.Button();
             this.updateBTN = new System.Windows.Forms.Button();
@@ -82,7 +83,6 @@ namespace Waterfall_PRJ
             this.EveningShiftLB = new System.Windows.Forms.ListBox();
             this.MorningShiftLB = new System.Windows.Forms.ListBox();
             this.btnAddShift = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.ManagementTabControl.SuspendLayout();
             this.EmployeeManagePage.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -97,10 +97,10 @@ namespace Waterfall_PRJ
             this.ManagementTabControl.Controls.Add(this.EmployeeManagePage);
             this.ManagementTabControl.Controls.Add(this.ShiftManagementPage);
             this.ManagementTabControl.Location = new System.Drawing.Point(4, 2);
-            this.ManagementTabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ManagementTabControl.Margin = new System.Windows.Forms.Padding(4);
             this.ManagementTabControl.Name = "ManagementTabControl";
             this.ManagementTabControl.SelectedIndex = 0;
-            this.ManagementTabControl.Size = new System.Drawing.Size(735, 638);
+            this.ManagementTabControl.Size = new System.Drawing.Size(881, 710);
             this.ManagementTabControl.TabIndex = 35;
             // 
             // EmployeeManagePage
@@ -114,14 +114,25 @@ namespace Waterfall_PRJ
             this.EmployeeManagePage.Controls.Add(this.groupBox1);
             this.EmployeeManagePage.Controls.Add(this.pictureBox1);
             this.EmployeeManagePage.Location = new System.Drawing.Point(4, 25);
-            this.EmployeeManagePage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EmployeeManagePage.Margin = new System.Windows.Forms.Padding(4);
             this.EmployeeManagePage.Name = "EmployeeManagePage";
-            this.EmployeeManagePage.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.EmployeeManagePage.Size = new System.Drawing.Size(727, 609);
+            this.EmployeeManagePage.Padding = new System.Windows.Forms.Padding(4);
+            this.EmployeeManagePage.Size = new System.Drawing.Size(873, 681);
             this.EmployeeManagePage.TabIndex = 1;
             this.EmployeeManagePage.Text = "Employee Management";
             this.EmployeeManagePage.UseVisualStyleBackColor = true;
             this.EmployeeManagePage.Click += new System.EventHandler(this.EmployeeManagePage_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(620, 26);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(100, 33);
+            this.btnLogout.TabIndex = 44;
+            this.btnLogout.Text = "LOGOUT";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // removeBTN
             // 
@@ -505,9 +516,9 @@ namespace Waterfall_PRJ
             this.ShiftManagementPage.Controls.Add(this.MorningShiftLB);
             this.ShiftManagementPage.Controls.Add(this.btnAddShift);
             this.ShiftManagementPage.Location = new System.Drawing.Point(4, 25);
-            this.ShiftManagementPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ShiftManagementPage.Margin = new System.Windows.Forms.Padding(4);
             this.ShiftManagementPage.Name = "ShiftManagementPage";
-            this.ShiftManagementPage.Size = new System.Drawing.Size(727, 609);
+            this.ShiftManagementPage.Size = new System.Drawing.Size(873, 681);
             this.ShiftManagementPage.TabIndex = 2;
             this.ShiftManagementPage.Text = "Work-shift Management";
             this.ShiftManagementPage.UseVisualStyleBackColor = true;
@@ -516,7 +527,7 @@ namespace Waterfall_PRJ
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(17, 576);
+            this.label20.Location = new System.Drawing.Point(18, 649);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(54, 17);
             this.label20.TabIndex = 35;
@@ -525,7 +536,7 @@ namespace Waterfall_PRJ
             // workhrsLbl
             // 
             this.workhrsLbl.AutoSize = true;
-            this.workhrsLbl.Location = new System.Drawing.Point(169, 538);
+            this.workhrsLbl.Location = new System.Drawing.Point(170, 611);
             this.workhrsLbl.Name = "workhrsLbl";
             this.workhrsLbl.Size = new System.Drawing.Size(0, 17);
             this.workhrsLbl.TabIndex = 34;
@@ -533,7 +544,7 @@ namespace Waterfall_PRJ
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(17, 538);
+            this.label19.Location = new System.Drawing.Point(18, 611);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(146, 17);
             this.label19.TabIndex = 33;
@@ -543,7 +554,7 @@ namespace Waterfall_PRJ
             // 
             this.EmployeeCalendar.Culture = new System.Globalization.CultureInfo("en-US");
             this.EmployeeCalendar.FirstDayOfWeek = System.DayOfWeek.Monday;
-            this.EmployeeCalendar.Location = new System.Drawing.Point(20, 92);
+            this.EmployeeCalendar.Location = new System.Drawing.Point(21, 92);
             this.EmployeeCalendar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EmployeeCalendar.MinimumSize = new System.Drawing.Size(336, 310);
             this.EmployeeCalendar.Name = "EmployeeCalendar";
@@ -570,7 +581,7 @@ namespace Waterfall_PRJ
             "Morning Shift",
             "Afternoon Shift",
             "Night Shift"});
-            this.ShiftSelectorCB.Location = new System.Drawing.Point(77, 574);
+            this.ShiftSelectorCB.Location = new System.Drawing.Point(78, 647);
             this.ShiftSelectorCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ShiftSelectorCB.Name = "ShiftSelectorCB";
             this.ShiftSelectorCB.Size = new System.Drawing.Size(205, 24);
@@ -580,7 +591,7 @@ namespace Waterfall_PRJ
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(16, 350);
+            this.label12.Location = new System.Drawing.Point(17, 423);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(170, 19);
             this.label12.TabIndex = 29;
@@ -590,7 +601,7 @@ namespace Waterfall_PRJ
             // 
             this.AvailableEmployeesLB.FormattingEnabled = true;
             this.AvailableEmployeesLB.ItemHeight = 16;
-            this.AvailableEmployeesLB.Location = new System.Drawing.Point(20, 370);
+            this.AvailableEmployeesLB.Location = new System.Drawing.Point(21, 443);
             this.AvailableEmployeesLB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AvailableEmployeesLB.Name = "AvailableEmployeesLB";
             this.AvailableEmployeesLB.Size = new System.Drawing.Size(371, 164);
@@ -663,7 +674,7 @@ namespace Waterfall_PRJ
             this.btnAddShift.BackColor = System.Drawing.SystemColors.Control;
             this.btnAddShift.Font = new System.Drawing.Font("Impact", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddShift.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAddShift.Location = new System.Drawing.Point(288, 566);
+            this.btnAddShift.Location = new System.Drawing.Point(289, 639);
             this.btnAddShift.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddShift.Name = "btnAddShift";
             this.btnAddShift.Size = new System.Drawing.Size(103, 33);
@@ -672,22 +683,11 @@ namespace Waterfall_PRJ
             this.btnAddShift.UseVisualStyleBackColor = false;
             this.btnAddShift.Click += new System.EventHandler(this.btnAddShift_Click);
             // 
-            // btnLogout
-            // 
-            this.btnLogout.Location = new System.Drawing.Point(620, 26);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(100, 33);
-            this.btnLogout.TabIndex = 44;
-            this.btnLogout.Text = "LOGOUT";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
             // ManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(906, 680);
+            this.ClientSize = new System.Drawing.Size(892, 717);
             this.Controls.Add(this.ManagementTabControl);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ManagementForm";

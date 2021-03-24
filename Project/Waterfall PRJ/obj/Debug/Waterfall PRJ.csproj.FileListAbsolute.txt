@@ -146,3 +146,23 @@ D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Wat
 D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.csproj.CopyComplete
 D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.exe
 D:\Shanessa_Data\New folder\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.pdb
+C:\Users\Tobias Halomoan\Desktop\Final Test\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Waterfall PRJ.exe.config
+C:\Users\Tobias Halomoan\Desktop\Final Test\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Waterfall PRJ.exe
+C:\Users\Tobias Halomoan\Desktop\Final Test\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Waterfall PRJ.pdb
+C:\Users\Tobias Halomoan\Desktop\Final Test\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Core.WinForms.dll
+C:\Users\Tobias Halomoan\Desktop\Final Test\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Licensing.dll
+C:\Users\Tobias Halomoan\Desktop\Final Test\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.SfInput.WinForms.dll
+C:\Users\Tobias Halomoan\Desktop\Final Test\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Shared.Base.dll
+C:\Users\Tobias Halomoan\Desktop\Final Test\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Core.WinForms.xml
+C:\Users\Tobias Halomoan\Desktop\Final Test\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.SfInput.WinForms.xml
+C:\Users\Tobias Halomoan\Desktop\Final Test\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Shared.Base.xml
+C:\Users\Tobias Halomoan\Desktop\Final Test\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.csprojAssemblyReference.cache
+C:\Users\Tobias Halomoan\Desktop\Final Test\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.ManagementForm.resources
+C:\Users\Tobias Halomoan\Desktop\Final Test\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.LoginForm.resources
+C:\Users\Tobias Halomoan\Desktop\Final Test\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.EmployeeAddingForm.resources
+C:\Users\Tobias Halomoan\Desktop\Final Test\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.Properties.Resources.resources
+C:\Users\Tobias Halomoan\Desktop\Final Test\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.csproj.GenerateResource.cache
+C:\Users\Tobias Halomoan\Desktop\Final Test\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.csproj.CoreCompileInputs.cache
+C:\Users\Tobias Halomoan\Desktop\Final Test\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.csproj.CopyComplete
+C:\Users\Tobias Halomoan\Desktop\Final Test\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.exe
+C:\Users\Tobias Halomoan\Desktop\Final Test\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.pdb
