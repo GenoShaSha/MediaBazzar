@@ -523,29 +523,45 @@ namespace Waterfall_PRJ
 
         private void removeBTN_Click(object sender, EventArgs e)
         {
-            Person p = (Person)employeesLB.SelectedItem;
-            employeesLB.Items.Remove(p);
-            employees.RemovePerson(p);
-            UpdateEmployeeManagementListbox();
+            try
+            {
+                Person p = (Person)employeesLB.SelectedItem;
+                employeesLB.Items.Remove(p);
+                employees.RemovePerson(p);
+                UpdateEmployeeManagementListbox();
+            }
+            catch(NullReferenceException)
+            {
+                MessageBox.Show("Please select an employee.");
+            }
+           
         }
 
         private void updateBTN_Click(object sender, EventArgs e)
         {
-            Person p = (Person)employeesLB.SelectedItem;
-            p.FirstName = firstNameTB.Text;
-            p.LastName = lastNameTB.Text;
-            p.Gender = GenderCB.SelectedItem.ToString();
-            p.Birthdate = DOBPicker.Value;
-            p.BSN_Num = BSN_TB.Text;
-            p.Relationship = relationshipStatusCB.SelectedItem.ToString();
-            p.Email = emailTB.Text;
-            p.PhoneNumber = phoneNumberTB.Text;
-            p.Address = addressTB.Text;
-            p.Postal = postalCodeTB.Text;
-            p.City = cityTB.Text;
-            p.Country = countryTB.Text;
-            MessageBox.Show($"User ID {p.EmployeeID} information updated!");
-            UpdateEmployeeManagementListbox();
+            try
+            {
+                Person p = (Person)employeesLB.SelectedItem;
+                p.FirstName = firstNameTB.Text;
+                p.LastName = lastNameTB.Text;
+                p.Gender = GenderCB.SelectedItem.ToString();
+                p.Birthdate = DOBPicker.Value;
+                p.BSN_Num = BSN_TB.Text;
+                p.Relationship = relationshipStatusCB.SelectedItem.ToString();
+                p.Email = emailTB.Text;
+                p.PhoneNumber = phoneNumberTB.Text;
+                p.Address = addressTB.Text;
+                p.Postal = postalCodeTB.Text;
+                p.City = cityTB.Text;
+                p.Country = countryTB.Text;
+                MessageBox.Show($"User ID {p.EmployeeID} information updated!");
+                UpdateEmployeeManagementListbox();
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Please select an employee.");
+            }
+            
         }
 
         private void RoleCB_SelectedIndexChanged(object sender, EventArgs e)
