@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PRJ_PCBS04_G3", "PRJ_PCBS04_G3\PRJ_PCBS04_G3.csproj", "{FB7CB38A-FA4D-4BF6-9E48-E9A26060A601}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB7CB38A-FA4D-4BF6-9E48-E9A26060A601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB7CB38A-FA4D-4BF6-9E48-E9A26060A601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB7CB38A-FA4D-4BF6-9E48-E9A26060A601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB7CB38A-FA4D-4BF6-9E48-E9A26060A601}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F0614DA5-5FF4-4BC4-8860-074F92A602B2}
+	EndGlobalSection
+EndGlobal
