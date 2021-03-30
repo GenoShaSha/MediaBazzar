@@ -28,7 +28,18 @@ namespace Waterfall_PRJ
         }
         public override string ToString()
         {
-            return $"{this.firstname} {this.lastname} ({this.employeeID}) : Administrator";
+            if (this.status == string.Empty)
+            {
+                return $"{this.firstname} {this.lastname} ({this.employeeID}) : Administrator";
+            }
+            else if (this.status == "Terminated")
+            {
+                return $"Removed : {this.firstname} {this.lastname} ({this.employeeID})";
+            }
+            else
+            {
+                return null;
+            }
         }
         public string Username
         { get { return this.adminusername; } set { this.adminusername = value; } }

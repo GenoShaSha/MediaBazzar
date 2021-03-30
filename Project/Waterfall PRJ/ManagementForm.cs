@@ -46,7 +46,7 @@ namespace Waterfall_PRJ
             employeesLB.Items.Clear();
             foreach (Person p in employees.GetPersons())
             {
-                employeesLB.Items.Add(p);
+              employeesLB.Items.Add(p);
             }
         }
 
@@ -523,12 +523,16 @@ namespace Waterfall_PRJ
 
         private void removeBTN_Click(object sender, EventArgs e)
         {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             try
             {
                 Person p = (Person)employeesLB.SelectedItem;
-                employeesLB.Items.Remove(p);
-                employees.RemovePerson(p);
-                UpdateEmployeeManagementListbox();
+                DialogResult result = MessageBox.Show($"Are you sure you want to delete employee {p.EmployeeID}?", "Warning!", buttons);
+                if (result == DialogResult.Yes)
+                {
+                    p.Status = "Terminated";
+                    UpdateEmployeeManagementListbox();
+                }
             }
             catch(NullReferenceException)
             {
@@ -541,7 +545,12 @@ namespace Waterfall_PRJ
         {
             try
             {
+                
                 Person p = (Person)employeesLB.SelectedItem;
+                if(p.Birthdate > DateTime.Now.AddYears(-18))
+                {
+                    throw new BirthDateException();
+                }
                 p.FirstName = firstNameTB.Text;
                 p.LastName = lastNameTB.Text;
                 p.Gender = GenderCB.SelectedItem.ToString();
@@ -560,6 +569,10 @@ namespace Waterfall_PRJ
             catch (NullReferenceException)
             {
                 MessageBox.Show("Please select an employee.");
+            }
+            catch (BirthDateException)
+            {
+
             }
             
         }
@@ -672,6 +685,20 @@ namespace Waterfall_PRJ
             LoginForm lf = new LoginForm();
             lf.Show();
             this.Hide();
+        }
+
+        private void employeesLB_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                Person p = (Person)employeesLB.SelectedItem;
+                EmployeeInformation info = new EmployeeInformation(p);
+                info.ShowDialog();
+            }
+            catch(NullReferenceException)
+            {
+                MessageBox.Show("Please select an employee.");
+            }
         }
     }
 }

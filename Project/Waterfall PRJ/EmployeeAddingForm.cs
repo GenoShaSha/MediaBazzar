@@ -31,6 +31,10 @@ namespace Waterfall_PRJ
         {
             try
             {
+                if(DOBPicker.Value >= DateTime.Now.AddYears(-18))
+                {
+                    throw new BirthDateException(DOBPicker.Value);
+                }
                 if (RoleCB.SelectedIndex == 0)
                 {
                     this.employees.AddPerson(new Administrator(firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text));
@@ -58,7 +62,11 @@ namespace Waterfall_PRJ
             }
             catch (NullReferenceException ex)
             {
-                MessageBox.Show($"Missing reference : {ex.ToString()}");
+                MessageBox.Show($"Missing reference : {ex.Message}");
+            }
+            catch (BirthDateException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
             firstNameTB.Text = string.Empty;
@@ -165,6 +173,11 @@ namespace Waterfall_PRJ
                 tbxRmv.Text = string.Empty;
                 cbxUsers.SelectedIndex = 0;
             }
+        }
+
+        private void EmployeeAddingForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

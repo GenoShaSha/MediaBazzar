@@ -22,6 +22,7 @@ namespace Waterfall_PRJ
         protected string postalcode;
         protected string city;  
         protected string country;
+        protected string status = string.Empty;
 
         protected Person(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship,string email, string phonenumber, string address, string postalcode, string city, string country)
         {
@@ -109,7 +110,19 @@ namespace Waterfall_PRJ
         
         public override string ToString()
         {
-            return $"{this.firstname} {this.lastname} ({this.employeeID})";
+            if (this.status == string.Empty)
+            {
+                return $"{this.firstname} {this.lastname} ({this.employeeID})";
+            }
+            else if (this.status == "Terminated")
+            {
+                return $"Removed : {this.firstname} {this.lastname} ({this.employeeID})";
+            }
+            else
+            {
+                return null;
+            }    
+          
         }
         public virtual string ShowAll()
         {
@@ -118,7 +131,16 @@ namespace Waterfall_PRJ
             return newstring;
         
         }
+        public string RemovedString()
+        {
+            return $"Removed employee {this.EmployeeID} ({this.FirstName} {this.LastName})";
+        }
 
+        public string Status
+        {
+            get { return this.status; }
+            set { this.status = value; }
+        }
 
     }
 }

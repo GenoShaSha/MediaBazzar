@@ -601,6 +601,7 @@ namespace Waterfall_PRJ
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "EmployeeAddingForm";
             this.Text = "Employee Addition";
+            this.Load += new System.EventHandler(this.EmployeeAddingForm_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

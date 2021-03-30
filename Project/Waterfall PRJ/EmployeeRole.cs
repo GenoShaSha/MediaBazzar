@@ -42,22 +42,35 @@ namespace Waterfall_PRJ
         public override string ToString()
         {
             string employeestring;
-            if (this.contract == "full")
+            if (this.status == string.Empty)
             {
-                employeestring = $"{this.firstname} {this.lastname} ({this.employeeID}) : Full-time employee";
+                if (this.contract == "full")
+                {
+                    employeestring = $"{this.firstname} {this.lastname} ({this.employeeID}) : Full-time employee";
+                }
+                else if (this.contract == "part")
+                {
+                    employeestring = $"{this.firstname} {this.lastname} ({this.employeeID}) : Part-time employee";
+                }
+                else if (this.contract == "middle")
+                {
+                    employeestring = $"{this.firstname} {this.lastname} ({this.employeeID}) : Part-time employee";
+                }
+                else
+                {
+                    employeestring = "";
+                }
+                return employeestring;
             }
-            else if (this.contract == "part")
+            else if (this.status == "Terminated")
             {
-                employeestring = $"{this.firstname} {this.lastname} ({this.employeeID}) : Part-time employee";
-            } else if( this.contract == "middle")
-            {
-                employeestring = $"{this.firstname} {this.lastname} ({this.employeeID}) : Part-time employee";
+                return $"Removed : {this.firstname} {this.lastname} ({this.employeeID})";
             }
             else
             {
-                employeestring = "";
+                return null;
             }
-            return employeestring;
+            
         }
     }
 }
