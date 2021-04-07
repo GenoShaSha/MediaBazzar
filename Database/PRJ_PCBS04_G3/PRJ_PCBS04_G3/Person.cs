@@ -24,6 +24,7 @@ namespace PRJ_PCBS04_G3
         protected string city;
         protected string country;
         protected DateTime dateOfJoin;
+        protected string role;
 
         protected Person(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email, string phonenumber, string address, string postalcode, string city, string country, DateTime dateOfJoin)
         {
@@ -42,6 +43,7 @@ namespace PRJ_PCBS04_G3
             this.city = city;
             this.country = country;
             this.dateOfJoin = dateOfJoin;
+            this.role = this.GetType().Name;
         }
 
         public string FirstName
@@ -124,6 +126,11 @@ namespace PRJ_PCBS04_G3
         }
         public long EmployeeID
         { get { return this.employeeID; } }
+
+        public string Role
+        {
+            get { return this.role; }
+        }
 
         public override string ToString()
         {
