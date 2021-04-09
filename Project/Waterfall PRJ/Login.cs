@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using MySql.Data.MySqlClient;
 
 namespace Waterfall_PRJ
 {
     public class Login
     {
-         
         private string username;
         private string password;
         private string loginType;
+        private MySqlConnection conn = new MySqlConnection("datasource=127.0.0.1;port=3306;username=root;database=mediabazaar;");
 
         public Login(string username, string password, string loginType)
         {
@@ -53,10 +54,40 @@ namespace Waterfall_PRJ
             }
             return false;
         }
+        public int ValidateAccount(string username, string password)
+        {
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand("SELECT `accountId` FROM `users` WHERE `accountName` = @username AND `accountPassword` = @password", conn);
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@password", password);
+
+            int id;
+
+            if (cmd.ExecuteScalar() == null)
+            {
+                id = 0;
+            }
+            else
+            {
+                id = Convert.ToInt32(cmd.ExecuteScalar().ToString() == "" ? 0 : cmd.ExecuteScalar());
+            }
+            
+            conn.Close();
+            return id;
+        }
         public bool RemoveUsers()
         {
             string paths = System.AppDomain.CurrentDomain.BaseDirectory;
             string databasePath;
+
+            string cmdString = "DELETE FROM `users` WHERE `users`.`userName` = @username";
+
+            MySqlCommand cmd = new MySqlCommand(cmdString, conn);
+            cmd.Parameters.AddWithValue("@username", username);
+
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
 
             if (this.loginType == "Manager")
             {
@@ -113,6 +144,16 @@ namespace Waterfall_PRJ
         {
             string paths = System.AppDomain.CurrentDomain.BaseDirectory;
             string databasePath;
+
+            string cmdString = "INSERT INTO `users`(`userId`, `userName`, `userPass`, `userCategory`)VALUES(NULL,@username,@password,@userCategory)";
+            MySqlCommand cmd = new MySqlCommand(cmdString, conn);
+            conn.Open();
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@password", password);
+            cmd.Parameters.AddWithValue("@userCategory", loginType);
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
 
             if (this.loginType == "Manager")
             {

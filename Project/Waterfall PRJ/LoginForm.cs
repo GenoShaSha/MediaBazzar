@@ -20,9 +20,11 @@ namespace Waterfall_PRJ
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //+ Convert.ToString(newLogin.ValidateAccount(newUsr, newPass))
             string newUsr = tbUsername.Text;
             string newPass = tbPassword.Text;
             string lgnType = string.Empty;
+
 
             if (rbAdmin.Checked == true)
             {
@@ -34,7 +36,6 @@ namespace Waterfall_PRJ
             }
 
             newLogin = new Login(newUsr, newPass, lgnType);
-
             if (newLogin.GetIdentity() == true)
             {
                 if (rbAdmin.Checked)
@@ -61,5 +62,5 @@ namespace Waterfall_PRJ
             tbPassword.Text = string.Empty;
         }
     }
-    }
+}
 
