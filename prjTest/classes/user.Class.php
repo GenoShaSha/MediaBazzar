@@ -24,11 +24,11 @@ class user extends dbConnection
                     $_SESSION['sess_role'] = $row['EmployeeType'];
                     if($_SESSION['sess_role'] == "admin" )
                     {
-                        header('location:floorEmployees.php');
+                        header('location:floorEmployees.php?signedIn');
                     }
                     else
                     {
-                        header('location:floorEmployees.php');
+                        header('location:floorEmployees.php?signedIn');
                     }
                     
                 }

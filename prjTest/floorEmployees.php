@@ -2,8 +2,9 @@
 session_start();
 include 'classes/dbConnection.Class.php';
 include 'classes/user.Class.php';
-include 'classes/Admin.class.php';
+include 'classes/employeeList.class.php';
 $employeeList = new employeeList();
+echo var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +42,7 @@ $employeeList = new employeeList();
     <?php } ?>
 
     <?php 
-    if( $_SESSION['sess_role'] == "admin")
+    if( $_SESSION['sess_role'] == "Admin")
     {
         echo "<h1>Employee List</h1>";
         $employeeList ->ShowEmployees();
