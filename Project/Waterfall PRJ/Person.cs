@@ -21,11 +21,11 @@ namespace Waterfall_PRJ
         protected string phonenumber;
         protected string address;
         protected string postalcode;
-        protected string city;  
+        protected string city;
         protected string country;
         protected string status = string.Empty;
 
-        protected Person(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship,string email, string phonenumber, string address, string postalcode, string city, string country)
+        protected Person(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email, string phonenumber, string address, string postalcode, string city, string country)
         {
             this.employeeID = Person.nextID;
             Person.nextID += 1;
@@ -51,7 +51,7 @@ namespace Waterfall_PRJ
         public string LastName
         {
             get { return this.lastname; }
-            set { this.lastname= value; }
+            set { this.lastname = value; }
         }
 
         public string Gender
@@ -62,7 +62,7 @@ namespace Waterfall_PRJ
         public DateTime Birthdate
         {
             get { return this.birthdate; }
-            set { this.birthdate= value; }
+            set { this.birthdate = value; }
         }
         public string BSN_Num
         {
@@ -72,12 +72,12 @@ namespace Waterfall_PRJ
         public string Relationship
         {
             get { return this.relationship; }
-            set { this.relationship= value; }
+            set { this.relationship = value; }
         }
         public string Email
         {
             get { return this.email; }
-            set { this.email= value; }
+            set { this.email = value; }
         }
         public string PhoneNumber
         {
@@ -87,7 +87,7 @@ namespace Waterfall_PRJ
         public string Address
         {
             get { return this.address; }
-            set { this.address= value; }
+            set { this.address = value; }
         }
 
         public string Postal
@@ -108,7 +108,7 @@ namespace Waterfall_PRJ
         }
         public long EmployeeID
         { get { return this.employeeID; } }
-        
+
         public override string ToString()
         {
             if (this.status == string.Empty)
@@ -122,15 +122,15 @@ namespace Waterfall_PRJ
             else
             {
                 return null;
-            }    
-          
+            }
+
         }
         public virtual string ShowAll()
         {
-            string infostring= $"Name : {this.firstname} {this.lastname}* Gender: {this.gender}* Birthdate: {this.birthdate.ToShortDateString()}* BSN : {this.BSN}* Status : {this.relationship}* Email: {this.email}* Address: {this.address}* Postalcode: {this.postalcode}* City: {this.city}* Country: {this.country}";
+            string infostring = $"Name : {this.firstname} {this.lastname}* Gender: {this.gender}* Birthdate: {this.birthdate.ToShortDateString()}* BSN : {this.BSN}* Status : {this.relationship}* Email: {this.email}* Address: {this.address}* Postalcode: {this.postalcode}* City: {this.city}* Country: {this.country}";
             string newstring = infostring.Replace("*", "\n");
             return newstring;
-        
+
         }
         public string RemovedString()
         {
@@ -141,6 +141,10 @@ namespace Waterfall_PRJ
         {
             get { return this.status; }
             set { this.status = value; }
+        }
+        private string Password
+        {
+            set { this.password = value; }
         }
 
         public string Password
