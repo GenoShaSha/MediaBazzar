@@ -58,7 +58,19 @@ namespace Waterfall_PRJ
                         this.employees.AddPerson(new EmployeeRole(firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, 20, "part"));
                     }
                 }
-                MessageBox.Show("User added!");
+                DialogResult result = MessageBox.Show("User added!");
+                if(result == DialogResult.OK)
+                {
+                    firstNameTB.Text = string.Empty;
+                    lastNameTB.Text = string.Empty;
+                    BSN_TB.Text = string.Empty;
+                    emailTB.Text = string.Empty;
+                    phoneNumberTB.Text = string.Empty;
+                    addressTB.Text = string.Empty;
+                    postalCodeTB.Text = string.Empty;
+                    cityTB.Text = string.Empty;
+                    countryTB.Text = string.Empty;
+                }
             }
             catch (NullReferenceException ex)
             {
@@ -69,15 +81,7 @@ namespace Waterfall_PRJ
                 MessageBox.Show(ex.Message);
             }
 
-            firstNameTB.Text = string.Empty;
-            lastNameTB.Text = string.Empty;
-            BSN_TB.Text = string.Empty;
-            emailTB.Text = string.Empty;
-            phoneNumberTB.Text = string.Empty;
-            addressTB.Text = string.Empty;
-            postalCodeTB.Text = string.Empty;
-            cityTB.Text = string.Empty;
-            countryTB.Text = string.Empty;
+           
         }
 
         private void CloseBtn_Click(object sender, EventArgs e)

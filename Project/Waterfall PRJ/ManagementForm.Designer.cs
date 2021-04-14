@@ -66,6 +66,7 @@ namespace Waterfall_PRJ
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ShiftManagementPage = new System.Windows.Forms.TabPage();
             this.label20 = new System.Windows.Forms.Label();
             this.workhrsLbl = new System.Windows.Forms.Label();
@@ -73,6 +74,7 @@ namespace Waterfall_PRJ
             this.EmployeeCalendar = new Syncfusion.WinForms.Input.SfCalendar();
             this.ShiftSelectorCB = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.AvailableEmployeesLB = new System.Windows.Forms.ListBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -81,14 +83,12 @@ namespace Waterfall_PRJ
             this.EveningShiftLB = new System.Windows.Forms.ListBox();
             this.MorningShiftLB = new System.Windows.Forms.ListBox();
             this.btnAddShift = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.ManagementTabControl.SuspendLayout();
             this.EmployeeManagePage.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.ShiftManagementPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.ShiftManagementPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -177,6 +177,7 @@ namespace Waterfall_PRJ
             this.employeesLB.Size = new System.Drawing.Size(355, 468);
             this.employeesLB.TabIndex = 39;
             this.employeesLB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.employeesLB_MouseClick_1);
+            this.employeesLB.SelectedIndexChanged += new System.EventHandler(this.employeesLB_SelectedIndexChanged);
             this.employeesLB.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.employeesLB_MouseDoubleClick);
             // 
             // groupBox2
@@ -280,7 +281,6 @@ namespace Waterfall_PRJ
             this.RoleCB.Name = "RoleCB";
             this.RoleCB.Size = new System.Drawing.Size(160, 24);
             this.RoleCB.TabIndex = 38;
-            this.RoleCB.SelectedIndexChanged += new System.EventHandler(this.RoleCB_SelectedIndexChanged);
             // 
             // phoneNumberTB
             // 
@@ -488,6 +488,17 @@ namespace Waterfall_PRJ
             this.label1.TabIndex = 22;
             this.label1.Text = "First Name :";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Waterfall_PRJ.Properties.Resources.TITLE_EMPLOYEE;
+            this.pictureBox1.Location = new System.Drawing.Point(163, 26);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(415, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 35;
+            this.pictureBox1.TabStop = false;
+            // 
             // ShiftManagementPage
             // 
             this.ShiftManagementPage.Controls.Add(this.label20);
@@ -576,6 +587,17 @@ namespace Waterfall_PRJ
             this.label12.TabIndex = 29;
             this.label12.Text = "Available Employees";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Waterfall_PRJ.Properties.Resources.TITLE_WORKSHIFT;
+            this.pictureBox2.Location = new System.Drawing.Point(155, 18);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(436, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 31;
+            this.pictureBox2.TabStop = false;
+            // 
             // AvailableEmployeesLB
             // 
             this.AvailableEmployeesLB.FormattingEnabled = true;
@@ -662,28 +684,6 @@ namespace Waterfall_PRJ
             this.btnAddShift.UseVisualStyleBackColor = false;
             this.btnAddShift.Click += new System.EventHandler(this.btnAddShift_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Waterfall_PRJ.Properties.Resources.TITLE_EMPLOYEE;
-            this.pictureBox1.Location = new System.Drawing.Point(163, 26);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(415, 44);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 35;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Waterfall_PRJ.Properties.Resources.TITLE_WORKSHIFT;
-            this.pictureBox2.Location = new System.Drawing.Point(155, 18);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(436, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 31;
-            this.pictureBox2.TabStop = false;
-            // 
             // ManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -699,9 +699,9 @@ namespace Waterfall_PRJ
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ShiftManagementPage.ResumeLayout(false);
             this.ShiftManagementPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 

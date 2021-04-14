@@ -27,6 +27,7 @@ namespace Waterfall_PRJ
             RoleCB.SelectedIndex = 0;
             ContractCB.SelectedIndex = 0;
             ManagementTabControl.SelectedTab = EmployeeManagePage;
+            updateBTN.Visible = false;
         }
 
         public ManagementForm(EmployeeManager employees, ShiftManager shifts)
@@ -39,6 +40,7 @@ namespace Waterfall_PRJ
             RoleCB.SelectedIndex = 0;
             ContractCB.SelectedIndex = 0;
             ManagementTabControl.SelectedTab = EmployeeManagePage;
+            updateBTN.Visible = false;
             UpdateEmployeeManagementListbox();
         }
         public void UpdateEmployeeManagementListbox()
@@ -579,18 +581,7 @@ namespace Waterfall_PRJ
 
         private void RoleCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(RoleCB.SelectedIndex == 0)
-            {
-                ContractCB.Enabled = false;
-            }
-            else if (RoleCB.SelectedIndex == 1)
-            {
-                ContractCB.Enabled = false;
-            }
-            else
-            {
-                ContractCB.Enabled = true;
-            }
+
         }
 
         private void ShiftManagementPage_Enter(object sender, EventArgs e)
@@ -699,6 +690,11 @@ namespace Waterfall_PRJ
             {
                 MessageBox.Show("Please select an employee.");
             }
+        }
+
+        private void employeesLB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            updateBTN.Visible = true;
         }
     }
 }
