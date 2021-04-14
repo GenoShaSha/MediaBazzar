@@ -6,50 +6,18 @@ using System.Threading.Tasks;
 
 namespace Waterfall_PRJ
 {
-    class SignIn
+    public class SignIn
     {
-        private string usrName;
-        private string pswd;
-        private string signinType;
+        private dbControler dc;
 
-        public SignIn(string usrName, string pswd, string signinType)
+        public SignIn()
         {
-            this.usrName = usrName;
-            this.pswd = pswd;
-            this.signinType = signinType;
+            dc = new dbControler();
         }
 
-        public bool GetIdentity()
+        public bool GetUsers()
         {
-            if (this.signinType == "Administrator")
-            {
-                string path = System.AppDomain.CurrentDomain.BaseDirectory;
-                string[] lines = System.IO.File.ReadAllLines(@path + "Database/Users/Admin/IdAndPass(Admin).txt");
 
-                foreach (string line in lines)
-                {
-                    string[] steps = line.Split('#');
-                    if (this.usrName == steps[0] && this.pswd == steps[1])
-                    {
-                        return true;
-                    }
-                }
-            }
-            else if (this.signinType == "Manager")
-            {
-                string path = System.AppDomain.CurrentDomain.BaseDirectory;
-                string[] lines = System.IO.File.ReadAllLines(@path + "Database/Users/Manager/IdAndPass(Mgr).txt");
-
-                foreach (string line in lines)
-                {
-                    string[] steps = line.Split('#');
-                    if (this.usrName == steps[0] && this.pswd == steps[1])
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
         }
     }
 }

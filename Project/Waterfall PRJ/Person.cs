@@ -17,6 +17,7 @@ namespace Waterfall_PRJ
         protected string BSN;
         protected string relationship;
         protected string email;
+        protected string password;
         protected string phonenumber;
         protected string address;
         protected string postalcode;
@@ -142,5 +143,10 @@ namespace Waterfall_PRJ
             set { this.status = value; }
         }
 
+        public string Password
+        {
+            get { return this.password; }
+            set { this.password = value; }
+        }
     }
 }
