@@ -13,18 +13,29 @@ namespace Waterfall_PRJ
 
         public dbControler()
         {
-            con = new MySqlConnection("Server=studmysql01.fhict.local; Uid=dbi450080;Database=dbi450080;Pwd=WortelSoulution");
+            con = new MySqlConnection("Server=studmysql01.fhict.local; Username=dbi450080;Database=dbi450080; Password=WortelSoulution");
         }
-        public void GetUsers(Person person)
+        public bool GetIdentity(string username, string password)
         {
-            string que = "SELECT * from 'signin' WHERE 'signin'.'Username' = @usrName AND 'signin'.'Password'= @password";
-            MySqlCommand cmd = new MySqlCommand(que, con);
-            con.Open();
-            cmd.Parameters.AddWithValue("@usrName", person.Email);
-            cmd.Parameters.AddWithValue("@password", person.Password);
+            try
+            {
+                string que = "SELECT * from 'signin' WHERE 'Username' = @usrName AND 'Password'= @password";
+                MySqlCommand cmd = new MySqlCommand(que, con);
+                con.Open();
+                cmd.Parameters.AddWithValue("@usrName", username);
+                cmd.Parameters.AddWithValue("@password", password);
 
-            cmd.ExecuteNonQuery();
-            con.Close();
+                cmd.ExecuteNonQuery();
+
+                con.Close();
+                Console.WriteLine(cmd.ExecuteNonQuery());
+                return true;
+            }
+            catch(Exception ex)
+            {
+                
+            }
+            return false;
         }
     }
 }

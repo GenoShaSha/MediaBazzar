@@ -187,3 +187,47 @@ C:\Users\Tobias Halomoan\Documents\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ
 C:\Users\Tobias Halomoan\Documents\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.exe
 C:\Users\Tobias Halomoan\Documents\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.pdb
 C:\Users\Tobias Halomoan\Documents\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.EmployeeInformation.resources
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Waterfall PRJ.exe.config
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Waterfall PRJ.exe
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Waterfall PRJ.pdb
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\BouncyCastle.Crypto.dll
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Google.Protobuf.dll
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\K4os.Compression.LZ4.dll
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\K4os.Hash.xxHash.dll
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\MySql.Data.dll
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Renci.SshNet.dll
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Core.WinForms.dll
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Licensing.dll
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.SfInput.WinForms.dll
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Shared.Base.dll
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\System.Buffers.dll
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\System.Memory.dll
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\System.Numerics.Vectors.dll
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Ubiety.Dns.Core.dll
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Zstandard.Net.dll
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Google.Protobuf.pdb
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Google.Protobuf.xml
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\K4os.Compression.LZ4.xml
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\K4os.Hash.xxHash.xml
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\MySql.Data.xml
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Renci.SshNet.xml
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Core.WinForms.xml
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.SfInput.WinForms.xml
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\Syncfusion.Shared.Base.xml
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\System.Buffers.xml
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\System.Memory.xml
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\System.Numerics.Vectors.xml
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.csprojAssemblyReference.cache
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.EmployeeInformation.resources
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.ManagementForm.resources
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.LoginForm.resources
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.EmployeeAddingForm.resources
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.Properties.Resources.resources
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.csproj.GenerateResource.cache
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.csproj.CopyComplete
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.exe
+D:\Shanessa_Data\Project\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall PRJ.pdb

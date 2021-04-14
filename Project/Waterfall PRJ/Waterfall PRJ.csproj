@@ -142,7 +142,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shift.cs" />
     <Compile Include="ShiftManager.cs" />
-    <Compile Include="SignIn.cs" />
     <EmbeddedResource Include="EmployeeInformation.resx">
       <DependentUpon>EmployeeInformation.cs</DependentUpon>
     </EmbeddedResource>

@@ -12,10 +12,12 @@ namespace Waterfall_PRJ
 {
     public partial class LoginForm : Form
     {
-        Login newLogin;
+        /*Login newLogin;*/
+        dbControler dc;
         public LoginForm()
         {
             InitializeComponent();
+            dc = new dbControler();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -24,7 +26,21 @@ namespace Waterfall_PRJ
             string newPass = tbPassword.Text;
             string lgnType = string.Empty;
 
-            if (rbAdmin.Checked == true)
+            if(dc.GetIdentity(newUsr, newPass)== true)
+            {
+                MessageBox.Show("Ur in to Admin page");
+                ManagementForm mf = new ManagementForm();
+                mf.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Put the right username or password!");
+            }
+            tbUsername.Text = string.Empty;
+            tbPassword.Text = string.Empty;
+
+/*            if (rbAdmin.Checked == true)
             {
                 lgnType = "Administrator";
             }
@@ -58,7 +74,7 @@ namespace Waterfall_PRJ
                 MessageBox.Show("Put the right username or password!");
             }
             tbUsername.Text = string.Empty;
-            tbPassword.Text = string.Empty;
+            tbPassword.Text = string.Empty; */
         }
     }
     }
