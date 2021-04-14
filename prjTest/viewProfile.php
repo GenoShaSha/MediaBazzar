@@ -21,13 +21,13 @@ $user = new user();
             <h1> MediaBazaar </h1>
         </div>
         <div class="navigation">
-            <a href="index.php?signedIn">HOME</a>
+            <a href="floorEmployees.php?signedIn">HOME</a>
             <a href="#">SCHEDULE</a>
             <input type="text" placeholder="Search...">
             <a href="viewProfile.php">PERSONAL INFO</a>
         </div>
         <div class="centerProfile" style = "position: absolute; top: 600px">
-            <h1><?php echo  $_SESSION['sess_first_name'] ?></h1>
+            <h1><?php echo  $_SESSION['sess_first_name'] ?> (<?php echo  $_SESSION['sess_role'] ?>) </h1>
             <div class = "txt_field"> 
                 <p> First Name: <?php echo $_SESSION['sess_first_name'] ?> </p> 
             </div>
@@ -65,7 +65,7 @@ $user = new user();
                 <p> Country: <?php echo $_SESSION['sess_country'] ?> </p> 
             </div>
             <div class = "txt_field"> 
-                <a href = "ProfileEdit.php"> Edit profile</a>
+                <a href = "editProfile.php"> Edit profile</a>
             </div>
         </div>
     </body>

@@ -4,7 +4,6 @@ include 'classes/dbConnection.Class.php';
 include 'classes/user.Class.php';
 include 'classes/employeeList.class.php';
 $employeeList = new employeeList();
-echo var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +19,7 @@ echo var_dump($_SESSION);
     <?php 
     if (isset($_GET['signedIn'])) { 
     ?>
-    <div class="topNavigation">
+    <div class="topnav">
         <a href="signOut.php">Sign Out</a>
         <a><?php echo "WELCOME ".$_SESSION["sess_user_name"]?></a>
     </div>               
@@ -33,8 +32,8 @@ echo var_dump($_SESSION);
     <?php 
     if (isset($_GET['signedIn'])) { 
     ?>
-    <div class="Navigation">
-        <a href="index.php">HOME</a>
+    <div class="navigation">
+        <a href="#">HOME</a>
         <a href="#">SCHEDULE</a>
         <input type="text" placeholder="Search...">
         <a href="RetrieveInfo.php">PERSONAL INFO</a>             

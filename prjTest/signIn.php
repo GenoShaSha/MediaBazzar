@@ -18,6 +18,7 @@ $user -> SubmitCredentials();
         <div class="center">
             <h1>Login</h1>
             <form method="post">
+            
             <?php if (isset($_GET['error'])) 
             { ?>
 

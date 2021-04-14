@@ -77,7 +77,7 @@ class user extends dbConnection
         }
         header('location:viewProfile.php');
     }
-}
+
 public function UpdateInformation()
 {
     if(isset($_POST['updateBtn']))
@@ -106,5 +106,6 @@ public function UpdateInformation()
             echo "Error : ".$e->getMessage();
         }
     } 
+}
 }
 ?>
