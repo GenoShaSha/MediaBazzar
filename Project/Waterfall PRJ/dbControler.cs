@@ -21,6 +21,7 @@ namespace Waterfall_PRJ
             {
                 string que = "SELECT * from 'signin' WHERE 'Username' = @usrName AND 'Password'= @password";
                 MySqlCommand cmd = new MySqlCommand(que, con);
+          
                 con.Open();
                 cmd.Parameters.AddWithValue("@usrName", username);
                 cmd.Parameters.AddWithValue("@password", password);
@@ -33,7 +34,6 @@ namespace Waterfall_PRJ
             }
             catch(Exception ex)
             {
-                
             }
             return false;
         }

@@ -147,10 +147,10 @@ namespace Waterfall_PRJ
             set { this.password = value; }
         }
 
-        public string Password
+/*        public string Password
         {
             get { return this.password; }
             set { this.password = value; }
-        }
+        }*/
     }
 }

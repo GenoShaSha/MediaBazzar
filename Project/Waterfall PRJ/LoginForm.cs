@@ -24,16 +24,16 @@ namespace Waterfall_PRJ
         {
             string newUsr = tbUsername.Text;
             string newPass = tbPassword.Text;
-            string lgnType = string.Empty;
-
-            if(dc.GetIdentity(newUsr, newPass)== true)
+            /*            string lgnType = string.Empty;*/
+            dc = new dbControler();
+            if (dc.GetIdentity(newUsr, newPass)== true)
             {
                 MessageBox.Show("Ur in to Admin page");
                 ManagementForm mf = new ManagementForm();
                 mf.Show();
                 this.Hide();
             }
-            else
+            else if(dc.GetIdentity(newUsr, newPass) == false)
             {
                 MessageBox.Show("Put the right username or password!");
             }
