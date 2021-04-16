@@ -35,8 +35,8 @@ namespace Waterfall_PRJ
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.rbManager = new System.Windows.Forms.RadioButton();
-            this.rbAdmin = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbxType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,7 +80,7 @@ namespace Waterfall_PRJ
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(283, 250);
+            this.button1.Location = new System.Drawing.Point(282, 281);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 46);
@@ -100,35 +100,34 @@ namespace Waterfall_PRJ
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
-            // rbManager
+            // label3
             // 
-            this.rbManager.AutoSize = true;
-            this.rbManager.Location = new System.Drawing.Point(112, 292);
-            this.rbManager.Name = "rbManager";
-            this.rbManager.Size = new System.Drawing.Size(85, 21);
-            this.rbManager.TabIndex = 10;
-            this.rbManager.TabStop = true;
-            this.rbManager.Text = "Manager";
-            this.rbManager.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(69, 242);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(137, 19);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "EmployeeType :";
             // 
-            // rbAdmin
+            // cbxType
             // 
-            this.rbAdmin.AutoSize = true;
-            this.rbAdmin.Location = new System.Drawing.Point(112, 265);
-            this.rbAdmin.Name = "rbAdmin";
-            this.rbAdmin.Size = new System.Drawing.Size(112, 21);
-            this.rbAdmin.TabIndex = 9;
-            this.rbAdmin.TabStop = true;
-            this.rbAdmin.Text = "Administrator";
-            this.rbAdmin.UseVisualStyleBackColor = true;
+            this.cbxType.FormattingEnabled = true;
+            this.cbxType.Items.AddRange(new object[] {
+            "Admin",
+            "Manager"});
+            this.cbxType.Location = new System.Drawing.Point(212, 242);
+            this.cbxType.Name = "cbxType";
+            this.cbxType.Size = new System.Drawing.Size(163, 24);
+            this.cbxType.TabIndex = 8;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 391);
-            this.Controls.Add(this.rbManager);
-            this.Controls.Add(this.rbAdmin);
+            this.Controls.Add(this.cbxType);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tbPassword);
@@ -152,7 +151,7 @@ namespace Waterfall_PRJ
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.RadioButton rbManager;
-        private System.Windows.Forms.RadioButton rbAdmin;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbxType;
     }
 }
