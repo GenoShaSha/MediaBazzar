@@ -26,7 +26,7 @@ namespace Waterfall_PRJ
                 cmd.Parameters.AddWithValue("@usrName", username);
                 cmd.Parameters.AddWithValue("@password", password);
 
-                cmd.ExecuteNonQuery();
+                cmd.ExecuteReader();
 
                 con.Close();
                 Console.WriteLine(cmd.ExecuteNonQuery());
