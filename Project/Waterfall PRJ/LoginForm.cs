@@ -24,18 +24,29 @@ namespace Waterfall_PRJ
         {
             string newUsr = tbUsername.Text;
             string newPass = tbPassword.Text;
-/*            string newType = cbxType.Text;*/
+            string type;
 
             /*            string lgnType = string.Empty;*/
             dc = new dbControler();
-            if (dc.GetIdentity(newUsr, newPass/*, newType*/)== true)
+            if (dc.GetIdentity(newUsr, newPass, out type))
             {
-                MessageBox.Show("Ur in to Admin page");
-                ManagementForm mf = new ManagementForm();
-                mf.Show();
-                this.Hide();
+                if (type == "Admin")
+                {
+                    MessageBox.Show("Ur in to Admin page");
+                    ManagementForm mf = new ManagementForm();
+                    mf.Show();
+                    this.Hide();
+                }
+                else if (type == "Manager")
+                {
+                    MessageBox.Show("Ur in to Manager page");
+                    ManagementForm mf = new ManagementForm();
+                    mf.Show();
+                    this.Hide();
+                }
+                else if (type == null) { MessageBox.Show("User type not defined"); }
             }
-            else if(dc.GetIdentity(newUsr, newPass/*, newType*/) == false)
+            else 
             {
                 MessageBox.Show("Put the right username or password!");
             }

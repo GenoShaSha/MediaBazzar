@@ -70,8 +70,8 @@ namespace Waterfall_PRJ
             this.label20 = new System.Windows.Forms.Label();
             this.workhrsLbl = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.EmployeeCalendar = new Syncfusion.WinForms.Input.SfCalendar();
-            this.ShiftSelectorCB = new System.Windows.Forms.ComboBox();
+/*            this.EmployeeCalendar = new Syncfusion.WinForms.Input.SfCalendar();
+*/            this.ShiftSelectorCB = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.AvailableEmployeesLB = new System.Windows.Forms.ListBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -493,8 +493,8 @@ namespace Waterfall_PRJ
             this.ShiftManagementPage.Controls.Add(this.label20);
             this.ShiftManagementPage.Controls.Add(this.workhrsLbl);
             this.ShiftManagementPage.Controls.Add(this.label19);
-            this.ShiftManagementPage.Controls.Add(this.EmployeeCalendar);
-            this.ShiftManagementPage.Controls.Add(this.ShiftSelectorCB);
+/*            this.ShiftManagementPage.Controls.Add(this.EmployeeCalendar);
+*/            this.ShiftManagementPage.Controls.Add(this.ShiftSelectorCB);
             this.ShiftManagementPage.Controls.Add(this.label12);
             this.ShiftManagementPage.Controls.Add(this.pictureBox2);
             this.ShiftManagementPage.Controls.Add(this.AvailableEmployeesLB);
@@ -542,8 +542,8 @@ namespace Waterfall_PRJ
             // 
             // EmployeeCalendar
             // 
-            this.EmployeeCalendar.Culture = new System.Globalization.CultureInfo("en-US");
-            this.EmployeeCalendar.FirstDayOfWeek = System.DayOfWeek.Monday;
+/*            this.EmployeeCalendar.Culture = new System.Globalization.CultureInfo("en-US");
+*//*            this.EmployeeCalendar.FirstDayOfWeek = System.DayOfWeek.Monday;
             this.EmployeeCalendar.Location = new System.Drawing.Point(21, 92);
             this.EmployeeCalendar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EmployeeCalendar.MinimumSize = new System.Drawing.Size(336, 310);
@@ -551,7 +551,7 @@ namespace Waterfall_PRJ
             this.EmployeeCalendar.Size = new System.Drawing.Size(364, 310);
             this.EmployeeCalendar.TabIndex = 32;
             this.EmployeeCalendar.Text = "sfCalendar1";
-            this.EmployeeCalendar.Click += new System.EventHandler(this.EmployeeCalendar_Click);
+            this.EmployeeCalendar.Click += new System.EventHandler(this.EmployeeCalendar_Click);*/
             // 
             // ShiftSelectorCB
             // 
@@ -660,7 +660,7 @@ namespace Waterfall_PRJ
             this.btnAddShift.TabIndex = 21;
             this.btnAddShift.Text = "ADD";
             this.btnAddShift.UseVisualStyleBackColor = false;
-            this.btnAddShift.Click += new System.EventHandler(this.btnAddShift_Click);
+/*            this.btnAddShift.Click += new System.EventHandler(this.btnAddShift_Click);*/
             // 
             // pictureBox1
             // 
@@ -757,7 +757,6 @@ namespace Waterfall_PRJ
         private System.Windows.Forms.ComboBox ContractCB;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private Syncfusion.WinForms.Input.SfCalendar EmployeeCalendar;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label workhrsLbl;
         private System.Windows.Forms.Label label19;

@@ -50,11 +50,8 @@ namespace Waterfall_PRJ
             }
         }
 
-        public void UpdateAvailableHours()
+/*        public void UpdateAvailableHours()
         {
-            DateTime Clicked_Date = (DateTime)EmployeeCalendar.SelectedDate;
-            DateTime datetime = EmployeeCalendar.SelectedDate.Value;
-            DayOfWeek dow = Clicked_Date.DayOfWeek;
             Person p = (Person)AvailableEmployeesLB.SelectedItem;
             EmployeeRole e = (EmployeeRole)AvailableEmployeesLB.SelectedItem;
 
@@ -406,7 +403,7 @@ namespace Waterfall_PRJ
                     counter1++;
                 }
             }
-        }
+        }*/
 
         private void UpdateWorkshiftManagementListbox()
         {
@@ -419,12 +416,11 @@ namespace Waterfall_PRJ
                 }
             }
         }
-        private void btnAddShift_Click(object sender, EventArgs e)
+/*        private void btnAddShift_Click(object sender, EventArgs e)
         {
             MorningShiftLB.Items.Clear();
             EveningShiftLB.Items.Clear();
             NightShiftLB.Items.Clear();
-            DateTime Clicked_Date = (DateTime)EmployeeCalendar.SelectedDate;
             Person p = (Person)AvailableEmployeesLB.SelectedItem;
             List<EmployeeRole> morningshifts = shifts.ShiftGetter(Clicked_Date, "morning");
             List<EmployeeRole> eveningshifts = shifts.ShiftGetter(Clicked_Date, "evening");
@@ -466,7 +462,7 @@ namespace Waterfall_PRJ
             }
             AvailableEmployeesLB.SelectedIndex = -1;
 
-        }
+        }*/
 
         private void addBTN_Click(object sender, EventArgs e)
         {
@@ -626,12 +622,11 @@ namespace Waterfall_PRJ
             MorningShiftLB.Items.Clear();
             EveningShiftLB.Items.Clear();
             NightShiftLB.Items.Clear();
-            DateTime Clicked_Date = (DateTime)EmployeeCalendar.SelectedDate;
             Person p = (Person)AvailableEmployeesLB.SelectedItem;
-            List<EmployeeRole> morningshifts = shifts.ShiftGetter(Clicked_Date, "morning");
+/*            List<EmployeeRole> morningshifts = shifts.ShiftGetter(Clicked_Date, "morning");
             List<EmployeeRole> eveningshifts = shifts.ShiftGetter(Clicked_Date, "evening");
-            List<EmployeeRole> nightshifts = shifts.ShiftGetter(Clicked_Date, "night");
-            if(morningshifts != null)
+            List<EmployeeRole> nightshifts = shifts.ShiftGetter(Clicked_Date, "night");*/
+ /*           if(morningshifts != null)
             {
                 foreach (EmployeeRole emp in morningshifts)
                 {
@@ -663,7 +658,7 @@ namespace Waterfall_PRJ
 
 
 
-        }
+        }*/
 
         private void AvailableEmployeesLB_SelectedIndexChanged(object sender, EventArgs e)
         {

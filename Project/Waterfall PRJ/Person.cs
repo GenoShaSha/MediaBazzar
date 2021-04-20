@@ -24,6 +24,7 @@ namespace Waterfall_PRJ
         protected string city;
         protected string country;
         protected string status = string.Empty;
+        protected string cType;
 
         protected Person(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email, string phonenumber, string address, string postalcode, string city, string country)
         {
@@ -146,11 +147,19 @@ namespace Waterfall_PRJ
         {
             set { this.password = value; }
         }
-
-/*        public string Password
+        private string CType
         {
-            get { return this.password; }
-            set { this.password = value; }
-        }*/
+            get { return this.cType; }
+            set
+            {
+                this.cType = value;
+            }
+        }
+
+        /*        public string Password
+                {
+                    get { return this.password; }
+                    set { this.password = value; }
+                }*/
     }
 }
