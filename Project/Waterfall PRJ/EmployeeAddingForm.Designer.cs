@@ -30,6 +30,8 @@ namespace Waterfall_PRJ
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblPswd = new System.Windows.Forms.Label();
+            this.tbxPswd = new System.Windows.Forms.TextBox();
             this.CloseBtn = new System.Windows.Forms.Button();
             this.addBTN = new System.Windows.Forms.Button();
             this.ContractCB = new System.Windows.Forms.ComboBox();
@@ -84,6 +86,8 @@ namespace Waterfall_PRJ
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblPswd);
+            this.groupBox2.Controls.Add(this.tbxPswd);
             this.groupBox2.Controls.Add(this.CloseBtn);
             this.groupBox2.Controls.Add(this.addBTN);
             this.groupBox2.Controls.Add(this.ContractCB);
@@ -109,6 +113,23 @@ namespace Waterfall_PRJ
             this.groupBox2.Size = new System.Drawing.Size(350, 334);
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
+            // 
+            // lblPswd
+            // 
+            this.lblPswd.AutoSize = true;
+            this.lblPswd.Location = new System.Drawing.Point(21, 0);
+            this.lblPswd.Name = "lblPswd";
+            this.lblPswd.Size = new System.Drawing.Size(77, 17);
+            this.lblPswd.TabIndex = 46;
+            this.lblPswd.Text = "Password :";
+            // 
+            // tbxPswd
+            // 
+            this.tbxPswd.Location = new System.Drawing.Point(118, -3);
+            this.tbxPswd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxPswd.Name = "tbxPswd";
+            this.tbxPswd.Size = new System.Drawing.Size(196, 22);
+            this.tbxPswd.TabIndex = 45;
             // 
             // CloseBtn
             // 
@@ -663,5 +684,7 @@ namespace Waterfall_PRJ
         private System.Windows.Forms.Label lblUserType;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Label lblPswd;
+        private System.Windows.Forms.TextBox tbxPswd;
     }
 }

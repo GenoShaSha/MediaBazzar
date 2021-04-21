@@ -11,7 +11,7 @@ namespace Waterfall_PRJ
         private string adminusername;
         private string adminpass;
 
-        public Administrator(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email, string phonenumber, string address, string postalcode, string city, string country) : base(firstname,lastname,gender,birthdate,BSN,relationship,email,phonenumber,address,postalcode,city,country)
+        public Administrator(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email,string password, string phonenumber, string address, string postalcode, string city, string country) : base(firstname,lastname,gender,birthdate,BSN,relationship,email,password,phonenumber,address,postalcode,city,country)
         {
             this.firstname = firstname;
             this.lastname = lastname;
@@ -20,6 +20,7 @@ namespace Waterfall_PRJ
             this.BSN = BSN;
             this.relationship = relationship;
             this.email = email;
+            this.password = password;
             this.phonenumber = phonenumber;
             this.address = address;
             this.postalcode = postalcode;

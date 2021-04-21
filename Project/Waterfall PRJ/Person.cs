@@ -26,7 +26,7 @@ namespace Waterfall_PRJ
         protected string status = string.Empty;
         protected string cType;
 
-        protected Person(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email, string phonenumber, string address, string postalcode, string city, string country)
+        protected Person(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email,string password, string phonenumber, string address, string postalcode, string city, string country)
         {
             this.employeeID = Person.nextID;
             Person.nextID += 1;
@@ -37,6 +37,7 @@ namespace Waterfall_PRJ
             this.BSN = BSN;
             this.relationship = relationship;
             this.email = email;
+            this.password = password;
             this.phonenumber = phonenumber;
             this.address = address;
             this.postalcode = postalcode;
@@ -143,8 +144,9 @@ namespace Waterfall_PRJ
             get { return this.status; }
             set { this.status = value; }
         }
-        private string Password
+        public string Password
         {
+            get { return this.password; }
             set { this.password = value; }
         }
         private string CType

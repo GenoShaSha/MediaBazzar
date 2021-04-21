@@ -19,72 +19,37 @@ namespace Waterfall_PRJ
         {
             try
             {
-                string que = "INSERT INTO addingemployees (FirstName,LastName,DateOfBirth,BSN,Gender,Relationship,Email,PhoneNumber,Address,PostalCode,City,Country,role,cType) VALUES (@fName,@lName,@dob,@bsn,@gender,@relationship,@email,@pNumber,@address,@pCode,@city,@country,@role,@cType)";
+                string que = "INSERT INTO employees(FirstName,LastName,DateOfBirth,BSN,Gender,Relationship,Email,Password,PhoneNumber,Address,PostalCode,City,Country,EmployeeType,ContractType) VALUES (@fName,@lName,@dob,@bsn,@gender,@relationship,@email,@pswd,@pNumber,@address,@pCode,@city,@country,@role,@cType)";
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand(que, con);
 
-/*                cmd.Parameters.AddWithValue("@fName", person.FirstName);
+                cmd.Parameters.AddWithValue("@fName", person.FirstName);
                 cmd.Parameters.AddWithValue("@lName", person.LastName);
                 cmd.Parameters.AddWithValue("@dob", person.Birthdate);
                 cmd.Parameters.AddWithValue("@bsn", person.BSN_Num);
                 cmd.Parameters.AddWithValue("@gender", person.Gender);
                 cmd.Parameters.AddWithValue("@relationship", person.Relationship);
                 cmd.Parameters.AddWithValue("@email", person.Email);
+                cmd.Parameters.AddWithValue("@pswd", person.Password);
                 cmd.Parameters.AddWithValue("@pNumber", person.PhoneNumber);
                 cmd.Parameters.AddWithValue("@address", person.Address);
                 cmd.Parameters.AddWithValue("@pCode", person.Postal);
                 cmd.Parameters.AddWithValue("@city", person.City);
-                cmd.Parameters.AddWithValue("@country", person.Country);*/
-                if(person is EmployeeRole)
+                cmd.Parameters.AddWithValue("@country", person.Country);
+                if (person is EmployeeRole)
                 {
-                    cmd.Parameters.AddWithValue("@fName", person.FirstName);
-                    cmd.Parameters.AddWithValue("@lName", person.LastName);
-                    cmd.Parameters.AddWithValue("@dob", person.Birthdate);
-                    cmd.Parameters.AddWithValue("@bsn", person.BSN_Num);
-                    cmd.Parameters.AddWithValue("@gender", person.Gender);
-                    cmd.Parameters.AddWithValue("@relationship", person.Relationship);
-                    cmd.Parameters.AddWithValue("@email", person.Email);
-                    cmd.Parameters.AddWithValue("@pNumber", person.PhoneNumber);
-                    cmd.Parameters.AddWithValue("@address", person.Address);
-                    cmd.Parameters.AddWithValue("@pCode", person.Postal);
-                    cmd.Parameters.AddWithValue("@city", person.City);
-                    cmd.Parameters.AddWithValue("@country", person.Country);
                     person.Status = "Employee";
                     cmd.Parameters.AddWithValue("@role", person.Status);
                     cmd.Parameters.AddWithValue("@cType", ((EmployeeRole)person).Contract);
                 }
                 else if (person is FloorManagerRole)
                 {
-                    cmd.Parameters.AddWithValue("@fName", person.FirstName);
-                    cmd.Parameters.AddWithValue("@lName", person.LastName);
-                    cmd.Parameters.AddWithValue("@dob", person.Birthdate);
-                    cmd.Parameters.AddWithValue("@bsn", person.BSN_Num);
-                    cmd.Parameters.AddWithValue("@gender", person.Gender);
-                    cmd.Parameters.AddWithValue("@relationship", person.Relationship);
-                    cmd.Parameters.AddWithValue("@email", person.Email);
-                    cmd.Parameters.AddWithValue("@pNumber", person.PhoneNumber);
-                    cmd.Parameters.AddWithValue("@address", person.Address);
-                    cmd.Parameters.AddWithValue("@pCode", person.Postal);
-                    cmd.Parameters.AddWithValue("@city", person.City);
-                    cmd.Parameters.AddWithValue("@country", person.Country);
                     person.Status = "Manager";
                     cmd.Parameters.AddWithValue("@role", person.Status);
                     cmd.Parameters.AddWithValue("@cType","full");
                 }
                 else if (person is Administrator)
                 {
-                    cmd.Parameters.AddWithValue("@fName", person.FirstName);
-                    cmd.Parameters.AddWithValue("@lName", person.LastName);
-                    cmd.Parameters.AddWithValue("@dob", person.Birthdate);
-                    cmd.Parameters.AddWithValue("@bsn", person.BSN_Num);
-                    cmd.Parameters.AddWithValue("@gender", person.Gender);
-                    cmd.Parameters.AddWithValue("@relationship", person.Relationship);
-                    cmd.Parameters.AddWithValue("@email", person.Email);
-                    cmd.Parameters.AddWithValue("@pNumber", person.PhoneNumber);
-                    cmd.Parameters.AddWithValue("@address", person.Address);
-                    cmd.Parameters.AddWithValue("@pCode", person.Postal);
-                    cmd.Parameters.AddWithValue("@city", person.City);
-                    cmd.Parameters.AddWithValue("@country", person.Country);
                     person.Status = "Administrator";
                     cmd.Parameters.AddWithValue("@role", person.Status);
                     cmd.Parameters.AddWithValue("@cType", "full");
@@ -105,7 +70,7 @@ namespace Waterfall_PRJ
             type = null;
             try
             {
-                string que = "SELECT * FROM signin WHERE Username = @usrName AND Password = @password;";
+                string que = "SELECT * FROM employees WHERE Email = @usrName AND Password = @password;";
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand(que, con);
           
@@ -116,7 +81,7 @@ namespace Waterfall_PRJ
                 
                 while (dr.Read())
                 {
-                    type = dr[3].ToString();
+                    type = dr[14].ToString();
                 }
 
 

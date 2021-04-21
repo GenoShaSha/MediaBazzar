@@ -619,14 +619,14 @@ namespace Waterfall_PRJ
         private void EmployeeCalendar_Click(object sender, EventArgs e)
         {
            
-            MorningShiftLB.Items.Clear();
+/*            MorningShiftLB.Items.Clear();
             EveningShiftLB.Items.Clear();
             NightShiftLB.Items.Clear();
             Person p = (Person)AvailableEmployeesLB.SelectedItem;
-/*            List<EmployeeRole> morningshifts = shifts.ShiftGetter(Clicked_Date, "morning");
+*//*            List<EmployeeRole> morningshifts = shifts.ShiftGetter(Clicked_Date, "morning");
             List<EmployeeRole> eveningshifts = shifts.ShiftGetter(Clicked_Date, "evening");
-            List<EmployeeRole> nightshifts = shifts.ShiftGetter(Clicked_Date, "night");*/
- /*           if(morningshifts != null)
+            List<EmployeeRole> nightshifts = shifts.ShiftGetter(Clicked_Date, "night");*//*
+            if (morningshifts != null)
             {
                 foreach (EmployeeRole emp in morningshifts)
                 {
@@ -637,17 +637,17 @@ namespace Waterfall_PRJ
             {
                 foreach (EmployeeRole emp in eveningshifts)
                 {
-                   EveningShiftLB.Items.Add(emp);
+                    EveningShiftLB.Items.Add(emp);
                 }
             }
             if (nightshifts != null)
             {
                 foreach (EmployeeRole emp in nightshifts)
                 {
-                   NightShiftLB.Items.Add(emp);
+                    NightShiftLB.Items.Add(emp);
                 }
             }
-            if(morningshifts == null && eveningshifts == null && nightshifts == null)
+            if (morningshifts == null && eveningshifts == null && nightshifts == null)
             {
                 MorningShiftLB.Items.Clear();
                 EveningShiftLB.Items.Clear();
@@ -656,9 +656,9 @@ namespace Waterfall_PRJ
 
             UpdateAvailableHours();
 
+*/
 
-
-        }*/
+        }
 
         private void AvailableEmployeesLB_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -690,7 +690,7 @@ namespace Waterfall_PRJ
                 EmployeeInformation info = new EmployeeInformation(p);
                 info.ShowDialog();
             }
-            catch(NullReferenceException)
+            catch (NullReferenceException)
             {
                 MessageBox.Show("Please select an employee.");
             }
