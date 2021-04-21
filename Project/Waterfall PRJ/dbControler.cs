@@ -19,10 +19,11 @@ namespace Waterfall_PRJ
         {
             try
             {
-                string que = "INSERT INTO employees(FirstName,LastName,DateOfBirth,BSN,Gender,Relationship,Email,Password,PhoneNumber,Address,PostalCode,City,Country,EmployeeType,ContractType) VALUES (@fName,@lName,@dob,@bsn,@gender,@relationship,@email,@pswd,@pNumber,@address,@pCode,@city,@country,@role,@cType)";
+                string que = "INSERT INTO employees(Employee_ID,FirstName,LastName,DateOfBirth,BSN,Gender,Relationship,Email,Password,PhoneNumber,Address,PostalCode,City,Country,EmployeeType,ContractType) VALUES (@eID,@fName,@lName,@dob,@bsn,@gender,@relationship,@email,@pswd,@pNumber,@address,@pCode,@city,@country,@role,@cType)";
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand(que, con);
 
+                cmd.Parameters.AddWithValue("@eID", person.EmployeeID);
                 cmd.Parameters.AddWithValue("@fName", person.FirstName);
                 cmd.Parameters.AddWithValue("@lName", person.LastName);
                 cmd.Parameters.AddWithValue("@dob", person.Birthdate);
@@ -58,12 +59,51 @@ namespace Waterfall_PRJ
                 cmd.ExecuteNonQuery();
 
                 con.Close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        public bool RemoveEmployees(long id)
+        {
+            try
+            {
+                string que = "DELETE FROM employees WHERE Employee_ID = @eID";
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand(que, con);
+
+                cmd.Parameters.AddWithValue("@eID", id);
+
+                cmd.ExecuteNonQuery();
+
+                con.Close();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return false;
+        }
+        public void ReadEmployees(Person person)
+        {
+            try
+            {
+                string que = "SELECT Employee_ID,FirstName,LastName,ContractType FROM employees ORDER BY Employee_ID;";
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand(que, con);
+
+                cmd.ExecuteReader();
+
+                con.Close();
                 /* Console.WriteLine(cmd.ExecuteNonQuery());*/
             }
             catch (MySqlException ex)
             {
                 Console.WriteLine(ex.Message);
             }
+
         }
         public bool GetIdentity(string username, string password, out string type)
         {
