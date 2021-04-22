@@ -10,6 +10,7 @@ namespace Waterfall_PRJ
     public class dbControler
     {
         private MySqlConnection con;
+        EmployeeManager em = new EmployeeManager();
 
         public dbControler()
         {
@@ -86,24 +87,29 @@ namespace Waterfall_PRJ
             }
             return false;
         }
-        public void ReadEmployees(Person person)
+        public string ReadEmployees(out string emplyee)
         {
+            emplyee = null;
             try
             {
-                string que = "SELECT Employee_ID,FirstName,LastName,ContractType FROM employees ORDER BY Employee_ID;";
+                string que = "SELECT * FROM employees ORDER BY Employee_ID;";
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand(que, con);
 
-                cmd.ExecuteReader();
+                MySqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    emplyee = dr[0].ToString(); dr[1].ToString(); dr[1].ToString(); dr[15].ToString();
+                }
 
                 con.Close();
-                /* Console.WriteLine(cmd.ExecuteNonQuery());*/
+                return emplyee;
             }
             catch (MySqlException ex)
             {
                 Console.WriteLine(ex.Message);
             }
-
+            return null;
         }
         public bool GetIdentity(string username, string password, out string type)
         {
@@ -126,7 +132,6 @@ namespace Waterfall_PRJ
 
 
                 con.Close();
-               /* Console.WriteLine(cmd.ExecuteNonQuery());*/
                 return true;
             }
             catch(MySqlException ex)

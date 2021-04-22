@@ -67,6 +67,7 @@ namespace Waterfall_PRJ
             this.tbxRmv = new System.Windows.Forms.TextBox();
             this.btnRmv = new System.Windows.Forms.Button();
             this.lblRmvUsr = new System.Windows.Forms.Label();
+            this.lbxEmployeeList = new System.Windows.Forms.ListBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -466,11 +467,21 @@ namespace Waterfall_PRJ
             this.lblRmvUsr.TabIndex = 36;
             this.lblRmvUsr.Text = "Username :";
             // 
+            // lbxEmployeeList
+            // 
+            this.lbxEmployeeList.FormattingEnabled = true;
+            this.lbxEmployeeList.ItemHeight = 16;
+            this.lbxEmployeeList.Location = new System.Drawing.Point(368, 265);
+            this.lbxEmployeeList.Name = "lbxEmployeeList";
+            this.lbxEmployeeList.Size = new System.Drawing.Size(335, 180);
+            this.lbxEmployeeList.TabIndex = 45;
+            // 
             // EmployeeAddingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 583);
+            this.Controls.Add(this.lbxEmployeeList);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -527,5 +538,6 @@ namespace Waterfall_PRJ
         private System.Windows.Forms.Label lblRmvUsr;
         private System.Windows.Forms.Label lblPswd;
         private System.Windows.Forms.TextBox tbxPswd;
+        private System.Windows.Forms.ListBox lbxEmployeeList;
     }
 }
