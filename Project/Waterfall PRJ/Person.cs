@@ -9,7 +9,7 @@ namespace Waterfall_PRJ
     public abstract class Person
     {
         protected long employeeID;
-        protected static long nextID = 1000;
+        //protected static long nextID = 1000;
         protected string firstname;
         protected string lastname;
         protected string gender;
@@ -28,8 +28,8 @@ namespace Waterfall_PRJ
 
         protected Person(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email,string password, string phonenumber, string address, string postalcode, string city, string country)
         {
-            this.employeeID = Person.nextID;
-            Person.nextID += 1;
+            //this.employeeID = Person.nextID;
+            //Person.nextID += 1;
             this.firstname = firstname;
             this.lastname = lastname;
             this.gender = gender;

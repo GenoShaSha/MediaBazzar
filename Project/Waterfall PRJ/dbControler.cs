@@ -16,6 +16,15 @@ namespace Waterfall_PRJ
         {
             con = new MySqlConnection("Server=studmysql01.fhict.local;Username=dbi450080;Database=dbi450080;Password=WortelSoulution");
         }
+        private int GetLastMadeID()
+        {
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand("SELECT MAX(Employee_ID) FROM `employees`");
+            int id = Convert.ToInt32(cmd.ExecuteScalar().ToString() == "" ? 0 : cmd.ExecuteScalar());
+            con.Close();
+            return id;
+        }
+
         public void AddEmployees(Person person)
         {
             try
@@ -24,7 +33,7 @@ namespace Waterfall_PRJ
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand(que, con);
 
-                cmd.Parameters.AddWithValue("@eID", person.EmployeeID);
+                cmd.Parameters.AddWithValue("@eID", GetLastMadeID() + 1);
                 cmd.Parameters.AddWithValue("@fName", person.FirstName);
                 cmd.Parameters.AddWithValue("@lName", person.LastName);
                 cmd.Parameters.AddWithValue("@dob", person.Birthdate);
