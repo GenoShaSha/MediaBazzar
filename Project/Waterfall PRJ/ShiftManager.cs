@@ -8,57 +8,47 @@ namespace Waterfall_PRJ
 {
     public class ShiftManager
     {
-        List<Shift> shifts;
+        private List<Shift> shifts;
 
         public ShiftManager()
         {
             shifts = new List<Shift>();
         }
 
-        public void AddShiftTime(DateTime shifttime)
+        public List<Shift> ShiftList
         {
-            shifts.Add(new Shift(shifttime));
+            get { return shifts; }
         }
 
-        public void AddShifts(DateTime shifttime, string shift, EmployeeRole employee)
+        public void AddShiftTime(DateTime shifttime, ShiftType type)
+        {
+            shifts.Add(new Shift(shifttime, type));
+        }
+
+        public bool AddEmployeeToShift(DateTime shifttime, ShiftType type, EmployeeRole employee)
         {
             foreach(Shift s in shifts)
             {
-                if(s.ShiftDate == shifttime)
+               if(s.ShiftDate == shifttime)
                 {
-                        if (shift == "morning")
-                        {
-                            s.AddMorningShift(employee);
-                        }
-                        else if (shift == "evening")
-                        {
-                            s.AddEveningShift(employee);
-                        }
-                        else
-                        {
-                            s.AddNightShift(employee);
-                        }
-                    
+                    if(s.Type == type)
+                    {
+                        s.AddEmployeeToShift(employee);
+                        return true;
+                    }
                 }
             }
+            return false;
         }
-        public List<EmployeeRole> ShiftGetter(DateTime shifttime, string shift)
+        public List<EmployeeRole> ReturnAssignedEmployees(DateTime shifttime, ShiftType type)
         {
             foreach (Shift s in shifts)
             {
                 if(s.ShiftDate == shifttime)
                 {
-                    if (shift == "morning")
+                  if(s.Type == type)
                     {
-                        return s.ReturnShifts("morning");
-                    }
-                    if (shift == "evening")
-                    {
-                        return s.ReturnShifts("evening");
-                    }
-                    if (shift == "night")
-                    {
-                        return s.ReturnShifts("night");
+                        return s.ReturnEmployeesFromShift();
                     }
                 }
             }
