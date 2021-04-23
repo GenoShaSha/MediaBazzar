@@ -72,5 +72,9 @@ namespace Waterfall_PRJ
             }
             
         }
+        public string Name
+        {
+            get { return this.firstname + " " + this.lastname; }
+        }
     }
 }

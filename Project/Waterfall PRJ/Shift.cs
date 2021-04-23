@@ -11,11 +11,12 @@ namespace Waterfall_PRJ
         private List<EmployeeRole> employees;
         private DateTime shiftdate;
         private ShiftType type;
-       public Shift(DateTime shiftdate,ShiftType type)
+        public Shift(DateTime shiftdate, ShiftType type)
         {
             this.shiftdate = shiftdate;
             this.type = type;
             this.employees = new List<EmployeeRole>();
+        }
         public DateTime ShiftDate
         {
             get { return this.shiftdate; }

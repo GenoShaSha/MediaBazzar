@@ -8,11 +8,16 @@ namespace Waterfall_PRJ
 {
     public class ShiftManager
     {
-        List<Shift> shifts;
+        private List<Shift> shifts;
 
         public ShiftManager()
         {
             shifts = new List<Shift>();
+        }
+
+        public List<Shift> ShiftList
+        {
+            get { return shifts; }
         }
 
         public void AddShiftTime(DateTime shifttime, ShiftType type)

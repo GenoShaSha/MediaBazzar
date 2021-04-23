@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Waterfall_PRJ
 {
-    class ShiftType
+    public enum ShiftType
     {
+        Morning,
+        Afternoon,
+        Night
     }
 }
