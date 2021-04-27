@@ -57,7 +57,7 @@ namespace Waterfall_PRJ
                 {
                     person.Status = "Manager";
                     cmd.Parameters.AddWithValue("@role", person.Status);
-                    cmd.Parameters.AddWithValue("@cType", "full");
+                    cmd.Parameters.AddWithValue("@cType","full");
                 }
                 else if (person is Administrator)
                 {
@@ -96,37 +96,30 @@ namespace Waterfall_PRJ
             }
             return false;
         }
-        public List<string> ReadEmployees()
+        public string ReadEmployees(out string emplyee)
         {
-            List<string> employees = new List<string>();
+            emplyee = null;
             try
             {
-                string que = "SELECT * FROM employees ORDER BY Employee_ID";
-                MySqlCommand cmd = new MySqlCommand(que, con);
+                string que = "SELECT * FROM employees ORDER BY Employee_ID;";
                 con.Open();
+                MySqlCommand cmd = new MySqlCommand(que, con);
 
-
-                using (MySqlDataReader objReader = cmd.ExecuteReader())
+                MySqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
                 {
-                    if (objReader.HasRows)
-                    {
-                        while (objReader.Read())
-                        {
-                            string item = objReader.GetString(1) + " " + objReader.GetString(2) + " | " + objReader.GetString(0);
-                            employees.Add(item);
-                        }
-                    }
+                    emplyee = dr[0].ToString(); dr[1].ToString(); dr[1].ToString(); dr[15].ToString();
                 }
+
                 con.Close();
-                return employees;
+                return emplyee;
             }
             catch (MySqlException ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            return employees;
+            return null;
         }
-
         public bool GetIdentity(string username, string password, out string type)
         {
             type = null;
@@ -135,12 +128,12 @@ namespace Waterfall_PRJ
                 string que = "SELECT * FROM employees WHERE Email = @usrName AND Password = @password;";
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand(que, con);
-
+          
                 cmd.Parameters.AddWithValue("@usrName", username);
                 cmd.Parameters.AddWithValue("@password", password);
 
-                MySqlDataReader dr = cmd.ExecuteReader();
-
+               MySqlDataReader dr = cmd.ExecuteReader();
+                
                 while (dr.Read())
                 {
                     type = dr[14].ToString();
@@ -150,7 +143,7 @@ namespace Waterfall_PRJ
                 con.Close();
                 return true;
             }
-            catch (MySqlException ex)
+            catch(MySqlException ex)
             {
                 Console.WriteLine(ex.Message);
             }
