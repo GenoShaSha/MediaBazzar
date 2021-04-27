@@ -27,8 +27,12 @@ namespace Waterfall_PRJ
             RoleCB.SelectedIndex = 0;
             ContractCB.SelectedIndex = 0;
             dc = new dbControler();
-            dc.ReadEmployees(out string employee);
-            lbxEmployeeList.Items.Add(dc.ReadEmployees(out string emp));
+            List<string> employeeList = dc.ReadEmployees();
+
+            foreach (var item in employeeList)
+            {
+                lbxEmployeeList.Items.Add(item);
+            }
         }
 
         private void addBTN_Click(object sender, EventArgs e)
