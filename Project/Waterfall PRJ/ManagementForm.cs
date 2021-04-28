@@ -347,12 +347,15 @@ namespace Waterfall_PRJ
                 {
                     shifts.AddEmployeeToShift(returnedDate, type, emp);
                 }
-                MessageBox.Show("Shift Added!");
-                ReturnShiftEmployeesLB(returnedDate);
             }
             catch (NullReferenceException)
             {
                 MessageBox.Show("Please select an employee and date.");
+            }
+            finally 
+            {
+                MessageBox.Show("Shift Added!");
+                ReturnShiftEmployeesLB(returnedDate);
             }
         }
 
@@ -382,6 +385,13 @@ namespace Waterfall_PRJ
 
         private void nextBtn_Click(object sender, EventArgs e)
         {
+            DateTime returnedDate;
+            for (int i = 0; i < 7; i++)
+            {
+                returnedDate = Convert.ToDateTime(daybuttons[i].Text);
+                returnedDate = returnedDate.AddDays(7);
+                daybuttons[i].Text = returnedDate.ToShortDateString();
+            }
 
         }
 
@@ -425,6 +435,17 @@ namespace Waterfall_PRJ
             returnedDate = Convert.ToDateTime(saturdayBtn.Text);
             dateLbl.Text = returnedDate.ToShortDateString();
             ReturnShiftEmployeesLB(returnedDate);
+        }
+
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            DateTime returnedDate;
+            for (int i = 0; i < 7; i++)
+            {
+                returnedDate = Convert.ToDateTime(daybuttons[i].Text);
+                returnedDate = returnedDate.AddDays(-7);
+                daybuttons[i].Text = returnedDate.ToShortDateString();
+            }
         }
     }
 }

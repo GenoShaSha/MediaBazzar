@@ -33,6 +33,13 @@ namespace Waterfall_PRJ
                 {
                     if(s.Type == type)
                     {
+                        foreach(EmployeeRole e in s.ReturnEmployeesFromShift())
+                        {
+                            if (employee == e)
+                            {
+                                return false;
+                            }
+                        }
                         s.AddEmployeeToShift(employee);
                         return true;
                     }

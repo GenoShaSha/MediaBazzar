@@ -102,6 +102,7 @@ namespace Waterfall_PRJ
             this.AfternoonShiftLB = new System.Windows.Forms.ListBox();
             this.MorningShiftLB = new System.Windows.Forms.ListBox();
             this.btnAddShift = new System.Windows.Forms.Button();
+            this.BackBtn = new System.Windows.Forms.Button();
             this.ManagementTabControl.SuspendLayout();
             this.EmployeeManagePage.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -520,6 +521,7 @@ namespace Waterfall_PRJ
             // 
             // ShiftManagementPage
             // 
+            this.ShiftManagementPage.Controls.Add(this.BackBtn);
             this.ShiftManagementPage.Controls.Add(this.dateLbl);
             this.ShiftManagementPage.Controls.Add(this.label28);
             this.ShiftManagementPage.Controls.Add(this.label27);
@@ -626,7 +628,7 @@ namespace Waterfall_PRJ
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(33, 69);
+            this.label26.Location = new System.Drawing.Point(76, 69);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(56, 17);
             this.label26.TabIndex = 50;
@@ -635,7 +637,7 @@ namespace Waterfall_PRJ
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(672, 69);
+            this.label25.Location = new System.Drawing.Point(707, 69);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(65, 17);
             this.label25.TabIndex = 49;
@@ -644,7 +646,7 @@ namespace Waterfall_PRJ
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(582, 69);
+            this.label24.Location = new System.Drawing.Point(617, 69);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(47, 17);
             this.label24.TabIndex = 48;
@@ -653,7 +655,7 @@ namespace Waterfall_PRJ
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(458, 69);
+            this.label23.Location = new System.Drawing.Point(493, 69);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(68, 17);
             this.label23.TabIndex = 47;
@@ -662,7 +664,7 @@ namespace Waterfall_PRJ
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(345, 69);
+            this.label22.Location = new System.Drawing.Point(380, 69);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(83, 17);
             this.label22.TabIndex = 46;
@@ -671,7 +673,7 @@ namespace Waterfall_PRJ
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(249, 69);
+            this.label21.Location = new System.Drawing.Point(284, 69);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(63, 17);
             this.label21.TabIndex = 45;
@@ -680,7 +682,7 @@ namespace Waterfall_PRJ
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(151, 69);
+            this.label19.Location = new System.Drawing.Point(186, 69);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(58, 17);
             this.label19.TabIndex = 44;
@@ -688,9 +690,9 @@ namespace Waterfall_PRJ
             // 
             // nextBtn
             // 
-            this.nextBtn.Location = new System.Drawing.Point(760, 96);
+            this.nextBtn.Location = new System.Drawing.Point(795, 95);
             this.nextBtn.Name = "nextBtn";
-            this.nextBtn.Size = new System.Drawing.Size(75, 38);
+            this.nextBtn.Size = new System.Drawing.Size(75, 40);
             this.nextBtn.TabIndex = 43;
             this.nextBtn.Text = ">>>";
             this.nextBtn.UseVisualStyleBackColor = true;
@@ -698,7 +700,7 @@ namespace Waterfall_PRJ
             // 
             // sundayBtn
             // 
-            this.sundayBtn.Location = new System.Drawing.Point(15, 89);
+            this.sundayBtn.Location = new System.Drawing.Point(58, 89);
             this.sundayBtn.Name = "sundayBtn";
             this.sundayBtn.Size = new System.Drawing.Size(99, 53);
             this.sundayBtn.TabIndex = 42;
@@ -708,7 +710,7 @@ namespace Waterfall_PRJ
             // 
             // saturdayBtn
             // 
-            this.saturdayBtn.Location = new System.Drawing.Point(655, 89);
+            this.saturdayBtn.Location = new System.Drawing.Point(690, 89);
             this.saturdayBtn.Name = "saturdayBtn";
             this.saturdayBtn.Size = new System.Drawing.Size(99, 53);
             this.saturdayBtn.TabIndex = 41;
@@ -718,7 +720,7 @@ namespace Waterfall_PRJ
             // 
             // fridayBtn
             // 
-            this.fridayBtn.Location = new System.Drawing.Point(550, 89);
+            this.fridayBtn.Location = new System.Drawing.Point(585, 89);
             this.fridayBtn.Name = "fridayBtn";
             this.fridayBtn.Size = new System.Drawing.Size(99, 53);
             this.fridayBtn.TabIndex = 40;
@@ -728,7 +730,7 @@ namespace Waterfall_PRJ
             // 
             // thursdayBtn
             // 
-            this.thursdayBtn.Location = new System.Drawing.Point(445, 89);
+            this.thursdayBtn.Location = new System.Drawing.Point(480, 89);
             this.thursdayBtn.Name = "thursdayBtn";
             this.thursdayBtn.Size = new System.Drawing.Size(99, 53);
             this.thursdayBtn.TabIndex = 39;
@@ -738,7 +740,7 @@ namespace Waterfall_PRJ
             // 
             // wednesdayBtn
             // 
-            this.wednesdayBtn.Location = new System.Drawing.Point(338, 89);
+            this.wednesdayBtn.Location = new System.Drawing.Point(373, 89);
             this.wednesdayBtn.Name = "wednesdayBtn";
             this.wednesdayBtn.Size = new System.Drawing.Size(99, 53);
             this.wednesdayBtn.TabIndex = 38;
@@ -748,7 +750,7 @@ namespace Waterfall_PRJ
             // 
             // tuesdayBtn
             // 
-            this.tuesdayBtn.Location = new System.Drawing.Point(233, 89);
+            this.tuesdayBtn.Location = new System.Drawing.Point(268, 89);
             this.tuesdayBtn.Name = "tuesdayBtn";
             this.tuesdayBtn.Size = new System.Drawing.Size(99, 53);
             this.tuesdayBtn.TabIndex = 37;
@@ -758,7 +760,7 @@ namespace Waterfall_PRJ
             // 
             // mondayBtn
             // 
-            this.mondayBtn.Location = new System.Drawing.Point(128, 89);
+            this.mondayBtn.Location = new System.Drawing.Point(163, 89);
             this.mondayBtn.Name = "mondayBtn";
             this.mondayBtn.Size = new System.Drawing.Size(99, 53);
             this.mondayBtn.TabIndex = 36;
@@ -888,7 +890,16 @@ namespace Waterfall_PRJ
             this.btnAddShift.TabIndex = 21;
             this.btnAddShift.Text = "ADD";
             this.btnAddShift.UseVisualStyleBackColor = false;
-/*            this.btnAddShift.Click += new System.EventHandler(this.btnAddShift_Click);*/
+            // 
+            // BackBtn
+            // 
+            this.BackBtn.Location = new System.Drawing.Point(3, 97);
+            this.BackBtn.Name = "BackBtn";
+            this.BackBtn.Size = new System.Drawing.Size(56, 36);
+            this.BackBtn.TabIndex = 57;
+            this.BackBtn.Text = "<<<";
+            this.BackBtn.UseVisualStyleBackColor = true;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
             // ManagementForm
             // 
@@ -986,5 +997,6 @@ namespace Waterfall_PRJ
         private System.Windows.Forms.Label dateLbl;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Button BackBtn;
     }
 }
