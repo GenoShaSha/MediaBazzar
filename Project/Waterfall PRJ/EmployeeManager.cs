@@ -9,6 +9,7 @@ namespace Waterfall_PRJ
     public class EmployeeManager
     {
         List<Person> persons;
+        dbControler dc = new dbControler();
 
         public EmployeeManager()
         {
@@ -18,6 +19,7 @@ namespace Waterfall_PRJ
         public void AddPerson(Person person)
         {
             persons.Add(person);
+            dc.AddEmployees(person);
         }
         public void RemovePerson(Person person)
         {
@@ -27,6 +29,18 @@ namespace Waterfall_PRJ
         {
             return persons;
         }
+        public void ReadPersons()
+        {
+            List<Person> employeeList = dc.ReadEmployees();
+            foreach(var item in employeeList.ToList())
+            {
+                if (item != null)
+                {
+                    employeeList.Add(item);
+                }
+            }
+        }
+
         
         public Person GetPerson(long ID)
         {

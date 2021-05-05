@@ -38,6 +38,8 @@ namespace Waterfall_PRJ
             this.updateBTN = new System.Windows.Forms.Button();
             this.employeesLB = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tbxPswd = new System.Windows.Forms.TextBox();
+            this.lblPswd = new System.Windows.Forms.Label();
             this.ContractCB = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -55,6 +57,8 @@ namespace Waterfall_PRJ
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbxID = new System.Windows.Forms.TextBox();
+            this.lblID = new System.Windows.Forms.Label();
             this.GenderCB = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.DOBPicker = new System.Windows.Forms.DateTimePicker();
@@ -69,6 +73,7 @@ namespace Waterfall_PRJ
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ShiftManagementPage = new System.Windows.Forms.TabPage();
+            this.BackBtn = new System.Windows.Forms.Button();
             this.dateLbl = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -102,7 +107,6 @@ namespace Waterfall_PRJ
             this.AfternoonShiftLB = new System.Windows.Forms.ListBox();
             this.MorningShiftLB = new System.Windows.Forms.ListBox();
             this.btnAddShift = new System.Windows.Forms.Button();
-            this.BackBtn = new System.Windows.Forms.Button();
             this.ManagementTabControl.SuspendLayout();
             this.EmployeeManagePage.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -156,18 +160,17 @@ namespace Waterfall_PRJ
             // 
             // removeBTN
             // 
-            this.removeBTN.Location = new System.Drawing.Point(511, 562);
+            this.removeBTN.Location = new System.Drawing.Point(596, 575);
             this.removeBTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.removeBTN.Name = "removeBTN";
             this.removeBTN.Size = new System.Drawing.Size(209, 33);
             this.removeBTN.TabIndex = 43;
             this.removeBTN.Text = "REMOVE";
             this.removeBTN.UseVisualStyleBackColor = true;
-            this.removeBTN.Click += new System.EventHandler(this.removeBTN_Click);
             // 
             // addBTN
             // 
-            this.addBTN.Location = new System.Drawing.Point(365, 563);
+            this.addBTN.Location = new System.Drawing.Point(450, 576);
             this.addBTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addBTN.Name = "addBTN";
             this.addBTN.Size = new System.Drawing.Size(140, 33);
@@ -178,7 +181,7 @@ namespace Waterfall_PRJ
             // 
             // updateBTN
             // 
-            this.updateBTN.Location = new System.Drawing.Point(4, 563);
+            this.updateBTN.Location = new System.Drawing.Point(7, 603);
             this.updateBTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.updateBTN.Name = "updateBTN";
             this.updateBTN.Size = new System.Drawing.Size(336, 33);
@@ -191,7 +194,7 @@ namespace Waterfall_PRJ
             // 
             this.employeesLB.FormattingEnabled = true;
             this.employeesLB.ItemHeight = 16;
-            this.employeesLB.Location = new System.Drawing.Point(365, 84);
+            this.employeesLB.Location = new System.Drawing.Point(450, 97);
             this.employeesLB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.employeesLB.Name = "employeesLB";
             this.employeesLB.Size = new System.Drawing.Size(355, 468);
@@ -202,6 +205,8 @@ namespace Waterfall_PRJ
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.tbxPswd);
+            this.groupBox2.Controls.Add(this.lblPswd);
             this.groupBox2.Controls.Add(this.ContractCB);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.label17);
@@ -218,13 +223,30 @@ namespace Waterfall_PRJ
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(4, 293);
+            this.groupBox2.Location = new System.Drawing.Point(3, 319);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(336, 266);
+            this.groupBox2.Size = new System.Drawing.Size(336, 280);
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
+            // 
+            // tbxPswd
+            // 
+            this.tbxPswd.Location = new System.Drawing.Point(99, 14);
+            this.tbxPswd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxPswd.Name = "tbxPswd";
+            this.tbxPswd.Size = new System.Drawing.Size(215, 22);
+            this.tbxPswd.TabIndex = 43;
+            // 
+            // lblPswd
+            // 
+            this.lblPswd.AutoSize = true;
+            this.lblPswd.Location = new System.Drawing.Point(20, 17);
+            this.lblPswd.Name = "lblPswd";
+            this.lblPswd.Size = new System.Drawing.Size(77, 17);
+            this.lblPswd.TabIndex = 42;
+            this.lblPswd.Text = "Password :";
             // 
             // ContractCB
             // 
@@ -233,7 +255,7 @@ namespace Waterfall_PRJ
             "Full Time (40 work hours)",
             "Part Time (30 work hours)",
             "Part Time (20 work hours)"});
-            this.ContractCB.Location = new System.Drawing.Point(120, 223);
+            this.ContractCB.Location = new System.Drawing.Point(121, 242);
             this.ContractCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ContractCB.Name = "ContractCB";
             this.ContractCB.Size = new System.Drawing.Size(193, 24);
@@ -242,7 +264,7 @@ namespace Waterfall_PRJ
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(19, 223);
+            this.label18.Location = new System.Drawing.Point(20, 242);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(96, 17);
             this.label18.TabIndex = 40;
@@ -251,7 +273,7 @@ namespace Waterfall_PRJ
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(19, 197);
+            this.label17.Location = new System.Drawing.Point(20, 216);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(45, 17);
             this.label17.TabIndex = 39;
@@ -259,7 +281,7 @@ namespace Waterfall_PRJ
             // 
             // countryTB
             // 
-            this.countryTB.Location = new System.Drawing.Point(93, 167);
+            this.countryTB.Location = new System.Drawing.Point(94, 186);
             this.countryTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.countryTB.Name = "countryTB";
             this.countryTB.Size = new System.Drawing.Size(221, 22);
@@ -267,7 +289,7 @@ namespace Waterfall_PRJ
             // 
             // cityTB
             // 
-            this.cityTB.Location = new System.Drawing.Point(68, 139);
+            this.cityTB.Location = new System.Drawing.Point(69, 158);
             this.cityTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cityTB.Name = "cityTB";
             this.cityTB.Size = new System.Drawing.Size(247, 22);
@@ -275,7 +297,7 @@ namespace Waterfall_PRJ
             // 
             // postalCodeTB
             // 
-            this.postalCodeTB.Location = new System.Drawing.Point(120, 110);
+            this.postalCodeTB.Location = new System.Drawing.Point(121, 129);
             this.postalCodeTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.postalCodeTB.Name = "postalCodeTB";
             this.postalCodeTB.Size = new System.Drawing.Size(195, 22);
@@ -283,7 +305,7 @@ namespace Waterfall_PRJ
             // 
             // addressTB
             // 
-            this.addressTB.Location = new System.Drawing.Point(93, 82);
+            this.addressTB.Location = new System.Drawing.Point(94, 101);
             this.addressTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addressTB.Name = "addressTB";
             this.addressTB.Size = new System.Drawing.Size(221, 22);
@@ -296,7 +318,7 @@ namespace Waterfall_PRJ
             "Administrator",
             "FloorManager",
             "Employee"});
-            this.RoleCB.Location = new System.Drawing.Point(155, 194);
+            this.RoleCB.Location = new System.Drawing.Point(156, 213);
             this.RoleCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RoleCB.Name = "RoleCB";
             this.RoleCB.Size = new System.Drawing.Size(160, 24);
@@ -304,7 +326,7 @@ namespace Waterfall_PRJ
             // 
             // phoneNumberTB
             // 
-            this.phoneNumberTB.Location = new System.Drawing.Point(137, 55);
+            this.phoneNumberTB.Location = new System.Drawing.Point(138, 74);
             this.phoneNumberTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.phoneNumberTB.Name = "phoneNumberTB";
             this.phoneNumberTB.Size = new System.Drawing.Size(177, 22);
@@ -312,7 +334,7 @@ namespace Waterfall_PRJ
             // 
             // emailTB
             // 
-            this.emailTB.Location = new System.Drawing.Point(76, 27);
+            this.emailTB.Location = new System.Drawing.Point(77, 46);
             this.emailTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.emailTB.Name = "emailTB";
             this.emailTB.Size = new System.Drawing.Size(239, 22);
@@ -321,7 +343,7 @@ namespace Waterfall_PRJ
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(19, 112);
+            this.label11.Location = new System.Drawing.Point(20, 131);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(92, 17);
             this.label11.TabIndex = 30;
@@ -330,7 +352,7 @@ namespace Waterfall_PRJ
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(19, 171);
+            this.label10.Location = new System.Drawing.Point(20, 190);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 17);
             this.label10.TabIndex = 30;
@@ -339,7 +361,7 @@ namespace Waterfall_PRJ
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(19, 139);
+            this.label9.Location = new System.Drawing.Point(20, 158);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(39, 17);
             this.label9.TabIndex = 29;
@@ -348,7 +370,7 @@ namespace Waterfall_PRJ
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(19, 85);
+            this.label8.Location = new System.Drawing.Point(20, 104);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 17);
             this.label8.TabIndex = 28;
@@ -357,7 +379,7 @@ namespace Waterfall_PRJ
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(19, 58);
+            this.label7.Location = new System.Drawing.Point(20, 77);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(111, 17);
             this.label7.TabIndex = 28;
@@ -366,7 +388,7 @@ namespace Waterfall_PRJ
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 30);
+            this.label6.Location = new System.Drawing.Point(20, 49);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 17);
             this.label6.TabIndex = 27;
@@ -374,6 +396,8 @@ namespace Waterfall_PRJ
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tbxID);
+            this.groupBox1.Controls.Add(this.lblID);
             this.groupBox1.Controls.Add(this.GenderCB);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.DOBPicker);
@@ -386,14 +410,31 @@ namespace Waterfall_PRJ
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(4, 84);
+            this.groupBox1.Location = new System.Drawing.Point(72, 91);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(336, 204);
+            this.groupBox1.Size = new System.Drawing.Size(336, 238);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Essential Information";
+            // 
+            // tbxID
+            // 
+            this.tbxID.Location = new System.Drawing.Point(47, 25);
+            this.tbxID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxID.Name = "tbxID";
+            this.tbxID.Size = new System.Drawing.Size(268, 22);
+            this.tbxID.TabIndex = 37;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(12, 28);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(29, 17);
+            this.lblID.TabIndex = 36;
+            this.lblID.Text = "ID :";
             // 
             // GenderCB
             // 
@@ -402,7 +443,7 @@ namespace Waterfall_PRJ
             "Male",
             "Female",
             "Non-Binary"});
-            this.GenderCB.Location = new System.Drawing.Point(163, 82);
+            this.GenderCB.Location = new System.Drawing.Point(165, 109);
             this.GenderCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GenderCB.Name = "GenderCB";
             this.GenderCB.Size = new System.Drawing.Size(152, 24);
@@ -412,7 +453,7 @@ namespace Waterfall_PRJ
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(11, 82);
+            this.label13.Location = new System.Drawing.Point(13, 109);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(60, 17);
             this.label13.TabIndex = 34;
@@ -421,7 +462,7 @@ namespace Waterfall_PRJ
             // DOBPicker
             // 
             this.DOBPicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.DOBPicker.Location = new System.Drawing.Point(109, 112);
+            this.DOBPicker.Location = new System.Drawing.Point(111, 139);
             this.DOBPicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DOBPicker.Name = "DOBPicker";
             this.DOBPicker.Size = new System.Drawing.Size(205, 22);
@@ -433,7 +474,7 @@ namespace Waterfall_PRJ
             this.relationshipStatusCB.Items.AddRange(new object[] {
             "Married",
             "Single"});
-            this.relationshipStatusCB.Location = new System.Drawing.Point(163, 167);
+            this.relationshipStatusCB.Location = new System.Drawing.Point(165, 194);
             this.relationshipStatusCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.relationshipStatusCB.Name = "relationshipStatusCB";
             this.relationshipStatusCB.Size = new System.Drawing.Size(152, 24);
@@ -441,7 +482,7 @@ namespace Waterfall_PRJ
             // 
             // BSN_TB
             // 
-            this.BSN_TB.Location = new System.Drawing.Point(120, 140);
+            this.BSN_TB.Location = new System.Drawing.Point(122, 167);
             this.BSN_TB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BSN_TB.Name = "BSN_TB";
             this.BSN_TB.Size = new System.Drawing.Size(195, 22);
@@ -449,7 +490,7 @@ namespace Waterfall_PRJ
             // 
             // lastNameTB
             // 
-            this.lastNameTB.Location = new System.Drawing.Point(109, 55);
+            this.lastNameTB.Location = new System.Drawing.Point(111, 82);
             this.lastNameTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lastNameTB.Name = "lastNameTB";
             this.lastNameTB.Size = new System.Drawing.Size(205, 22);
@@ -457,7 +498,7 @@ namespace Waterfall_PRJ
             // 
             // firstNameTB
             // 
-            this.firstNameTB.Location = new System.Drawing.Point(109, 27);
+            this.firstNameTB.Location = new System.Drawing.Point(111, 54);
             this.firstNameTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.firstNameTB.Name = "firstNameTB";
             this.firstNameTB.Size = new System.Drawing.Size(205, 22);
@@ -466,7 +507,7 @@ namespace Waterfall_PRJ
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 171);
+            this.label5.Location = new System.Drawing.Point(13, 198);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(138, 17);
             this.label5.TabIndex = 26;
@@ -475,7 +516,7 @@ namespace Waterfall_PRJ
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 140);
+            this.label4.Location = new System.Drawing.Point(13, 167);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 17);
             this.label4.TabIndex = 25;
@@ -484,7 +525,7 @@ namespace Waterfall_PRJ
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 112);
+            this.label3.Location = new System.Drawing.Point(13, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 17);
             this.label3.TabIndex = 24;
@@ -493,7 +534,7 @@ namespace Waterfall_PRJ
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 58);
+            this.label2.Location = new System.Drawing.Point(13, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 17);
             this.label2.TabIndex = 23;
@@ -502,7 +543,7 @@ namespace Waterfall_PRJ
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 30);
+            this.label1.Location = new System.Drawing.Point(13, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 17);
             this.label1.TabIndex = 22;
@@ -534,7 +575,6 @@ namespace Waterfall_PRJ
             this.ShiftManagementPage.Controls.Add(this.label23);
             this.ShiftManagementPage.Controls.Add(this.label22);
             this.ShiftManagementPage.Controls.Add(this.label21);
-            this.ShiftManagementPage.Controls.Add(this.label19);
             this.ShiftManagementPage.Controls.Add(this.nextBtn);
             this.ShiftManagementPage.Controls.Add(this.sundayBtn);
             this.ShiftManagementPage.Controls.Add(this.saturdayBtn);
@@ -545,6 +585,7 @@ namespace Waterfall_PRJ
             this.ShiftManagementPage.Controls.Add(this.mondayBtn);
             this.ShiftManagementPage.Controls.Add(this.label20);
             this.ShiftManagementPage.Controls.Add(this.workhrsLbl);
+            this.ShiftManagementPage.Controls.Add(this.label19);
             this.ShiftManagementPage.Controls.Add(this.label12);
             this.ShiftManagementPage.Controls.Add(this.pictureBox2);
             this.ShiftManagementPage.Controls.Add(this.AvailableEmployeesLB);
@@ -563,6 +604,16 @@ namespace Waterfall_PRJ
             this.ShiftManagementPage.Text = "Work-shift Management";
             this.ShiftManagementPage.UseVisualStyleBackColor = true;
             this.ShiftManagementPage.Enter += new System.EventHandler(this.ShiftManagementPage_Enter);
+            // 
+            // BackBtn
+            // 
+            this.BackBtn.Location = new System.Drawing.Point(3, 97);
+            this.BackBtn.Name = "BackBtn";
+            this.BackBtn.Size = new System.Drawing.Size(56, 36);
+            this.BackBtn.TabIndex = 57;
+            this.BackBtn.Text = "<<<";
+            this.BackBtn.UseVisualStyleBackColor = true;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
             // dateLbl
             // 
@@ -682,11 +733,11 @@ namespace Waterfall_PRJ
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(186, 69);
+            this.label19.Location = new System.Drawing.Point(18, 611);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(58, 17);
-            this.label19.TabIndex = 44;
-            this.label19.Text = "Monday";
+            this.label19.Size = new System.Drawing.Size(146, 17);
+            this.label19.TabIndex = 33;
+            this.label19.Text = "Available work hours: ";
             // 
             // nextBtn
             // 
@@ -797,11 +848,11 @@ namespace Waterfall_PRJ
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(217, 22);
+            this.pictureBox2.Image = global::Waterfall_PRJ.Properties.Resources.TITLE_WORKSHIFT;
+            this.pictureBox2.Location = new System.Drawing.Point(155, 18);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(397, 34);
+            this.pictureBox2.Size = new System.Drawing.Size(436, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 31;
             this.pictureBox2.TabStop = false;
@@ -890,16 +941,6 @@ namespace Waterfall_PRJ
             this.btnAddShift.TabIndex = 21;
             this.btnAddShift.Text = "ADD";
             this.btnAddShift.UseVisualStyleBackColor = false;
-            // 
-            // BackBtn
-            // 
-            this.BackBtn.Location = new System.Drawing.Point(3, 97);
-            this.BackBtn.Name = "BackBtn";
-            this.BackBtn.Size = new System.Drawing.Size(56, 36);
-            this.BackBtn.TabIndex = 57;
-            this.BackBtn.Text = "<<<";
-            this.BackBtn.UseVisualStyleBackColor = true;
-            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
             // ManagementForm
             // 
@@ -998,5 +1039,9 @@ namespace Waterfall_PRJ
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Button BackBtn;
+        private System.Windows.Forms.TextBox tbxPswd;
+        private System.Windows.Forms.Label lblPswd;
+        private System.Windows.Forms.TextBox tbxID;
+        private System.Windows.Forms.Label lblID;
     }
 }

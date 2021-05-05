@@ -12,33 +12,24 @@ namespace Waterfall_PRJ
         private string contract;
         public EmployeeRole(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email,string password, string phonenumber, string address, string postalcode, string city, string country, int workhours,string contract) : base(firstname, lastname, gender, birthdate, BSN, relationship, email, password, phonenumber, address, postalcode, city, country)
         {
-            this.firstname = firstname;
-            this.lastname = lastname;
-            this.gender = gender;
-            this.birthdate = birthdate;
-            this.BSN = BSN;
-            this.relationship = relationship;
-            this.email = email;
-            this.password = password;
-            this.phonenumber = phonenumber;
-            this.address = address;
-            this.postalcode = postalcode;
-            this.city = city;
-            this.country = country;
+            this.workhours = workhours;
+            this.contract = contract;
+        }
+        public EmployeeRole(int id, string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email, string password, string phonenumber, string address, string postalcode, string city, string country, int workhours, string contract) : base(id, firstname, lastname, gender, birthdate, BSN, relationship, email, password, phonenumber, address, postalcode, city, country)
+        {
             this.workhours = workhours;
             this.contract = contract;
         }
 
+
         public int Workhours
         {
             get { return this.workhours; }
-            set { this.workhours = value; }
         }
 
         public string Contract
         {
             get { return this.contract; }
-            set { this.contract = value; }
         }
         public override string ToString()
         {

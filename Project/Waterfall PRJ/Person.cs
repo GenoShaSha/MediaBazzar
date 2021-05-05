@@ -8,7 +8,7 @@ namespace Waterfall_PRJ
 {
     public abstract class Person
     {
-        protected long employeeID;
+        protected int employeeID;
         //protected static long nextID = 1000;
         protected string firstname;
         protected string lastname;
@@ -26,10 +26,25 @@ namespace Waterfall_PRJ
         protected string status = string.Empty;
         protected string cType;
 
-        protected Person(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email,string password, string phonenumber, string address, string postalcode, string city, string country)
+        protected Person(int id, string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email, string password, string phonenumber, string address, string postalcode, string city, string country)
         {
-            //this.employeeID = Person.nextID;
-            //Person.nextID += 1;
+            this.employeeID = id;
+            this.firstname = firstname;
+            this.lastname = lastname;
+            this.gender = gender;
+            this.birthdate = birthdate;
+            this.BSN = BSN;
+            this.relationship = relationship;
+            this.email = email;
+            this.password = password;
+            this.phonenumber = phonenumber;
+            this.address = address;
+            this.postalcode = postalcode;
+            this.city = city;
+            this.country = country;
+        }
+        protected Person(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email, string password, string phonenumber, string address, string postalcode, string city, string country)
+        {
             this.firstname = firstname;
             this.lastname = lastname;
             this.gender = gender;
@@ -48,7 +63,7 @@ namespace Waterfall_PRJ
         public string FirstName
         {
             get { return this.firstname; }
-            set { this.firstname = value; }
+            set { this.FirstName = value; }
         }
         public string LastName
         {
@@ -108,8 +123,20 @@ namespace Waterfall_PRJ
             get { return this.country; }
             set { this.country = value; }
         }
-        public long EmployeeID
-        { get { return this.employeeID; } }
+        public string Status
+        {
+            get { return this.status; }
+            set { this.status = value; }
+        }
+        public string Password
+        {
+            get { return this.password; }
+            set { this.password = value; }
+        }
+        public int EmployeeID
+        {
+            get { return this.employeeID; }
+        }
 
         public override string ToString()
         {
@@ -125,43 +152,27 @@ namespace Waterfall_PRJ
             {
                 return null;
             }
-
-        }
-        public virtual string ShowAll()
-        {
-            string infostring = $"Name : {this.firstname} {this.lastname}* Gender: {this.gender}* Birthdate: {this.birthdate.ToShortDateString()}* BSN : {this.BSN}* Status : {this.relationship}* Email: {this.email}* Address: {this.address}* Postalcode: {this.postalcode}* City: {this.city}* Country: {this.country}";
-            string newstring = infostring.Replace("*", "\n");
-            return newstring;
-
-        }
-        public string RemovedString()
-        {
-            return $"Removed employee {this.EmployeeID} ({this.FirstName} {this.LastName})";
         }
 
-        public string Status
+        public void UpdatePerson(string fName, string lName, string gender, DateTime bod, string bsn, string relationship, string email, string pswd, string pNumb, string address, string pCode, string city, string country)
         {
-            get { return this.status; }
-            set { this.status = value; }
+            this.firstname = fName;
+            this.lastname = lName;
+            this.gender = gender;
+            this.birthdate = bod;
+            this.BSN = bsn;
+            this.relationship = relationship;
+            this.email = email;
+            this.password = pswd;
+            this.phonenumber = pNumb;
+            this.address = address;
+            this.postalcode = pCode;
+            this.city = city;
+            this.country = country;
         }
-        public string Password
-        {
-            get { return this.password; }
-            set { this.password = value; }
-        }
-        private string CType
+/*        private string CType
         {
             get { return this.cType; }
-            set
-            {
-                this.cType = value;
-            }
-        }
-
-        /*        public string Password
-                {
-                    get { return this.password; }
-                    set { this.password = value; }
-                }*/
+        }*/
     }
 }

@@ -137,6 +137,7 @@
     <Compile Include="EmployeeAddingForm.Designer.cs">
       <DependentUpon>EmployeeAddingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MedBazzar.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

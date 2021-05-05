@@ -8,25 +8,15 @@ namespace Waterfall_PRJ
 {
     public class Administrator : Person
     {
-        private string adminusername;
-        private string adminpass;
-
         public Administrator(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email,string password, string phonenumber, string address, string postalcode, string city, string country) : base(firstname,lastname,gender,birthdate,BSN,relationship,email,password,phonenumber,address,postalcode,city,country)
         {
-            this.firstname = firstname;
-            this.lastname = lastname;
-            this.gender = gender;
-            this.birthdate = birthdate;
-            this.BSN = BSN;
-            this.relationship = relationship;
-            this.email = email;
-            this.password = password;
-            this.phonenumber = phonenumber;
-            this.address = address;
-            this.postalcode = postalcode;
-            this.city = city;
-            this.country = country;
+
         }
+        public Administrator(int id, string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email, string password, string phonenumber, string address, string postalcode, string city, string country) : base(id, firstname, lastname, gender, birthdate, BSN, relationship, email, password, phonenumber, address, postalcode, city, country)
+        {
+
+        }
+
         public override string ToString()
         {
             if (this.status == string.Empty)
@@ -42,9 +32,5 @@ namespace Waterfall_PRJ
                 return null;
             }
         }
-        public string Username
-        { get { return this.adminusername; } set { this.adminusername = value; } }
-        public string Password
-        { get { return this.adminpass; } set { this.adminpass= value; } }
     }
 }

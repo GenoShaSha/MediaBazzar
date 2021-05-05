@@ -21,6 +21,9 @@ namespace Waterfall_PRJ
         private DateTime returnedDate;
         private List<Button> daybuttons;
         private ShiftType type = ShiftType.Morning;
+        dbControler dc;
+        MedBazzar mb;
+
         public ManagementForm()
         {
             InitializeComponent();
@@ -35,6 +38,16 @@ namespace Waterfall_PRJ
             date = DateTime.Now;
             daybuttons = new List<Button>() { sundayBtn, mondayBtn, tuesdayBtn,wednesdayBtn,thursdayBtn,fridayBtn,saturdayBtn};
          
+            dc = new dbControler();
+            List<Person> employeeList = dc.ReadEmployees();
+            foreach (var item in employeeList)
+            {
+                if (item != null)
+                {
+                    employeesLB.Items.Add(item);
+                }
+            }
+            mb = new MedBazzar();
         }
 
         public ManagementForm(EmployeeManager employees, ShiftManager shifts)
@@ -51,17 +64,32 @@ namespace Waterfall_PRJ
             UpdateEmployeeManagementListbox();
             date = DateTime.Now;
             daybuttons = new List<Button>() { mondayBtn, tuesdayBtn, wednesdayBtn, thursdayBtn, fridayBtn, saturdayBtn, sundayBtn };
+            /*            UpdateEmployeeManagementListbox();
+            */
+            dc = new dbControler();
+            List<Person> employeeList = dc.ReadEmployees();
+            foreach (var item in employeeList)
+            {
+                employeesLB.Items.Add(item);
+            }
         }
         public void UpdateEmployeeManagementListbox()
         {
             employeesLB.Items.Clear();
-            foreach (Person p in employees.GetPersons())
+            /*            foreach (Person p in employees.GetPersons())
+                        {
+                            employeesLB.Items.Add(p);
+                        }*/
+            List<Person> employeeList = dc.ReadEmployees();
+            foreach (var item in employeeList)
             {
-              employeesLB.Items.Add(p);
+                if (item != null)
+                {
+                    employeesLB.Items.Add(item);
+                }
             }
         }
 
-        
 
         private void UpdateWorkshiftManagementListbox()
         {
@@ -99,6 +127,7 @@ namespace Waterfall_PRJ
                 BSN_TB.Text = p.BSN_Num;
                 relationshipStatusCB.SelectedItem = p.Relationship;
                 emailTB.Text = p.Email;
+                tbxPswd.Text = p.Password;
                 phoneNumberTB.Text = p.PhoneNumber;
                 addressTB.Text = p.Address;
                 postalCodeTB.Text = p.Postal;
@@ -121,14 +150,14 @@ namespace Waterfall_PRJ
             {
                 MessageBox.Show("Please select a user.");
             }
-            
+
             //JRUT
             //Still need to make it so that the textboxes get filled if you click on an employee.
             //THAL
             //Added filled textboxes
         }
 
-        private void removeBTN_Click(object sender, EventArgs e)
+/*        private void removeBTN_Click(object sender, EventArgs e)
         {
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             try
@@ -146,31 +175,23 @@ namespace Waterfall_PRJ
                 MessageBox.Show("Please select an employee.");
             }
            
-        }
+        }*/
 
         private void updateBTN_Click(object sender, EventArgs e)
         {
+            Person p = (Person)employeesLB.SelectedItem;
             try
             {
-                
-                Person p = (Person)employeesLB.SelectedItem;
-                if(p.Birthdate > DateTime.Now.AddYears(-18))
+
+                if (p.Birthdate > DateTime.Now.AddYears(-18))
                 {
                     throw new BirthDateException();
                 }
-                p.FirstName = firstNameTB.Text;
-                p.LastName = lastNameTB.Text;
-                p.Gender = GenderCB.SelectedItem.ToString();
-                p.Birthdate = DOBPicker.Value;
-                p.BSN_Num = BSN_TB.Text;
-                p.Relationship = relationshipStatusCB.SelectedItem.ToString();
-                p.Email = emailTB.Text;
-                p.PhoneNumber = phoneNumberTB.Text;
-                p.Address = addressTB.Text;
-                p.Postal = postalCodeTB.Text;
-                p.City = cityTB.Text;
-                p.Country = countryTB.Text;
-                MessageBox.Show($"User ID {p.EmployeeID} information updated!");
+                mb.UpdatePerson(p, firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text
+                    , phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text);
+
+                MessageBox.Show($"User ID information updated!");
+
                 UpdateEmployeeManagementListbox();
             }
             catch (NullReferenceException)
@@ -181,7 +202,6 @@ namespace Waterfall_PRJ
             {
 
             }
-            
         }
 
         private void RoleCB_SelectedIndexChanged(object sender, EventArgs e)

@@ -438,10 +438,10 @@ namespace Waterfall_PRJ
             // 
             // tbxRmv
             // 
-            this.tbxRmv.Location = new System.Drawing.Point(116, 57);
+            this.tbxRmv.Location = new System.Drawing.Point(62, 57);
             this.tbxRmv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxRmv.Name = "tbxRmv";
-            this.tbxRmv.Size = new System.Drawing.Size(180, 22);
+            this.tbxRmv.Size = new System.Drawing.Size(234, 22);
             this.tbxRmv.TabIndex = 35;
             // 
             // btnRmv
@@ -463,9 +463,9 @@ namespace Waterfall_PRJ
             this.lblRmvUsr.Location = new System.Drawing.Point(26, 57);
             this.lblRmvUsr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRmvUsr.Name = "lblRmvUsr";
-            this.lblRmvUsr.Size = new System.Drawing.Size(81, 17);
+            this.lblRmvUsr.Size = new System.Drawing.Size(29, 17);
             this.lblRmvUsr.TabIndex = 36;
-            this.lblRmvUsr.Text = "Username :";
+            this.lblRmvUsr.Text = "ID :";
             // 
             // lbxEmployeeList
             // 
