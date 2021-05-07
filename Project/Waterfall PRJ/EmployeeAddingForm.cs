@@ -96,6 +96,7 @@ namespace Waterfall_PRJ
                     lastNameTB.Text = string.Empty;
                     BSN_TB.Text = string.Empty;
                     emailTB.Text = string.Empty;
+                    tbxPswd.Text = string.Empty;
                     phoneNumberTB.Text = string.Empty;
                     addressTB.Text = string.Empty;
                     postalCodeTB.Text = string.Empty;
@@ -134,6 +135,10 @@ namespace Waterfall_PRJ
                 ContractCB.Enabled = false;
             }
             else if (RoleCB.SelectedIndex == 1)
+            {
+                ContractCB.Enabled = false;
+            }
+            else if(RoleCB.SelectedIndex == 3)
             {
                 ContractCB.Enabled = false;
             }

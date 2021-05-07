@@ -450,7 +450,6 @@ namespace Waterfall_PRJ
             this.GenderCB.Name = "GenderCB";
             this.GenderCB.Size = new System.Drawing.Size(152, 24);
             this.GenderCB.TabIndex = 35;
-            this.GenderCB.SelectedIndexChanged += new System.EventHandler(this.GenderCB_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -869,7 +868,6 @@ namespace Waterfall_PRJ
             this.AvailableEmployeesLB.Size = new System.Drawing.Size(371, 164);
             this.AvailableEmployeesLB.TabIndex = 28;
             this.AvailableEmployeesLB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AvailableEmployeesLB_MouseClick);
-            this.AvailableEmployeesLB.SelectedIndexChanged += new System.EventHandler(this.AvailableEmployeesLB_SelectedIndexChanged);
             // 
             // label14
             // 

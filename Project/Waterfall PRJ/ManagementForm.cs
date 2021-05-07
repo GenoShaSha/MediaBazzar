@@ -150,32 +150,7 @@ namespace Waterfall_PRJ
             {
                 MessageBox.Show("Please select a user.");
             }
-
-            //JRUT
-            //Still need to make it so that the textboxes get filled if you click on an employee.
-            //THAL
-            //Added filled textboxes
         }
-
-/*        private void removeBTN_Click(object sender, EventArgs e)
-        {
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            try
-            {
-                Person p = (Person)employeesLB.SelectedItem;
-                DialogResult result = MessageBox.Show($"Are you sure you want to delete employee {p.EmployeeID}?", "Warning!", buttons);
-                if (result == DialogResult.Yes)
-                {
-                    p.Status = "Terminated";
-                    UpdateEmployeeManagementListbox();
-                }
-            }
-            catch(NullReferenceException)
-            {
-                MessageBox.Show("Please select an employee.");
-            }
-           
-        }*/
 
         private void updateBTN_Click(object sender, EventArgs e)
         {
@@ -204,11 +179,6 @@ namespace Waterfall_PRJ
             }
         }
 
-        private void RoleCB_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void ShiftManagementPage_Enter(object sender, EventArgs e)
         {
             UpdateWorkshiftManagementListbox();
@@ -235,17 +205,6 @@ namespace Waterfall_PRJ
             }
         }
 
-
-        private void AvailableEmployeesLB_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GenderCB_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void EmployeeManagePage_Click(object sender, EventArgs e)
         {
             employeesLB.SelectedIndex = -1;
@@ -256,6 +215,7 @@ namespace Waterfall_PRJ
             BSN_TB.Text = "";
             relationshipStatusCB.SelectedIndex = 0;
             emailTB.Text = "";
+            tbxPswd.Text = string.Empty;
             phoneNumberTB.Text = "";
             addressTB.Text = "";
             postalCodeTB.Text = "";

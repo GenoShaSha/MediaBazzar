@@ -9,7 +9,6 @@ namespace Waterfall_PRJ
     public abstract class Employee
     {
         protected int employeeID;
-        //protected static long nextID = 1000;
         protected string firstname;
         protected string lastname;
         protected string gender;

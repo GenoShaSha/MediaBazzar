@@ -30,18 +30,25 @@ namespace Waterfall_PRJ
             dc = new dbEmployees();
             if (dc.GetIdentity(newUsr, newPass, out type))
             {
-                if (type == "Admin")
+                if (type == "Administrator")
                 {
-                    MessageBox.Show("Ur in to Admin page");
+                    MessageBox.Show("Ur in to Admin form!");
                     ManagementForm mf = new ManagementForm();
                     mf.Show();
                     this.Hide();
                 }
-                else if (type == "Manager")
+                else if (type == "Floor Manager")
                 {
-                    MessageBox.Show("Ur in to Manager page");
+                    MessageBox.Show("Ur in to Management form!");
                     ManagementForm mf = new ManagementForm();
                     mf.Show();
+                    this.Hide();
+                }
+                else if (type == "Warehouse Manager")
+                {
+                    MessageBox.Show("Ur in to Warehouse form!");
+                    StockForm sf = new StockForm();
+                    sf.Show();
                     this.Hide();
                 }
                 else if (type == null) { MessageBox.Show("User type not defined"); }

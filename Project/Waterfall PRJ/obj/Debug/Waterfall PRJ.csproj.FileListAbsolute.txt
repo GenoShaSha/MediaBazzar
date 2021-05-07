@@ -300,3 +300,4 @@ C:\Users\Tobias Halomoan\Documents\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ
 C:\Users\Tobias Halomoan\Documents\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\System.Memory.xml
 C:\Users\Tobias Halomoan\Documents\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Tobias Halomoan\Documents\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\shane\OneDrive - Office 365 Fontys\Semester 2 - Software\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.StockForm.resources
