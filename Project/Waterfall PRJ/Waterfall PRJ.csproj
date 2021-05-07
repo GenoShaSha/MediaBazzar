@@ -119,7 +119,6 @@
     <Compile Include="EmployeeManagement.cs" />
     <Compile Include="FloorManager.cs" />
     <Compile Include="Goods.cs" />
-    <Compile Include="Login.cs" />
     <Compile Include="ManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
