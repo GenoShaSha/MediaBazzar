@@ -86,7 +86,6 @@ namespace Waterfall_PRJ
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.nextBtn = new System.Windows.Forms.Button();
             this.sundayBtn = new System.Windows.Forms.Button();
             this.saturdayBtn = new System.Windows.Forms.Button();
@@ -97,6 +96,7 @@ namespace Waterfall_PRJ
             this.mondayBtn = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.workhrsLbl = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.AvailableEmployeesLB = new System.Windows.Forms.ListBox();
@@ -316,8 +316,10 @@ namespace Waterfall_PRJ
             this.RoleCB.FormattingEnabled = true;
             this.RoleCB.Items.AddRange(new object[] {
             "Administrator",
-            "FloorManager",
-            "Employee"});
+            "Floor Manager",
+            "Floor Staff",
+            "Warehouse Manager",
+            "Warehouse Staff"});
             this.RoleCB.Location = new System.Drawing.Point(156, 213);
             this.RoleCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RoleCB.Name = "RoleCB";
@@ -730,15 +732,6 @@ namespace Waterfall_PRJ
             this.label21.TabIndex = 45;
             this.label21.Text = "Tuesday";
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(18, 611);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(146, 17);
-            this.label19.TabIndex = 33;
-            this.label19.Text = "Available work hours: ";
-            // 
             // nextBtn
             // 
             this.nextBtn.Location = new System.Drawing.Point(795, 95);
@@ -835,6 +828,15 @@ namespace Waterfall_PRJ
             this.workhrsLbl.Name = "workhrsLbl";
             this.workhrsLbl.Size = new System.Drawing.Size(0, 17);
             this.workhrsLbl.TabIndex = 34;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(18, 611);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(146, 17);
+            this.label19.TabIndex = 33;
+            this.label19.Text = "Available work hours: ";
             // 
             // label12
             // 

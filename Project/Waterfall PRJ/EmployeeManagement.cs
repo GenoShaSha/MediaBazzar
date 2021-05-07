@@ -6,32 +6,32 @@ using System.Threading.Tasks;
 
 namespace Waterfall_PRJ
 {
-    public class EmployeeManager
+    public class EmployeeManagement
     {
-        List<Person> persons;
-        dbControler dc = new dbControler();
+        List<Employee> persons;
+        dbEmployees dc = new dbEmployees();
 
-        public EmployeeManager()
+        public EmployeeManagement()
         {
-            persons = new List<Person>();
+            persons = new List<Employee>();
         }
 
-        public void AddPerson(Person person)
+        public void AddPerson(Employee person)
         {
             persons.Add(person);
             dc.AddEmployees(person);
         }
-        public void RemovePerson(Person person)
+        public void RemovePerson(Employee person)
         {
             persons.Remove(person);
         }
-        public List<Person> GetPersons()
+        public List<Employee> GetPersons()
         {
             return persons;
         }
         public void ReadPersons()
         {
-            List<Person> employeeList = dc.ReadEmployees();
+            List<Employee> employeeList = dc.ReadEmployees();
             foreach(var item in employeeList.ToList())
             {
                 if (item != null)
@@ -42,9 +42,9 @@ namespace Waterfall_PRJ
         }
 
         
-        public Person GetPerson(long ID)
+        public Employee GetPerson(long ID)
         {
-            foreach(Person p in persons)
+            foreach(Employee p in persons)
             {
                 if(p.EmployeeID == ID)
                 {

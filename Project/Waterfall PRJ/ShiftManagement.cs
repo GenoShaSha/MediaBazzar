@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Waterfall_PRJ
 {
-    public class ShiftManager
+    public class ShiftManagement
     {
         private List<Shift> shifts;
 
-        public ShiftManager()
+        public ShiftManagement()
         {
             shifts = new List<Shift>();
         }
@@ -25,7 +25,7 @@ namespace Waterfall_PRJ
             shifts.Add(new Shift(shifttime, type));
         }
 
-        public bool AddEmployeeToShift(DateTime shifttime, ShiftType type, EmployeeRole employee)
+        public bool AddEmployeeToShift(DateTime shifttime, ShiftType type, FloorStaff employee)
         {
             foreach(Shift s in shifts)
             {
@@ -33,7 +33,7 @@ namespace Waterfall_PRJ
                 {
                     if(s.Type == type)
                     {
-                        foreach(EmployeeRole e in s.ReturnEmployeesFromShift())
+                        foreach(FloorStaff e in s.ReturnEmployeesFromShift())
                         {
                             if (employee == e)
                             {
@@ -47,7 +47,7 @@ namespace Waterfall_PRJ
             }
             return false;
         }
-        public List<EmployeeRole> ReturnAssignedEmployees(DateTime shifttime, ShiftType type)
+        public List<FloorStaff> ReturnAssignedEmployees(DateTime shifttime, ShiftType type)
         {
             foreach (Shift s in shifts)
             {

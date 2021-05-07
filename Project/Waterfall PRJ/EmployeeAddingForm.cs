@@ -13,12 +13,12 @@ namespace Waterfall_PRJ
 {
     public partial class EmployeeAddingForm : Form
     {
-        private EmployeeManager employees;
-        private ShiftManager shifts;
+        private EmployeeManagement employees;
+        private ShiftManagement shifts;
         Thread th;
-        dbControler dc;
+        dbEmployees dc;
         MedBazzar mb = new MedBazzar();
-        public EmployeeAddingForm(EmployeeManager e, ShiftManager s)
+        public EmployeeAddingForm(EmployeeManagement e, ShiftManagement s)
         {
             InitializeComponent();
             this.employees = e;
@@ -27,8 +27,8 @@ namespace Waterfall_PRJ
             relationshipStatusCB.SelectedIndex = 0;
             RoleCB.SelectedIndex = 0;
             ContractCB.SelectedIndex = 0;
-            dc = new dbControler();
-            List<Person> employeeList = dc.ReadEmployees();
+            dc = new dbEmployees();
+            List<Employee> employeeList = dc.ReadEmployees();
             foreach (var item in employeeList)
             {
                 if (item != null)
@@ -42,7 +42,7 @@ namespace Waterfall_PRJ
         {
             try
             {
-                List<Person> p = new List<Person>();
+                List<Employee> p = new List<Employee>();
                 if(DOBPicker.Value >= DateTime.Now.AddYears(-18))
                 {
                     throw new BirthDateException(DOBPicker.Value);
@@ -59,15 +59,34 @@ namespace Waterfall_PRJ
                 {
                     if (ContractCB.SelectedIndex == 0)
                     {
-                        this.mb.AddEmployeeRole(firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, "full");
+                        this.mb.AddEmployeeRole(2,firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, "full");
                     }
                     else if (ContractCB.SelectedIndex == 1)
                     {
-                        this.mb.AddEmployeeRole(firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, "middle");
+                        this.mb.AddEmployeeRole(2, firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, "middle");
                     }
                     else
                     {
-                        this.mb.AddEmployeeRole(firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, "part");
+                        this.mb.AddEmployeeRole(2, firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, "part");
+                    }
+                }
+                else if (RoleCB.SelectedIndex == 3)
+                {
+                    this.mb.AddNewEmp(3, firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text);
+                }
+                else if (RoleCB.SelectedIndex == 4)
+                {
+                    if (ContractCB.SelectedIndex == 0)
+                    {
+                        this.mb.AddEmployeeRole(4, firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, "full");
+                    }
+                    else if (ContractCB.SelectedIndex == 1)
+                    {
+                        this.mb.AddEmployeeRole(4, firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, "middle");
+                    }
+                    else
+                    {
+                        this.mb.AddEmployeeRole(4, firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, "part");
                     }
                 }
                 DialogResult result = MessageBox.Show("User added!");
@@ -128,7 +147,7 @@ namespace Waterfall_PRJ
             try
             {
                 int newUsr = Convert.ToInt32(tbxRmv.Text);
-                dc = new dbControler();
+                dc = new dbEmployees();
                 if (dc.RemoveEmployees(newUsr))
                 {
                     MessageBox.Show("User has been removed!");

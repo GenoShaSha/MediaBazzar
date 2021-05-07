@@ -210,8 +210,10 @@ namespace Waterfall_PRJ
             this.RoleCB.FormattingEnabled = true;
             this.RoleCB.Items.AddRange(new object[] {
             "Administrator",
-            "FloorManager",
-            "Employee"});
+            "Floor Manager",
+            "Floor Staff",
+            "Warehouse Manager ",
+            "Warehouse Staff"});
             this.RoleCB.Location = new System.Drawing.Point(154, 194);
             this.RoleCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RoleCB.Name = "RoleCB";

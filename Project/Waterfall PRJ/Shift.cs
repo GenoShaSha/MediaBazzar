@@ -8,14 +8,14 @@ namespace Waterfall_PRJ
 {
     public class Shift
     {
-        private List<EmployeeRole> employees;
+        private List<FloorStaff> employees;
         private DateTime shiftdate;
         private ShiftType type;
         public Shift(DateTime shiftdate, ShiftType type)
         {
             this.shiftdate = shiftdate;
             this.type = type;
-            this.employees = new List<EmployeeRole>();
+            this.employees = new List<FloorStaff>();
         }
         public DateTime ShiftDate
         {
@@ -26,12 +26,12 @@ namespace Waterfall_PRJ
         {
             get { return this.type; }
         }
-        public void AddEmployeeToShift(EmployeeRole employee)
+        public void AddEmployeeToShift(FloorStaff employee)
         {
             employees.Add(employee);
         }
 
-        public List<EmployeeRole> ReturnEmployeesFromShift()
+        public List<FloorStaff> ReturnEmployeesFromShift()
         {
             return this.employees;
         }

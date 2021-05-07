@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Waterfall_PRJ
 {
-    public abstract class Person
+    public abstract class Employee
     {
         protected int employeeID;
         //protected static long nextID = 1000;
@@ -26,7 +26,7 @@ namespace Waterfall_PRJ
         protected string status = string.Empty;
         protected string cType;
 
-        protected Person(int id, string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email, string password, string phonenumber, string address, string postalcode, string city, string country)
+        protected Employee(int id, string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email, string password, string phonenumber, string address, string postalcode, string city, string country)
         {
             this.employeeID = id;
             this.firstname = firstname;
@@ -43,7 +43,7 @@ namespace Waterfall_PRJ
             this.city = city;
             this.country = country;
         }
-        protected Person(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email, string password, string phonenumber, string address, string postalcode, string city, string country)
+        protected Employee(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email, string password, string phonenumber, string address, string postalcode, string city, string country)
         {
             this.firstname = firstname;
             this.lastname = lastname;

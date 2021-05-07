@@ -7,16 +7,16 @@ using MySql.Data.MySqlClient;
 
 namespace Waterfall_PRJ
 {
-    public class dbControler
+    public class dbEmployees
     {
         private MySqlConnection con;
 
-        public dbControler()
+        public dbEmployees()
         {
             con = new MySqlConnection("Server=studmysql01.fhict.local;Username=dbi450080;Database=dbi450080;Password=WortelSoulution");
         }
 
-        public void AddEmployees(Person person)
+        public void AddEmployees(Employee person)
         {
             try
             {
@@ -37,17 +37,29 @@ namespace Waterfall_PRJ
                 cmd.Parameters.AddWithValue("@pCode", person.Postal);
                 cmd.Parameters.AddWithValue("@city", person.City);
                 cmd.Parameters.AddWithValue("@country", person.Country);
-                if (person is EmployeeRole)
+                if (person is FloorStaff)
                 {
-                    person.Status = "Employee";
+                    person.Status = "Floor Staff";
                     cmd.Parameters.AddWithValue("@role", person.Status);
-                    cmd.Parameters.AddWithValue("@cType", ((EmployeeRole)person).Contract);
+                    cmd.Parameters.AddWithValue("@cType", ((FloorStaff)person).Contract);
                 }
-                else if (person is FloorManagerRole)
+                else if (person is FloorManager)
                 {
-                    person.Status = "Manager";
+                    person.Status = "Floor Manager";
                     cmd.Parameters.AddWithValue("@role", person.Status);
                     cmd.Parameters.AddWithValue("@cType","full");
+                }
+                else if (person is WarehouseStaff)
+                {
+                    person.Status = "Warehouse Staff";
+                    cmd.Parameters.AddWithValue("@role", person.Status);
+                    cmd.Parameters.AddWithValue("@cType", ((WarehouseStaff)person).Contract);
+                }
+                else if (person is WarehouseManager)
+                {
+                    person.Status = "Warehouse Manager";
+                    cmd.Parameters.AddWithValue("@role", person.Status);
+                    cmd.Parameters.AddWithValue("@cType", "full");
                 }
                 else if (person is Administrator)
                 {
@@ -55,7 +67,6 @@ namespace Waterfall_PRJ
                     cmd.Parameters.AddWithValue("@role", person.Status);
                     cmd.Parameters.AddWithValue("@cType", "full");
                 }
-
                 cmd.ExecuteNonQuery();
 
                 con.Close();
@@ -100,9 +111,9 @@ namespace Waterfall_PRJ
             }
             return false;
         }
-        public List<Person> ReadEmployees()
+        public List<Employee> ReadEmployees()
         {
-            List<Person> employees = new List<Person>();
+            List<Employee> employees = new List<Employee>();
             try
             {
                 string que = "SELECT * FROM employees ORDER BY Employee_ID;";
@@ -133,18 +144,26 @@ namespace Waterfall_PRJ
                             //int WorkHours = (int)objReader["WorkHours"];
                             string ContractType = objReader["ContractType"].ToString();
 
-                            Person person = null;
+                            Employee person = null;
                             if(EmployeeType == "Administrator")
                             {
                                 person = new Administrator(empID, FirstName, LastName, Gender, DateOfBirth, BSN, Relationship, Email, Password, PhoneNumber, Address, PostalCode, City, Country);
                             }
-                            else if(EmployeeType == "Manager")
+                            else if(EmployeeType == "Floor Manager")
                             {
-                                person = new FloorManagerRole(empID, FirstName, LastName, Gender, DateOfBirth, BSN, Relationship, Email, Password, PhoneNumber, Address, PostalCode, City, Country);
+                                person = new FloorManager(empID, FirstName, LastName, Gender, DateOfBirth, BSN, Relationship, Email, Password, PhoneNumber, Address, PostalCode, City, Country);
                             }
-                            else if(EmployeeType == "Employee")
+                            else if (EmployeeType == "Warehouse Manager")
                             {
-                                person = new EmployeeRole(empID, FirstName, LastName, Gender, DateOfBirth, BSN, Relationship, Email, Password, PhoneNumber, Address, PostalCode, City, Country, 0, ContractType);
+                                person = new FloorManager(empID, FirstName, LastName, Gender, DateOfBirth, BSN, Relationship, Email, Password, PhoneNumber, Address, PostalCode, City, Country);
+                            }
+                            else if(EmployeeType == "Floor Staff")
+                            {
+                                person = new FloorStaff(empID, FirstName, LastName, Gender, DateOfBirth, BSN, Relationship, Email, Password, PhoneNumber, Address, PostalCode, City, Country, 0, ContractType);
+                            }
+                            else if (EmployeeType == "Warehouse Staff")
+                            {
+                                person = new FloorStaff(empID, FirstName, LastName, Gender, DateOfBirth, BSN, Relationship, Email, Password, PhoneNumber, Address, PostalCode, City, Country, 0, ContractType);
                             }
                             employees.Add(person);
                         }
@@ -166,7 +185,7 @@ namespace Waterfall_PRJ
             }
             return null;
         }
-        public bool UpdateEmployee(Person person)
+        public bool UpdateEmployee(Employee person)
         {
             try
             {
@@ -189,15 +208,27 @@ namespace Waterfall_PRJ
                 cmd.Parameters.AddWithValue("@pCode", person.Postal);
                 cmd.Parameters.AddWithValue("@city", person.City);
                 cmd.Parameters.AddWithValue("@country", person.Country);
-                if (person is EmployeeRole)
+                if (person is FloorStaff)
                 {
-                    person.Status = "Employee";
+                    person.Status = "Floor Staff";
                     cmd.Parameters.AddWithValue("@role", person.Status);
-                    cmd.Parameters.AddWithValue("@cType", ((EmployeeRole)person).Contract);
+                    cmd.Parameters.AddWithValue("@cType", ((FloorStaff)person).Contract);
                 }
-                else if (person is FloorManagerRole)
+                else if (person is WarehouseStaff)
                 {
-                    person.Status = "Manager";
+                    person.Status = "Warehouse Staff";
+                    cmd.Parameters.AddWithValue("@role", person.Status);
+                    cmd.Parameters.AddWithValue("@cType", ((WarehouseStaff)person).Contract);
+                }
+                else if (person is FloorManager)
+                {
+                    person.Status = "Floor Manager";
+                    cmd.Parameters.AddWithValue("@role", person.Status);
+                    cmd.Parameters.AddWithValue("@cType", "full");
+                }
+                else if (person is WarehouseManager)
+                {
+                    person.Status = "Warehouse Manager";
                     cmd.Parameters.AddWithValue("@role", person.Status);
                     cmd.Parameters.AddWithValue("@cType", "full");
                 }

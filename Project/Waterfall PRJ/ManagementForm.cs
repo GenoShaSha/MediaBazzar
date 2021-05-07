@@ -14,21 +14,21 @@ namespace Waterfall_PRJ
 {
     public partial class ManagementForm : Form
     {
-        EmployeeManager employees;
-        ShiftManager shifts;
+        EmployeeManagement employees;
+        ShiftManagement shifts;
         Thread th;
         private DateTime date;
         private DateTime returnedDate;
         private List<Button> daybuttons;
         private ShiftType type = ShiftType.Morning;
-        dbControler dc;
+        dbEmployees dc;
         MedBazzar mb;
 
         public ManagementForm()
         {
             InitializeComponent();
-            employees = new EmployeeManager();
-            shifts = new ShiftManager();
+            employees = new EmployeeManagement();
+            shifts = new ShiftManagement();
             GenderCB.SelectedIndex = 0;
             relationshipStatusCB.SelectedIndex = 0;
             RoleCB.SelectedIndex = 0;
@@ -38,8 +38,8 @@ namespace Waterfall_PRJ
             date = DateTime.Now;
             daybuttons = new List<Button>() { sundayBtn, mondayBtn, tuesdayBtn,wednesdayBtn,thursdayBtn,fridayBtn,saturdayBtn};
          
-            dc = new dbControler();
-            List<Person> employeeList = dc.ReadEmployees();
+            dc = new dbEmployees();
+            List<Employee> employeeList = dc.ReadEmployees();
             foreach (var item in employeeList)
             {
                 if (item != null)
@@ -50,7 +50,7 @@ namespace Waterfall_PRJ
             mb = new MedBazzar();
         }
 
-        public ManagementForm(EmployeeManager employees, ShiftManager shifts)
+        public ManagementForm(EmployeeManagement employees, ShiftManagement shifts)
         {
             InitializeComponent();
             this.employees = employees;
@@ -66,8 +66,8 @@ namespace Waterfall_PRJ
             daybuttons = new List<Button>() { mondayBtn, tuesdayBtn, wednesdayBtn, thursdayBtn, fridayBtn, saturdayBtn, sundayBtn };
             /*            UpdateEmployeeManagementListbox();
             */
-            dc = new dbControler();
-            List<Person> employeeList = dc.ReadEmployees();
+            dc = new dbEmployees();
+            List<Employee> employeeList = dc.ReadEmployees();
             foreach (var item in employeeList)
             {
                 employeesLB.Items.Add(item);
@@ -80,7 +80,7 @@ namespace Waterfall_PRJ
                         {
                             employeesLB.Items.Add(p);
                         }*/
-            List<Person> employeeList = dc.ReadEmployees();
+            List<Employee> employeeList = dc.ReadEmployees();
             foreach (var item in employeeList)
             {
                 if (item != null)
@@ -94,11 +94,11 @@ namespace Waterfall_PRJ
         private void UpdateWorkshiftManagementListbox()
         {
             AvailableEmployeesLB.Items.Clear();
-            foreach (Person p in employees.GetPersons())
+            foreach (Employee p in employees.GetPersons())
             {
-                if (p is EmployeeRole)
+                if (p is FloorStaff)
                 {
-                    AvailableEmployeesLB.Items.Add((EmployeeRole)p);
+                    AvailableEmployeesLB.Items.Add((FloorStaff)p);
                 }
             }
         }
@@ -119,7 +119,7 @@ namespace Waterfall_PRJ
         {
             try
             {
-                Person p = (Person)employeesLB.SelectedItem;
+                Employee p = (Employee)employeesLB.SelectedItem;
                 firstNameTB.Text = p.FirstName;
                 lastNameTB.Text = p.LastName;
                 GenderCB.SelectedItem = p.Gender;
@@ -179,7 +179,7 @@ namespace Waterfall_PRJ
 
         private void updateBTN_Click(object sender, EventArgs e)
         {
-            Person p = (Person)employeesLB.SelectedItem;
+            Employee p = (Employee)employeesLB.SelectedItem;
             try
             {
 
@@ -220,10 +220,10 @@ namespace Waterfall_PRJ
         {
             if(AvailableEmployeesLB.SelectedIndex > -1)
             {
-                Person p = (Person)AvailableEmployeesLB.SelectedItem;
+                Employee p = (Employee)AvailableEmployeesLB.SelectedItem;
 
-                workhrsLbl.Text = ((EmployeeRole)p).Workhours.ToString() + "hours";
-                if (((EmployeeRole)p).Workhours < 0)
+                workhrsLbl.Text = ((FloorStaff)p).Workhours.ToString() + "hours";
+                if (((FloorStaff)p).Workhours < 0)
                 {
                     workhrsLbl.ForeColor = Color.Red;
                 }
@@ -274,7 +274,7 @@ namespace Waterfall_PRJ
         {
             try
             {
-                Person p = (Person)employeesLB.SelectedItem;
+                Employee p = (Employee)employeesLB.SelectedItem;
                 EmployeeInformation info = new EmployeeInformation(p);
                 info.ShowDialog();
             }
@@ -319,26 +319,26 @@ namespace Waterfall_PRJ
             NightShiftLB.Items.Clear();
            if (shifts.ShiftList.Count > 0)
             {
-                List<EmployeeRole> morningEmps = shifts.ReturnAssignedEmployees(returndate, ShiftType.Morning);
-                List<EmployeeRole> afternooonEmps = shifts.ReturnAssignedEmployees(returndate, ShiftType.Afternoon);
-                List<EmployeeRole> nightEmps = shifts.ReturnAssignedEmployees(returndate, ShiftType.Night);
+                List<FloorStaff> morningEmps = shifts.ReturnAssignedEmployees(returndate, ShiftType.Morning);
+                List<FloorStaff> afternooonEmps = shifts.ReturnAssignedEmployees(returndate, ShiftType.Afternoon);
+                List<FloorStaff> nightEmps = shifts.ReturnAssignedEmployees(returndate, ShiftType.Night);
                 if (morningEmps != null)
                 {
-                    foreach (EmployeeRole e in morningEmps)
+                    foreach (FloorStaff e in morningEmps)
                     {
                         MorningShiftLB.Items.Add(e.Name);
                     }
                 }
                 if (afternooonEmps != null)
                 {
-                    foreach (EmployeeRole e in afternooonEmps)
+                    foreach (FloorStaff e in afternooonEmps)
                     {
                         AfternoonShiftLB.Items.Add(e.Name);
                     }
                 }
                 if (nightEmps != null)
                 {
-                    foreach (EmployeeRole e in nightEmps)
+                    foreach (FloorStaff e in nightEmps)
                     {
                         NightShiftLB.Items.Add(e.Name);
                     }
@@ -357,7 +357,7 @@ namespace Waterfall_PRJ
         {
             try
             {
-                EmployeeRole emp = (EmployeeRole)AvailableEmployeesLB.SelectedItem;
+                FloorStaff emp = (FloorStaff)AvailableEmployeesLB.SelectedItem;
                 if(shifts.AddEmployeeToShift(returnedDate,type,emp) == false)
                 {
                     shifts.AddShiftTime(returnedDate, type);

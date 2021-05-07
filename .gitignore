@@ -345,3 +345,7 @@ Project/.vs/Waterfall PRJ/v16/.suo
 *.cache
 Project/.vs/Waterfall PRJ/v16/.suo
 *.exe
+Project/.vs/Waterfall PRJ/v16/.suo
+*.exe
+Project/Waterfall PRJ/bin/Debug/Waterfall PRJ.pdb
+*.pdb

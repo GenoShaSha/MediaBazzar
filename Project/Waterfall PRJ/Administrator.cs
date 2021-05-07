@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Waterfall_PRJ
 {
-    public class Administrator : Person
+    public class Administrator : Employee
     {
         public Administrator(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email,string password, string phonenumber, string address, string postalcode, string city, string country) : base(firstname,lastname,gender,birthdate,BSN,relationship,email,password,phonenumber,address,postalcode,city,country)
         {

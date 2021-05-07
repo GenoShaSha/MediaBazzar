@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Waterfall_PRJ
 {
-    public class EmployeeRole : Person
+    public class WarehouseStaff : Employee
     {
         private int workhours;
         private string contract;
-        public EmployeeRole(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email,string password, string phonenumber, string address, string postalcode, string city, string country, int workhours,string contract) : base(firstname, lastname, gender, birthdate, BSN, relationship, email, password, phonenumber, address, postalcode, city, country)
+        public WarehouseStaff(string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email, string password, string phonenumber, string address, string postalcode, string city, string country, int workhours, string contract) : base(firstname, lastname, gender, birthdate, BSN, relationship, email, password, phonenumber, address, postalcode, city, country)
         {
             this.workhours = workhours;
             this.contract = contract;
         }
-        public EmployeeRole(int id, string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email, string password, string phonenumber, string address, string postalcode, string city, string country, int workhours, string contract) : base(id, firstname, lastname, gender, birthdate, BSN, relationship, email, password, phonenumber, address, postalcode, city, country)
+        public WarehouseStaff(int id, string firstname, string lastname, string gender, DateTime birthdate, string BSN, string relationship, string email, string password, string phonenumber, string address, string postalcode, string city, string country, int workhours, string contract) : base(id, firstname, lastname, gender, birthdate, BSN, relationship, email, password, phonenumber, address, postalcode, city, country)
         {
             this.workhours = workhours;
             this.contract = contract;
@@ -38,15 +38,15 @@ namespace Waterfall_PRJ
             {
                 if (this.contract == "full")
                 {
-                    employeestring = $"{this.firstname} {this.lastname} ({this.employeeID}) : Full-time employee";
+                    employeestring = $"{this.firstname} {this.lastname} ({this.employeeID}) : Full-time Warehouse Staff";
                 }
                 else if (this.contract == "part")
                 {
-                    employeestring = $"{this.firstname} {this.lastname} ({this.employeeID}) : Part-time employee";
+                    employeestring = $"{this.firstname} {this.lastname} ({this.employeeID}) : Part-time Warehouse Staff";
                 }
                 else if (this.contract == "middle")
                 {
-                    employeestring = $"{this.firstname} {this.lastname} ({this.employeeID}) : Part-time employee";
+                    employeestring = $"{this.firstname} {this.lastname} ({this.employeeID}) : Part-time Warehouse Staff";
                 }
                 else
                 {
@@ -62,11 +62,12 @@ namespace Waterfall_PRJ
             {
                 return null;
             }
-            
+
         }
         public string Name
         {
             get { return this.firstname + " " + this.lastname; }
         }
+
     }
 }

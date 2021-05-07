@@ -12,8 +12,8 @@ namespace Waterfall_PRJ
 {
     public partial class EmployeeInformation : Form
     {
-        Person p = null;
-        public EmployeeInformation(Person person)
+        Employee p = null;
+        public EmployeeInformation(Employee person)
         {
             InitializeComponent();
             this.p = person;
@@ -37,7 +37,7 @@ namespace Waterfall_PRJ
             {
                 roleLbl.Text = "Employee";
                 ContractLbl.Visible = true;
-                ContractLbl.Text = ((EmployeeRole)p).Contract;
+                ContractLbl.Text = ((FloorStaff)p).Contract;
             }
             else
             {
