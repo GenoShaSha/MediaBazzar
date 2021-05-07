@@ -23,7 +23,24 @@ namespace Waterfall_PRJ
 
         private void btnAddStock_Click(object sender, EventArgs e)
         {
+            try
+            {
+                lbxStock.Items.Clear();
+                lbxStock.HorizontalScrollbar = true;
+                gm.AddProduct(new Good(Convert.ToInt32(tbxArtNumb.Text), tbxProductName.Text, cbxCategory.SelectedItem.ToString(), Convert.ToDouble(tbxProductPrice.Text), tbxDimention.Text));
+                foreach (Good g in dg.ReadGoods())
+                {
+                    lbxStock.Items.Add(g);
+                }
+                tbxArtNumb.Text = string.Empty;
+                tbxProductName.Text = string.Empty;
+                tbxProductPrice.Text = string.Empty;
+                tbxDimention.Text = string.Empty;
+            }
+            catch
+            {
 
+            }
         }
 
         private void btnRemoveStock_Click(object sender, EventArgs e)

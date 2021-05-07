@@ -32,11 +32,11 @@ namespace Waterfall_PRJ
         public void ReadPersons()
         {
             List<Employee> employeeList = dc.ReadEmployees();
-            foreach(var item in employeeList.ToList())
+            foreach (Employee emp in dc.ReadEmployees())
             {
-                if (item != null)
+                if (emp != null)
                 {
-                    employeeList.Add(item);
+                    employeeList.Add(emp);
                 }
             }
         }

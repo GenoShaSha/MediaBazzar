@@ -36,6 +36,7 @@ namespace Waterfall_PRJ
                     lbxEmployeeList.Items.Add(item);
                 }
             }
+            //employees.ReadPersons();
         }
 
         private void addBTN_Click(object sender, EventArgs e)

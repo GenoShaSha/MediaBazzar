@@ -47,6 +47,7 @@ namespace Waterfall_PRJ
                     employeesLB.Items.Add(item);
                 }
             }
+            //employees.ReadPersons();
             mb = new MedBazzar();
         }
 
@@ -72,6 +73,8 @@ namespace Waterfall_PRJ
             {
                 employeesLB.Items.Add(item);
             }
+            //employees.ReadPersons();
+
         }
         public void UpdateEmployeeManagementListbox()
         {
