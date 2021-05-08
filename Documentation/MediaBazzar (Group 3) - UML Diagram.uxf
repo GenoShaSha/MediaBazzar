@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>1352</y>
+      <w>360</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>Administrator
+--
+
+--
+#Administrator(id: int, firstname: string, lastname: string, gender: string,
+birthdate: DateTime, BSN: string, relationship: string, email: string,
+password: string, phonenumber: string, address: string, postalcode:
+string, city: string, country: string)
+#Administrator(firstname: string, lastname: string, gender: string,
+birthdate: DateTime, BSN: string, relationship: string, email: string,
+password: string, phonenumber: string, address: string, postalcode:
+string, city: string, country: string)
+--
++ToString(): string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>784</x>
+      <y>1352</y>
+      <w>344</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>FloorStaff
+--
+- workhours: int
+- contract: string
+--
+#FloorStaff(id: int, firstname: string, lastname: string, gender: string,
+birthdate: DateTime, BSN: string, relationship: string, email: string,
+password: string, phonenumber: string, address: string, postalcode:
+string, city: string, country: string, workhours: int, contract: string)
+#FloorStaff(firstname: string, lastname: string, gender: string,
+birthdate: DateTime, BSN: string, relationship: string, email: string,
+password: string, phonenumber: string, address: string, postalcode:
+string, city: string, country: string, workhours: int, contract: string)
+--
++ToString(): string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>1352</y>
+      <w>368</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>FloorManager
+--
+
+--
+#FloorManager(id: int, firstname: string, lastname: string, gender: string,
+birthdate: DateTime, BSN: string, relationship: string, email: string,
+password: string, phonenumber: string, address: string, postalcode:
+string, city: string, country: string)
+#FloorManager(firstname: string, lastname: string, gender: string,
+birthdate: DateTime, BSN: string, relationship: string, email: string,
+password: string, phonenumber: string, address: string, postalcode:
+string, city: string, country: string)
+--
++ToString(): string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1144</x>
+      <y>1352</y>
+      <w>400</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>WarehouseManager
+--
+
+--
+#WarehouseManager(id: int, firstname: string, lastname: string, gender: string,
+birthdate: DateTime, BSN: string, relationship: string, email: string,
+password: string, phonenumber: string, address: string, postalcode:
+string, city: string, country: string)
+#WarehouseManager(firstname: string, lastname: string, gender: string,
+birthdate: DateTime, BSN: string, relationship: string, email: string,
+password: string, phonenumber: string, address: string, postalcode:
+string, city: string, country: string)
+--
++ToString(): string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>784</x>
+      <y>672</y>
+      <w>344</w>
+      <h>600</h>
+    </coordinates>
+    <panel_attributes>/Employee/
+--
+#employeeID: int
+#firstname: string
+#lastname: string
+#gender: string
+#birthdate: DateTime
+#BSN: string
+#relationship: string
+#email: string
+#password: string
+#phonenumber: string
+#address: string
+#postalcode: string
+#city: string
+#country: string
+#status: string 
+#cType: string
+--
+#Employee(id: int, firstname: string, lastname: string, gender: string,
+birthdate: DateTime, BSN: string, relationship: string, email: string,
+password: string, phonenumber: string, address: string, postalcode:
+string, city: string, country: string)
+#Employee(firstname: string, lastname: string, gender: string,
+birthdate: DateTime, BSN: string, relationship: string, email: string,
+password: string, phonenumber: string, address: string, postalcode:
+string, city: string, country: string)
++UpdatePerson(fName: string, lName: string, gender: string, bod: 
+DateTime, bsn: string, relationship: string, email: string, pswd: string
+pNumb: string, address: string, pCode: string, city: string, country:
+string)
++FirstName {get; set;}: string
++LastName {get; set;}: string
++Gender {get; set;}: string
++Birthdate {get; set;}: DateTime
++BSN_Num {get; set;}: string
++Relationship {get; set;}: string
++Email {get; set;}: string
++PhoneNumber {get; set;}: string
++Address {get; set;}: string
++Postal {get; set;}: string
++City {get; set;}: string
++Country {get; set;}: string
++Status {get; set;}: string
++Password {get; set;}: string
++EmployeeID {get;}: int
+--
++ToString(): string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>672</x>
+      <y>480</y>
+      <w>208</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>EmployeeManagement
+--
+
+--
++EmployeeManagement()
++AddPerson(person: Employee): void
++RemovePerson(id: long): void
++GetPersons(): List&lt;Employee&gt;
++ReadPersons(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>224</x>
+      <y>672</y>
+      <w>264</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>Shift
+--
+-shiftdate: DateTime
+-type: ShiftType
+--
++Shift(shiftdate: DateTime, type: ShiftType)
++ShiftDate {get; }: DateTime
++Type {get; }: ShiftType
++AddEmployeeToShift(employee Employee): void
++ReturnEmployeesFromShift(): List&lt;Employee&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>56</x>
+      <y>720</y>
+      <w>120</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+ShiftType
+--
+Morning
+Afternoon
+Night</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>480</y>
+      <w>416</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>ShiftManagement
+--
+
+--
++ShiftManagement()
++ShiftList {get; }: List&lt;Shift&gt;
++AAddShiftTime(shifttime: DateTime, type: ShiftType): void
++AddEmployeeToShift(shifttime: DateTime, type: ShiftType,
+employee: Employee): bool
++ReturnAssignedEmployee(shifttime: DateTime, type: ShiftType): List&lt;Employee&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1168</x>
+      <y>672</y>
+      <w>344</w>
+      <h>256</h>
+    </coordinates>
+    <panel_attributes>Good
+--
+-iD: int
+-articleNumbers: int
+-productName: string
+-category: string
+-productPrice: double
+-physicalDimensions: string
+--
++Good(id: int, articleNumbers: int, productName: string, category: 
+string, productPrice: double, physicalDimensions: string)
++Good(articleNumbers: int, productName: string, category: string,
+productPrice: double, physicalDimensions: string)
++ID {get; set;}: int
++ArticleNumbers {get; set;}: int
++ProductName {get; set;}: string
++Category {get; set;}: string
++ProductPrice {get; set;}: double
++PhysicalDimensions {get; set;}: string
+--
++ToString(): string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1400</x>
+      <y>480</y>
+      <w>208</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>GoodManagement
+--
+
+--
++GoodManagement()
++AddProduct(good: Good): void
++RemoveProduct(id: int): void
++GetProducts(): List&lt;Good&gt;
++ReadGoods(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>936</x>
+      <y>264</y>
+      <w>376</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes>MedBazzar
+--
+
+--
++AddNewEmp(role: int, fName: string, lName: string, gender: string, 
+bod: DateTime, bsn: string, relationship: string, email: string, pswd: 
+string, pNumb: string, address: string, pCode: string, city: string, 
+country: string): void
++AddEmployeeRole(role: int, fName: string, lName: string, gender: string, 
+bod: DateTime, bsn: string, relationship: string, email: string, pswd: 
+string, pNumb: string, address: string, pCode: string, city: string, 
+country: string, contract: string): void
++RemoveEmployee(id: long): void
++UpdatePerson(p: Employee, newFName: string, newLName: string,
+newGender: string, newDoB: DatTime, newBSN: string, newRelationship: 
+string, newEmail: string, newPass: string, newPNumb: string, newAddress:
+string, newPCode: string, newCity: string, newCountry: string): void
++AddGood(articleNumbers: int, productName: string, category: string,
+productPrice: double, physicalDimensions: string): void
++RemoveGood(id: int): void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1536</x>
+      <y>672</y>
+      <w>176</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>DbGoods
+--
+-con: MySqlConnection
+--
++DbGoods()
++AddGood(good: Good): void
++RemoveGood(id: int): bool
++ReadGoods(): List&lt;good&gt;
++UpdateGood(good: Good): bool
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>512</x>
+      <y>672</y>
+      <w>240</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>DbEmployees
+--
+-con: MySqlConnection
+--
++DbEmployees()
++AddEmployees(person: Employee): void
++RemoveEmployees(id: long): bool
++ReadEmployees(): List&lt;Employee&gt;
++UpdateEmployee(person: Employee): bool
++GetIdentity(username: string, pasword: string, 
+type: out string)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>152</x>
+      <y>1296</y>
+      <w>1592</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;70.0;10.0;20.0;1970.0;20.0;1970.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>856</x>
+      <y>1344</y>
+      <w>24</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1336</x>
+      <y>1304</y>
+      <w>24</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>944</x>
+      <y>1264</y>
+      <w>24</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1560</x>
+      <y>1352</y>
+      <w>344</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>WarehouseStaff
+--
+- workhours: int
+- contract: string
+--
+#WarehouseStaff(id: int, firstname: string, lastname: string, gender: 
+string, birthdate: DateTime, BSN: string, relationship: string, email: 
+string, password: string, phonenumber: string, address: string, 
+postalcode: string, city: string, country: string, workhours: int, 
+contract: string)
+#WarehouseStaff(firstname: string, lastname: string, gender: string,
+birthdate: DateTime, BSN: string, relationship: string, email: string,
+password: string, phonenumber: string, address: string, postalcode:
+string, city: string, country: string, workhours: int, contract: string)
+--
++ToString(): string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>568</x>
+      <y>1304</y>
+      <w>24</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1328</x>
+      <y>584</y>
+      <w>176</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=* -goods</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;60.0;200.0;60.0;200.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1496</x>
+      <y>584</y>
+      <w>136</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>150.0;110.0;150.0;60.0;10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>584</y>
+      <w>152</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;60.0;170.0;60.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>760</x>
+      <y>584</y>
+      <w>256</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=* -persons</panel_attributes>
+    <additional_attributes>240.0;110.0;240.0;60.0;10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>872</x>
+      <y>504</y>
+      <w>224</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;260.0;70.0;260.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1088</x>
+      <y>504</y>
+      <w>328</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>390.0;70.0;10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>416</x>
+      <y>792</y>
+      <w>384</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=* -employees</panel_attributes>
+    <additional_attributes>460.0;100.0;10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>336</x>
+      <y>600</y>
+      <w>120</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=* -shifts</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;40.0;130.0;40.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>168</x>
+      <y>760</y>
+      <w>72</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+</panel_attributes>
+    <additional_attributes>70.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1272</x>
+      <y>80</y>
+      <w>296</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>StockForm
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1304</x>
+      <y>224</y>
+      <w>112</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;120.0;170.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>632</x>
+      <y>80</y>
+      <w>296</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>ManagementForm
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>952</x>
+      <y>80</y>
+      <w>296</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>EmployeeAddingForm
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1088</x>
+      <y>224</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>776</x>
+      <y>224</y>
+      <w>176</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0;200.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>432</x>
+      <y>424</y>
+      <w>520</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0;630.0;10.0</additional_attributes>
+  </element>
+</diagram>
