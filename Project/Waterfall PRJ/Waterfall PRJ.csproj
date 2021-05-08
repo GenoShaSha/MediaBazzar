@@ -108,8 +108,8 @@
   <ItemGroup>
     <Compile Include="Administrator.cs" />
     <Compile Include="BirthDateException.cs" />
-    <Compile Include="dbEmployees.cs" />
-    <Compile Include="dbGoods.cs" />
+    <Compile Include="DbEmployees.cs" />
+    <Compile Include="DbGoods.cs" />
     <Compile Include="EmployeeInformation.cs">
       <SubType>Form</SubType>
     </Compile>

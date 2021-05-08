@@ -7,11 +7,11 @@ using MySql.Data.MySqlClient;
 
 namespace Waterfall_PRJ
 {
-    public class dbEmployees
+    public class DbEmployees
     {
         private MySqlConnection con;
 
-        public dbEmployees()
+        public DbEmployees()
         {
             con = new MySqlConnection("Server=studmysql01.fhict.local;Username=dbi450080;Database=dbi450080;Password=WortelSoulution");
         }

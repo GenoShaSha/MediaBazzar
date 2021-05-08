@@ -12,26 +12,22 @@ namespace Waterfall_PRJ
 {
     public partial class StockForm : Form
     {
-        private dbGoods dg;
+        private DbGoods dg;
         private GoodManagement gm;
+        private MedBazzar mb;
         public StockForm()
         {
             InitializeComponent();
-            dg = new dbGoods();
+            dg = new DbGoods();
             gm = new GoodManagement();
+            mb = new MedBazzar();
         }
 
         private void btnAddStock_Click(object sender, EventArgs e)
         {
             try
             {
-                lbxStock.Items.Clear();
-                lbxStock.HorizontalScrollbar = true;
-                gm.AddProduct(new Good(Convert.ToInt32(tbxArtNumb.Text), tbxProductName.Text, cbxCategory.SelectedItem.ToString(), Convert.ToDouble(tbxProductPrice.Text), tbxDimention.Text));
-                foreach (Good g in dg.ReadGoods())
-                {
-                    lbxStock.Items.Add(g);
-                }
+                mb.AddGood(Convert.ToInt32(tbxArtNumb.Text), tbxProductName.Text, cbxCategory.SelectedItem.ToString(), Convert.ToDouble(tbxProductPrice.Text), tbxDimention.Text);
                 tbxArtNumb.Text = string.Empty;
                 tbxProductName.Text = string.Empty;
                 tbxProductPrice.Text = string.Empty;
@@ -48,7 +44,7 @@ namespace Waterfall_PRJ
             try
             {
                 int newID = Convert.ToInt32(tbxRmvID.Text);
-                gm.RemoveProduct(newID);
+                mb.RemoveGood(newID);
                 MessageBox.Show("Stock has been removed!");
             }
             catch

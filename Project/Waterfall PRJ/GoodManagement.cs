@@ -9,23 +9,12 @@ namespace Waterfall_PRJ
     public class GoodManagement
     {
         List<Good> goods;
-        private dbGoods dg;
+        private DbGoods dg;
 
         public GoodManagement()
         {
             goods = new List<Good>();
-            dg = new dbGoods();
-        }
-        public Good GetProduct(int ID)
-        {
-            foreach (Good g in goods)
-            {
-                if (g.ID == ID)
-                {
-                    return g;
-                }
-            }
-            return null;
+            dg = new DbGoods();
         }
         public void AddProduct(Good good)
         {
@@ -35,6 +24,10 @@ namespace Waterfall_PRJ
         public void RemoveProduct(int id)
         {
             dg.RemoveGood(id);
+        }
+        public void ReadGoods()
+        {
+            goods = dg.ReadGoods();
         }
         public List<Good> GetProducts()
         {

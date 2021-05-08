@@ -13,11 +13,11 @@ namespace Waterfall_PRJ
     public partial class LoginForm : Form
     {
         /*Login newLogin;*/
-        dbEmployees dc;
+        DbEmployees dc;
         public LoginForm()
         {
             InitializeComponent();
-            dc = new dbEmployees();
+            dc = new DbEmployees();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace Waterfall_PRJ
             string type;
 
             /*            string lgnType = string.Empty;*/
-            dc = new dbEmployees();
+            dc = new DbEmployees();
             if (dc.GetIdentity(newUsr, newPass, out type))
             {
                 if (type == "Administrator")

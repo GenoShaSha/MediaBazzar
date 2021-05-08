@@ -9,12 +9,14 @@ namespace Waterfall_PRJ
     class MedBazzar
     {
         EmployeeManagement em;
-        dbEmployees dc;
+        GoodManagement gm;
+        DbEmployees dc;
 
         public MedBazzar()
         {
             em = new EmployeeManagement();
-            dc = new dbEmployees();
+            gm = new GoodManagement();
+            dc = new DbEmployees();
         }
 
         public void AddNewEmp(int role, string fName, string lName, string gender, DateTime bod, string bsn, string relationship, string email, string pswd, string pNumb, string address, string pCode, string city, string country)
@@ -69,7 +71,18 @@ namespace Waterfall_PRJ
 
             }
         }
-
+        public void AddGood(int articleNumbers, string productName, string category, double productPrice, string physicalDimensions)
+        {
+            gm.AddProduct(new Good(articleNumbers, productName, category, productPrice, physicalDimensions));
+        }
+        public void RemoveEmployee(long id)
+        {
+            em.RemovePerson(id);
+        }
+        public void RemoveGood(int id)
+        {
+            gm.RemoveProduct(id);
+        }
         public void UpdatePerson(Employee p, string newFName, string newLName, string newGender, DateTime newDoB, string newBSN, string newRelationship, string newEmail, string newPass, string newPNumb, string newAddress, string newPCode, string newCity, string newCountry)
         {
             p.UpdatePerson(newFName, newLName, newGender, newDoB, newBSN, newRelationship, newEmail, newPass, newPNumb, newAddress, newPCode, newCity, newCountry);

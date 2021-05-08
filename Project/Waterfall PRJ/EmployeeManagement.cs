@@ -9,11 +9,12 @@ namespace Waterfall_PRJ
     public class EmployeeManagement
     {
         List<Employee> persons;
-        dbEmployees dc = new dbEmployees();
+        DbEmployees dc;
 
         public EmployeeManagement()
         {
             persons = new List<Employee>();
+            dc = new DbEmployees();
         }
 
         public void AddPerson(Employee person)
@@ -21,9 +22,9 @@ namespace Waterfall_PRJ
             persons.Add(person);
             dc.AddEmployees(person);
         }
-        public void RemovePerson(Employee person)
+        public void RemovePerson(long id)
         {
-            persons.Remove(person);
+            dc.RemoveEmployees(id);
         }
         public List<Employee> GetPersons()
         {
@@ -31,22 +32,15 @@ namespace Waterfall_PRJ
         }
         public void ReadPersons()
         {
-            List<Employee> employeeList = dc.ReadEmployees();
-            foreach (Employee emp in dc.ReadEmployees())
-            {
-                if (emp != null)
-                {
-                    employeeList.Add(emp);
-                }
-            }
+            persons = dc.ReadEmployees();
         }
 
-        
+
         public Employee GetPerson(long ID)
         {
-            foreach(Employee p in persons)
+            foreach (Employee p in persons)
             {
-                if(p.EmployeeID == ID)
+                if (p.EmployeeID == ID)
                 {
                     return p;
                 }

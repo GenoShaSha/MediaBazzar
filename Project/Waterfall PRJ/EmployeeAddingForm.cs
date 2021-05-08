@@ -16,7 +16,7 @@ namespace Waterfall_PRJ
         private EmployeeManagement employees;
         private ShiftManagement shifts;
         Thread th;
-        dbEmployees dc;
+        DbEmployees dc;
         MedBazzar mb = new MedBazzar();
         public EmployeeAddingForm(EmployeeManagement e, ShiftManagement s)
         {
@@ -27,16 +27,17 @@ namespace Waterfall_PRJ
             relationshipStatusCB.SelectedIndex = 0;
             RoleCB.SelectedIndex = 0;
             ContractCB.SelectedIndex = 0;
-            dc = new dbEmployees();
-            List<Employee> employeeList = dc.ReadEmployees();
-            foreach (var item in employeeList)
-            {
-                if (item != null)
-                {
-                    lbxEmployeeList.Items.Add(item);
-                }
-            }
-            //employees.ReadPersons();
+            dc = new DbEmployees();
+            //List<Employee> employeeList = dc.ReadEmployees();
+            //foreach (var item in employeeList)
+            //{
+            //    if (item != null)
+            //    {
+            //        lbxEmployeeList.Items.Add(item);
+            //    }
+            //}
+            //UpdateEmployeeManagementListbox();
+
         }
 
         private void addBTN_Click(object sender, EventArgs e)
@@ -153,11 +154,7 @@ namespace Waterfall_PRJ
             try
             {
                 int newUsr = Convert.ToInt32(tbxRmv.Text);
-                dc = new dbEmployees();
-                if (dc.RemoveEmployees(newUsr))
-                {
-                    MessageBox.Show("User has been removed!");
-                }
+                mb.RemoveEmployee(newUsr);
             }
             catch
             {

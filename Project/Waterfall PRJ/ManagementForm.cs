@@ -21,7 +21,7 @@ namespace Waterfall_PRJ
         private DateTime returnedDate;
         private List<Button> daybuttons;
         private ShiftType type = ShiftType.Morning;
-        dbEmployees dc;
+        DbEmployees dc;
         MedBazzar mb;
 
         public ManagementForm()
@@ -38,17 +38,19 @@ namespace Waterfall_PRJ
             date = DateTime.Now;
             daybuttons = new List<Button>() { sundayBtn, mondayBtn, tuesdayBtn,wednesdayBtn,thursdayBtn,fridayBtn,saturdayBtn};
          
-            dc = new dbEmployees();
-            List<Employee> employeeList = dc.ReadEmployees();
-            foreach (var item in employeeList)
-            {
-                if (item != null)
-                {
-                    employeesLB.Items.Add(item);
-                }
-            }
-            //employees.ReadPersons();
+            dc = new DbEmployees();
+            //List<Employee> employeeList = dc.ReadEmployees();
+            //foreach (var item in employeeList)
+            //{
+            //    if (item != null)
+            //    {
+            //        employeesLB.Items.Add(item);
+            //    }
+            //}
             mb = new MedBazzar();
+            
+            UpdateEmployeeManagementListbox();
+
         }
 
         public ManagementForm(EmployeeManagement employees, ShiftManagement shifts)
@@ -65,31 +67,23 @@ namespace Waterfall_PRJ
             UpdateEmployeeManagementListbox();
             date = DateTime.Now;
             daybuttons = new List<Button>() { mondayBtn, tuesdayBtn, wednesdayBtn, thursdayBtn, fridayBtn, saturdayBtn, sundayBtn };
-            /*            UpdateEmployeeManagementListbox();
-            */
-            dc = new dbEmployees();
-            List<Employee> employeeList = dc.ReadEmployees();
-            foreach (var item in employeeList)
-            {
-                employeesLB.Items.Add(item);
-            }
-            //employees.ReadPersons();
+            employees.GetPersons();
+            UpdateEmployeeManagementListbox();
 
+            dc = new DbEmployees();
+            //List<Employee> employeeList = dc.ReadEmployees();
+            //foreach (var item in employeeList)
+            //{
+            //    employeesLB.Items.Add(item);
+            //}
         }
         public void UpdateEmployeeManagementListbox()
         {
             employeesLB.Items.Clear();
-            /*            foreach (Person p in employees.GetPersons())
-                        {
-                            employeesLB.Items.Add(p);
-                        }*/
-            List<Employee> employeeList = dc.ReadEmployees();
-            foreach (var item in employeeList)
+            employees.ReadPersons();
+            foreach (Employee p in employees.GetPersons())
             {
-                if (item != null)
-                {
-                    employeesLB.Items.Add(item);
-                }
+                employeesLB.Items.Add(p);
             }
         }
 
@@ -169,7 +163,7 @@ namespace Waterfall_PRJ
                     , phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text);
 
                 MessageBox.Show($"User ID information updated!");
-
+                employees.GetPersons();
                 UpdateEmployeeManagementListbox();
             }
             catch (NullReferenceException)
