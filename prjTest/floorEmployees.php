@@ -41,7 +41,7 @@ $employeeList = new employeeList();
     <?php } ?>
 
     <?php 
-    if( $_SESSION['sess_role'] == "Admin")
+    if( $_SESSION['sess_role'] == "Administrator")
     {
         echo "<h1>Employee List</h1>";
         $employeeList ->ShowEmployees();

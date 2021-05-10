@@ -59,6 +59,10 @@ $user -> UpdateInformation();
                     <label>Email</label>
                 </div>
                 <div class="txt_field">
+                    <input type="Password" name = "password" id = "password" required>
+                    <label>Password</label>
+                </div>
+                <div class="txt_field">
                     <input type="Phone Number" name = "phone_number" id = "phone_number" required>
                     <label>Phone Number</label>
                 </div>

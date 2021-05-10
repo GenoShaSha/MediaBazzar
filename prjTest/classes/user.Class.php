@@ -9,7 +9,7 @@ class user extends dbConnection
             $password = trim($_POST['password']);
             try
             {
-                $query = "SELECT * FROM `signin` WHERE `Username` = :username AND `Password` = :password";
+                $query = "SELECT * FROM `employees` WHERE `Email` = :username AND `Password` = :password";
                 $stmt = $this -> connect() -> prepare($query);
                 $stmt -> bindParam(':username', $username, PDO::PARAM_STR);
                 $stmt -> bindValue(':password', $password, PDO::PARAM_STR);
@@ -22,7 +22,7 @@ class user extends dbConnection
                     $_SESSION['sess_user_name'] = $row['Username'];
                     $_SESSION['sess_password'] = $row['Password'];
                     $_SESSION['sess_role'] = $row['EmployeeType'];
-                    if($_SESSION['sess_role'] == "admin" )
+                    if($_SESSION['sess_role'] == "Administrator" )
                     {
                         header('location:floorEmployees.php?signedIn');
                     }
@@ -50,7 +50,7 @@ class user extends dbConnection
             try
             {
                 $id = $_SESSION['sess_user_id'];
-                $query = "SELECT * from `addingemployees` where Employee_ID = $id limit 1";
+                $query = "SELECT * from `employees` where Employee_ID = $id limit 1";
                 $stmt = $this -> connect() -> prepare($query);
                 $stmt -> execute();
                 $result = $stmt -> fetch(PDO::FETCH_ASSOC);
@@ -62,9 +62,10 @@ class user extends dbConnection
                 $_SESSION['sess_gender'] = $result['Gender'];
                 $_SESSION['sess_relationship'] = $result['Relationship'];
                 $_SESSION['sess_email'] = $result['Email'];
+                $_SESSION['sess_pass'] = $result['Password'];
                 $_SESSION['sess_phone_number'] = $result['PhoneNumber'];
                 $_SESSION['sess_address'] = $result['Address'];
-                $_SESSION['sess_postal_code'] = $result['PostalCOde'];
+                $_SESSION['sess_postal_code'] = $result['PostalCode'];
                 $_SESSION['sess_city'] = $result['City'];
                 $_SESSION['sess_country'] = $result['Country'];
 
@@ -89,6 +90,7 @@ public function UpdateInformation()
         $gender = $_POST['gender'];
         $relationship = $_POST['relationship'];
         $email = $_POST['email'];
+        $pswd = $_POST['password'];
         $pNumber = $_POST['phone_number'];
         $address = $_POST['address'];
         $pCode = $_POST['postal_code'];
@@ -96,9 +98,9 @@ public function UpdateInformation()
         $country = $_POST['country'];
         try
         {
-            $query = "UPDATE `addingemployees` SET `FirstName`= ? ,`LastName`= ?,`DateOfBirth`= ? ,`BSN`= ?,`Gender`= ?,`Relationship`= ?,`Email`= ?,`PhoneNumber`= ?,`Address`= ?,`PostalCode`= ?,`City`= ?,`Country`= ? WHERE `Employee_ID` = $_SESSION[sess_user_id]";
+            $query = "UPDATE `employees` SET `FirstName`= ? ,`LastName`= ?,`DateOfBirth`= ? ,`BSN`= ?,`Gender`= ?,`Relationship`= ?,`Email`= ?,`Password`= ?,`PhoneNumber`= ?,`Address`= ?,`PostalCode`= ?,`City`= ?,`Country`= ? WHERE `Employee_ID` = $_SESSION[sess_user_id]";
             $stmt = $this -> connect() -> prepare($query);
-            $stmt -> execute([$firstName,$lastName, $dob, $bsn, $gender, $relationship, $email, $pNumber, $address, $pCode, $city, $country]);
+            $stmt -> execute([$firstName,$lastName, $dob, $bsn, $gender, $relationship, $email, $pswd, $pNumber, $address, $pCode, $city, $country]);
             header('location:retrieveInfo.php');  
         }
         catch (PDOException $e)

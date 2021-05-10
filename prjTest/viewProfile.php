@@ -50,6 +50,9 @@ $user = new user();
                 <p> Email: <?php echo $_SESSION['sess_email'] ?> </p> 
             </div>
             <div class = "txt_field"> 
+                <p> Password: <?php echo $_SESSION['sess_pass'] ?> </p> 
+            </div>
+            <div class = "txt_field"> 
                 <p> Phone Number: <?php echo $_SESSION['sess_phone_number'] ?> </p> 
             </div>
             <div class = "txt_field"> 
