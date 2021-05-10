@@ -28,14 +28,14 @@ namespace Waterfall_PRJ
                 roleLbl.Text = "Administrator";
                 ContractLbl.Visible = false;
             }
-            else if (p.GetType().Name == "FloorManagerRole")
+            else if (p.GetType().Name == "Floor Manager")
             {
                 roleLbl.Text = "Floor Manager";
                 ContractLbl.Visible = false;
             }
-            else if (p.GetType().Name == "EmployeeRole")
+            else if (p.GetType().Name == "Floor Staff")
             {
-                roleLbl.Text = "Employee";
+                roleLbl.Text = "Floor Staff";
                 ContractLbl.Visible = true;
                 ContractLbl.Text = ((FloorStaff)p).Contract;
             }

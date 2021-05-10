@@ -8,9 +8,9 @@ namespace Waterfall_PRJ
 {
     class MedBazzar
     {
-        EmployeeManagement em;
-        GoodManagement gm;
-        DbEmployees dc;
+        private EmployeeManagement em;
+        private GoodManagement gm;
+        private DbEmployees dc;
 
         public MedBazzar()
         {
