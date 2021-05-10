@@ -120,10 +120,11 @@ namespace Waterfall_PRJ
             // 
             this.ManagementTabControl.Controls.Add(this.EmployeeManagePage);
             this.ManagementTabControl.Controls.Add(this.ShiftManagementPage);
-            this.ManagementTabControl.Location = new System.Drawing.Point(3, 2);
+            this.ManagementTabControl.Location = new System.Drawing.Point(4, 2);
+            this.ManagementTabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ManagementTabControl.Name = "ManagementTabControl";
             this.ManagementTabControl.SelectedIndex = 0;
-            this.ManagementTabControl.Size = new System.Drawing.Size(661, 577);
+            this.ManagementTabControl.Size = new System.Drawing.Size(881, 710);
             this.ManagementTabControl.TabIndex = 35;
             // 
             // EmployeeManagePage
@@ -136,10 +137,11 @@ namespace Waterfall_PRJ
             this.EmployeeManagePage.Controls.Add(this.groupBox2);
             this.EmployeeManagePage.Controls.Add(this.groupBox1);
             this.EmployeeManagePage.Controls.Add(this.pictureBox1);
-            this.EmployeeManagePage.Location = new System.Drawing.Point(4, 22);
+            this.EmployeeManagePage.Location = new System.Drawing.Point(4, 25);
+            this.EmployeeManagePage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EmployeeManagePage.Name = "EmployeeManagePage";
-            this.EmployeeManagePage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.EmployeeManagePage.Size = new System.Drawing.Size(653, 551);
+            this.EmployeeManagePage.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EmployeeManagePage.Size = new System.Drawing.Size(873, 681);
             this.EmployeeManagePage.TabIndex = 1;
             this.EmployeeManagePage.Text = "Employee Management";
             this.EmployeeManagePage.UseVisualStyleBackColor = true;
@@ -147,10 +149,10 @@ namespace Waterfall_PRJ
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(465, 21);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogout.Location = new System.Drawing.Point(620, 26);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(75, 27);
+            this.btnLogout.Size = new System.Drawing.Size(100, 33);
             this.btnLogout.TabIndex = 44;
             this.btnLogout.Text = "LOGOUT";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -158,20 +160,20 @@ namespace Waterfall_PRJ
             // 
             // removeBTN
             // 
-            this.removeBTN.Location = new System.Drawing.Point(447, 467);
-            this.removeBTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.removeBTN.Location = new System.Drawing.Point(596, 575);
+            this.removeBTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.removeBTN.Name = "removeBTN";
-            this.removeBTN.Size = new System.Drawing.Size(157, 27);
+            this.removeBTN.Size = new System.Drawing.Size(209, 33);
             this.removeBTN.TabIndex = 43;
             this.removeBTN.Text = "REMOVE";
             this.removeBTN.UseVisualStyleBackColor = true;
             // 
             // addBTN
             // 
-            this.addBTN.Location = new System.Drawing.Point(338, 468);
-            this.addBTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addBTN.Location = new System.Drawing.Point(451, 576);
+            this.addBTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addBTN.Name = "addBTN";
-            this.addBTN.Size = new System.Drawing.Size(105, 27);
+            this.addBTN.Size = new System.Drawing.Size(140, 33);
             this.addBTN.TabIndex = 42;
             this.addBTN.Text = "Admission Form";
             this.addBTN.UseVisualStyleBackColor = true;
@@ -179,10 +181,10 @@ namespace Waterfall_PRJ
             // 
             // updateBTN
             // 
-            this.updateBTN.Location = new System.Drawing.Point(5, 490);
-            this.updateBTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.updateBTN.Location = new System.Drawing.Point(72, 627);
+            this.updateBTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.updateBTN.Name = "updateBTN";
-            this.updateBTN.Size = new System.Drawing.Size(252, 27);
+            this.updateBTN.Size = new System.Drawing.Size(336, 33);
             this.updateBTN.TabIndex = 40;
             this.updateBTN.Text = "UPDATE";
             this.updateBTN.UseVisualStyleBackColor = true;
@@ -191,10 +193,11 @@ namespace Waterfall_PRJ
             // employeesLB
             // 
             this.employeesLB.FormattingEnabled = true;
-            this.employeesLB.Location = new System.Drawing.Point(338, 79);
-            this.employeesLB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.employeesLB.ItemHeight = 16;
+            this.employeesLB.Location = new System.Drawing.Point(451, 97);
+            this.employeesLB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.employeesLB.Name = "employeesLB";
-            this.employeesLB.Size = new System.Drawing.Size(267, 381);
+            this.employeesLB.Size = new System.Drawing.Size(355, 468);
             this.employeesLB.TabIndex = 39;
             this.employeesLB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.employeesLB_MouseClick_1);
             this.employeesLB.SelectedIndexChanged += new System.EventHandler(this.employeesLB_SelectedIndexChanged);
@@ -220,29 +223,28 @@ namespace Waterfall_PRJ
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(2, 259);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Location = new System.Drawing.Point(72, 333);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Size = new System.Drawing.Size(252, 228);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(336, 281);
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
             // 
             // tbxPswd
             // 
-            this.tbxPswd.Location = new System.Drawing.Point(74, 11);
-            this.tbxPswd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxPswd.Location = new System.Drawing.Point(99, 14);
+            this.tbxPswd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxPswd.Name = "tbxPswd";
-            this.tbxPswd.Size = new System.Drawing.Size(162, 20);
+            this.tbxPswd.Size = new System.Drawing.Size(215, 22);
             this.tbxPswd.TabIndex = 43;
             // 
             // lblPswd
             // 
             this.lblPswd.AutoSize = true;
-            this.lblPswd.Location = new System.Drawing.Point(15, 14);
-            this.lblPswd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPswd.Location = new System.Drawing.Point(20, 17);
             this.lblPswd.Name = "lblPswd";
-            this.lblPswd.Size = new System.Drawing.Size(59, 13);
+            this.lblPswd.Size = new System.Drawing.Size(77, 17);
             this.lblPswd.TabIndex = 42;
             this.lblPswd.Text = "Password :";
             // 
@@ -253,62 +255,60 @@ namespace Waterfall_PRJ
             "Full Time (40 work hours)",
             "Part Time (30 work hours)",
             "Part Time (20 work hours)"});
-            this.ContractCB.Location = new System.Drawing.Point(91, 197);
-            this.ContractCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ContractCB.Location = new System.Drawing.Point(121, 242);
+            this.ContractCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ContractCB.Name = "ContractCB";
-            this.ContractCB.Size = new System.Drawing.Size(146, 21);
+            this.ContractCB.Size = new System.Drawing.Size(193, 24);
             this.ContractCB.TabIndex = 41;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(15, 197);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Location = new System.Drawing.Point(20, 242);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(73, 13);
+            this.label18.Size = new System.Drawing.Size(96, 17);
             this.label18.TabIndex = 40;
             this.label18.Text = "Contract type:";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(15, 176);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Location = new System.Drawing.Point(20, 217);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(35, 13);
+            this.label17.Size = new System.Drawing.Size(45, 17);
             this.label17.TabIndex = 39;
             this.label17.Text = "Role :";
             // 
             // countryTB
             // 
-            this.countryTB.Location = new System.Drawing.Point(70, 151);
-            this.countryTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.countryTB.Location = new System.Drawing.Point(93, 186);
+            this.countryTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.countryTB.Name = "countryTB";
-            this.countryTB.Size = new System.Drawing.Size(167, 20);
+            this.countryTB.Size = new System.Drawing.Size(221, 22);
             this.countryTB.TabIndex = 38;
             // 
             // cityTB
             // 
-            this.cityTB.Location = new System.Drawing.Point(52, 128);
-            this.cityTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cityTB.Location = new System.Drawing.Point(69, 158);
+            this.cityTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cityTB.Name = "cityTB";
-            this.cityTB.Size = new System.Drawing.Size(186, 20);
+            this.cityTB.Size = new System.Drawing.Size(247, 22);
             this.cityTB.TabIndex = 37;
             // 
             // postalCodeTB
             // 
-            this.postalCodeTB.Location = new System.Drawing.Point(91, 105);
-            this.postalCodeTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.postalCodeTB.Location = new System.Drawing.Point(121, 129);
+            this.postalCodeTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.postalCodeTB.Name = "postalCodeTB";
-            this.postalCodeTB.Size = new System.Drawing.Size(147, 20);
+            this.postalCodeTB.Size = new System.Drawing.Size(195, 22);
             this.postalCodeTB.TabIndex = 36;
             // 
             // addressTB
             // 
-            this.addressTB.Location = new System.Drawing.Point(70, 82);
-            this.addressTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addressTB.Location = new System.Drawing.Point(93, 101);
+            this.addressTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addressTB.Name = "addressTB";
-            this.addressTB.Size = new System.Drawing.Size(167, 20);
+            this.addressTB.Size = new System.Drawing.Size(221, 22);
             this.addressTB.TabIndex = 35;
             // 
             // RoleCB
@@ -320,85 +320,79 @@ namespace Waterfall_PRJ
             "Floor Staff",
             "Warehouse Manager",
             "Warehouse Staff"});
-            this.RoleCB.Location = new System.Drawing.Point(117, 173);
-            this.RoleCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RoleCB.Location = new System.Drawing.Point(156, 213);
+            this.RoleCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RoleCB.Name = "RoleCB";
-            this.RoleCB.Size = new System.Drawing.Size(121, 21);
+            this.RoleCB.Size = new System.Drawing.Size(160, 24);
             this.RoleCB.TabIndex = 38;
             // 
             // phoneNumberTB
             // 
-            this.phoneNumberTB.Location = new System.Drawing.Point(104, 60);
-            this.phoneNumberTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.phoneNumberTB.Location = new System.Drawing.Point(139, 74);
+            this.phoneNumberTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.phoneNumberTB.Name = "phoneNumberTB";
-            this.phoneNumberTB.Size = new System.Drawing.Size(134, 20);
+            this.phoneNumberTB.Size = new System.Drawing.Size(177, 22);
             this.phoneNumberTB.TabIndex = 34;
             // 
             // emailTB
             // 
-            this.emailTB.Location = new System.Drawing.Point(58, 37);
-            this.emailTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailTB.Location = new System.Drawing.Point(77, 46);
+            this.emailTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.emailTB.Name = "emailTB";
-            this.emailTB.Size = new System.Drawing.Size(180, 20);
+            this.emailTB.Size = new System.Drawing.Size(239, 22);
             this.emailTB.TabIndex = 33;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(15, 106);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Location = new System.Drawing.Point(20, 130);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 13);
+            this.label11.Size = new System.Drawing.Size(92, 17);
             this.label11.TabIndex = 30;
             this.label11.Text = "Postal Code :";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(15, 154);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(20, 190);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 13);
+            this.label10.Size = new System.Drawing.Size(65, 17);
             this.label10.TabIndex = 30;
             this.label10.Text = "Country :";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 128);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(20, 158);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(30, 13);
+            this.label9.Size = new System.Drawing.Size(39, 17);
             this.label9.TabIndex = 29;
             this.label9.Text = "City :";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(15, 84);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(20, 103);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 13);
+            this.label8.Size = new System.Drawing.Size(68, 17);
             this.label8.TabIndex = 28;
             this.label8.Text = "Address :";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 63);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(20, 78);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 13);
+            this.label7.Size = new System.Drawing.Size(111, 17);
             this.label7.TabIndex = 28;
             this.label7.Text = "Phone Number :";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 40);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(20, 49);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 13);
+            this.label6.Size = new System.Drawing.Size(50, 17);
             this.label6.TabIndex = 27;
             this.label6.Text = "Email :";
             // 
@@ -418,30 +412,29 @@ namespace Waterfall_PRJ
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(54, 74);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(72, 91);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(252, 193);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(336, 238);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Essential Information";
             // 
             // tbxID
             // 
-            this.tbxID.Location = new System.Drawing.Point(35, 20);
-            this.tbxID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxID.Location = new System.Drawing.Point(47, 25);
+            this.tbxID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxID.Name = "tbxID";
-            this.tbxID.Size = new System.Drawing.Size(202, 20);
+            this.tbxID.Size = new System.Drawing.Size(268, 22);
             this.tbxID.TabIndex = 37;
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(9, 23);
-            this.lblID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblID.Location = new System.Drawing.Point(12, 28);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(24, 13);
+            this.lblID.Size = new System.Drawing.Size(29, 17);
             this.lblID.TabIndex = 36;
             this.lblID.Text = "ID :";
             // 
@@ -452,30 +445,28 @@ namespace Waterfall_PRJ
             "Male",
             "Female",
             "Non-Binary"});
-            this.GenderCB.Location = new System.Drawing.Point(124, 89);
-            this.GenderCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GenderCB.Location = new System.Drawing.Point(165, 110);
+            this.GenderCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GenderCB.Name = "GenderCB";
-            this.GenderCB.Size = new System.Drawing.Size(115, 21);
+            this.GenderCB.Size = new System.Drawing.Size(152, 24);
             this.GenderCB.TabIndex = 35;
-            this.GenderCB.SelectedIndexChanged += new System.EventHandler(this.GenderCB_SelectedIndexChanged);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(10, 89);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Location = new System.Drawing.Point(13, 110);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(45, 13);
+            this.label13.Size = new System.Drawing.Size(60, 17);
             this.label13.TabIndex = 34;
             this.label13.Text = "Gender:";
             // 
             // DOBPicker
             // 
             this.DOBPicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.DOBPicker.Location = new System.Drawing.Point(83, 113);
-            this.DOBPicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DOBPicker.Location = new System.Drawing.Point(111, 139);
+            this.DOBPicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DOBPicker.Name = "DOBPicker";
-            this.DOBPicker.Size = new System.Drawing.Size(155, 20);
+            this.DOBPicker.Size = new System.Drawing.Size(205, 22);
             this.DOBPicker.TabIndex = 33;
             // 
             // relationshipStatusCB
@@ -484,93 +475,88 @@ namespace Waterfall_PRJ
             this.relationshipStatusCB.Items.AddRange(new object[] {
             "Married",
             "Single"});
-            this.relationshipStatusCB.Location = new System.Drawing.Point(124, 158);
-            this.relationshipStatusCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.relationshipStatusCB.Location = new System.Drawing.Point(165, 194);
+            this.relationshipStatusCB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.relationshipStatusCB.Name = "relationshipStatusCB";
-            this.relationshipStatusCB.Size = new System.Drawing.Size(115, 21);
+            this.relationshipStatusCB.Size = new System.Drawing.Size(152, 24);
             this.relationshipStatusCB.TabIndex = 32;
             // 
             // BSN_TB
             // 
-            this.BSN_TB.Location = new System.Drawing.Point(92, 136);
-            this.BSN_TB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BSN_TB.Location = new System.Drawing.Point(123, 167);
+            this.BSN_TB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BSN_TB.Name = "BSN_TB";
-            this.BSN_TB.Size = new System.Drawing.Size(147, 20);
+            this.BSN_TB.Size = new System.Drawing.Size(195, 22);
             this.BSN_TB.TabIndex = 30;
             // 
             // lastNameTB
             // 
-            this.lastNameTB.Location = new System.Drawing.Point(83, 67);
-            this.lastNameTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lastNameTB.Location = new System.Drawing.Point(111, 82);
+            this.lastNameTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lastNameTB.Name = "lastNameTB";
-            this.lastNameTB.Size = new System.Drawing.Size(155, 20);
+            this.lastNameTB.Size = new System.Drawing.Size(205, 22);
             this.lastNameTB.TabIndex = 28;
             // 
             // firstNameTB
             // 
-            this.firstNameTB.Location = new System.Drawing.Point(83, 44);
-            this.firstNameTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.firstNameTB.Location = new System.Drawing.Point(111, 54);
+            this.firstNameTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.firstNameTB.Name = "firstNameTB";
-            this.firstNameTB.Size = new System.Drawing.Size(155, 20);
+            this.firstNameTB.Size = new System.Drawing.Size(205, 22);
             this.firstNameTB.TabIndex = 27;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 161);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(13, 198);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 13);
+            this.label5.Size = new System.Drawing.Size(138, 17);
             this.label5.TabIndex = 26;
             this.label5.Text = "Relationship Status :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 136);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(13, 167);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 13);
+            this.label4.Size = new System.Drawing.Size(98, 17);
             this.label4.TabIndex = 25;
             this.label4.Text = "BSN Number :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 113);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(13, 139);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.Size = new System.Drawing.Size(95, 17);
             this.label3.TabIndex = 24;
             this.label3.Text = "Date of Birth :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 69);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(13, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
+            this.label2.Size = new System.Drawing.Size(84, 17);
             this.label2.TabIndex = 23;
             this.label2.Text = "Last Name :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 46);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(13, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.Size = new System.Drawing.Size(84, 17);
             this.label1.TabIndex = 22;
             this.label1.Text = "First Name :";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(122, 21);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(163, 26);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(311, 36);
+            this.pictureBox1.Size = new System.Drawing.Size(415, 44);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 35;
             this.pictureBox1.TabStop = false;
@@ -611,9 +597,10 @@ namespace Waterfall_PRJ
             this.ShiftManagementPage.Controls.Add(this.AfternoonShiftLB);
             this.ShiftManagementPage.Controls.Add(this.MorningShiftLB);
             this.ShiftManagementPage.Controls.Add(this.btnAddShift);
-            this.ShiftManagementPage.Location = new System.Drawing.Point(4, 22);
+            this.ShiftManagementPage.Location = new System.Drawing.Point(4, 25);
+            this.ShiftManagementPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ShiftManagementPage.Name = "ShiftManagementPage";
-            this.ShiftManagementPage.Size = new System.Drawing.Size(653, 551);
+            this.ShiftManagementPage.Size = new System.Drawing.Size(873, 681);
             this.ShiftManagementPage.TabIndex = 2;
             this.ShiftManagementPage.Text = "Work-shift Management";
             this.ShiftManagementPage.UseVisualStyleBackColor = true;
@@ -621,10 +608,10 @@ namespace Waterfall_PRJ
             // 
             // BackBtn
             // 
-            this.BackBtn.Location = new System.Drawing.Point(2, 79);
-            this.BackBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BackBtn.Location = new System.Drawing.Point(3, 97);
+            this.BackBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BackBtn.Name = "BackBtn";
-            this.BackBtn.Size = new System.Drawing.Size(42, 29);
+            this.BackBtn.Size = new System.Drawing.Size(56, 36);
             this.BackBtn.TabIndex = 57;
             this.BackBtn.Text = "<<<";
             this.BackBtn.UseVisualStyleBackColor = true;
@@ -633,38 +620,35 @@ namespace Waterfall_PRJ
             // dateLbl
             // 
             this.dateLbl.AutoSize = true;
-            this.dateLbl.Location = new System.Drawing.Point(496, 271);
-            this.dateLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.dateLbl.Location = new System.Drawing.Point(661, 334);
             this.dateLbl.Name = "dateLbl";
-            this.dateLbl.Size = new System.Drawing.Size(0, 13);
+            this.dateLbl.Size = new System.Drawing.Size(0, 17);
             this.dateLbl.TabIndex = 56;
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(410, 335);
-            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label28.Location = new System.Drawing.Point(547, 412);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(0, 13);
+            this.label28.Size = new System.Drawing.Size(0, 17);
             this.label28.TabIndex = 55;
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(496, 235);
-            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label27.Location = new System.Drawing.Point(661, 289);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(76, 13);
+            this.label27.Size = new System.Drawing.Size(99, 17);
             this.label27.TabIndex = 54;
             this.label27.Text = "Selected date:";
             // 
             // NightRB
             // 
             this.NightRB.AutoSize = true;
-            this.NightRB.Location = new System.Drawing.Point(88, 235);
-            this.NightRB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NightRB.Location = new System.Drawing.Point(117, 289);
+            this.NightRB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NightRB.Name = "NightRB";
-            this.NightRB.Size = new System.Drawing.Size(50, 17);
+            this.NightRB.Size = new System.Drawing.Size(62, 21);
             this.NightRB.TabIndex = 53;
             this.NightRB.TabStop = true;
             this.NightRB.Text = "Night";
@@ -674,10 +658,10 @@ namespace Waterfall_PRJ
             // AfternoonRB
             // 
             this.AfternoonRB.AutoSize = true;
-            this.AfternoonRB.Location = new System.Drawing.Point(88, 213);
-            this.AfternoonRB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AfternoonRB.Location = new System.Drawing.Point(117, 262);
+            this.AfternoonRB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AfternoonRB.Name = "AfternoonRB";
-            this.AfternoonRB.Size = new System.Drawing.Size(71, 17);
+            this.AfternoonRB.Size = new System.Drawing.Size(91, 21);
             this.AfternoonRB.TabIndex = 52;
             this.AfternoonRB.TabStop = true;
             this.AfternoonRB.Text = "Afternoon";
@@ -687,10 +671,10 @@ namespace Waterfall_PRJ
             // MorningRB
             // 
             this.MorningRB.AutoSize = true;
-            this.MorningRB.Location = new System.Drawing.Point(88, 191);
-            this.MorningRB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MorningRB.Location = new System.Drawing.Point(117, 235);
+            this.MorningRB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MorningRB.Name = "MorningRB";
-            this.MorningRB.Size = new System.Drawing.Size(63, 17);
+            this.MorningRB.Size = new System.Drawing.Size(80, 21);
             this.MorningRB.TabIndex = 51;
             this.MorningRB.TabStop = true;
             this.MorningRB.Text = "Morning";
@@ -700,69 +684,63 @@ namespace Waterfall_PRJ
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(57, 56);
-            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label26.Location = new System.Drawing.Point(76, 69);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(43, 13);
+            this.label26.Size = new System.Drawing.Size(56, 17);
             this.label26.TabIndex = 50;
             this.label26.Text = "Sunday";
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(530, 56);
-            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label25.Location = new System.Drawing.Point(707, 69);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(49, 13);
+            this.label25.Size = new System.Drawing.Size(65, 17);
             this.label25.TabIndex = 49;
             this.label25.Text = "Saturday";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(463, 56);
-            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label24.Location = new System.Drawing.Point(617, 69);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(35, 13);
+            this.label24.Size = new System.Drawing.Size(47, 17);
             this.label24.TabIndex = 48;
             this.label24.Text = "Friday";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(370, 56);
-            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Location = new System.Drawing.Point(493, 69);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(51, 13);
+            this.label23.Size = new System.Drawing.Size(68, 17);
             this.label23.TabIndex = 47;
             this.label23.Text = "Thursday";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(285, 56);
-            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label22.Location = new System.Drawing.Point(380, 69);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(64, 13);
+            this.label22.Size = new System.Drawing.Size(83, 17);
             this.label22.TabIndex = 46;
             this.label22.Text = "Wednesday";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(213, 56);
-            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label21.Location = new System.Drawing.Point(284, 69);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(48, 13);
+            this.label21.Size = new System.Drawing.Size(63, 17);
             this.label21.TabIndex = 45;
             this.label21.Text = "Tuesday";
             // 
             // nextBtn
             // 
-            this.nextBtn.Location = new System.Drawing.Point(596, 77);
-            this.nextBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nextBtn.Location = new System.Drawing.Point(795, 95);
+            this.nextBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nextBtn.Name = "nextBtn";
-            this.nextBtn.Size = new System.Drawing.Size(56, 32);
+            this.nextBtn.Size = new System.Drawing.Size(75, 39);
             this.nextBtn.TabIndex = 43;
             this.nextBtn.Text = ">>>";
             this.nextBtn.UseVisualStyleBackColor = true;
@@ -770,10 +748,10 @@ namespace Waterfall_PRJ
             // 
             // sundayBtn
             // 
-            this.sundayBtn.Location = new System.Drawing.Point(44, 72);
-            this.sundayBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sundayBtn.Location = new System.Drawing.Point(59, 89);
+            this.sundayBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sundayBtn.Name = "sundayBtn";
-            this.sundayBtn.Size = new System.Drawing.Size(74, 43);
+            this.sundayBtn.Size = new System.Drawing.Size(99, 53);
             this.sundayBtn.TabIndex = 42;
             this.sundayBtn.Text = "12/22/2021";
             this.sundayBtn.UseVisualStyleBackColor = true;
@@ -781,10 +759,10 @@ namespace Waterfall_PRJ
             // 
             // saturdayBtn
             // 
-            this.saturdayBtn.Location = new System.Drawing.Point(518, 72);
-            this.saturdayBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.saturdayBtn.Location = new System.Drawing.Point(691, 89);
+            this.saturdayBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.saturdayBtn.Name = "saturdayBtn";
-            this.saturdayBtn.Size = new System.Drawing.Size(74, 43);
+            this.saturdayBtn.Size = new System.Drawing.Size(99, 53);
             this.saturdayBtn.TabIndex = 41;
             this.saturdayBtn.Text = "12/22/2021";
             this.saturdayBtn.UseVisualStyleBackColor = true;
@@ -792,10 +770,10 @@ namespace Waterfall_PRJ
             // 
             // fridayBtn
             // 
-            this.fridayBtn.Location = new System.Drawing.Point(439, 72);
-            this.fridayBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fridayBtn.Location = new System.Drawing.Point(585, 89);
+            this.fridayBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fridayBtn.Name = "fridayBtn";
-            this.fridayBtn.Size = new System.Drawing.Size(74, 43);
+            this.fridayBtn.Size = new System.Drawing.Size(99, 53);
             this.fridayBtn.TabIndex = 40;
             this.fridayBtn.Text = "12/22/2021";
             this.fridayBtn.UseVisualStyleBackColor = true;
@@ -803,10 +781,10 @@ namespace Waterfall_PRJ
             // 
             // thursdayBtn
             // 
-            this.thursdayBtn.Location = new System.Drawing.Point(360, 72);
-            this.thursdayBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.thursdayBtn.Location = new System.Drawing.Point(480, 89);
+            this.thursdayBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.thursdayBtn.Name = "thursdayBtn";
-            this.thursdayBtn.Size = new System.Drawing.Size(74, 43);
+            this.thursdayBtn.Size = new System.Drawing.Size(99, 53);
             this.thursdayBtn.TabIndex = 39;
             this.thursdayBtn.Text = "12/22/2021";
             this.thursdayBtn.UseVisualStyleBackColor = true;
@@ -814,10 +792,10 @@ namespace Waterfall_PRJ
             // 
             // wednesdayBtn
             // 
-            this.wednesdayBtn.Location = new System.Drawing.Point(280, 72);
-            this.wednesdayBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.wednesdayBtn.Location = new System.Drawing.Point(373, 89);
+            this.wednesdayBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.wednesdayBtn.Name = "wednesdayBtn";
-            this.wednesdayBtn.Size = new System.Drawing.Size(74, 43);
+            this.wednesdayBtn.Size = new System.Drawing.Size(99, 53);
             this.wednesdayBtn.TabIndex = 38;
             this.wednesdayBtn.Text = "12/22/2021";
             this.wednesdayBtn.UseVisualStyleBackColor = true;
@@ -825,10 +803,10 @@ namespace Waterfall_PRJ
             // 
             // tuesdayBtn
             // 
-            this.tuesdayBtn.Location = new System.Drawing.Point(201, 72);
-            this.tuesdayBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tuesdayBtn.Location = new System.Drawing.Point(268, 89);
+            this.tuesdayBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tuesdayBtn.Name = "tuesdayBtn";
-            this.tuesdayBtn.Size = new System.Drawing.Size(74, 43);
+            this.tuesdayBtn.Size = new System.Drawing.Size(99, 53);
             this.tuesdayBtn.TabIndex = 37;
             this.tuesdayBtn.Text = "12/22/2021";
             this.tuesdayBtn.UseVisualStyleBackColor = true;
@@ -836,10 +814,10 @@ namespace Waterfall_PRJ
             // 
             // mondayBtn
             // 
-            this.mondayBtn.Location = new System.Drawing.Point(122, 72);
-            this.mondayBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mondayBtn.Location = new System.Drawing.Point(163, 89);
+            this.mondayBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mondayBtn.Name = "mondayBtn";
-            this.mondayBtn.Size = new System.Drawing.Size(74, 43);
+            this.mondayBtn.Size = new System.Drawing.Size(99, 53);
             this.mondayBtn.TabIndex = 36;
             this.mondayBtn.Text = "12/22/2021";
             this.mondayBtn.UseVisualStyleBackColor = true;
@@ -848,29 +826,26 @@ namespace Waterfall_PRJ
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(101, 166);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Location = new System.Drawing.Point(135, 204);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(41, 13);
+            this.label20.Size = new System.Drawing.Size(54, 17);
             this.label20.TabIndex = 35;
             this.label20.Text = "Assign:";
             // 
             // workhrsLbl
             // 
             this.workhrsLbl.AutoSize = true;
-            this.workhrsLbl.Location = new System.Drawing.Point(170, 357);
-            this.workhrsLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.workhrsLbl.Location = new System.Drawing.Point(227, 439);
             this.workhrsLbl.Name = "workhrsLbl";
-            this.workhrsLbl.Size = new System.Drawing.Size(0, 13);
+            this.workhrsLbl.Size = new System.Drawing.Size(0, 17);
             this.workhrsLbl.TabIndex = 34;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(14, 496);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Location = new System.Drawing.Point(19, 610);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(111, 13);
+            this.label19.Size = new System.Drawing.Size(146, 17);
             this.label19.TabIndex = 33;
             this.label19.Text = "Available work hours: ";
             // 
@@ -878,20 +853,19 @@ namespace Waterfall_PRJ
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(250, 175);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Location = new System.Drawing.Point(333, 215);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(141, 16);
+            this.label12.Size = new System.Drawing.Size(170, 19);
             this.label12.TabIndex = 29;
             this.label12.Text = "Available Employees";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Waterfall_PRJ.Properties.Resources.TITLE_WORKSHIFT;
-            this.pictureBox2.Location = new System.Drawing.Point(116, 15);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(155, 18);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(327, 41);
+            this.pictureBox2.Size = new System.Drawing.Size(436, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 31;
             this.pictureBox2.TabStop = false;
@@ -899,22 +873,21 @@ namespace Waterfall_PRJ
             // AvailableEmployeesLB
             // 
             this.AvailableEmployeesLB.FormattingEnabled = true;
-            this.AvailableEmployeesLB.Location = new System.Drawing.Point(182, 200);
-            this.AvailableEmployeesLB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AvailableEmployeesLB.ItemHeight = 16;
+            this.AvailableEmployeesLB.Location = new System.Drawing.Point(243, 246);
+            this.AvailableEmployeesLB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AvailableEmployeesLB.Name = "AvailableEmployeesLB";
-            this.AvailableEmployeesLB.Size = new System.Drawing.Size(279, 134);
+            this.AvailableEmployeesLB.Size = new System.Drawing.Size(371, 164);
             this.AvailableEmployeesLB.TabIndex = 28;
             this.AvailableEmployeesLB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AvailableEmployeesLB_MouseClick);
-            this.AvailableEmployeesLB.SelectedIndexChanged += new System.EventHandler(this.AvailableEmployeesLB_SelectedIndexChanged);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(459, 380);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Location = new System.Drawing.Point(612, 468);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(181, 16);
+            this.label14.Size = new System.Drawing.Size(206, 19);
             this.label14.TabIndex = 27;
             this.label14.Text = "Night Shift (17.00 - 21.00)";
             // 
@@ -922,10 +895,9 @@ namespace Waterfall_PRJ
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(235, 380);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Location = new System.Drawing.Point(313, 468);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(211, 16);
+            this.label15.Size = new System.Drawing.Size(244, 19);
             this.label15.TabIndex = 26;
             this.label15.Text = "Afternoon Shift (13.00 - 17.00)";
             // 
@@ -933,38 +905,40 @@ namespace Waterfall_PRJ
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(26, 380);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Location = new System.Drawing.Point(35, 468);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(199, 16);
+            this.label16.Size = new System.Drawing.Size(230, 19);
             this.label16.TabIndex = 25;
             this.label16.Text = "Morning Shift (09.00 - 13.00)";
             // 
             // NightShiftLB
             // 
             this.NightShiftLB.FormattingEnabled = true;
-            this.NightShiftLB.Location = new System.Drawing.Point(445, 407);
-            this.NightShiftLB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NightShiftLB.ItemHeight = 16;
+            this.NightShiftLB.Location = new System.Drawing.Point(593, 501);
+            this.NightShiftLB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NightShiftLB.Name = "NightShiftLB";
-            this.NightShiftLB.Size = new System.Drawing.Size(194, 108);
+            this.NightShiftLB.Size = new System.Drawing.Size(257, 132);
             this.NightShiftLB.TabIndex = 24;
             // 
             // AfternoonShiftLB
             // 
             this.AfternoonShiftLB.FormattingEnabled = true;
-            this.AfternoonShiftLB.Location = new System.Drawing.Point(238, 407);
-            this.AfternoonShiftLB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AfternoonShiftLB.ItemHeight = 16;
+            this.AfternoonShiftLB.Location = new System.Drawing.Point(317, 501);
+            this.AfternoonShiftLB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AfternoonShiftLB.Name = "AfternoonShiftLB";
-            this.AfternoonShiftLB.Size = new System.Drawing.Size(194, 108);
+            this.AfternoonShiftLB.Size = new System.Drawing.Size(257, 132);
             this.AfternoonShiftLB.TabIndex = 23;
             // 
             // MorningShiftLB
             // 
             this.MorningShiftLB.FormattingEnabled = true;
-            this.MorningShiftLB.Location = new System.Drawing.Point(29, 407);
-            this.MorningShiftLB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MorningShiftLB.ItemHeight = 16;
+            this.MorningShiftLB.Location = new System.Drawing.Point(39, 501);
+            this.MorningShiftLB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MorningShiftLB.Name = "MorningShiftLB";
-            this.MorningShiftLB.Size = new System.Drawing.Size(194, 108);
+            this.MorningShiftLB.Size = new System.Drawing.Size(257, 132);
             this.MorningShiftLB.TabIndex = 22;
             // 
             // btnAddShift
@@ -972,22 +946,21 @@ namespace Waterfall_PRJ
             this.btnAddShift.BackColor = System.Drawing.SystemColors.Control;
             this.btnAddShift.Font = new System.Drawing.Font("Impact", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddShift.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAddShift.Location = new System.Drawing.Point(383, 344);
-            this.btnAddShift.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddShift.Location = new System.Drawing.Point(511, 423);
+            this.btnAddShift.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddShift.Name = "btnAddShift";
-            this.btnAddShift.Size = new System.Drawing.Size(77, 27);
+            this.btnAddShift.Size = new System.Drawing.Size(103, 33);
             this.btnAddShift.TabIndex = 21;
             this.btnAddShift.Text = "ADD";
             this.btnAddShift.UseVisualStyleBackColor = false;
-            this.btnAddShift.Click += new System.EventHandler(this.btnAddShift_Click_1);
             // 
             // ManagementForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 646);
+            this.ClientSize = new System.Drawing.Size(1024, 795);
             this.Controls.Add(this.ManagementTabControl);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ManagementForm";
             this.Text = "Management";
             this.ManagementTabControl.ResumeLayout(false);

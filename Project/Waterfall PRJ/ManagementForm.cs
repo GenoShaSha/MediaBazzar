@@ -39,14 +39,6 @@ namespace Waterfall_PRJ
             daybuttons = new List<Button>() { sundayBtn, mondayBtn, tuesdayBtn,wednesdayBtn,thursdayBtn,fridayBtn,saturdayBtn};
             UpdateEmployeeManagementListbox();
             dc = new DbEmployees();
-            //List<Employee> employeeList = dc.ReadEmployees();
-            //foreach (var item in employeeList)
-            //{
-            //    if (item != null)
-            //    {
-            //        employeesLB.Items.Add(item);
-            //    }
-            //}
             mb = new MedBazzar();
         }
 
@@ -65,21 +57,11 @@ namespace Waterfall_PRJ
             date = DateTime.Now;
             daybuttons = new List<Button>() { mondayBtn, tuesdayBtn, wednesdayBtn, thursdayBtn, fridayBtn, saturdayBtn, sundayBtn };
             dc = new DbEmployees();
-            //List<Employee> employeeList = dc.ReadEmployees();
-            //foreach (var item in employeeList)
-            //{
-            //    employeesLB.Items.Add(item);
-            //}
             mb = new MedBazzar();
         }
         public void UpdateEmployeeManagementListbox()
         {
             employeesLB.Items.Clear();
-            /*            foreach (Person p in employees.GetPersons())
-                        {
-                            employeesLB.Items.Add(p);
-                        }*/
-            //List<Employee> employeeList = dc.ReadEmployees();
             List<Employee> employeeList = em.GetPersons();
             foreach (var item in employeeList)
             {
@@ -92,8 +74,8 @@ namespace Waterfall_PRJ
 
         private void UpdateWorkshiftManagementListbox()
         {
-            List<Employee> employeeList = dc.ReadEmployees();
             AvailableEmployeesLB.Items.Clear();
+            List<Employee> employeeList = em.GetPersons();
             foreach (Employee p in employeeList)
             {
                 if (p is FloorStaff)
@@ -157,16 +139,13 @@ namespace Waterfall_PRJ
             Employee p = (Employee)employeesLB.SelectedItem;
             try
             {
-
                 if (p.Birthdate > DateTime.Now.AddYears(-18))
                 {
                     throw new BirthDateException();
                 }
                 mb.UpdatePerson(p, firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text
                     , phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text);
-
                 MessageBox.Show($"User ID information updated!");
-
                 UpdateEmployeeManagementListbox();
             }
             catch (NullReferenceException)
@@ -178,19 +157,12 @@ namespace Waterfall_PRJ
 
             }
         }
-
-        private void RoleCB_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void ShiftManagementPage_Enter(object sender, EventArgs e)
         {
             UpdateWorkshiftManagementListbox();
             UpdateShiftButtonValues();
             MorningRB.Checked = true;
         }
-
         private void AvailableEmployeesLB_MouseClick(object sender, MouseEventArgs e)
         {
             if(AvailableEmployeesLB.SelectedIndex > -1)
@@ -209,18 +181,6 @@ namespace Waterfall_PRJ
 
             }
         }
-
-
-        private void AvailableEmployeesLB_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GenderCB_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void EmployeeManagePage_Click(object sender, EventArgs e)
         {
             employeesLB.SelectedIndex = -1;
@@ -237,14 +197,12 @@ namespace Waterfall_PRJ
             cityTB.Text = "";
             countryTB.Text = "";
         }
-
         private void btnLogout_Click(object sender, EventArgs e)
         {
             LoginForm lf = new LoginForm();
             lf.Show();
             this.Hide();
         }
-
         private void employeesLB_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             try
@@ -258,12 +216,10 @@ namespace Waterfall_PRJ
                 MessageBox.Show("Please select an employee.");
             }
         }
-
         private void employeesLB_SelectedIndexChanged(object sender, EventArgs e)
         {
             updateBTN.Visible = true;
         }
-
         public void UpdateShiftButtonValues()
         {
             int currentday = (int)date.DayOfWeek;
@@ -286,7 +242,6 @@ namespace Waterfall_PRJ
                 }
             }
         }
-
         private void ReturnShiftEmployeesLB(DateTime returndate)
         {
             MorningShiftLB.Items.Clear();
@@ -320,7 +275,6 @@ namespace Waterfall_PRJ
                 }
             }
         }
-
         private void sundayBtn_Click(object sender, EventArgs e)
         {
             returnedDate = Convert.ToDateTime(sundayBtn.Text);
@@ -328,7 +282,6 @@ namespace Waterfall_PRJ
             ReturnShiftEmployeesLB(returnedDate);
             UpdateWorkshiftManagementListbox();
         }
-
         private void btnAddShift_Click(object sender, EventArgs e)
         {
             try
@@ -354,7 +307,6 @@ namespace Waterfall_PRJ
                 ReturnShiftEmployeesLB(returnedDate);
             }
         }
-
         private void MorningRB_CheckedChanged(object sender, EventArgs e)
         {
             if(MorningRB.Checked)
@@ -362,7 +314,6 @@ namespace Waterfall_PRJ
                 type = ShiftType.Morning;
             }
         }
-
         private void AfternoonRB_CheckedChanged(object sender, EventArgs e)
         {
             if (AfternoonRB.Checked)
@@ -370,7 +321,6 @@ namespace Waterfall_PRJ
                 type = ShiftType.Afternoon;
             }
         }
-
         private void NightRB_CheckedChanged(object sender, EventArgs e)
         {
             if (NightRB.Checked)
@@ -378,7 +328,6 @@ namespace Waterfall_PRJ
                 type = ShiftType.Night;
             }
         }
-
         private void nextBtn_Click(object sender, EventArgs e)
         {
             DateTime returnedDate;
@@ -388,19 +337,14 @@ namespace Waterfall_PRJ
                 returnedDate = returnedDate.AddDays(7);
                 daybuttons[i].Text = returnedDate.ToShortDateString();
             }
-
         }
-
         private void mondayBtn_Click(object sender, EventArgs e)
         {
             returnedDate = Convert.ToDateTime(mondayBtn.Text);
             dateLbl.Text = returnedDate.ToShortDateString();
             ReturnShiftEmployeesLB(returnedDate);
             UpdateWorkshiftManagementListbox();
-
-
         }
-
         private void tuesdayBtn_Click(object sender, EventArgs e)
         {
             returnedDate = Convert.ToDateTime(tuesdayBtn.Text);
@@ -408,7 +352,6 @@ namespace Waterfall_PRJ
             ReturnShiftEmployeesLB(returnedDate);
             UpdateWorkshiftManagementListbox();
         }
-
         private void wednesdayBtn_Click(object sender, EventArgs e)
         {
             returnedDate = Convert.ToDateTime(wednesdayBtn.Text);
@@ -416,7 +359,6 @@ namespace Waterfall_PRJ
             ReturnShiftEmployeesLB(returnedDate);
             UpdateWorkshiftManagementListbox();
         }
-
         private void thursdayBtn_Click(object sender, EventArgs e)
         {
             returnedDate = Convert.ToDateTime(thursdayBtn.Text);
@@ -424,7 +366,6 @@ namespace Waterfall_PRJ
             ReturnShiftEmployeesLB(returnedDate);
             UpdateWorkshiftManagementListbox();
         }
-
         private void fridayBtn_Click(object sender, EventArgs e)
         {
             returnedDate = Convert.ToDateTime(fridayBtn.Text);
@@ -432,7 +373,6 @@ namespace Waterfall_PRJ
             ReturnShiftEmployeesLB(returnedDate);
             UpdateWorkshiftManagementListbox();
         }
-
         private void saturdayBtn_Click(object sender, EventArgs e)
         {
             returnedDate = Convert.ToDateTime(saturdayBtn.Text);
@@ -440,7 +380,6 @@ namespace Waterfall_PRJ
             ReturnShiftEmployeesLB(returnedDate);
             UpdateWorkshiftManagementListbox();
         }
-
         private void BackBtn_Click(object sender, EventArgs e)
         {
             DateTime returnedDate;
@@ -450,11 +389,6 @@ namespace Waterfall_PRJ
                 returnedDate = returnedDate.AddDays(-7);
                 daybuttons[i].Text = returnedDate.ToShortDateString();
             }
-        }
-
-        private void btnAddShift_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

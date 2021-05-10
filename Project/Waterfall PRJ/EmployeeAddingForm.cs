@@ -116,8 +116,6 @@ namespace Waterfall_PRJ
             {
                 MessageBox.Show(ex.Message);
             }
-
-           
         }
 
         private void CloseBtn_Click(object sender, EventArgs e)
@@ -163,6 +161,5 @@ namespace Waterfall_PRJ
 
             }
         }
-
     }
 }
