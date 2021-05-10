@@ -28,6 +28,7 @@ namespace Waterfall_PRJ
         }
         public List<Employee> GetPersons()
         {
+            ReadPersons();
             return persons;
         }
         public void ReadPersons()

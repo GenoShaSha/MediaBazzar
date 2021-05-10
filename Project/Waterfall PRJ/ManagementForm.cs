@@ -14,7 +14,7 @@ namespace Waterfall_PRJ
 {
     public partial class ManagementForm : Form
     {
-        EmployeeManagement employees;
+        EmployeeManagement em;
         ShiftManagement shifts;
         Thread th;
         private DateTime date;
@@ -27,7 +27,7 @@ namespace Waterfall_PRJ
         public ManagementForm()
         {
             InitializeComponent();
-            employees = new EmployeeManagement();
+            em = new EmployeeManagement();
             shifts = new ShiftManagement();
             GenderCB.SelectedIndex = 0;
             relationshipStatusCB.SelectedIndex = 0;
@@ -37,23 +37,23 @@ namespace Waterfall_PRJ
             updateBTN.Visible = false;
             date = DateTime.Now;
             daybuttons = new List<Button>() { sundayBtn, mondayBtn, tuesdayBtn,wednesdayBtn,thursdayBtn,fridayBtn,saturdayBtn};
-         
+            UpdateEmployeeManagementListbox();
             dc = new DbEmployees();
-            List<Employee> employeeList = dc.ReadEmployees();
-            foreach (var item in employeeList)
-            {
-                if (item != null)
-                {
-                    employeesLB.Items.Add(item);
-                }
-            }
+            //List<Employee> employeeList = dc.ReadEmployees();
+            //foreach (var item in employeeList)
+            //{
+            //    if (item != null)
+            //    {
+            //        employeesLB.Items.Add(item);
+            //    }
+            //}
             mb = new MedBazzar();
         }
 
         public ManagementForm(EmployeeManagement employees, ShiftManagement shifts)
         {
             InitializeComponent();
-            this.employees = employees;
+            this.em = employees;
             this.shifts = shifts;
             GenderCB.SelectedIndex = 0;
             relationshipStatusCB.SelectedIndex = 0;
@@ -64,14 +64,13 @@ namespace Waterfall_PRJ
             UpdateEmployeeManagementListbox();
             date = DateTime.Now;
             daybuttons = new List<Button>() { mondayBtn, tuesdayBtn, wednesdayBtn, thursdayBtn, fridayBtn, saturdayBtn, sundayBtn };
-            /*            UpdateEmployeeManagementListbox();
-            */
             dc = new DbEmployees();
-            List<Employee> employeeList = dc.ReadEmployees();
-            foreach (var item in employeeList)
-            {
-                employeesLB.Items.Add(item);
-            }
+            //List<Employee> employeeList = dc.ReadEmployees();
+            //foreach (var item in employeeList)
+            //{
+            //    employeesLB.Items.Add(item);
+            //}
+            mb = new MedBazzar();
         }
         public void UpdateEmployeeManagementListbox()
         {
@@ -80,7 +79,8 @@ namespace Waterfall_PRJ
                         {
                             employeesLB.Items.Add(p);
                         }*/
-            List<Employee> employeeList = dc.ReadEmployees();
+            //List<Employee> employeeList = dc.ReadEmployees();
+            List<Employee> employeeList = em.GetPersons();
             foreach (var item in employeeList)
             {
                 if (item != null)
@@ -89,7 +89,6 @@ namespace Waterfall_PRJ
                 }
             }
         }
-
 
         private void UpdateWorkshiftManagementListbox()
         {
@@ -113,7 +112,7 @@ namespace Waterfall_PRJ
         }
         private void OpenNewForm(object obj)
         {
-            Application.Run(new EmployeeAddingForm(employees, shifts));
+            Application.Run(new EmployeeAddingForm(em, shifts));
         }
 
         private void employeesLB_MouseClick_1(object sender, MouseEventArgs e)

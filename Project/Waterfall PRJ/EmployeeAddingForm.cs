@@ -13,7 +13,7 @@ namespace Waterfall_PRJ
 {
     public partial class EmployeeAddingForm : Form
     {
-        private EmployeeManagement employees;
+        private EmployeeManagement em;
         private ShiftManagement shifts;
         Thread th;
         DbEmployees dc;
@@ -21,13 +21,14 @@ namespace Waterfall_PRJ
         public EmployeeAddingForm(EmployeeManagement e, ShiftManagement s)
         {
             InitializeComponent();
-            this.employees = e;
+            this.em = e;
             this.shifts = s;
             GenderCB.SelectedIndex = 0;
             relationshipStatusCB.SelectedIndex = 0;
             RoleCB.SelectedIndex = 0;
             ContractCB.SelectedIndex = 0;
             dc = new DbEmployees();
+            UpdateEmployeeManagementListbox();
             //List<Employee> employeeList = dc.ReadEmployees();
             //foreach (var item in employeeList)
             //{
@@ -39,7 +40,23 @@ namespace Waterfall_PRJ
             //UpdateEmployeeManagementListbox();
 
         }
-
+        public void UpdateEmployeeManagementListbox()
+        {
+            lbxEmployeeList.Items.Clear();
+            /*            foreach (Person p in employees.GetPersons())
+                        {
+                            employeesLB.Items.Add(p);
+                        }*/
+            //List<Employee> employeeList = dc.ReadEmployees();
+            List<Employee> employeeList = em.GetPersons();
+            foreach (var item in employeeList)
+            {
+                if (item != null)
+                {
+                    lbxEmployeeList.Items.Add(item);
+                }
+            }
+        }
         private void addBTN_Click(object sender, EventArgs e)
         {
             try
@@ -127,7 +144,7 @@ namespace Waterfall_PRJ
         }
         private void OpenNewForm(object obj)
         {
-            Application.Run(new ManagementForm(employees, shifts));
+            Application.Run(new ManagementForm(em, shifts));
         }
 
         private void RoleCB_SelectedIndexChanged(object sender, EventArgs e)
