@@ -51,13 +51,17 @@ namespace Waterfall_PRJ
             this.tbxArtNumb = new System.Windows.Forms.TextBox();
             this.lblProductName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnRemoveStock = new System.Windows.Forms.Button();
             this.tbxDimention = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddStock = new System.Windows.Forms.Button();
+            this.btnRemoveStock = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tbxRmvID = new System.Windows.Forms.TextBox();
             this.lblRmvID = new System.Windows.Forms.Label();
+            this.btnApproved = new System.Windows.Forms.Button();
+            this.lbxRequestStock = new System.Windows.Forms.ListBox();
+            this.lblStocks = new System.Windows.Forms.Label();
+            this.lblReqStock = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -176,15 +180,17 @@ namespace Waterfall_PRJ
             this.btnUpdateProducts.TabIndex = 1;
             this.btnUpdateProducts.Text = "UPDATE";
             this.btnUpdateProducts.UseVisualStyleBackColor = true;
+            this.btnUpdateProducts.Click += new System.EventHandler(this.btnUpdateProducts_Click);
             // 
             // lbxStock
             // 
             this.lbxStock.FormattingEnabled = true;
             this.lbxStock.ItemHeight = 16;
-            this.lbxStock.Location = new System.Drawing.Point(392, 104);
+            this.lbxStock.Location = new System.Drawing.Point(388, 133);
             this.lbxStock.Name = "lbxStock";
-            this.lbxStock.Size = new System.Drawing.Size(551, 644);
+            this.lbxStock.Size = new System.Drawing.Size(551, 308);
             this.lbxStock.TabIndex = 48;
+            this.lbxStock.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lbxStock_MouseClick);
             // 
             // cbxCategory
             // 
@@ -267,16 +273,6 @@ namespace Waterfall_PRJ
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Stock";
             // 
-            // btnRemoveStock
-            // 
-            this.btnRemoveStock.Location = new System.Drawing.Point(216, 69);
-            this.btnRemoveStock.Name = "btnRemoveStock";
-            this.btnRemoveStock.Size = new System.Drawing.Size(95, 39);
-            this.btnRemoveStock.TabIndex = 15;
-            this.btnRemoveStock.Text = "REMOVE";
-            this.btnRemoveStock.UseVisualStyleBackColor = true;
-            this.btnRemoveStock.Click += new System.EventHandler(this.btnRemoveStock_Click);
-            // 
             // tbxDimention
             // 
             this.tbxDimention.Location = new System.Drawing.Point(109, 169);
@@ -302,6 +298,16 @@ namespace Waterfall_PRJ
             this.btnAddStock.Text = "ADD";
             this.btnAddStock.UseVisualStyleBackColor = true;
             this.btnAddStock.Click += new System.EventHandler(this.btnAddStock_Click);
+            // 
+            // btnRemoveStock
+            // 
+            this.btnRemoveStock.Location = new System.Drawing.Point(216, 69);
+            this.btnRemoveStock.Name = "btnRemoveStock";
+            this.btnRemoveStock.Size = new System.Drawing.Size(95, 39);
+            this.btnRemoveStock.TabIndex = 15;
+            this.btnRemoveStock.Text = "REMOVE";
+            this.btnRemoveStock.UseVisualStyleBackColor = true;
+            this.btnRemoveStock.Click += new System.EventHandler(this.btnRemoveStock_Click);
             // 
             // groupBox3
             // 
@@ -331,11 +337,51 @@ namespace Waterfall_PRJ
             this.lblRmvID.TabIndex = 15;
             this.lblRmvID.Text = "ID :";
             // 
+            // btnApproved
+            // 
+            this.btnApproved.Location = new System.Drawing.Point(844, 690);
+            this.btnApproved.Name = "btnApproved";
+            this.btnApproved.Size = new System.Drawing.Size(95, 39);
+            this.btnApproved.TabIndex = 16;
+            this.btnApproved.Text = "APPROVED";
+            this.btnApproved.UseVisualStyleBackColor = true;
+            // 
+            // lbxRequestStock
+            // 
+            this.lbxRequestStock.FormattingEnabled = true;
+            this.lbxRequestStock.ItemHeight = 16;
+            this.lbxRequestStock.Location = new System.Drawing.Point(388, 488);
+            this.lbxRequestStock.Name = "lbxRequestStock";
+            this.lbxRequestStock.Size = new System.Drawing.Size(551, 196);
+            this.lbxRequestStock.TabIndex = 57;
+            // 
+            // lblStocks
+            // 
+            this.lblStocks.AutoSize = true;
+            this.lblStocks.Location = new System.Drawing.Point(388, 111);
+            this.lblStocks.Name = "lblStocks";
+            this.lblStocks.Size = new System.Drawing.Size(85, 17);
+            this.lblStocks.TabIndex = 58;
+            this.lblStocks.Text = "List of Stock";
+            // 
+            // lblReqStock
+            // 
+            this.lblReqStock.AutoSize = true;
+            this.lblReqStock.Location = new System.Drawing.Point(388, 466);
+            this.lblReqStock.Name = "lblReqStock";
+            this.lblReqStock.Size = new System.Drawing.Size(142, 17);
+            this.lblReqStock.TabIndex = 59;
+            this.lblReqStock.Text = "List of Request Stock";
+            // 
             // StockForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(976, 772);
+            this.Controls.Add(this.lblReqStock);
+            this.Controls.Add(this.lblStocks);
+            this.Controls.Add(this.lbxRequestStock);
+            this.Controls.Add(this.btnApproved);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.lbxStock);
@@ -392,5 +438,9 @@ namespace Waterfall_PRJ
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox tbxRmvID;
         private System.Windows.Forms.Label lblRmvID;
+        private System.Windows.Forms.Button btnApproved;
+        private System.Windows.Forms.ListBox lbxRequestStock;
+        private System.Windows.Forms.Label lblStocks;
+        private System.Windows.Forms.Label lblReqStock;
     }
 }

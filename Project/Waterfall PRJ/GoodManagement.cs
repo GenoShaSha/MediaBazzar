@@ -31,6 +31,7 @@ namespace Waterfall_PRJ
         }
         public List<Good> GetProducts()
         {
+            ReadGoods();
             return goods;
         }
     }

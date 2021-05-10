@@ -29,25 +29,10 @@ namespace Waterfall_PRJ
             ContractCB.SelectedIndex = 0;
             dc = new DbEmployees();
             UpdateEmployeeManagementListbox();
-            //List<Employee> employeeList = dc.ReadEmployees();
-            //foreach (var item in employeeList)
-            //{
-            //    if (item != null)
-            //    {
-            //        lbxEmployeeList.Items.Add(item);
-            //    }
-            //}
-            //UpdateEmployeeManagementListbox();
-
         }
         public void UpdateEmployeeManagementListbox()
         {
             lbxEmployeeList.Items.Clear();
-            /*            foreach (Person p in employees.GetPersons())
-                        {
-                            employeesLB.Items.Add(p);
-                        }*/
-            //List<Employee> employeeList = dc.ReadEmployees();
             List<Employee> employeeList = em.GetPersons();
             foreach (var item in employeeList)
             {

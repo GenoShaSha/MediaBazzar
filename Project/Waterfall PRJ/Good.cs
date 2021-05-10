@@ -12,10 +12,10 @@ namespace Waterfall_PRJ
         private int articleNumbers;
         private string productName;
         private string category;
-        private double productPrice;
+        private decimal productPrice;
         private string physicalDimensions;
 
-        public Good(int articleNumbers, string productName, string category, double productPrice, string physicalDimensions)
+        public Good(int articleNumbers, string productName, string category, decimal productPrice, string physicalDimensions)
         {
             this.articleNumbers = articleNumbers;
             this.productName = productName;
@@ -23,9 +23,17 @@ namespace Waterfall_PRJ
             this.productPrice = productPrice;
             this.physicalDimensions = physicalDimensions;
         }
-        public Good(int id, int articleNumbers, string productName, string category, double productPrice, string physicalDimensions)
+        public Good(int id, int articleNumbers, string productName, string category, decimal productPrice, string physicalDimensions)
         {
             this.iD = id;
+            this.articleNumbers = articleNumbers;
+            this.productName = productName;
+            this.category = category;
+            this.productPrice = productPrice;
+            this.physicalDimensions = physicalDimensions;
+        }
+        public void UpdateStock(int articleNumbers, string productName, string category, decimal productPrice, string physicalDimensions)
+        {
             this.articleNumbers = articleNumbers;
             this.productName = productName;
             this.category = category;
@@ -51,7 +59,7 @@ namespace Waterfall_PRJ
             get { return this.category; }
             set { this.category = value; }
         }
-        public double ProductPrice
+        public decimal ProductPrice
         {
             get { return this.productPrice; }
             set { this.productPrice = value; }

@@ -51,6 +51,20 @@ namespace Waterfall_PRJ
                     sf.Show();
                     this.Hide();
                 }
+                else if (type == "Floor Staff")
+                {
+                    MessageBox.Show("Ur in to Stock Request form!");
+                    StockRequest rs = new StockRequest();
+                    rs.Show();
+                    this.Hide();
+                }
+                else if (type == "Warehouse Staff")
+                {
+                    MessageBox.Show("Ur in to Stock Request form!");
+                    ProceedStockRequest psr = new ProceedStockRequest();
+                    psr.Show();
+                    this.Hide();
+                }
                 else if (type == null) { MessageBox.Show("User type not defined"); }
             }
             else 

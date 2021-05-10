@@ -150,32 +150,7 @@ namespace Waterfall_PRJ
             {
                 MessageBox.Show("Please select a user.");
             }
-
-            //JRUT
-            //Still need to make it so that the textboxes get filled if you click on an employee.
-            //THAL
-            //Added filled textboxes
         }
-
-/*        private void removeBTN_Click(object sender, EventArgs e)
-        {
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            try
-            {
-                Person p = (Person)employeesLB.SelectedItem;
-                DialogResult result = MessageBox.Show($"Are you sure you want to delete employee {p.EmployeeID}?", "Warning!", buttons);
-                if (result == DialogResult.Yes)
-                {
-                    p.Status = "Terminated";
-                    UpdateEmployeeManagementListbox();
-                }
-            }
-            catch(NullReferenceException)
-            {
-                MessageBox.Show("Please select an employee.");
-            }
-           
-        }*/
 
         private void updateBTN_Click(object sender, EventArgs e)
         {
@@ -196,7 +171,7 @@ namespace Waterfall_PRJ
             }
             catch (NullReferenceException)
             {
-                MessageBox.Show("Please select an employee.");
+                MessageBox.Show("Failed update an employee.");
             }
             catch (BirthDateException)
             {

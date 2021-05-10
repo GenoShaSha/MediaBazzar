@@ -94,7 +94,7 @@ namespace Waterfall_PRJ
                             int articleNumbs = (int)objReader["articleNumbers"];
                             string productName = objReader["productName"].ToString();
                             string category = objReader["category"].ToString();
-                            double productPrice = (double)objReader["productPrice"];
+                            decimal productPrice = (decimal)objReader["productPrice"];
                             string physicalDimension = objReader["physicalDimensions"].ToString();
 
                             Good good = new Good(goodID, articleNumbs, productName, category, productPrice, physicalDimension);
@@ -122,7 +122,7 @@ namespace Waterfall_PRJ
         {
             try
             {
-                string que = "UPDATE goods SET articleNumbers= @artNumbs, productName= @pName, category= @category, productPrice= @pPrice, physicalDimension= @pDimensions WHERE goods_ID= @gID";
+                string que = "UPDATE goods SET articleNumbers= @artNumbs, productName= @pName, category= @category, productPrice= @pPrice, physicalDimensions= @pDimensions WHERE goods_ID= @gID";
 
                 MySqlCommand cmd = new MySqlCommand(que, con);
                 con.Open();

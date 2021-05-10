@@ -11,12 +11,14 @@ namespace Waterfall_PRJ
         private EmployeeManagement em;
         private GoodManagement gm;
         private DbEmployees dc;
+        private DbGoods dg;
 
         public MedBazzar()
         {
             em = new EmployeeManagement();
             gm = new GoodManagement();
             dc = new DbEmployees();
+            dg = new DbGoods();
         }
 
         public void AddNewEmp(int role, string fName, string lName, string gender, DateTime bod, string bsn, string relationship, string email, string pswd, string pNumb, string address, string pCode, string city, string country)
@@ -71,7 +73,7 @@ namespace Waterfall_PRJ
 
             }
         }
-        public void AddGood(int articleNumbers, string productName, string category, double productPrice, string physicalDimensions)
+        public void AddGood(int articleNumbers, string productName, string category, decimal productPrice, string physicalDimensions)
         {
             gm.AddProduct(new Good(articleNumbers, productName, category, productPrice, physicalDimensions));
         }
@@ -87,6 +89,11 @@ namespace Waterfall_PRJ
         {
             p.UpdatePerson(newFName, newLName, newGender, newDoB, newBSN, newRelationship, newEmail, newPass, newPNumb, newAddress, newPCode, newCity, newCountry);
             dc.UpdateEmployee(p);
+        }
+        public void UpdateStock(Good g, int newArtNumb, string newPName, string newCat, decimal newPPrice, string newPDimension)
+        {
+            g.UpdateStock(newArtNumb, newPName, newCat, newPPrice, newPDimension);
+            dg.UpdateGood(g);
         }
     }
 }
