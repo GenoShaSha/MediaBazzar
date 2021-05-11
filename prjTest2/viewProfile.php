@@ -11,6 +11,7 @@ $user = new user();
         <meta charset="utf-8">
         <title>Profile</title>
         <link rel="stylesheet" href="styles\profile_authentication_styles.css">
+        
     </head> 
     <body>
         <div class="topnav">
@@ -68,8 +69,9 @@ $user = new user();
                 <p> Country: <?php echo $_SESSION['sess_country'] ?> </p> 
             </div>
             <div class = "txt_field"> 
-                <a href = "editProfile.php"> Edit profile</a>
+                <a href = "editProfile.php" class="button"> Edit profile</a>
             </div>
         </div>
+        
     </body>
 </html>     
