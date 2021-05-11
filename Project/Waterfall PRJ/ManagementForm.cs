@@ -285,31 +285,7 @@ namespace Waterfall_PRJ
             ReturnShiftEmployeesLB(returnedDate);
             UpdateWorkshiftManagementListbox();
         }
-       /* private void btnAddShift_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                FloorStaff emp = (FloorStaff)AvailableEmployeesLB.SelectedItem;
-                if(shifts.AddEmployeeToShift(returnedDate,type,emp) == false)
-                {
-                    shifts.AddShiftTime(returnedDate, type);
-                    shifts.AddEmployeeToShift(returnedDate, type, emp);
-                }
-                else
-                {
-                    shifts.AddEmployeeToShift(returnedDate, type, emp);
-                }
-            }
-            catch (NullReferenceException)
-            {
-                MessageBox.Show("Please select an employee and date.");
-            }
-            finally 
-            {
-                MessageBox.Show("Shift Added!");
-                ReturnShiftEmployeesLB(returnedDate);
-            }
-        }*/
+
         private void MorningRB_CheckedChanged(object sender, EventArgs e)
         {
             if(MorningRB.Checked)
@@ -414,6 +390,12 @@ namespace Waterfall_PRJ
             }
             ReturnShiftEmployeesLB(returnedDate);
            
+        }
+
+        private void btnShowStock_Click(object sender, EventArgs e)
+        {
+            StockRequest sr = new StockRequest();
+            sr.Show();
         }
     }
 }

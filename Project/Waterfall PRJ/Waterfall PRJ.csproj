@@ -110,6 +110,7 @@
     <Compile Include="BirthDateException.cs" />
     <Compile Include="DbEmployees.cs" />
     <Compile Include="DbGoods.cs" />
+    <Compile Include="DbRequest.cs" />
     <Compile Include="DbShift.cs" />
     <Compile Include="EmployeeInformation.cs">
       <SubType>Form</SubType>
@@ -142,21 +143,10 @@
     </Compile>
     <Compile Include="MedBazzar.cs" />
     <Compile Include="Employee.cs" />
-    <Compile Include="ProceedStockRequest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ProceedStockRequest.Designer.cs">
-      <DependentUpon>ProceedStockRequest.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Request.cs" />
-    <Compile Include="StockRequest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StockRequest.Designer.cs">
-      <DependentUpon>StockRequest.cs</DependentUpon>
-    </Compile>
+    <Compile Include="RequestManagement.cs" />
     <Compile Include="Shift.cs" />
     <Compile Include="ShiftManagement.cs" />
     <Compile Include="ShiftType.cs" />
@@ -165,6 +155,12 @@
     </Compile>
     <Compile Include="StockForm.Designer.cs">
       <DependentUpon>StockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockRequest.Designer.cs">
+      <DependentUpon>StockRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="WarehouseManager.cs" />
     <Compile Include="WarehouseStaff.cs" />
@@ -179,9 +175,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeAddingForm.resx">
       <DependentUpon>EmployeeAddingForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ProceedStockRequest.resx">
-      <DependentUpon>ProceedStockRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -221,6 +214,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\media bazzar employee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\floor manager form.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\productstock shop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\productstock warehouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ask request.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

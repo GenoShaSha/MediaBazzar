@@ -14,14 +14,17 @@ namespace Waterfall_PRJ
     {
         private DbGoods dg;
         private GoodManagement gm;
+        private RequestManagement rm;
         private MedBazzar mb;
         public StockForm()
         {
             InitializeComponent();
             dg = new DbGoods();
             gm = new GoodManagement();
+            rm = new RequestManagement();
             mb = new MedBazzar();
             UpdateStockListbox();
+            UpdateRequestStockListbox();
         }
 
         public void UpdateStockListbox()
@@ -34,6 +37,19 @@ namespace Waterfall_PRJ
                 if (item != null)
                 {
                     lbxStock.Items.Add(item);
+                }
+            }
+        }
+        public void UpdateRequestStockListbox()
+        {
+            lbxRequestStock.Items.Clear();
+            lbxRequestStock.HorizontalScrollbar = true;
+            List<Request> requestList = rm.GetRequest();
+            foreach (var item in requestList)
+            {
+                if (item != null)
+                {
+                    lbxRequestStock.Items.Add(item);
                 }
             }
         }
@@ -167,6 +183,20 @@ namespace Waterfall_PRJ
                 quantity--;
                 tbxUpdateQuantity.Text = quantity.ToString();
             }
+        }
+
+        private void btnApproved_Click(object sender, EventArgs e)
+        {
+            Request r = (Request)lbxRequestStock.SelectedItem;
+
+            MessageBox.Show("The request has been approved!");
+        }
+
+        private void btnDisapproved_Click(object sender, EventArgs e)
+        {
+            Request r = (Request)lbxRequestStock.SelectedItem;
+            MessageBox.Show("The request has been disapproved!");
+
         }
     }
 }

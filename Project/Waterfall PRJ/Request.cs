@@ -9,14 +9,27 @@ namespace Waterfall_PRJ
     public class Request
     {
         private int amountRequest;
-        private Good good;
-        private string status;
+        private int id;
 
-        public Request(int amount, string status)
+        public Request(int amount, int id)
         {
             this.amountRequest = amount;
-            this.status = status;
+            this.id = id;
         }
-        
+        public int AmountRequest
+        {
+            get { return this.amountRequest; }
+            set { this.amountRequest = value; }
+        }
+        public int ID
+        {
+            get { return this.id; }
+            set { this.id = value; }
+        }
+        public override string ToString()
+        {
+            return $"Good ID :{id}, Quantity :{amountRequest} units.";
+        }
+
     }
 }

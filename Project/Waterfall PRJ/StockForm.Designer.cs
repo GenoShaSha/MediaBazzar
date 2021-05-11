@@ -419,6 +419,7 @@ namespace Waterfall_PRJ
             this.btnApproved.TabIndex = 16;
             this.btnApproved.Text = "APPROVED";
             this.btnApproved.UseVisualStyleBackColor = true;
+            this.btnApproved.Click += new System.EventHandler(this.btnApproved_Click);
             // 
             // lbxRequestStock
             // 
@@ -455,6 +456,7 @@ namespace Waterfall_PRJ
             this.btnDisapproved.TabIndex = 60;
             this.btnDisapproved.Text = "DISAPPROVED";
             this.btnDisapproved.UseVisualStyleBackColor = true;
+            this.btnDisapproved.Click += new System.EventHandler(this.btnDisapproved_Click);
             // 
             // CategoryCB
             // 

@@ -17,7 +17,6 @@ namespace Waterfall_PRJ
         public GoodManagement()
         {
             goods = new List<Good>();
-            goods2 = new List<Good>();
             dg = new DbGoods();
         }
         public void AddProduct(Good good)
@@ -25,14 +24,7 @@ namespace Waterfall_PRJ
             goods.Add(good);
             dg.AddGood(good);
         }
-        public void AddProductToFloor(Good good)
-        {
-            if(g.ID == good.ID)
-            {
-                goods2.Add(good);
-                goods.Remove(good);
-            }
-        }
+
         public void RemoveProduct(int id)
         {
             dg.RemoveGood(id);

@@ -118,13 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="media bazzar employee" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\media bazzar employee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TITLE WORKSHIFT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TITLE WORKSHIFT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="productstock warehouse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\productstock warehouse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TITLE EMPLOYEE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TITLE EMPLOYEE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="media bazzar employee" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\media bazzar employee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="floor manager form" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\floor manager form.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="productstock shop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\productstock shop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ask request" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ask request.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

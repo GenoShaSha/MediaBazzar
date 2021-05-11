@@ -63,9 +63,49 @@ namespace Waterfall_PRJ.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ask_request {
+            get {
+                object obj = ResourceManager.GetObject("ask request", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap floor_manager_form {
+            get {
+                object obj = ResourceManager.GetObject("floor manager form", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap media_bazzar_employee {
             get {
                 object obj = ResourceManager.GetObject("media bazzar employee", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap productstock_shop {
+            get {
+                object obj = ResourceManager.GetObject("productstock shop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap productstock_warehouse {
+            get {
+                object obj = ResourceManager.GetObject("productstock warehouse", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

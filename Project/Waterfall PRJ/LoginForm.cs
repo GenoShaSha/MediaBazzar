@@ -54,11 +54,13 @@ namespace Waterfall_PRJ
                 else if (type == "Warehouse Staff")
                 {
                     MessageBox.Show("Ur in to Stock Request form!");
-                    ProceedStockRequest psr = new ProceedStockRequest();
-                    psr.Show();
-                    this.Hide();
+                    StockRequest srw = new StockRequest();
+                    srw.Show();
                 }
-                else if (type == null) { MessageBox.Show("User type not defined"); }
+                else if (type == null) 
+                { 
+                    MessageBox.Show("User type not defined"); 
+                }
             }
             else 
             {
@@ -66,42 +68,6 @@ namespace Waterfall_PRJ
             }
             tbUsername.Text = string.Empty;
             tbPassword.Text = string.Empty;
-
-/*            if (rbAdmin.Checked == true)
-            {
-                lgnType = "Administrator";
-            }
-            else
-            {
-                lgnType = "Manager";
-            }
-
-            newLogin = new Login(newUsr, newPass, lgnType);
-
-            if (newLogin.GetIdentity() == true)
-            {
-                if (rbAdmin.Checked)
-                {
-                    MessageBox.Show("Ur in to Admin page");
-                    ManagementForm mf = new ManagementForm();
-                    mf.Show();
-                    this.Hide();
-                }
-                else if (rbManager.Checked)
-                {
-                    MessageBox.Show("Ur in to Manager page");
-                    ManagementForm mf = new ManagementForm();
-                    mf.Show();
-                    this.Hide();
-                }
-
-            }
-            else if (newLogin.GetIdentity() == false)
-            {
-                MessageBox.Show("Put the right username or password!");
-            }
-            tbUsername.Text = string.Empty;
-            tbPassword.Text = string.Empty; */
         }
     }
     }

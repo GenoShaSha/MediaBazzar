@@ -14,6 +14,7 @@ namespace Waterfall_PRJ
         private DbGoods dg;
         private ShiftManagement sm;
         private DbShift ds;
+        private DbRequest dr;
         public MedBazzar()
         {
             em = new EmployeeManagement();
@@ -21,6 +22,7 @@ namespace Waterfall_PRJ
             dc = new DbEmployees();
             dg = new DbGoods();
             sm = new ShiftManagement();
+            dr = new DbRequest();
         }
 
         public void AddNewEmp(int role, string fName, string lName, string gender, DateTime bod, string bsn, string relationship, string email, string pswd, string pNumb, string address, string pCode, string city, string country)
@@ -101,6 +103,10 @@ namespace Waterfall_PRJ
         public void AddShift(DateTime date, ShiftType type)
         {
             sm.AddShiftTime(new Shift(date, type));
+        }
+        public void AddRequest(int amount, int gID, int empID)
+        {
+            dr.AddRequest(new Request(amount, gID),empID);
         }
     }
 }

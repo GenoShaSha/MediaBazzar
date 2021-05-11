@@ -35,18 +35,5 @@ namespace Waterfall_PRJ
         {
             persons = dc.ReadEmployees();
         }
-
-
-        public Employee GetPerson(long ID)
-        {
-            foreach (Employee p in persons)
-            {
-                if (p.EmployeeID == ID)
-                {
-                    return p;
-                }
-            }
-            return null;
-        }
     }
 }
