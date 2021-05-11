@@ -2,8 +2,9 @@
 session_start();
 include 'classes/dbConnection.Class.php';
 include 'classes/user.Class.php';
-include 'classes/employeeList.class.php';
-$employeeList = new employeeList();
+include 'classes/workShift.Class.php';
+$workShift = new workShift();
+$workShift -> GetShifts();
 ?>
 
 <!DOCTYPE html>
@@ -48,6 +49,7 @@ $employeeList = new employeeList();
         <a href="RetrieveInfo.php">PERSONAL INFO</a>             
     </div>
     <?php } ?>
+    <input id="userName" type="hidden" name="name" value="<?php echo "".$_SESSION["sess_user_name"]?>">
 
     <?php 
     if( $_SESSION['sess_role'] == "Administrator")

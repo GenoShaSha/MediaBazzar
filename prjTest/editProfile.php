@@ -27,7 +27,7 @@ $user -> UpdateInformation();
             <input type="text" placeholder="Search...">
             <a href="viewProfile.php">PERSONAL INFO</a>
         </div>
-        <div class="centerProfile" style = "position: absolute; top: 600px">
+        <div class="centerProfile" style = "position: absolute; top: 800px">
             <h1>Profile</h1>
             <form method = "POST">
                 <div class="txt_field">

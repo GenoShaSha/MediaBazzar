@@ -1,11 +1,13 @@
-﻿ var dp = new DayPilot.Calendar("dp");
+﻿ 
+ var dp = new DayPilot.Calendar("dp");
 
         dp.startDate = "2021-05-10";
         dp.viewType = "Week";
+        var username = document.getElementById("userName").value;
 
 
         dp.onEventClick = function (args) {
-            alert("Start Shift: " + args.e.start() + "\n" + "End Shift: " + args.e.end() + "\n" +"Employee: Jordy" );
+            alert("Start Shift: " + args.e.start() + "\n" + "End Shift: " + args.e.end() + "\n" +"Employee: "+ username );
         };
 
         dp.headerDateFormat = "dddd";
