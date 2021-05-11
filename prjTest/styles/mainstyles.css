@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i');
+body
+{
+    margin: 0;
+    padding: 0;
+    background: rgb(223, 223, 223);
+    height: 100vh;
+    overflow: hidden;
+    padding-bottom:58px; /* height of the footer */
+    font-family: "Jost", sans-serif;
+    
+}
+
+.topnav
+{
+    background-color: #333;
+    overflow: hidden;
+}
+
+.topnav a
+{
+    float :  right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding:14px;
+}
+.header
+{
+    grid-area: header;
+    background: rgb(51,51,51);
+    background: linear-gradient(183deg, rgba(51,51,51,1) 0%, rgba(241,241,241,1) 100%);
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.header a
+{
+    float:right;
+    display: block;
+    text-align: center;
+    padding: 16px 14px;
+}
+
+.navigation
+{
+    overflow: hidden;
+    background-color: #333;
+}
+.navigation a
+{
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navigation input[type = text]
+{
+    border: none;
+    float: left;
+    padding : 10px;
+    margin-top: 5px;
+    margin-left: 16px;
+}
+
+div.movietags
+{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+#movieimg
+{
+    width: 400px;
+    height: 400px;
+}
+
+#movieimg > img 
+{
+    border: 1px solid black;
+    width: 150px;
+    height: 200px;
+    margin: 1.66%;
+}
+
+#dp{
+margin-top: -40px;
+}
