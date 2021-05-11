@@ -34,7 +34,7 @@ $user -> SubmitCredentials();
                     <label>Password</label>
                 </div>
                 <div class="pass">Forgot Password?</div>
-                <input type="submit" name = "addBtn" id = "addBtn" class="button" value="Sign In">
+                <input type="submit" name = "addBtn" id = "addBtn" value="Sign In">
             </form>
         </div>
     </body>

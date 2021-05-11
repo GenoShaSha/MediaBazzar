@@ -12,7 +12,6 @@ $user -> UpdateInformation();
         <meta charset="utf-8">
         <title>Profile</title>
         <link rel="stylesheet" href="styles\profile_authentication_styles.css">
-
     </head> 
     <body>
         <div class="topnav">
@@ -28,7 +27,7 @@ $user -> UpdateInformation();
             <input type="text" placeholder="Search...">
             <a href="viewProfile.php">PERSONAL INFO</a>
         </div>
-        <div class="centerProfileEdit" style = "position: absolute; top: 600px">
+        <div class="centerProfile" style = "position: absolute; top: 600px">
             <h1>Profile</h1>
             <form method = "POST">
                 <div class="txt_field">
@@ -83,9 +82,9 @@ $user -> UpdateInformation();
                     <input type="Country" name = "country" id = "country" required>
                     <label>Country</label>
                 </div>
-                <input type="submit" name = "updateBtn" id = "updateBtn" class="button" value = "Submit">
-                <a href = "viewProfile.php" class="button">Back</a>
+                <input type="submit" name = "updateBtn" id = "updateBtn" value = "Submit">
             </form>
+            <div> <a href = "viewProfile.php">Back:</a> </div>
         </div>
     </body>
 </html>     

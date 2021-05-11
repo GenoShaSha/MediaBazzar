@@ -18,8 +18,8 @@ class user extends dbConnection
                 $row = $stmt -> fetch(PDO::FETCH_ASSOC);
                 if($count == 1 && !empty($row))
                 {
-                    $_SESSION['sess_user_id'] = $row['EmployeeID'];
-                    $_SESSION['sess_user_name'] = $row['Username'];
+                    $_SESSION['sess_user_id'] = $row['Employee_ID'];
+                    $_SESSION['sess_email'] = $row['Email'];
                     $_SESSION['sess_password'] = $row['Password'];
                     $_SESSION['sess_role'] = $row['EmployeeType'];
                     if($_SESSION['sess_role'] == "Administrator" )
