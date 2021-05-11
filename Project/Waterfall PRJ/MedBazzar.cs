@@ -106,7 +106,7 @@ namespace Waterfall_PRJ
         }
         public void AddRequest(int amount, int gID, int empID)
         {
-            dr.AddRequest(new Request(amount, gID),empID);
+            dr.AddRequest(new Request(amount,gID,empID));
         }
     }
 }

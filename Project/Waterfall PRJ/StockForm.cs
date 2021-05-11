@@ -25,6 +25,7 @@ namespace Waterfall_PRJ
             mb = new MedBazzar();
             UpdateStockListbox();
             UpdateRequestStockListbox();
+            DialogResult notification = MessageBox.Show($"You have {lbxRequestStock.Items.Count} pending requests!");
         }
 
         public void UpdateStockListbox()
@@ -187,9 +188,21 @@ namespace Waterfall_PRJ
 
         private void btnApproved_Click(object sender, EventArgs e)
         {
-            Request r = (Request)lbxRequestStock.SelectedItem;
-
-            MessageBox.Show("The request has been approved!");
+            try
+            {
+                Request r = (Request)lbxRequestStock.SelectedItem;
+                Good g = gm.ReturnGoodByID(r.GoodID);
+                if(r.AmountRequest < g.Quantity)
+                {
+                    mb.UpdateStock(g, g.ArticleNumbers, g.ProductName, g.Category, g.ProductPrice, g.PhysicalDimensions, (g.Quantity - r.AmountRequest));
+                    MessageBox.Show("The request has been approved!");
+                }
+                
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Please select a request");
+            }
         }
 
         private void btnDisapproved_Click(object sender, EventArgs e)

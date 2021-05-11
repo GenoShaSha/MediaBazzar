@@ -29,6 +29,18 @@ namespace Waterfall_PRJ
         {
             dg.RemoveGood(id);
         }
+
+        public Good ReturnGoodByID(int id)
+        {
+            foreach(Good g in goods)
+            {
+                if(g.ID == id)
+                {
+                    return g;
+                }
+            }
+            return null;
+        }
         public void ReadGoods()
         {
             goods = dg.ReadGoods();

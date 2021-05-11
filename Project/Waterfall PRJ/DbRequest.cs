@@ -18,7 +18,7 @@ namespace Waterfall_PRJ
         }
 
 
-        public void AddRequest(Request request, int empID)
+        public void AddRequest(Request request)
         {
             try
             {
@@ -26,8 +26,8 @@ namespace Waterfall_PRJ
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand(que, con);
 
-                cmd.Parameters.AddWithValue("@gID", request.ID);
-                cmd.Parameters.AddWithValue("@eID", empID);
+                cmd.Parameters.AddWithValue("@gID", request.GoodID);
+                cmd.Parameters.AddWithValue("@eID", request.EmpID);
                 cmd.Parameters.AddWithValue("@quantity", request.AmountRequest);
 
                 cmd.ExecuteNonQuery();
@@ -65,7 +65,7 @@ namespace Waterfall_PRJ
                             int empID = (int)objReader["Employee_ID"];
                             int quantity = (int)objReader["quantity"];
 
-                            Request request = new Request(quantity, goodID);
+                            Request request = new Request(quantity, goodID,empID);
                             requests.Add(request);
                         }
                     }

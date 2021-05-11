@@ -258,9 +258,10 @@ namespace Waterfall_PRJ
         }
     
 
-        public bool GetIdentity(string username, string password, out string type)
+        public bool GetIdentity(string username, string password, out string type, out int id)
         {
             type = null;
+            id = 0;
             try
             {
                 string que = "SELECT * FROM employees WHERE Email = @usrName AND Password = @password;";
@@ -275,6 +276,7 @@ namespace Waterfall_PRJ
                 while (dr.Read())
                 {
                     type = dr[14].ToString();
+                    id = Convert.ToInt32(dr[0]);
                 }
 
 

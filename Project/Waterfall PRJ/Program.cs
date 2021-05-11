@@ -16,7 +16,7 @@ namespace Waterfall_PRJ
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StockForm());
+            Application.Run(new LoginForm());
         }
     }
 }

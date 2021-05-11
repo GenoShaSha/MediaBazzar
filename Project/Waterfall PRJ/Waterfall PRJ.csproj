@@ -156,11 +156,11 @@
     <Compile Include="StockForm.Designer.cs">
       <DependentUpon>StockForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StockRequest.cs">
+    <Compile Include="StockRequests.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StockRequest.Designer.cs">
-      <DependentUpon>StockRequest.cs</DependentUpon>
+    <Compile Include="StockRequests.Designer.cs">
+      <DependentUpon>StockRequests.cs</DependentUpon>
     </Compile>
     <Compile Include="WarehouseManager.cs" />
     <Compile Include="WarehouseStaff.cs" />
@@ -189,8 +189,8 @@
     <EmbeddedResource Include="StockForm.resx">
       <DependentUpon>StockForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StockRequest.resx">
-      <DependentUpon>StockRequest.cs</DependentUpon>
+    <EmbeddedResource Include="StockRequests.resx">
+      <DependentUpon>StockRequests.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

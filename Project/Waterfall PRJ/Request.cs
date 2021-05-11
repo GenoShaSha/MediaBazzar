@@ -8,27 +8,31 @@ namespace Waterfall_PRJ
 {
     public class Request
     {
+        private int emp_id;
         private int amountRequest;
-        private int id;
+        private int good_id;
 
-        public Request(int amount, int id)
+        public Request(int amount, int good_id,int emp_id)
         {
+            this.emp_id = emp_id;
             this.amountRequest = amount;
-            this.id = id;
+            this.good_id = good_id;
         }
         public int AmountRequest
         {
             get { return this.amountRequest; }
-            set { this.amountRequest = value; }
         }
-        public int ID
+        public int GoodID
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this.good_id; }
+        }
+        public int EmpID
+        {
+            get { return this.emp_id; }
         }
         public override string ToString()
         {
-            return $"Good ID :{id}, Quantity :{amountRequest} units.";
+            return $"Employeed ID: {EmpID} Good ID :{GoodID}, Quantity :{amountRequest} units.";
         }
 
     }

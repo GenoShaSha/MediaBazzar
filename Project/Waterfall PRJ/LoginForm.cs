@@ -25,10 +25,11 @@ namespace Waterfall_PRJ
             string newUsr = tbUsername.Text;
             string newPass = tbPassword.Text;
             string type;
+            int id;
 
             /*            string lgnType = string.Empty;*/
             dc = new DbEmployees();
-            if (dc.GetIdentity(newUsr, newPass, out type))
+            if (dc.GetIdentity(newUsr, newPass, out type, out id))
             {
                 if (type == "Administrator")
                 {
@@ -40,7 +41,7 @@ namespace Waterfall_PRJ
                 else if (type == "Floor Manager")
                 {
                     MessageBox.Show("Ur in to Management form!");
-                    ManagementForm mf = new ManagementForm();
+                    ManagementForm mf = new ManagementForm(id);
                     mf.Show();
                     this.Hide();
                 }
@@ -54,7 +55,7 @@ namespace Waterfall_PRJ
                 else if (type == "Warehouse Staff")
                 {
                     MessageBox.Show("Ur in to Stock Request form!");
-                    StockRequest srw = new StockRequest();
+                    StockRequests srw = new StockRequests(id);
                     srw.Show();
                 }
                 else if (type == null) 

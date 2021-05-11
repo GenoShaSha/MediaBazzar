@@ -24,6 +24,7 @@ namespace Waterfall_PRJ
          DbEmployees dc;
         private MedBazzar mb;
         private DbShift ds;
+        private int user_id;
 
         public ManagementForm()
         {
@@ -42,6 +43,25 @@ namespace Waterfall_PRJ
             dc = new DbEmployees();
             mb = new MedBazzar();
             ds = new DbShift();
+        }
+        public ManagementForm(int user_id)
+        {
+            InitializeComponent();
+            em = new EmployeeManagement();
+            shifts = new ShiftManagement();
+            GenderCB.SelectedIndex = 0;
+            relationshipStatusCB.SelectedIndex = 0;
+            RoleCB.SelectedIndex = 0;
+            ContractCB.SelectedIndex = 0;
+            ManagementTabControl.SelectedTab = EmployeeManagePage;
+            updateBTN.Visible = false;
+            date = DateTime.Now;
+            daybuttons = new List<Button>() { sundayBtn, mondayBtn, tuesdayBtn, wednesdayBtn, thursdayBtn, fridayBtn, saturdayBtn };
+            UpdateEmployeeManagementListbox();
+            dc = new DbEmployees();
+            mb = new MedBazzar();
+            ds = new DbShift();
+            this.user_id = user_id;
         }
 
         public ManagementForm(EmployeeManagement employees, ShiftManagement shifts)
@@ -394,7 +414,7 @@ namespace Waterfall_PRJ
 
         private void btnShowStock_Click(object sender, EventArgs e)
         {
-            StockRequest sr = new StockRequest();
+            StockRequests sr = new StockRequests(user_id);
             sr.Show();
         }
     }

@@ -16,10 +16,10 @@ namespace Waterfall_PRJ
             requests = new List<Request>();
             dr = new DbRequest();
         }
-        public void AddRequest(Request request,int id)
+        public void AddRequest(Request request)
         {
             requests.Add(request);
-            dr.AddRequest(request,id);
+            dr.AddRequest(request);
         }
         public void RemoveRequest(Request request)
         {
