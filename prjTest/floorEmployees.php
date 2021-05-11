@@ -21,7 +21,7 @@ $employeeList = new employeeList();
     ?>
     <div class="topnav">
         <a href="signOut.php">Sign Out</a>
-        <a><?php echo "WELCOME ".$_SESSION["sess_user_name"]?></a>
+        <a><?php echo "WELCOME ".$_SESSION["sess_email"]?></a>
     </div>               
     <?php } ?>
  
