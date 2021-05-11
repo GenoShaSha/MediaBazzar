@@ -121,7 +121,7 @@ namespace Waterfall_PRJ
             this.ManagementTabControl.Controls.Add(this.EmployeeManagePage);
             this.ManagementTabControl.Controls.Add(this.ShiftManagementPage);
             this.ManagementTabControl.Location = new System.Drawing.Point(4, 2);
-            this.ManagementTabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ManagementTabControl.Margin = new System.Windows.Forms.Padding(4);
             this.ManagementTabControl.Name = "ManagementTabControl";
             this.ManagementTabControl.SelectedIndex = 0;
             this.ManagementTabControl.Size = new System.Drawing.Size(881, 710);
@@ -138,9 +138,9 @@ namespace Waterfall_PRJ
             this.EmployeeManagePage.Controls.Add(this.groupBox1);
             this.EmployeeManagePage.Controls.Add(this.pictureBox1);
             this.EmployeeManagePage.Location = new System.Drawing.Point(4, 25);
-            this.EmployeeManagePage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EmployeeManagePage.Margin = new System.Windows.Forms.Padding(4);
             this.EmployeeManagePage.Name = "EmployeeManagePage";
-            this.EmployeeManagePage.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EmployeeManagePage.Padding = new System.Windows.Forms.Padding(4);
             this.EmployeeManagePage.Size = new System.Drawing.Size(873, 681);
             this.EmployeeManagePage.TabIndex = 1;
             this.EmployeeManagePage.Text = "Employee Management";
@@ -598,7 +598,7 @@ namespace Waterfall_PRJ
             this.ShiftManagementPage.Controls.Add(this.MorningShiftLB);
             this.ShiftManagementPage.Controls.Add(this.btnAddShift);
             this.ShiftManagementPage.Location = new System.Drawing.Point(4, 25);
-            this.ShiftManagementPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ShiftManagementPage.Margin = new System.Windows.Forms.Padding(4);
             this.ShiftManagementPage.Name = "ShiftManagementPage";
             this.ShiftManagementPage.Size = new System.Drawing.Size(873, 681);
             this.ShiftManagementPage.TabIndex = 2;
@@ -953,6 +953,7 @@ namespace Waterfall_PRJ
             this.btnAddShift.TabIndex = 21;
             this.btnAddShift.Text = "ADD";
             this.btnAddShift.UseVisualStyleBackColor = false;
+            this.btnAddShift.Click += new System.EventHandler(this.btnAddShift_Click_1);
             // 
             // ManagementForm
             // 

@@ -282,7 +282,7 @@ namespace Waterfall_PRJ
             ReturnShiftEmployeesLB(returnedDate);
             UpdateWorkshiftManagementListbox();
         }
-        private void btnAddShift_Click(object sender, EventArgs e)
+       /* private void btnAddShift_Click(object sender, EventArgs e)
         {
             try
             {
@@ -306,7 +306,7 @@ namespace Waterfall_PRJ
                 MessageBox.Show("Shift Added!");
                 ReturnShiftEmployeesLB(returnedDate);
             }
-        }
+        }*/
         private void MorningRB_CheckedChanged(object sender, EventArgs e)
         {
             if(MorningRB.Checked)
@@ -388,6 +388,14 @@ namespace Waterfall_PRJ
                 returnedDate = Convert.ToDateTime(daybuttons[i].Text);
                 returnedDate = returnedDate.AddDays(-7);
                 daybuttons[i].Text = returnedDate.ToShortDateString();
+            }
+        }
+
+        private void btnAddShift_Click_1(object sender, EventArgs e)
+        {
+            if(returnedDate != null)
+            {
+                mb.AddShift(returnedDate, type);
             }
         }
     }

@@ -12,13 +12,15 @@ namespace Waterfall_PRJ
         private GoodManagement gm;
         private DbEmployees dc;
         private DbGoods dg;
-
+        private ShiftManagement sm;
+        private DbShift ds;
         public MedBazzar()
         {
             em = new EmployeeManagement();
             gm = new GoodManagement();
             dc = new DbEmployees();
             dg = new DbGoods();
+            sm = new ShiftManagement();
         }
 
         public void AddNewEmp(int role, string fName, string lName, string gender, DateTime bod, string bsn, string relationship, string email, string pswd, string pNumb, string address, string pCode, string city, string country)
@@ -94,6 +96,11 @@ namespace Waterfall_PRJ
         {
             g.UpdateStock(newArtNumb, newPName, newCat, newPPrice, newPDimension,newQuantity);
             dg.UpdateGood(g);
+        }
+
+        public void AddShift(DateTime date, ShiftType type)
+        {
+            sm.AddShiftTime(new Shift(date, type));
         }
     }
 }

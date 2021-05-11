@@ -9,11 +9,13 @@ namespace Waterfall_PRJ
     public class ShiftManagement
     {
         private List<Shift> shifts;
+        private DbShift shiftdb;
         
 
         public ShiftManagement()
         {
             shifts = new List<Shift>();
+            shiftdb = new DbShift();
         }
 
         public List<Shift> ShiftList
@@ -21,9 +23,10 @@ namespace Waterfall_PRJ
             get { return shifts; }
         }
 
-        public void AddShiftTime(DateTime shifttime, ShiftType type)
+        public void AddShiftTime(Shift shift)
         {
-            shifts.Add(new Shift(shifttime, type));
+            shifts.Add(shift);
+            shiftdb.AddShift(shift);
         }
 
         public bool AddEmployeeToShift(DateTime shifttime, ShiftType type, FloorStaff employee)
