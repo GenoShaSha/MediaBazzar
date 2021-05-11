@@ -42,7 +42,7 @@ namespace Waterfall_PRJ
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(94, 182);
+            this.label1.Location = new System.Drawing.Point(117, 200);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 19);
             this.label1.TabIndex = 0;
@@ -52,7 +52,7 @@ namespace Waterfall_PRJ
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(102, 211);
+            this.label2.Location = new System.Drawing.Point(125, 229);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 19);
             this.label2.TabIndex = 1;
@@ -60,25 +60,25 @@ namespace Waterfall_PRJ
             // 
             // tbUsername
             // 
-            this.tbUsername.Location = new System.Drawing.Point(212, 181);
+            this.tbUsername.Location = new System.Drawing.Point(235, 199);
             this.tbUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(281, 22);
+            this.tbUsername.Size = new System.Drawing.Size(232, 22);
             this.tbUsername.TabIndex = 2;
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(212, 210);
+            this.tbPassword.Location = new System.Drawing.Point(235, 228);
             this.tbPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(281, 22);
+            this.tbPassword.Size = new System.Drawing.Size(232, 22);
             this.tbPassword.TabIndex = 3;
             this.tbPassword.UseSystemPasswordChar = true;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Impact", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(377, 255);
+            this.button1.Location = new System.Drawing.Point(374, 268);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 46);

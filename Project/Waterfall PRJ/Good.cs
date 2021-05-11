@@ -14,16 +14,18 @@ namespace Waterfall_PRJ
         private string category;
         private decimal productPrice;
         private string physicalDimensions;
+        private int quantity;
 
-        public Good(int articleNumbers, string productName, string category, decimal productPrice, string physicalDimensions)
+        public Good(int articleNumbers, string productName, string category, decimal productPrice, string physicalDimensions, int quantity)
         {
             this.articleNumbers = articleNumbers;
             this.productName = productName;
             this.category = category;
             this.productPrice = productPrice;
             this.physicalDimensions = physicalDimensions;
+            this.quantity = quantity;
         }
-        public Good(int id, int articleNumbers, string productName, string category, decimal productPrice, string physicalDimensions)
+        public Good(int id, int articleNumbers, string productName, string category, decimal productPrice, string physicalDimensions, int quantity)
         {
             this.iD = id;
             this.articleNumbers = articleNumbers;
@@ -31,14 +33,16 @@ namespace Waterfall_PRJ
             this.category = category;
             this.productPrice = productPrice;
             this.physicalDimensions = physicalDimensions;
+            this.quantity = quantity;
         }
-        public void UpdateStock(int articleNumbers, string productName, string category, decimal productPrice, string physicalDimensions)
+        public void UpdateStock(int articleNumbers, string productName, string category, decimal productPrice, string physicalDimensions, int quantity)
         {
             this.articleNumbers = articleNumbers;
             this.productName = productName;
             this.category = category;
             this.productPrice = productPrice;
             this.physicalDimensions = physicalDimensions;
+            this.quantity = quantity;
         }
         public int ID
         {
@@ -69,13 +73,18 @@ namespace Waterfall_PRJ
             get { return this.physicalDimensions; }
             set { this.physicalDimensions = value; }
         }
+
+        public int Quantity
+        {
+            get { return this.quantity; }
+        }
         public override string ToString()
         {
-            return $"Category :{category}, ID :{iD}, Art. Number :{articleNumbers}, Name :{productName}, Price :{productPrice} euro";
+            return $"ID :{iD}, Art. Number :{articleNumbers}, Name :{productName}, Price :{productPrice} euro, Quantity : {quantity} units.";
         }
         public virtual string GetInfo()
         {
-            return $"Category :{category}, ID :{iD}, Art. Number :{articleNumbers}, Name :{productName}, Price :{productPrice} euro";
+            return $"ID :{iD}, Art. Number :{articleNumbers}, Name :{productName}, Price :{productPrice} euro";
         }
     }
 }

@@ -50,14 +50,7 @@ namespace Waterfall_PRJ
                     StockForm sf = new StockForm();
                     sf.Show();
                     this.Hide();
-                }
-                else if (type == "Floor Staff")
-                {
-                    MessageBox.Show("Ur in to Stock Request form!");
-                    StockRequest rs = new StockRequest();
-                    rs.Show();
-                    this.Hide();
-                }
+                } 
                 else if (type == "Warehouse Staff")
                 {
                     MessageBox.Show("Ur in to Stock Request form!");

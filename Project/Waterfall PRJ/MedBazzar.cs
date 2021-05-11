@@ -73,9 +73,9 @@ namespace Waterfall_PRJ
 
             }
         }
-        public void AddGood(int articleNumbers, string productName, string category, decimal productPrice, string physicalDimensions)
+        public void AddGood(int articleNumbers, string productName, string category, decimal productPrice, string physicalDimensions, int quantity)
         {
-            gm.AddProduct(new Good(articleNumbers, productName, category, productPrice, physicalDimensions));
+            gm.AddProduct(new Good(articleNumbers, productName, category, productPrice, physicalDimensions,quantity));
         }
         public void RemoveEmployee(long id)
         {
@@ -90,9 +90,9 @@ namespace Waterfall_PRJ
             p.UpdatePerson(newFName, newLName, newGender, newDoB, newBSN, newRelationship, newEmail, newPass, newPNumb, newAddress, newPCode, newCity, newCountry);
             dc.UpdateEmployee(p);
         }
-        public void UpdateStock(Good g, int newArtNumb, string newPName, string newCat, decimal newPPrice, string newPDimension)
+        public void UpdateStock(Good g, int newArtNumb, string newPName, string newCat, decimal newPPrice, string newPDimension, int newQuantity)
         {
-            g.UpdateStock(newArtNumb, newPName, newCat, newPPrice, newPDimension);
+            g.UpdateStock(newArtNumb, newPName, newCat, newPPrice, newPDimension,newQuantity);
             dg.UpdateGood(g);
         }
     }

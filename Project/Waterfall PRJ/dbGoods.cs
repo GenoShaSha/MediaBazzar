@@ -21,7 +21,7 @@ namespace Waterfall_PRJ
         {
             try
             {
-                string que = "INSERT INTO goods(articleNumbers,productName,category,productPrice,physicalDimensions) VALUES (@artNumbs,@pName,@category,@pPrice,@pDimensions)";
+                string que = "INSERT INTO goods(articleNumbers,productName,category,productPrice,physicalDimensions,quantity) VALUES (@artNumbs,@pName,@category,@pPrice,@pDimensions,@quantity)";
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand(que, con);
 
@@ -30,6 +30,7 @@ namespace Waterfall_PRJ
                 cmd.Parameters.AddWithValue("@category", good.Category);
                 cmd.Parameters.AddWithValue("@pPrice", good.ProductPrice);
                 cmd.Parameters.AddWithValue("@pDimensions", good.PhysicalDimensions);
+                cmd.Parameters.AddWithValue("@quantity", good.Quantity);
 
                 cmd.ExecuteNonQuery();
 
@@ -96,8 +97,9 @@ namespace Waterfall_PRJ
                             string category = objReader["category"].ToString();
                             decimal productPrice = (decimal)objReader["productPrice"];
                             string physicalDimension = objReader["physicalDimensions"].ToString();
+                            int quantity = (int)objReader["quantity"];
 
-                            Good good = new Good(goodID, articleNumbs, productName, category, productPrice, physicalDimension);
+                            Good good = new Good(goodID, articleNumbs, productName, category, productPrice, physicalDimension,quantity);
                             goods.Add(good);
                         }
                     }
@@ -122,7 +124,7 @@ namespace Waterfall_PRJ
         {
             try
             {
-                string que = "UPDATE goods SET articleNumbers= @artNumbs, productName= @pName, category= @category, productPrice= @pPrice, physicalDimensions= @pDimensions WHERE goods_ID= @gID";
+                string que = "UPDATE goods SET articleNumbers= @artNumbs, productName= @pName, category= @category, productPrice= @pPrice, physicalDimensions= @pDimensions, quantity = @quantity WHERE goods_ID= @gID";
 
                 MySqlCommand cmd = new MySqlCommand(que, con);
                 con.Open();
@@ -133,6 +135,7 @@ namespace Waterfall_PRJ
                 cmd.Parameters.AddWithValue("@category", good.Category);
                 cmd.Parameters.AddWithValue("@pPrice", good.ProductPrice);
                 cmd.Parameters.AddWithValue("@pDimensions", good.PhysicalDimensions);
+                cmd.Parameters.AddWithValue("@quantity", good.Quantity);
 
                 cmd.ExecuteNonQuery();
 
