@@ -5,6 +5,27 @@
         dp.viewType = "Week";
         var username = document.getElementById("userName").value;
 
+        var userShiftType = document.getElementById("userShiftType").value;
+        var userShiftDate = document.getElementById("userShiftDate").value;
+
+        var startTime;
+        var endTime;
+
+        if(userShiftType == "Morning")
+        {
+            startTime = "T12:00:00";
+            endTime= "T13:00:00"
+        }    
+        if(userShiftType == "Afternoon")
+        {
+            startTime = "T12:00:00";
+            endTime= "T17:00:00"
+        }
+        if(userShiftType == "Night")
+        {
+            startTime = "T17:00:00";
+            endTime= "T21:00:00"
+        }
 
         dp.onEventClick = function (args) {
             alert("Start Shift: " + args.e.start() + "\n" + "End Shift: " + args.e.end() + "\n" +"Employee: "+ username );
@@ -14,43 +35,46 @@
         dp.init();
 
         var monday = new DayPilot.Event({
-            start: new DayPilot.Date("2021-05-10T09:00:00"),
-            end: new DayPilot.Date("2021-05-10T18:00:00"),
+            start: new DayPilot.Date(userShiftDate+startTime),
+            end: new DayPilot.Date(userShiftDate+endTime),
             id: "1",
-            text: "Morning & Afternoon Shift"
+            text: "Monday Shift"
         });
+        /*
         var tuesday = new DayPilot.Event({
-            start: new DayPilot.Date("2021-05-11T09:00:00"),
-            end: new DayPilot.Date("2021-05-11T12:00:00"),
+            start: new DayPilot.Date(userShiftDate+startTime),
+            end: new DayPilot.Date(userShiftDate+endTime),
             id: "2",
-            text: "Morning Shift"
+            text: "Tuesday Shift"
             
         });
         var wednesday = new DayPilot.Event({
-            start: new DayPilot.Date("2021-05-12T12:00:00"),
-            end: new DayPilot.Date("2021-05-12T20:00:00"),
+            start: new DayPilot.Date(userShiftDate+startTime),
+            end: new DayPilot.Date(userShiftDate+endTime),
             id: "3",
-            text: "Evening Shift"
+            text: "Wednesday Shift"
             
         });
         var thursday = new DayPilot.Event({
-            start: new DayPilot.Date("2021-05-13T09:00:00"),
-            end: new DayPilot.Date("2021-05-13T18:00:00"),
-            id: "3",
-            text: "Morning & Afternoon Shift"
+            start: new DayPilot.Date(userShiftDate+startTime),
+            end: new DayPilot.Date(userShiftDate+endTime),
+            id: "4",
+            text: "Thursday Shift"
             
         });
         var friday = new DayPilot.Event({
-            start: new DayPilot.Date("2021-05-14T12:00:00"),
-            end: new DayPilot.Date("2021-05-14T20:00:00"),
-            id: "3",
-            text: "Evening Shift"
+            start: new DayPilot.Date(userShiftDate+startTime),
+            end: new DayPilot.Date(userShiftDate+endTime),
+            id: "5",
+            text: "Friday Shift"
             
         });
+        */
         dp.events.add(monday);
+        /*
         dp.events.add(tuesday);
         dp.events.add(wednesday);
         dp.events.add(thursday);
         dp.events.add(friday);
-
-
+        */
+      
