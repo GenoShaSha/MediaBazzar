@@ -65,5 +65,9 @@ namespace Waterfall_PRJ
             }
             return null;
         }
+        public void ReadShifts()
+        {
+            shifts = shiftdb.ReadShifts();
+        }
     }
 }

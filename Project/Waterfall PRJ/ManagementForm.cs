@@ -22,7 +22,8 @@ namespace Waterfall_PRJ
         private List<Button> daybuttons;
         private ShiftType type = ShiftType.Morning;
          DbEmployees dc;
-        MedBazzar mb;
+        private MedBazzar mb;
+        private DbShift ds;
 
         public ManagementForm()
         {
@@ -40,6 +41,7 @@ namespace Waterfall_PRJ
             UpdateEmployeeManagementListbox();
             dc = new DbEmployees();
             mb = new MedBazzar();
+            ds = new DbShift();
         }
 
         public ManagementForm(EmployeeManagement employees, ShiftManagement shifts)
@@ -393,10 +395,8 @@ namespace Waterfall_PRJ
 
         private void btnAddShift_Click_1(object sender, EventArgs e)
         {
-            if(returnedDate != null)
-            {
-                mb.AddShift(returnedDate, type);
-            }
+           shifts.ReadShifts();
+           
         }
     }
 }
