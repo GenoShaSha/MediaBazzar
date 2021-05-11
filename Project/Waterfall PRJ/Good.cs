@@ -73,7 +73,6 @@ namespace Waterfall_PRJ
             get { return this.physicalDimensions; }
             set { this.physicalDimensions = value; }
         }
-
         public int Quantity
         {
             get { return this.quantity; }

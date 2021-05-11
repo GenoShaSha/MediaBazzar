@@ -29,12 +29,33 @@ namespace Waterfall_PRJ
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.lblTitleStockRequest = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // lblTitleStockRequest
+            // 
+            this.lblTitleStockRequest.AutoSize = true;
+            this.lblTitleStockRequest.Location = new System.Drawing.Point(57, 35);
+            this.lblTitleStockRequest.Name = "lblTitleStockRequest";
+            this.lblTitleStockRequest.Size = new System.Drawing.Size(46, 17);
+            this.lblTitleStockRequest.TabIndex = 0;
+            this.lblTitleStockRequest.Text = "label1";
+            // 
+            // ProceedStockRequest
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblTitleStockRequest);
+            this.Name = "ProceedStockRequest";
             this.Text = "ProceedStockRequest";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblTitleStockRequest;
     }
 }

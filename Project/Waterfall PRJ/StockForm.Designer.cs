@@ -37,6 +37,10 @@ namespace Waterfall_PRJ
             this.tbxUpdateArtNr = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.minusBtn = new System.Windows.Forms.Button();
+            this.plusBtn = new System.Windows.Forms.Button();
+            this.tbxUpdateQuantity = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.cbxUpdateCat = new System.Windows.Forms.ComboBox();
             this.tbxUpdateDim = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,6 +55,8 @@ namespace Waterfall_PRJ
             this.tbxArtNumb = new System.Windows.Forms.TextBox();
             this.lblProductName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbxQuantity = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.tbxDimention = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddStock = new System.Windows.Forms.Button();
@@ -63,13 +69,7 @@ namespace Waterfall_PRJ
             this.lblStocks = new System.Windows.Forms.Label();
             this.lblReqStock = new System.Windows.Forms.Label();
             this.btnDisapproved = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tbxQuantity = new System.Windows.Forms.TextBox();
             this.CategoryCB = new System.Windows.Forms.ComboBox();
-            this.tbxUpdateQuantity = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.plusBtn = new System.Windows.Forms.Button();
-            this.minusBtn = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -149,12 +149,48 @@ namespace Waterfall_PRJ
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.tbxUpdateArtNr);
-            this.groupBox2.Location = new System.Drawing.Point(32, 349);
+            this.groupBox2.Location = new System.Drawing.Point(39, 413);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(341, 266);
             this.groupBox2.TabIndex = 56;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Update Stock";
+            // 
+            // minusBtn
+            // 
+            this.minusBtn.Location = new System.Drawing.Point(268, 196);
+            this.minusBtn.Name = "minusBtn";
+            this.minusBtn.Size = new System.Drawing.Size(46, 23);
+            this.minusBtn.TabIndex = 58;
+            this.minusBtn.Text = "-";
+            this.minusBtn.UseVisualStyleBackColor = true;
+            this.minusBtn.Click += new System.EventHandler(this.minusBtn_Click);
+            // 
+            // plusBtn
+            // 
+            this.plusBtn.Location = new System.Drawing.Point(109, 196);
+            this.plusBtn.Name = "plusBtn";
+            this.plusBtn.Size = new System.Drawing.Size(46, 23);
+            this.plusBtn.TabIndex = 49;
+            this.plusBtn.Text = "+";
+            this.plusBtn.UseVisualStyleBackColor = true;
+            this.plusBtn.Click += new System.EventHandler(this.plusBtn_Click);
+            // 
+            // tbxUpdateQuantity
+            // 
+            this.tbxUpdateQuantity.Location = new System.Drawing.Point(161, 197);
+            this.tbxUpdateQuantity.Name = "tbxUpdateQuantity";
+            this.tbxUpdateQuantity.Size = new System.Drawing.Size(101, 22);
+            this.tbxUpdateQuantity.TabIndex = 57;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(30, 200);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(65, 17);
+            this.label8.TabIndex = 56;
+            this.label8.Text = "Quantity:";
             // 
             // cbxUpdateCat
             // 
@@ -198,7 +234,7 @@ namespace Waterfall_PRJ
             // 
             this.lbxStock.FormattingEnabled = true;
             this.lbxStock.ItemHeight = 16;
-            this.lbxStock.Location = new System.Drawing.Point(388, 133);
+            this.lbxStock.Location = new System.Drawing.Point(395, 197);
             this.lbxStock.Name = "lbxStock";
             this.lbxStock.Size = new System.Drawing.Size(551, 308);
             this.lbxStock.TabIndex = 48;
@@ -288,12 +324,28 @@ namespace Waterfall_PRJ
             this.groupBox1.Controls.Add(this.cbxCategory);
             this.groupBox1.Controls.Add(this.lblArtNumb);
             this.groupBox1.Controls.Add(this.tbxProductPrice);
-            this.groupBox1.Location = new System.Drawing.Point(32, 61);
+            this.groupBox1.Location = new System.Drawing.Point(39, 125);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(341, 282);
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Stock";
+            // 
+            // tbxQuantity
+            // 
+            this.tbxQuantity.Location = new System.Drawing.Point(107, 199);
+            this.tbxQuantity.Name = "tbxQuantity";
+            this.tbxQuantity.Size = new System.Drawing.Size(204, 22);
+            this.tbxQuantity.TabIndex = 48;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(28, 202);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 17);
+            this.label7.TabIndex = 47;
+            this.label7.Text = "Quantity:";
             // 
             // tbxDimention
             // 
@@ -336,7 +388,7 @@ namespace Waterfall_PRJ
             this.groupBox3.Controls.Add(this.btnRemoveStock);
             this.groupBox3.Controls.Add(this.tbxRmvID);
             this.groupBox3.Controls.Add(this.lblRmvID);
-            this.groupBox3.Location = new System.Drawing.Point(32, 621);
+            this.groupBox3.Location = new System.Drawing.Point(39, 685);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(341, 126);
             this.groupBox3.TabIndex = 48;
@@ -361,7 +413,7 @@ namespace Waterfall_PRJ
             // 
             // btnApproved
             // 
-            this.btnApproved.Location = new System.Drawing.Point(682, 699);
+            this.btnApproved.Location = new System.Drawing.Point(689, 763);
             this.btnApproved.Name = "btnApproved";
             this.btnApproved.Size = new System.Drawing.Size(115, 39);
             this.btnApproved.TabIndex = 16;
@@ -372,7 +424,7 @@ namespace Waterfall_PRJ
             // 
             this.lbxRequestStock.FormattingEnabled = true;
             this.lbxRequestStock.ItemHeight = 16;
-            this.lbxRequestStock.Location = new System.Drawing.Point(388, 488);
+            this.lbxRequestStock.Location = new System.Drawing.Point(395, 552);
             this.lbxRequestStock.Name = "lbxRequestStock";
             this.lbxRequestStock.Size = new System.Drawing.Size(551, 196);
             this.lbxRequestStock.TabIndex = 57;
@@ -380,7 +432,7 @@ namespace Waterfall_PRJ
             // lblStocks
             // 
             this.lblStocks.AutoSize = true;
-            this.lblStocks.Location = new System.Drawing.Point(388, 84);
+            this.lblStocks.Location = new System.Drawing.Point(395, 148);
             this.lblStocks.Name = "lblStocks";
             this.lblStocks.Size = new System.Drawing.Size(85, 17);
             this.lblStocks.TabIndex = 58;
@@ -389,7 +441,7 @@ namespace Waterfall_PRJ
             // lblReqStock
             // 
             this.lblReqStock.AutoSize = true;
-            this.lblReqStock.Location = new System.Drawing.Point(388, 466);
+            this.lblReqStock.Location = new System.Drawing.Point(395, 530);
             this.lblReqStock.Name = "lblReqStock";
             this.lblReqStock.Size = new System.Drawing.Size(142, 17);
             this.lblReqStock.TabIndex = 59;
@@ -397,28 +449,12 @@ namespace Waterfall_PRJ
             // 
             // btnDisapproved
             // 
-            this.btnDisapproved.Location = new System.Drawing.Point(803, 699);
+            this.btnDisapproved.Location = new System.Drawing.Point(810, 763);
             this.btnDisapproved.Name = "btnDisapproved";
             this.btnDisapproved.Size = new System.Drawing.Size(136, 39);
             this.btnDisapproved.TabIndex = 60;
             this.btnDisapproved.Text = "DISAPPROVED";
             this.btnDisapproved.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 202);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 17);
-            this.label7.TabIndex = 47;
-            this.label7.Text = "Quantity:";
-            // 
-            // tbxQuantity
-            // 
-            this.tbxQuantity.Location = new System.Drawing.Point(107, 199);
-            this.tbxQuantity.Name = "tbxQuantity";
-            this.tbxQuantity.Size = new System.Drawing.Size(204, 22);
-            this.tbxQuantity.TabIndex = 48;
             // 
             // CategoryCB
             // 
@@ -428,54 +464,18 @@ namespace Waterfall_PRJ
             "Household",
             "Computer & Electronics",
             "Kitchen"});
-            this.CategoryCB.Location = new System.Drawing.Point(388, 104);
+            this.CategoryCB.Location = new System.Drawing.Point(395, 168);
             this.CategoryCB.Name = "CategoryCB";
             this.CategoryCB.Size = new System.Drawing.Size(243, 24);
             this.CategoryCB.TabIndex = 61;
             this.CategoryCB.Text = "Select Category";
             this.CategoryCB.SelectedIndexChanged += new System.EventHandler(this.CategoryCB_SelectedIndexChanged);
             // 
-            // tbxUpdateQuantity
-            // 
-            this.tbxUpdateQuantity.Location = new System.Drawing.Point(161, 197);
-            this.tbxUpdateQuantity.Name = "tbxUpdateQuantity";
-            this.tbxUpdateQuantity.Size = new System.Drawing.Size(101, 22);
-            this.tbxUpdateQuantity.TabIndex = 57;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(30, 200);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 17);
-            this.label8.TabIndex = 56;
-            this.label8.Text = "Quantity:";
-            // 
-            // plusBtn
-            // 
-            this.plusBtn.Location = new System.Drawing.Point(109, 196);
-            this.plusBtn.Name = "plusBtn";
-            this.plusBtn.Size = new System.Drawing.Size(46, 23);
-            this.plusBtn.TabIndex = 49;
-            this.plusBtn.Text = "+";
-            this.plusBtn.UseVisualStyleBackColor = true;
-            this.plusBtn.Click += new System.EventHandler(this.plusBtn_Click);
-            // 
-            // minusBtn
-            // 
-            this.minusBtn.Location = new System.Drawing.Point(268, 196);
-            this.minusBtn.Name = "minusBtn";
-            this.minusBtn.Size = new System.Drawing.Size(46, 23);
-            this.minusBtn.TabIndex = 58;
-            this.minusBtn.Text = "-";
-            this.minusBtn.UseVisualStyleBackColor = true;
-            this.minusBtn.Click += new System.EventHandler(this.minusBtn_Click);
-            // 
             // StockForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(976, 772);
+            this.ClientSize = new System.Drawing.Size(976, 833);
             this.Controls.Add(this.CategoryCB);
             this.Controls.Add(this.btnDisapproved);
             this.Controls.Add(this.lblReqStock);
