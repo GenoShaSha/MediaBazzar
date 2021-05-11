@@ -22,7 +22,8 @@ namespace Waterfall_PRJ
         private List<Button> daybuttons;
         private ShiftType type = ShiftType.Morning;
          DbEmployees dc;
-        MedBazzar mb;
+        private MedBazzar mb;
+        private DbShift ds;
 
         public ManagementForm()
         {
@@ -40,6 +41,7 @@ namespace Waterfall_PRJ
             UpdateEmployeeManagementListbox();
             dc = new DbEmployees();
             mb = new MedBazzar();
+            ds = new DbShift();
         }
 
         public ManagementForm(EmployeeManagement employees, ShiftManagement shifts)
@@ -58,6 +60,7 @@ namespace Waterfall_PRJ
             daybuttons = new List<Button>() { mondayBtn, tuesdayBtn, wednesdayBtn, thursdayBtn, fridayBtn, saturdayBtn, sundayBtn };
             dc = new DbEmployees();
             mb = new MedBazzar();
+            ds = new DbShift();
         }
         public void UpdateEmployeeManagementListbox()
         {
@@ -282,7 +285,7 @@ namespace Waterfall_PRJ
             ReturnShiftEmployeesLB(returnedDate);
             UpdateWorkshiftManagementListbox();
         }
-        private void btnAddShift_Click(object sender, EventArgs e)
+       /* private void btnAddShift_Click(object sender, EventArgs e)
         {
             try
             {
@@ -306,7 +309,7 @@ namespace Waterfall_PRJ
                 MessageBox.Show("Shift Added!");
                 ReturnShiftEmployeesLB(returnedDate);
             }
-        }
+        }*/
         private void MorningRB_CheckedChanged(object sender, EventArgs e)
         {
             if(MorningRB.Checked)
@@ -389,6 +392,28 @@ namespace Waterfall_PRJ
                 returnedDate = returnedDate.AddDays(-7);
                 daybuttons[i].Text = returnedDate.ToShortDateString();
             }
+        }
+
+        private void btnAddShift_Click_1(object sender, EventArgs e)
+        {
+           shifts.ReadShifts();
+            Employee emp = (Employee)AvailableEmployeesLB.SelectedItem;
+            if(ds.ReturnShift(new Shift(returnedDate,type)) == false)
+            {
+                ds.AddShift(new Shift(returnedDate,type));
+            }
+            shifts.ReadShifts();
+            foreach(Shift s in shifts.ShiftList)
+            {
+                if(s.Type == type && s.ShiftDate == returnedDate)
+                {
+                    s.AddEmployeeToShift((FloorStaff)emp);
+                    ds.AddAssignments(((FloorStaff)emp).EmployeeID, s.ID);
+                    MessageBox.Show("Adding to shift succesfull.");
+                }
+            }
+            ReturnShiftEmployeesLB(returnedDate);
+           
         }
     }
 }

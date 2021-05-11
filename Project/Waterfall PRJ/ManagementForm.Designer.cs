@@ -953,6 +953,7 @@ namespace Waterfall_PRJ
             this.btnAddShift.TabIndex = 21;
             this.btnAddShift.Text = "ADD";
             this.btnAddShift.UseVisualStyleBackColor = false;
+            this.btnAddShift.Click += new System.EventHandler(this.btnAddShift_Click_1);
             // 
             // ManagementForm
             // 

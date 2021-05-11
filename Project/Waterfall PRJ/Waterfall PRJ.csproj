@@ -110,6 +110,7 @@
     <Compile Include="BirthDateException.cs" />
     <Compile Include="DbEmployees.cs" />
     <Compile Include="DbGoods.cs" />
+    <Compile Include="DbShift.cs" />
     <Compile Include="EmployeeInformation.cs">
       <SubType>Form</SubType>
     </Compile>
