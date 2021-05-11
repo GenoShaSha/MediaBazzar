@@ -39,7 +39,34 @@ namespace Waterfall_PRJ
                 }
             }
         }
+        public void AddAssignments(int emp_id, int work_id)
+        {
+            try
+            {
+                string query = "INSERT INTO assignedworkshifts (Employee_ID, shift_id) VALUES (@emp_id, @shift_id)";
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@emp_id", emp_id);
+                cmd.Parameters.AddWithValue("@shift_id", work_id);
 
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if (con != null)
+                {
+                    con.Close();
+                }
+            }
+        }
         public List<Shift> ReadShifts()
         {
             List<Shift> shifts = new List<Shift>();
@@ -56,21 +83,22 @@ namespace Waterfall_PRJ
                     {
                         while(objReader.Read())
                         {
+                            int id = (int)objReader["shift_id"];
                             DateTime date = (DateTime)objReader["date"];
                             type = (String)objReader["type"];
                             if(type == "Morning")
                             {
-                                Shift shift = new Shift(date, ShiftType.Morning);
+                                Shift shift = new Shift(id,date, ShiftType.Morning);
                                 shifts.Add(shift);
                             }
                             else if (type == "Afternoon")
                             {
-                                Shift shift = new Shift(date, ShiftType.Afternoon);
+                                Shift shift = new Shift(id,date, ShiftType.Afternoon);
                                 shifts.Add(shift);
                             }
                             else if (type == "Night")
                             {
-                                Shift shift = new Shift(date, ShiftType.Night);
+                                Shift shift = new Shift(id,date, ShiftType.Night);
                                 shifts.Add(shift);
                             }
                         }

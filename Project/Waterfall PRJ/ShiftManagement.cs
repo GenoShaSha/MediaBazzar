@@ -51,6 +51,11 @@ namespace Waterfall_PRJ
             }
             return false;
         }
+
+        public void AssignEmployeeToShift(Shift s, Employee employee)
+        {
+            s.AddEmployeeToShift((FloorStaff)employee);
+        }
         public List<FloorStaff> ReturnAssignedEmployees(DateTime shifttime, ShiftType type)
         {
             foreach (Shift s in shifts)
