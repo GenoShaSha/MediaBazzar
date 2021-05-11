@@ -34,7 +34,7 @@ $employeeList = new employeeList();
     ?>
     <div class="navigation">
         <a href="#">HOME</a>
-        <a href="#">SCHEDULE</a>
+        <a href="schedule.php">SCHEDULE</a>
         <input type="text" placeholder="Search...">
         <a href="RetrieveInfo.php">PERSONAL INFO</a>             
     </div>

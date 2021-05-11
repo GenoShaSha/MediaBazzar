@@ -22,7 +22,7 @@ $user = new user();
         </div>
         <div class="navigation">
             <a href="floorEmployees.php?signedIn">HOME</a>
-            <a href="#">SCHEDULE</a>
+            <a href="schedule.php">SCHEDULE</a>
             <input type="text" placeholder="Search...">
             <a href="viewProfile.php">PERSONAL INFO</a>
         </div>
