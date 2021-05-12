@@ -24,11 +24,11 @@ class user extends dbConnection
                     $_SESSION['sess_role'] = $row['EmployeeType'];
                     if($_SESSION['sess_role'] == "Administrator" )
                     {
-                        header('location:retrieveInfo.php');
+                        header('location:floorEmployees.php?signedIn');
                     }
                     else
                     {
-                        header('location:retrieveInfo.php');
+                        header('location:floorEmployees.php?signedIn');
                     }
                     
                 }
@@ -76,7 +76,7 @@ class user extends dbConnection
             }
            
         }
-        header('location:floorEmployees.php?signedIn');
+        header('location:viewProfile.php');
     }
 
 public function UpdateInformation()
@@ -85,6 +85,7 @@ public function UpdateInformation()
     {
         $firstName = $_POST['first_name'];
         $lastName = $_POST['last_name'];
+        $dob = $_POST['date_of_birth'];
         $bsn = $_POST['bsn'];
         $gender = $_POST['gender'];
         $relationship = $_POST['relationship'];
@@ -95,61 +96,11 @@ public function UpdateInformation()
         $pCode = $_POST['postal_code'];
         $city = $_POST['city'];
         $country = $_POST['country'];
-
-       
-        if($firstName == "")
-        {
-            $firstName = $_SESSION['sess_first_name'];
-        }
-        if($lastName == "")
-        {
-            $lastName = $_SESSION['sess_last_name'];
-        }
-        if($bsn == "")
-        {
-            $bsn = $_SESSION['sess_BSN'];
-        }
-        if($gender == "")
-        {
-            $gender = $_SESSION['sess_gender'];
-        }
-        if($relationship == "")
-        {
-            $relationship = $_SESSION['sess_relationship'];
-        }
-        if($email == "")
-        {
-            $email = $_SESSION['sess_email'];
-        }
-        if($pswd == "")
-        {
-            $pswd = $_SESSION['sess_pass'];
-        }
-        if($pNumber == "")
-        {
-            $pNumber = $_SESSION['sess_phone_number'];
-        }
-        if($address == "")
-        {
-            $address = $_SESSION['sess_address'];
-        }
-        if($pCode == "")
-        {
-            $pCode =$_SESSION['sess_postal_code'];
-        }
-        if($city == "")
-        {
-            $city = $_SESSION['sess_city'];
-        }
-        if($country == "")
-        {
-            $country =   $_SESSION['sess_country'];
-        }
         try
         {
-            $query = "UPDATE `employees` SET `FirstName`= ? ,`LastName`= ?,`BSN`= ?,`Gender`= ?,`Relationship`= ?,`Email`= ?,`Password`= ?,`PhoneNumber`= ?,`Address`= ?,`PostalCode`= ?,`City`= ?,`Country`= ? WHERE `Employee_ID` = $_SESSION[sess_user_id]";
+            $query = "UPDATE `employees` SET `FirstName`= ? ,`LastName`= ?,`DateOfBirth`= ? ,`BSN`= ?,`Gender`= ?,`Relationship`= ?,`Email`= ?,`Password`= ?,`PhoneNumber`= ?,`Address`= ?,`PostalCode`= ?,`City`= ?,`Country`= ? WHERE `Employee_ID` = $_SESSION[sess_user_id]";
             $stmt = $this -> connect() -> prepare($query);
-            $stmt -> execute([$firstName,$lastName, $bsn, $gender, $relationship, $email, $pswd, $pNumber, $address, $pCode, $city, $country]);
+            $stmt -> execute([$firstName,$lastName, $dob, $bsn, $gender, $relationship, $email, $pswd, $pNumber, $address, $pCode, $city, $country]);
             header('location:retrieveInfo.php');  
         }
         catch (PDOException $e)

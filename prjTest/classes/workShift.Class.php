@@ -32,33 +32,5 @@ class workShift extends dbConnection
                }
            }
     }
-
-    public function GetAllShifts(int $id)
-    {
-       try
-       {
-           $emp_id = $id;
-           $query = "SELECT shifts.date, shifts.type FROM assignedworkshifts INNER JOIN shifts ON shifts.shift_id = assignedworkshifts.shift_id WHERE Employee_ID = $emp_id ORDER BY shifts.date";
-           $stmt = $this -> connect() -> query($query);
-           echo "<table border = '2'>
-           <tr>
-           <th>Date</th>
-           <th>Shift Type</th> 
-         </tr>
-                ";
-           while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
-           {
-               echo "<tr>";
-               echo "<td>" . $row['date'] . "</td>";
-               echo "<td>".$row['type']."</td>";
-               echo "</tr>";
-           }
-           echo "</table>";
-       }
-       catch (PDOException $e) 
-       {
-        echo "Error : ".$e->getMessage();
-       }
-    }
 }
 ?>

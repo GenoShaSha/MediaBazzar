@@ -5,7 +5,7 @@ class employeeList extends dbConnection
     {
        try
        {
-           $query = "SELECT * FROM `employees`";
+           $query = "SELECT * FROM `addingemployees`";
            $stmt = $this -> connect() -> query($query);
            echo "<table border = '1'>
                 <tr>
@@ -24,6 +24,7 @@ class employeeList extends dbConnection
                 <th>Country</th>
                 <th>Date of Join</th>
                 <th>Employee Role</th>
+                <th>Contract Type</th>
                 </tr>";
            while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
            {
@@ -41,8 +42,9 @@ class employeeList extends dbConnection
                echo "<td>".$row['PostalCode']."</td>";
                echo "<td>".$row['City']."</td>";
                echo "<td>".$row['Country']."</td>";
-               echo "<td>".$row['DateOfJoin']."</td>";
-               echo "<td>".$row['EmployeeType']."</td>";
+               echo "<td>".$row['DoJ']."</td>";
+               echo "<td>".$row['role']."</td>";
+               echo "<td>".$row['cType']."</td>";
                echo "</tr>";
            }
            echo "</table>";

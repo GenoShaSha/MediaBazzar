@@ -21,7 +21,7 @@ namespace Waterfall_PRJ
         private DateTime returnedDate;
         private List<Button> daybuttons;
         private ShiftType type = ShiftType.Morning;
-        private DbEmployees dc;
+         DbEmployees dc;
         private MedBazzar mb;
         private DbShift ds;
         private int user_id;
@@ -53,7 +53,7 @@ namespace Waterfall_PRJ
             relationshipStatusCB.SelectedIndex = 0;
             RoleCB.SelectedIndex = 0;
             ContractCB.SelectedIndex = 0;
-            ManagementTabControl.SelectedTab = ShiftManagementPage;
+            ManagementTabControl.SelectedTab = EmployeeManagePage;
             updateBTN.Visible = false;
             date = DateTime.Now;
             daybuttons = new List<Button>() { sundayBtn, mondayBtn, tuesdayBtn, wednesdayBtn, thursdayBtn, fridayBtn, saturdayBtn };
@@ -215,7 +215,7 @@ namespace Waterfall_PRJ
             {
                 Employee p = (Employee)AvailableEmployeesLB.SelectedItem;
 
-               /* workhrsLbl.Text = ((FloorStaff)p).Workhours.ToString() + "hours";
+                workhrsLbl.Text = ((FloorStaff)p).Workhours.ToString() + "hours";
                 if (((FloorStaff)p).Workhours < 0)
                 {
                     workhrsLbl.ForeColor = Color.Red;
@@ -223,7 +223,7 @@ namespace Waterfall_PRJ
                 else
                 {
                     workhrsLbl.ForeColor = Color.Black;
-                }*/
+                }
 
             }
         }
@@ -422,11 +422,11 @@ namespace Waterfall_PRJ
                 ds.AddShift(new Shift(returnedDate,type));
             }
             shifts.ReadShifts();
-            foreach (Shift s in shifts.ShiftList)
+            foreach(Shift s in shifts.ShiftList)
             {
                 if(s.Type == type && s.ShiftDate == returnedDate)
                 {
-                    shifts.AddEmployeeToShift(returnedDate, type, (FloorStaff)emp);
+                    s.AddEmployeeToShift((FloorStaff)emp);
                     ds.AddAssignments(((FloorStaff)emp).EmployeeID, s.ID);
                     MessageBox.Show("Adding to shift succesfull.");
                 }
@@ -439,30 +439,6 @@ namespace Waterfall_PRJ
         {
             StockRequests sr = new StockRequests(user_id);
             sr.Show();
-        }
-
-        private void SignOutBtn_Click(object sender, EventArgs e)
-        {
-            LoginForm lf = new LoginForm();
-            lf.Show();
-            this.Hide();
-        }
-
-        private void removeBTN_Click(object sender, EventArgs e)
-        {
-            Employee p = (Employee)employeesLB.SelectedItem;
-            DialogResult delete_conf = MessageBox.Show("Are you sure you want to remove this employee?","Confirmation",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
-            if(delete_conf == DialogResult.Yes)
-            {
-                dc.RemoveEmployees(p.EmployeeID);
-                MessageBox.Show("Employee removed.");
-            }
-            else if (delete_conf == DialogResult.No)
-            {
-                MessageBox.Show("Deletion cancelled.");
-            }
-            
-
         }
     }
 }
