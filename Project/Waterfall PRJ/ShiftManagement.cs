@@ -74,9 +74,5 @@ namespace Waterfall_PRJ
         {
             shifts = shiftdb.ReadShifts();
         }
-        public void ReadAssignedShifts()
-        {
-            shifts = shiftdb.ReadAssignedShifts();
-        }
     }
 }
