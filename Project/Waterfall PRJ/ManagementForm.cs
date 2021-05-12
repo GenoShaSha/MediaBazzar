@@ -95,6 +95,31 @@ namespace Waterfall_PRJ
             }
         }
 
+        private void UpdateWorkshiftsListbox()
+        {
+            List<Shift> shiftss = new List<Shift>();
+
+            MorningShiftLB.Items.Clear();
+            AfternoonShiftLB.Items.Clear();
+            NightShiftLB.Items.Clear();
+            shifts.ReadAssignedShifts();
+            foreach (Shift s in shiftss)
+            {
+                if (returnedDate == s.ShiftDate)
+                {
+                    if (s.Type == ShiftType.Morning)
+                    {
+                        foreach (FloorStaff e in s.ReturnEmployeesFromShift())
+                        {
+                            MorningShiftLB.Items.Add(e);
+                        }
+                    }
+                }
+            }
+
+
+        }
+
         private void UpdateWorkshiftManagementListbox()
         {
             AvailableEmployeesLB.Items.Clear();
@@ -108,6 +133,7 @@ namespace Waterfall_PRJ
             }
         }
        
+
         private void addBTN_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -67,6 +67,58 @@ namespace Waterfall_PRJ
                 }
             }
         }
+        public List<Shift> ReadAssignedShifts()
+        {
+            List<Shift> shifts = new List<Shift>();
+            List<Employee> employees = new List<Employee>();
+            try
+            {
+                string que = "SELECT * FROM assignedworkshifts ORDER BY Employee_ID;";
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand(que, con);
+                using (MySqlDataReader objReader = cmd.ExecuteReader())
+                {
+                    if (objReader.HasRows)
+                    {
+                        while (objReader.Read())
+                        {
+                            int empID = (int)objReader["Employee_ID"];
+                            int shiftID = (int)objReader["shift_id"];
+                            foreach (Shift s in shifts)
+                            {
+                                if (s.ID == shiftID)
+                                {
+                                    foreach (Employee e in employees)
+                                    {
+                                        if (empID == e.EmployeeID)
+                                        {
+                                            s.AddEmployeeToShift((FloorStaff)e);
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                con.Close();
+                Console.Write(shifts);
+                return shifts;
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if (con != null)
+                {
+                    con.Close();
+                }
+            }
+            return null;
+        }
         public List<Shift> ReadShifts()
         {
             List<Shift> shifts = new List<Shift>();
