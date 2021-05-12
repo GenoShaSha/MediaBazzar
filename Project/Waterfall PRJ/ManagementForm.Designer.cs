@@ -109,6 +109,7 @@ namespace Waterfall_PRJ
             this.AfternoonShiftLB = new System.Windows.Forms.ListBox();
             this.MorningShiftLB = new System.Windows.Forms.ListBox();
             this.btnAddShift = new System.Windows.Forms.Button();
+            this.SignOutBtn = new System.Windows.Forms.Button();
             this.ManagementTabControl.SuspendLayout();
             this.EmployeeManagePage.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -151,12 +152,12 @@ namespace Waterfall_PRJ
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(620, 26);
+            this.btnLogout.Location = new System.Drawing.Point(7, 6);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(100, 33);
+            this.btnLogout.Size = new System.Drawing.Size(83, 49);
             this.btnLogout.TabIndex = 44;
-            this.btnLogout.Text = "LOGOUT";
+            this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
@@ -169,6 +170,7 @@ namespace Waterfall_PRJ
             this.removeBTN.TabIndex = 43;
             this.removeBTN.Text = "REMOVE";
             this.removeBTN.UseVisualStyleBackColor = true;
+            this.removeBTN.Click += new System.EventHandler(this.removeBTN_Click);
             // 
             // addBTN
             // 
@@ -565,6 +567,7 @@ namespace Waterfall_PRJ
             // 
             // ShiftManagementPage
             // 
+            this.ShiftManagementPage.Controls.Add(this.SignOutBtn);
             this.ShiftManagementPage.Controls.Add(this.lblMonday);
             this.ShiftManagementPage.Controls.Add(this.btnShowStock);
             this.ShiftManagementPage.Controls.Add(this.BackBtn);
@@ -858,7 +861,7 @@ namespace Waterfall_PRJ
             // workhrsLbl
             // 
             this.workhrsLbl.AutoSize = true;
-            this.workhrsLbl.Location = new System.Drawing.Point(227, 439);
+            this.workhrsLbl.Location = new System.Drawing.Point(210, 378);
             this.workhrsLbl.Name = "workhrsLbl";
             this.workhrsLbl.Size = new System.Drawing.Size(0, 17);
             this.workhrsLbl.TabIndex = 34;
@@ -978,6 +981,16 @@ namespace Waterfall_PRJ
             this.btnAddShift.UseVisualStyleBackColor = false;
             this.btnAddShift.Click += new System.EventHandler(this.btnAddShift_Click_1);
             // 
+            // SignOutBtn
+            // 
+            this.SignOutBtn.Location = new System.Drawing.Point(4, 3);
+            this.SignOutBtn.Name = "SignOutBtn";
+            this.SignOutBtn.Size = new System.Drawing.Size(83, 48);
+            this.SignOutBtn.TabIndex = 60;
+            this.SignOutBtn.Text = "Log Out";
+            this.SignOutBtn.UseVisualStyleBackColor = true;
+            this.SignOutBtn.Click += new System.EventHandler(this.SignOutBtn_Click);
+            // 
             // ManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1081,5 +1094,6 @@ namespace Waterfall_PRJ
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Button btnShowStock;
         private System.Windows.Forms.Label lblMonday;
+        private System.Windows.Forms.Button SignOutBtn;
     }
 }

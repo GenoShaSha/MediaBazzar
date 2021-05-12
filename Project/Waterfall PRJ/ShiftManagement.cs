@@ -26,7 +26,6 @@ namespace Waterfall_PRJ
         public void AddShiftTime(Shift shift)
         {
             shifts.Add(shift);
-            shiftdb.AddShift(shift);
         }
 
         public bool AddEmployeeToShift(DateTime shifttime, ShiftType type, FloorStaff employee)

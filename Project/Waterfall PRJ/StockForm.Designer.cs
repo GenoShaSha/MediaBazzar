@@ -72,9 +72,12 @@ namespace Waterfall_PRJ
             this.CategoryCB = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.StockIdSearchTB = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.LogOutBtn = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbxUpdatePrice
@@ -431,6 +434,7 @@ namespace Waterfall_PRJ
             this.lbxRequestStock.Name = "lbxRequestStock";
             this.lbxRequestStock.Size = new System.Drawing.Size(551, 196);
             this.lbxRequestStock.TabIndex = 57;
+            this.lbxRequestStock.Click += new System.EventHandler(this.lbxRequestStock_Click);
             // 
             // lblStocks
             // 
@@ -492,6 +496,25 @@ namespace Waterfall_PRJ
             this.StockIdSearchTB.TabIndex = 49;
             this.StockIdSearchTB.TextChanged += new System.EventHandler(this.StockIdSearchTB_TextChanged);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.LogOutBtn);
+            this.panel1.Location = new System.Drawing.Point(12, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(952, 820);
+            this.panel1.TabIndex = 63;
+            this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseClick);
+            // 
+            // LogOutBtn
+            // 
+            this.LogOutBtn.Location = new System.Drawing.Point(3, 11);
+            this.LogOutBtn.Name = "LogOutBtn";
+            this.LogOutBtn.Size = new System.Drawing.Size(83, 39);
+            this.LogOutBtn.TabIndex = 64;
+            this.LogOutBtn.Text = "Log Out";
+            this.LogOutBtn.UseVisualStyleBackColor = true;
+            this.LogOutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
+            // 
             // StockForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -509,6 +532,7 @@ namespace Waterfall_PRJ
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.lbxStock);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.panel1);
             this.Name = "StockForm";
             this.Text = "StockForm";
             this.groupBox2.ResumeLayout(false);
@@ -517,6 +541,7 @@ namespace Waterfall_PRJ
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -567,5 +592,7 @@ namespace Waterfall_PRJ
         private System.Windows.Forms.Button plusBtn;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox StockIdSearchTB;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button LogOutBtn;
     }
 }

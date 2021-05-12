@@ -22,7 +22,7 @@ $user = new user();
         </div>
         <div class="navigation">
             <a href="floorEmployees.php?signedIn">HOME</a>
-            <a href="schedule.php">SCHEDULE</a>
+            <a href="scheduleBeta.php">SCHEDULE</a>
             <input type="text" placeholder="Search...">
             <a href="viewProfile.php">PERSONAL INFO</a>
         </div>
@@ -50,7 +50,7 @@ $user = new user();
                 <p> Email: <?php echo $_SESSION['sess_email'] ?> </p> 
             </div>
             <div class = "txt_field"> 
-                <p> Password: <?php echo $_SESSION['sess_pass'] ?> </p> 
+                <p> Password: <?php echo $_SESSION['sess_password'] ?> </p> 
             </div>
             <div class = "txt_field"> 
                 <p> Phone Number: <?php echo $_SESSION['sess_phone_number'] ?> </p> 

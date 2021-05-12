@@ -31,55 +31,51 @@ $user -> UpdateInformation();
             <h1>Profile</h1>
             <form method = "POST">
                 <div class="txt_field">
-                    <input type="First Name" name = "first_name" id = "first_name" required>
+                    <input type="First Name" name = "first_name" id = "first_name" value = "">
                     <label>First Name</label>
                 </div>
                 <div class="txt_field">
-                    <input type="Last Name" name = "last_name" id = "last_name" required>
+                    <input type="Last Name" name = "last_name" id = "last_name" value = "">
                     <label>Last Name</label>
                 </div>
                 <div class="txt_field">
-                    <input type="Date of Birth" name = "date_of_birth" id = "date_of_birth" required>
-                    <label>Date of Birth</label>
-                </div>
-                <div class="txt_field">
-                    <input type="BSN" name = "bsn" id = "bsn" required>
+                    <input type="BSN" name = "bsn" id = "bsn" value = "">
                     <label>BSN</label>
                 </div>
                 <div class="txt_field">
-                    <input type="Gender" name = "gender" id = "gender" required>
+                    <input type="Gender" name = "gender" id = "gender" value = "">
                     <label>Gender</label>
                 </div>
                 <div class="txt_field">
-                    <input type="Relationsip" name = "relationship" id = "relationship" required>
+                    <input type="Relationsip" name = "relationship" id = "relationship" value = "">
                     <label>Relationship</label>
                 </div>
                 <div class="txt_field">
-                    <input type="Email" name = "email" id = "email" required>
+                    <input type="Email" name = "email" id = "email" value = "">
                     <label>Email</label>
                 </div>
                 <div class="txt_field">
-                    <input type="Password" name = "password" id = "password" required>
+                    <input type="Password" name = "password" id = "password" value = "">
                     <label>Password</label>
                 </div>
                 <div class="txt_field">
-                    <input type="Phone Number" name = "phone_number" id = "phone_number" required>
+                    <input type="Phone Number" name = "phone_number" id = "phone_number" value = "">
                     <label>Phone Number</label>
                 </div>
                 <div class="txt_field">
-                    <input type="Address" name = "address" id = "address" required>
+                    <input type="Address" name = "address" id = "address" value = "">
                     <label>Address</label>
                 </div>
                 <div class="txt_field">
-                    <input type="Postal Code" name = "postal_code" id = "postal_code" required>
+                    <input type="Postal Code" name = "postal_code" id = "postal_code" value = "">
                     <label>Postal Code</label>
                 </div>
                 <div class="txt_field">
-                    <input type="City" name = "city" id = "city" required>
+                    <input type="City" name = "city" id = "city" value = "">
                     <label>City</label>
                 </div>
                 <div class="txt_field">
-                    <input type="Country" name = "country" id = "country" required>
+                    <input type="Country" name = "country" id = "country" value = "">
                     <label>Country</label>
                 </div>
                 <input type="submit" name = "updateBtn" id = "updateBtn" value = "Submit">
