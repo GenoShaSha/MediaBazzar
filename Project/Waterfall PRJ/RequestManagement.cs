@@ -24,6 +24,7 @@ namespace Waterfall_PRJ
         public void RemoveRequest(Request request)
         {
             requests.Remove(request);
+            dr.RemoveRequest(request);
         }
         public void ReadRequest()
         {

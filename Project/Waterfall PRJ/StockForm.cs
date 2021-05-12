@@ -192,12 +192,18 @@ namespace Waterfall_PRJ
             {
                 Request r = (Request)lbxRequestStock.SelectedItem;
                 Good g = gm.ReturnGoodByID(r.GoodID);
-                if(r.AmountRequest < g.Quantity)
+                if(r.AmountRequest <= g.Quantity)
                 {
                     mb.UpdateStock(g, g.ArticleNumbers, g.ProductName, g.Category, g.ProductPrice, g.PhysicalDimensions, (g.Quantity - r.AmountRequest));
                     MessageBox.Show("The request has been approved!");
+                    rm.RemoveRequest(r);
+                    UpdateRequestStockListbox();
+                    UpdateStockListbox();
                 }
-                
+                else if (r.AmountRequest > g.Quantity)
+                {
+                    MessageBox.Show("The request cannot be completed!(Not enough stock in warehouse.)");
+                }
             }
             catch (NullReferenceException)
             {
@@ -207,9 +213,41 @@ namespace Waterfall_PRJ
 
         private void btnDisapproved_Click(object sender, EventArgs e)
         {
-            Request r = (Request)lbxRequestStock.SelectedItem;
-            MessageBox.Show("The request has been disapproved!");
+            try
+            {
+                Request r = (Request)lbxRequestStock.SelectedItem;
+                MessageBox.Show("The request has been disapproved!");
+                rm.RemoveRequest(r);
+                UpdateRequestStockListbox();
+            }
+            catch(NullReferenceException)
+            {
+                MessageBox.Show("Please select a request");
+            }
+            
+            
 
+        }
+
+        private void StockIdSearchTB_TextChanged(object sender, EventArgs e)
+        {
+            lbxStock.Items.Clear();
+            List<Good> goodList = gm.GetProducts();
+            if (StockIdSearchTB.Text != string.Empty)
+            {
+                foreach(var item in goodList)
+                {
+                    if(Convert.ToInt32(StockIdSearchTB.Text) == ((Good)item).ID)
+                    {
+                        lbxStock.Items.Add(item);
+                    }
+                }
+            }
+            if(StockIdSearchTB.Text == string.Empty)
+            {
+                CategoryCB.SelectedIndex = 0;
+                UpdateStockListbox();
+            }
         }
     }
 }

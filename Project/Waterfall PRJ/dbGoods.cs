@@ -76,6 +76,50 @@ namespace Waterfall_PRJ
             }
             return false;
         }
+        public Good ReturnGoodByID(int id)
+        {
+            try
+            {
+                Good good;
+                string que = "SELECT * FROM goods WHERE goods_ID = @gID";
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand(que, con);
+                cmd.Parameters.AddWithValue("@gID", id);
+                using (MySqlDataReader objReader = cmd.ExecuteReader())
+                {
+                    if (objReader.HasRows)
+                    {
+                        while (objReader.Read())
+                        {
+                            int goodID = (int)objReader["goods_ID"];
+                            int articleNumbs = (int)objReader["articleNumbers"];
+                            string productName = objReader["productName"].ToString();
+                            string category = objReader["category"].ToString();
+                            decimal productPrice = (decimal)objReader["productPrice"];
+                            string physicalDimension = objReader["physicalDimensions"].ToString();
+                            int quantity = (int)objReader["quantity"];
+
+                             good = new Good(goodID, articleNumbs, productName, category, productPrice, physicalDimension, quantity);
+                            return good;
+                        }
+                    }
+                    con.Close();
+                }
+              
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if(con != null)
+                {
+                    con.Close();
+                }
+            }
+            return null;
+        }
         public List<Good> ReadGoods()
         {
             List<Good> goods = new List<Good>();

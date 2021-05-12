@@ -86,15 +86,17 @@ namespace Waterfall_PRJ
             }
             return null;
         }
-        public bool RemoveRequest(int id)
+        public bool RemoveRequest(Request request)
         {
             try
             {
-                string que = "DELETE FROM stockrequest WHERE goods_ID = @gID";
+                string que = "DELETE FROM stockrequest WHERE goods_ID = @gID AND Employee_ID = @eID AND quantity = @amount";
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand(que, con);
 
-                cmd.Parameters.AddWithValue("@gID", id);
+                cmd.Parameters.AddWithValue("@gID", request.GoodID);
+                cmd.Parameters.AddWithValue("@eID", request.EmpID);
+                cmd.Parameters.AddWithValue("@amount", request.AmountRequest);
 
                 cmd.ExecuteNonQuery();
 

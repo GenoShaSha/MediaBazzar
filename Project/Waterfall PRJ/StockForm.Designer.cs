@@ -70,6 +70,8 @@ namespace Waterfall_PRJ
             this.lblReqStock = new System.Windows.Forms.Label();
             this.btnDisapproved = new System.Windows.Forms.Button();
             this.CategoryCB = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.StockIdSearchTB = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -473,11 +475,30 @@ namespace Waterfall_PRJ
             this.CategoryCB.Text = "Select Category";
             this.CategoryCB.SelectedIndexChanged += new System.EventHandler(this.CategoryCB_SelectedIndexChanged);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(728, 148);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(89, 17);
+            this.label9.TabIndex = 62;
+            this.label9.Text = "Search by ID";
+            // 
+            // StockIdSearchTB
+            // 
+            this.StockIdSearchTB.Location = new System.Drawing.Point(689, 168);
+            this.StockIdSearchTB.Name = "StockIdSearchTB";
+            this.StockIdSearchTB.Size = new System.Drawing.Size(168, 22);
+            this.StockIdSearchTB.TabIndex = 49;
+            this.StockIdSearchTB.TextChanged += new System.EventHandler(this.StockIdSearchTB_TextChanged);
+            // 
             // StockForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(976, 833);
+            this.Controls.Add(this.StockIdSearchTB);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.CategoryCB);
             this.Controls.Add(this.btnDisapproved);
             this.Controls.Add(this.lblReqStock);
@@ -544,5 +565,7 @@ namespace Waterfall_PRJ
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button minusBtn;
         private System.Windows.Forms.Button plusBtn;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox StockIdSearchTB;
     }
 }

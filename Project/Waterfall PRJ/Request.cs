@@ -11,12 +11,18 @@ namespace Waterfall_PRJ
         private int emp_id;
         private int amountRequest;
         private int good_id;
+        private DbGoods dg;
+        private DbEmployees de;
+        Good good;
+        string emp_name;
 
         public Request(int amount, int good_id,int emp_id)
         {
             this.emp_id = emp_id;
             this.amountRequest = amount;
             this.good_id = good_id;
+            dg = new DbGoods();
+            de = new DbEmployees();
         }
         public int AmountRequest
         {
@@ -30,9 +36,21 @@ namespace Waterfall_PRJ
         {
             get { return this.emp_id; }
         }
+
+        private void GetGood(int id)
+        {
+            this.good = dg.ReturnGoodByID(id);
+        }
+
+        private void GetName(int id)
+        {
+            this.emp_name = de.GetName(id);
+        }
         public override string ToString()
         {
-            return $"Employeed ID: {EmpID} Good ID :{GoodID}, Quantity :{amountRequest} units.";
+            GetGood(GoodID);
+            GetName(EmpID);
+            return $"Requested by: {emp_name} ({EmpID}), Good :{good.ProductName} ({GoodID}), Quantity :{amountRequest} units.";
         }
 
     }

@@ -9,9 +9,7 @@ namespace Waterfall_PRJ
     public class GoodManagement
     {
         private List<Good> goods;
-        private List<Good> goods2;
         private DbGoods dg;
-        private Request rqst;
         Good g;
 
         public GoodManagement()

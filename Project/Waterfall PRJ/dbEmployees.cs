@@ -185,6 +185,48 @@ namespace Waterfall_PRJ
             }
             return null;
         }
+
+        public string GetName(int id)
+        {
+
+            try
+            {
+                string namestring;
+                string FirstName;
+                string LastName;
+                string que = "SELECT * FROM employees WHERE Employee_ID = @eID";
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand(que, con);
+                cmd.Parameters.AddWithValue("@eID", id);
+
+                using (MySqlDataReader objReader = cmd.ExecuteReader())
+                {
+                    if (objReader.HasRows)
+                    {
+                        while (objReader.Read())
+                        {
+                            FirstName = objReader["FirstName"].ToString();
+                            LastName = objReader["LastName"].ToString();
+                            namestring = FirstName + LastName;
+                            return namestring;
+                        }
+                    }
+                }
+                con.Close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if(con != null)
+                {
+                    con.Close();
+                }
+            }
+            return null;
+        }
         public bool UpdateEmployee(Employee person)
         {
             try
