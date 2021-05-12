@@ -15,6 +15,8 @@ namespace Waterfall_PRJ
         {
             con = new MySqlConnection("Server=studmysql01.fhict.local;Username=dbi450080;Database=dbi450080;Password=WortelSoulution");
         }
+
+
         public void AddShift(Shift shift)
         {
             try
@@ -38,6 +40,59 @@ namespace Waterfall_PRJ
                     con.Close();
                 }
             }
+        }
+
+        public List<Shift> ReadAssignedShifts()
+        {
+            List<Shift> shifts = new List<Shift>();
+            List<Employee> employees = new List<Employee>();
+            try
+            {
+                string que = "SELECT * FROM assignedworkshifts ORDER BY Employee_ID;";
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand(que, con);
+                using (MySqlDataReader objReader = cmd.ExecuteReader())
+                {
+                    if (objReader.HasRows)
+                    {
+                        while (objReader.Read())
+                        {
+                            int empID = (int)objReader["Employee_ID"];
+                            int shiftID = (int)objReader["shift_id"];
+                            foreach (Shift s in shifts)
+                            {
+                                if (s.ID == shiftID)
+                                {
+                                    foreach (Employee e in employees)
+                                    {
+                                        if (empID == e.EmployeeID)
+                                        {
+                                            s.AddEmployeeToShift((FloorStaff)e);
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                con.Close();
+                Console.Write(shifts);
+                return shifts;
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if (con != null)
+                {
+                    con.Close();
+                }
+            }
+            return null;
         }
         public void AddAssignments(int emp_id, int work_id)
         {

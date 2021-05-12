@@ -350,3 +350,4 @@ C:\Users\joran\OneDrive\Documents\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\
 C:\Users\Tobias Halomoan\Documents\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.StockForm.resources
 C:\Users\shane\OneDrive - Office 365 Fontys\Semester 2 - Software\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.StockRequest.resources
 C:\Users\Tobias Halomoan\Documents\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.StockRequests.resources
+C:\Users\joran\OneDrive\Documents\GitHub\s-cb04-s2-g3-prj\Project\Waterfall PRJ\obj\Debug\Waterfall_PRJ.StockRequests.resources
