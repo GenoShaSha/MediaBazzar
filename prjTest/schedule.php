@@ -3,6 +3,7 @@ session_start();
 include 'classes/dbConnection.Class.php';
 include 'classes/user.Class.php';
 include 'classes/workShift.Class.php';
+$user = new user();
 $workShift = new workShift();
 $workShift -> GetShifts();
 ?>
@@ -23,41 +24,20 @@ $workShift -> GetShifts();
         <a href="RetrieveInfo.php">PERSONAL INFO</a>             
     </div>
 <body>
-    <?php 
-    if (isset($_GET['signedIn'])) { 
-    ?>
-    <div class="topnav">
-        <a href="signOut.php">Sign Out</a>
-        <a><?php echo "WELCOME ".$_SESSION["sess_user_name"]?></a>
-    </div>               
-    <?php } ?>
- 
+
     <div class="header">
         <h1> MediaBazaar </h1>
     </div>
+
     <br>
     <div id="dp"></div>
     <br>
 
-    <?php 
-    if (isset($_GET['signedIn'])) { 
-    ?>
-    <div class="navigation">
-        <a href="#">HOME</a>
-        <a href="#">SCHEDULE</a>
-        <input type="text" placeholder="Search...">
-        <a href="RetrieveInfo.php">PERSONAL INFO</a>             
-    </div>
-    <?php } ?>
-    <input id="userName" type="hidden" name="name" value="<?php echo "".$_SESSION["sess_user_name"]?>">
+    <input id="userName" type="hidden" value="<?php echo "".$_SESSION["sess_email"]?>">
+    <input id="userShiftDate" type="hidden" value="<?php echo "".$_SESSION["sess_date"]?>">
+    <input id="userShiftType" type="hidden" value="<?php echo "".$_SESSION["sess_type"]?>">
 
-    <?php 
-    if( $_SESSION['sess_role'] == "Administrator")
-    {
-        echo "<h1>Employee List</h1>";
-        $employeeList ->ShowEmployees();
-    }
-    ?>
+
  </body>
  </html>
      <script src="js/daypilot-all.min.js"></script>
