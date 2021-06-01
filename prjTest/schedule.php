@@ -5,6 +5,8 @@ include 'classes/user.Class.php';
 include 'classes/workShift.Class.php';
 $workShift = new workShift();
 $workShift -> GetShifts();
+$db = new dbConnection();
+
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +16,6 @@ $workShift -> GetShifts();
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>TagsPage</title>
     <link rel="stylesheet" href="styles\mainstyles.css">
-    <link href="helpers/v2/main.css?v=2021.1.248" type="text/css" rel="stylesheet"/>
 
 </head>
 <div class="navigation">
@@ -36,7 +37,81 @@ $workShift -> GetShifts();
         <h1> MediaBazaar </h1>
     </div>
     <br>
-    <div id="dp"></div>
+    <h1> Your Workweek </h1>
+    <table class="styled-table">
+    <thead>
+        <tr>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+		        <td><?php echo $_SESSION['sess_shift']; ?></td>
+                <td><?php echo $_SESSION['sess_shift']; ?></td>
+		        <td><?php echo $_SESSION['sess_shift']; ?></td>
+		        <td><?php echo $_SESSION['sess_shift']; ?></td>
+		        <td><?php echo $_SESSION['sess_shift']; ?></td>
+		        <td><?php echo $_SESSION['sess_shift']; ?></td>
+		        <td><?php echo $_SESSION['sess_shift']; ?></td>
+
+        </tr>
+    </tbody>
+</table>
+<br>
+<hr>
+<br>
+<h1>Set Your Prefference </h1>
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+                <td onclick="changeColor(this)" id="DayTime">Morning</td>
+                <td onclick="changeColor(this)" id="DayTime">Morning</td>
+                <td onclick="changeColor(this)" id="DayTime">Morning</td>
+                <td onclick="changeColor(this)" id="DayTime">Morning</td>
+                <td onclick="changeColor(this)" id="DayTime">Morning</td>
+                <td onclick="changeColor(this)" id="DayTime">Morning</td>
+                <td onclick="changeColor(this)" id="DayTime">Morning</td>
+        </tr>
+        <tr>
+                <td onclick="changeColor(this)" id="DayTime">Evening</td>
+                <td onclick="changeColor(this)" id="DayTime">Evening</td>
+                <td onclick="changeColor(this)" id="DayTime">Evening</td>
+                <td onclick="changeColor(this)" id="DayTime">Evening</td>
+                <td onclick="changeColor(this)" id="DayTime">Evening</td>
+                <td onclick="changeColor(this)" id="DayTime">Evening</td>
+                <td onclick="changeColor(this)" id="DayTime">Evening</td>
+        </tr>
+        <tr>
+                <td onclick="changeColor(this)" id="DayTime">Afternoon</td>
+                <td onclick="changeColor(this)" id="DayTime">Afternoon</td>
+                <td onclick="changeColor(this)" id="DayTime">Afternoon</td>
+                <td onclick="changeColor(this)" id="DayTime">Afternoon</td>
+                <td onclick="changeColor(this)" id="DayTime">Afternoon</td>
+                <td onclick="changeColor(this)" id="DayTime">Afternoon</td>
+                <td onclick="changeColor(this)" id="DayTime">Afternoon</td>
+        </tr>   
+    </tbody>
+</table>
+<br>
+<button type="submit" name="updatePrefference" class="btn">Update your Prefference!</button>
+
     <br>
 
     <?php 
@@ -49,7 +124,8 @@ $workShift -> GetShifts();
         <a href="RetrieveInfo.php">PERSONAL INFO</a>             
     </div>
     <?php } ?>
-    <input id="userName" type="hidden" name="name" value="<?php echo "".$_SESSION["sess_user_name"]?>">
+    
+    <!-- <input id="userName" type="hidden" name="name" value="<?php echo "".$_SESSION["sess_user_name"]?>"> -->
 
     <?php 
     if( $_SESSION['sess_role'] == "Administrator")
@@ -60,5 +136,4 @@ $workShift -> GetShifts();
     ?>
  </body>
  </html>
-     <script src="js/daypilot-all.min.js"></script>
     <script src="js/main.js" type="text/javascript"></script>

@@ -8,12 +8,17 @@ class workShift extends dbConnection
                try
                {
                    $id = $_SESSION['sess_user_id'];
-                   $query = "SELECT `shift_id` FROM `assignedworkshifts` WHERE Employee_ID = $id";
-                   $stmt = $this -> connect() -> query($query);
 
-                   while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+                   $query1 = "SELECT `shift_id` FROM `assignedworkshifts` WHERE Employee_ID = $id";
+                   $stmt1 = $this -> connect() -> query($query1);
+
+                   $query2 = "SELECT * FROM `shifts` WHERE `shift_id` = 3";
+                   $stmt2 = $this -> connect() -> query($query2);
+
+                   
+                   while ($row = $stmt2->fetch(PDO::FETCH_ASSOC))
                    {
-                       $_SESSION['sess_shift'] = $row['shift_id'];
+                       $_SESSION['sess_shift'] = $row['type'];
                    }
                }
                catch (PDOException $e) 
