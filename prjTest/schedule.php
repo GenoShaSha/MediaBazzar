@@ -17,7 +17,7 @@ $db = new dbConnection();
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>TagsPage</title>
     <link rel="stylesheet" href="styles\mainstyles.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <div class="navigation">
         <a href="floorEmployees.php?signedIn">HOME</a>
@@ -82,41 +82,63 @@ $db = new dbConnection();
     </thead>
     <tbody>
         <tr>
-                <td onclick="changeColor(this)" id="DayTime">Morning</td>
-                <td onclick="changeColor(this)" id="DayTime">Morning</td>
-                <td onclick="changeColor(this)" id="DayTime">Morning</td>
-                <td onclick="changeColor(this)" id="DayTime">Morning</td>
-                <td onclick="changeColor(this)" id="DayTime">Morning</td>
-                <td onclick="changeColor(this)" id="DayTime">Morning</td>
-                <td onclick="changeColor(this)" id="DayTime">Morning</td>
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Morning1">Morning</td>
+                <input id="Morning1Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Morning2">Morning</td>
+                <input id="Morning2Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Morning3">Morning</td>
+                <input id="Morning3Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Morning4">Morning</td>
+                <input id="Morning4Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Morning5">Morning</td>
+                <input id="Morning5Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Morning6">Morning</td>
+                <input id="Morning6Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Morning7">Morning</td>
+                <input id="Morning7Value" type="hidden" value="0">
         </tr>
         <tr>
-                <td onclick="changeColor(this)" id="DayTime">Evening</td>
-                <td onclick="changeColor(this)" id="DayTime">Evening</td>
-                <td onclick="changeColor(this)" id="DayTime">Evening</td>
-                <td onclick="changeColor(this)" id="DayTime">Evening</td>
-                <td onclick="changeColor(this)" id="DayTime">Evening</td>
-                <td onclick="changeColor(this)" id="DayTime">Evening</td>
-                <td onclick="changeColor(this)" id="DayTime">Evening</td>
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Evening1">Evening</td>
+                <input id="Evening1Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Evening2">Evening</td>
+                <input id="Evening2Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Evening3">Evening</td>
+                <input id="Evening3Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Evening4">Evening</td>
+                <input id="Evening4Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Evening5">Evening</td>
+                <input id="Evening5Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Evening6">Evening</td>
+                <input id="Evening6Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Evening7">Evening</td>
+                <input id="Evening7Value" type="hidden" value="0">
         </tr>
         <tr>
-                <td onclick="changeColor(this)" id="DayTime">Afternoon</td>
-                <td onclick="changeColor(this)" id="DayTime">Afternoon</td>
-                <td onclick="changeColor(this)" id="DayTime">Afternoon</td>
-                <td onclick="changeColor(this)" id="DayTime">Afternoon</td>
-                <td onclick="changeColor(this)" id="DayTime">Afternoon</td>
-                <td onclick="changeColor(this)" id="DayTime">Afternoon</td>
-                <td onclick="changeColor(this)" id="DayTime">Afternoon</td>
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Afternoon1">Afternoon</td>
+                <input id="Afternoon1Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Afternoon2">Afternoon</td>
+                <input id="Afternoon2Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Afternoon3">Afternoon</td>
+                <input id="Afternoon3Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Afternoon4">Afternoon</td>
+                <input id="Afternoon4Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Afternoon5">Afternoon</td>
+                <input id="Afternoon5Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Afternoon6">Afternoon</td>
+                <input id="Afternoon6Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Afternoon7">Afternoon</td>
+                <input id="Afternoon7Value" type="hidden" value="0">
         </tr>   
     </tbody>
 </table>
 <br>
+
 <form  method="POST">
+<input id="PreferenceValue" name="PreferenceValue" type="hidden">
 <button type="submit" name="UpdatePreference" class="btn">Update your Preference!</button>
 </form>
 
     <br>
-
     <?php 
     if (isset($_GET['signedIn'])) { 
     ?>
@@ -139,4 +161,4 @@ $db = new dbConnection();
     ?>
  </body>
  </html>
-    <script src="js/main.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/javascript"></script>

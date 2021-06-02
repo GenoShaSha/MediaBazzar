@@ -120,7 +120,7 @@ div.movietags
     border-bottom: 2px solid gray;
 }
 
-#DayTime:hover
+.DayTime:hover
 {
     background-color: gray;
 }
