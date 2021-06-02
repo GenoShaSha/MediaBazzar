@@ -27,5 +27,23 @@ class workShift extends dbConnection
                }
            }
     }
+    public function UpdatePreference()
+    {
+           if(isset($_POST['UpdatePreference']))
+           {          
+               try
+               {
+                   $id = $_SESSION['sess_user_id'];
+
+                   $query = "UPDATE `employees` SET `Preference`= '000001' WHERE Employee_ID = $id";
+                   $stmt = $this -> connect() -> query($query);
+                   $stmt ->execute();
+                }
+               catch (PDOException $e) 
+               {
+                echo "Error : ".$e->getMessage();
+               }
+           }
+    }
 }
 ?>

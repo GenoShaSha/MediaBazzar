@@ -5,6 +5,7 @@ include 'classes/user.Class.php';
 include 'classes/workShift.Class.php';
 $workShift = new workShift();
 $workShift -> GetShifts();
+$workShift -> UpdatePreference();
 $db = new dbConnection();
 
 ?>
@@ -110,7 +111,9 @@ $db = new dbConnection();
     </tbody>
 </table>
 <br>
-<button type="submit" name="updatePrefference" class="btn">Update your Prefference!</button>
+<form  method="POST">
+<button type="submit" name="UpdatePreference" class="btn">Update your Preference!</button>
+</form>
 
     <br>
 
