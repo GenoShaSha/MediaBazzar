@@ -4,7 +4,6 @@ include 'classes/dbConnection.Class.php';
 include 'classes/user.Class.php';
 include 'classes/workShift.Class.php';
 $workShift = new workShift();
-$workShift -> GetShifts();
 $workShift -> UpdatePreference();
 $db = new dbConnection();
 
@@ -37,37 +36,25 @@ $db = new dbConnection();
     <div class="header">
         <h1> MediaBazaar </h1>
     </div>
+    <hr>
     <br>
+    <br>
+    <form method="POST">
+    <div class="container">
+    <button type="submit" name="PreviousWeek" class="btn">Last Week</button>
+    <button type="submit" name="CurrentWeek" class="btn">Current Week</button>
+    <button type="submit" name="NextWeek" class="btn">Next Week</button>
+    </div>
+    </form>
+       <br>
     <h1> Your Workweek </h1>
     <table class="styled-table">
-    <thead>
-        <tr>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thursday</th>
-            <th>Friday</th>
-            <th>Saturday</th>
-            <th>Sunday</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-		        <td><?php echo $_SESSION['sess_shift']; ?></td>
-                <td><?php echo $_SESSION['sess_shift']; ?></td>
-		        <td><?php echo $_SESSION['sess_shift']; ?></td>
-		        <td><?php echo $_SESSION['sess_shift']; ?></td>
-		        <td><?php echo $_SESSION['sess_shift']; ?></td>
-		        <td><?php echo $_SESSION['sess_shift']; ?></td>
-		        <td><?php echo $_SESSION['sess_shift']; ?></td>
-
-        </tr>
-    </tbody>
+        <?php $workShift -> GetShifts(); ?> 
 </table>
 <br>
 <hr>
 <br>
-<h1>Set Your Prefference </h1>
+<h1>Set Your Preference </h1>
 <table class="styled-table">
     <thead>
         <tr>
@@ -135,7 +122,8 @@ $db = new dbConnection();
 
 <form  method="POST">
 <input id="PreferenceValue" name="PreferenceValue" type="hidden">
-<button type="submit" name="UpdatePreference" class="btn">Update your Preference!</button>
+<br>
+<button type="submit" name="UpdatePreference" class="btn container">Update your Preference!</button>
 </form>
 
     <br>

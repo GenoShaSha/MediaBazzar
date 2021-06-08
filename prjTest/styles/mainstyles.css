@@ -130,7 +130,7 @@ div.movietags
     background:green !important;
 }
 
-h1 {
+h1,h2,h3,h4,h5 {
     text-align:center;
 }
 
@@ -144,3 +144,11 @@ h1 {
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
 
   }
+
+.container{
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
