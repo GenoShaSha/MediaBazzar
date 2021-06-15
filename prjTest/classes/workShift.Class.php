@@ -31,7 +31,7 @@ class workShift extends dbConnection
                 (SELECT `shift_id` FROM `assignedworkshifts` WHERE Employee_ID = $id AND `date` BETWEEN '".$this_week_sd."' AND '".$this_week_ed."')";               
                 $stmt = $this -> connect() -> query($query);
 
-
+                
                 echo "<h5> Current week range from $this_week_sd to $this_week_ed </h5>";
                 echo "<thead>";
                 echo "<tr>";
@@ -45,11 +45,20 @@ class workShift extends dbConnection
                 echo "</thead>";
                 
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
-                {
-
+                {                
                     echo "<tbody>";
                     echo "<tr>";
-                    echo "<td>".$row['type']."</td>";
+
+                    for ($i = 0; $i < 7; $i++) {
+                        $mondayWeek = strtotime(date("Y-m-d",$monday)." +".$i."days");
+                        $dayWeek = date("Y-m-d",$mondayWeek);
+
+                        if($row['date'] == $dayWeek)
+                        {
+                        echo "<td>".$row['type']."</td>";
+                        break;
+                        }
+                    }
                     echo "</tr>";
                     echo "</tbody>";
 
