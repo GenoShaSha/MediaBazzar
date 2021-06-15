@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    public class Stock
+    class Shift
     {
     }
 }

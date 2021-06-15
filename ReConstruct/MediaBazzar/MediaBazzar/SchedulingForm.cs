@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MediaBazzar
 {
-    public partial class Form1 : Form
+    public partial class SchedulingForm : Form
     {
-        public Form1()
+        public SchedulingForm()
         {
             InitializeComponent();
         }

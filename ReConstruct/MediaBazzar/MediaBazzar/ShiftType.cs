@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    public interface IManager
+    public enum ShiftType
     {
-        void AddObj(Object obj);
-        void RemoveObj(int id);
-        List<object> GetListObj();
+        MORNING,
+        AFTERNOON,
+        NIGHT
     }
 }

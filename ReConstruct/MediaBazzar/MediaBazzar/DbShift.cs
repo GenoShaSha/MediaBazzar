@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    public interface IManager
+    class DbShift
     {
-        void AddObj(Object obj);
-        void RemoveObj(int id);
-        List<object> GetListObj();
     }
 }

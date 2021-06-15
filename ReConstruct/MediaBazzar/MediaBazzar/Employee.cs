@@ -22,7 +22,7 @@ namespace MediaBazzar
         protected string postalCode;
         protected string city;
         protected string country;
-        protected string employeeType;
+        protected string employeeType = string.Empty;
         protected DateTime dateOfJoin;
         protected string status = string.Empty;
 
@@ -151,6 +151,7 @@ namespace MediaBazzar
             get { return this.employeeType; }
             set { this.employeeType = value; }
         }
+
         public override string ToString()
         {
             if (this.status == string.Empty)
