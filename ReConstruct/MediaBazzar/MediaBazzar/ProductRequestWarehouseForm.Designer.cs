@@ -29,12 +29,90 @@ namespace MediaBazzar
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.label2 = new System.Windows.Forms.Label();
+            this.EmployeeIDLbl = new System.Windows.Forms.Label();
+            this.AmountTb = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.StockRequestLB = new System.Windows.Forms.ListBox();
+            this.RequestBtn = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(126, 287);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 17);
+            this.label2.TabIndex = 19;
+            // 
+            // EmployeeIDLbl
+            // 
+            this.EmployeeIDLbl.AutoSize = true;
+            this.EmployeeIDLbl.Location = new System.Drawing.Point(29, 287);
+            this.EmployeeIDLbl.Name = "EmployeeIDLbl";
+            this.EmployeeIDLbl.Size = new System.Drawing.Size(91, 17);
+            this.EmployeeIDLbl.TabIndex = 18;
+            this.EmployeeIDLbl.Text = "Employee ID:";
+            // 
+            // AmountTb
+            // 
+            this.AmountTb.Location = new System.Drawing.Point(301, 282);
+            this.AmountTb.Name = "AmountTb";
+            this.AmountTb.Size = new System.Drawing.Size(169, 22);
+            this.AmountTb.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(239, 285);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 17);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Amount";
+            // 
+            // StockRequestLB
+            // 
+            this.StockRequestLB.FormattingEnabled = true;
+            this.StockRequestLB.ItemHeight = 16;
+            this.StockRequestLB.Location = new System.Drawing.Point(32, 27);
+            this.StockRequestLB.Name = "StockRequestLB";
+            this.StockRequestLB.Size = new System.Drawing.Size(450, 228);
+            this.StockRequestLB.TabIndex = 15;
+            // 
+            // RequestBtn
+            // 
+            this.RequestBtn.Location = new System.Drawing.Point(32, 322);
+            this.RequestBtn.Name = "RequestBtn";
+            this.RequestBtn.Size = new System.Drawing.Size(450, 42);
+            this.RequestBtn.TabIndex = 14;
+            this.RequestBtn.Text = "Send Request";
+            this.RequestBtn.UseVisualStyleBackColor = true;
+            // 
+            // ProductRequestWarehouseForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(531, 399);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.EmployeeIDLbl);
+            this.Controls.Add(this.AmountTb);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.StockRequestLB);
+            this.Controls.Add(this.RequestBtn);
+            this.Name = "ProductRequestWarehouseForm";
             this.Text = "ProductRequestWarehouseForm";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label EmployeeIDLbl;
+        private System.Windows.Forms.TextBox AmountTb;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox StockRequestLB;
+        private System.Windows.Forms.Button RequestBtn;
     }
 }

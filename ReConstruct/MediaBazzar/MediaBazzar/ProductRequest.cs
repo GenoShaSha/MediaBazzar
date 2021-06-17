@@ -6,21 +6,25 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    public class ProductRequestWarehouse
+    public class ProductRequest
     {
         private int emp_id;
         private int amountRequest;
         private int product_id;
+        private string location;
         private DbProductWarehouse dpw;
+        private DbProductFloor dpf;
         private DbEmployee de;
         Product product;
         string emp_name;
-        public ProductRequestWarehouse(int amount, int product_id, int emp_id)
+        public ProductRequest(int amount, int product_id, int emp_id, string location)
         {
             this.emp_id = emp_id;
             this.amountRequest = amount;
             this.product_id = product_id;
+            this.location = location;
             dpw = new DbProductWarehouse();
+            dpf = new DbProductFloor();
             de = new DbEmployee();
         }
         public int AmountRequest
@@ -35,10 +39,15 @@ namespace MediaBazzar
         {
             get { return this.emp_id; }
         }
+        public string Location
+        {
+            get { return this.location; }
+        }
         private void GetProduct(int id) 
         {
             this.product = dpw.ReturnProductByID(id);
         }
+
         private void GetName(int id)
         {
             this.emp_name = de.GetName(id);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    class ProductRequestFloorManagement 
+    public class ProductRequestFloorManagement 
     {
         private List<ProductRequestFloor> requests;
         private DbProductRequestFloor dr;

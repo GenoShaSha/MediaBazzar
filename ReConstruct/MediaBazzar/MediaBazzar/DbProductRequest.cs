@@ -7,17 +7,17 @@ using MySql.Data.MySqlClient;
 
 namespace MediaBazzar
 {
-    class DbProductRequestWarehouse
+    class DbProductRequest
     {
         private MySqlConnection con;
 
-        public DbProductRequestWarehouse()
+        public DbProductRequest()
         {
             con = new MySqlConnection("Server=studmysql01.fhict.local;Username=dbi450080;Database=dbi450080;Password=WortelSoulution");
         }
 
 
-        public void AddRequest(ProductRequestWarehouse request)
+        public void AddRequest(ProductRequestWarehous request)
         {
             try
             {
@@ -45,9 +45,9 @@ namespace MediaBazzar
                 }
             }
         }
-        public List<ProductRequestWarehouse> ReadRequest()
+        public List<ProductRequest> ReadRequest()
         {
-            List<ProductRequestWarehouse> requests = new List<ProductRequestWarehouse>();
+            List<ProductRequest> requests = new List<ProductRequest>();
             try
             {
                 string que = "SELECT * FROM stockrequest ORDER BY goods_ID;";
@@ -65,7 +65,7 @@ namespace MediaBazzar
                             int quantity = (int)objReader["quantity"];
                             string location = objReader["location"].ToString();
 
-                            ProductRequestWarehouse request = new ProductRequestWarehouse(quantity, goodID, empID);
+                            ProductRequest request = new ProductRequest(quantity, goodID, empID);
                             requests.Add(request);
                         }
                     }
@@ -86,7 +86,7 @@ namespace MediaBazzar
             }
             return null;
         }
-        public bool RemoveRequest(ProductRequestWarehouse request)
+        public bool RemoveRequest(ProductRequest request)
         {
             try
             {
