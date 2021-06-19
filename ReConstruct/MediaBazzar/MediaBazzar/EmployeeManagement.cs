@@ -10,10 +10,12 @@ namespace MediaBazzar
     {
         private List<Employee> employees;
         private DbEmployee de;
+        private DbFiredEmployee df;
         public EmployeeManagement()
         {
             employees = new List<Employee>();
             de = new DbEmployee();
+            df = new DbFiredEmployee();
         }
         public void AddObj(Object obj)
         {
@@ -34,17 +36,10 @@ namespace MediaBazzar
         {
             de.RemoveEmployees(id);
         }
-        public Employee AddFiredEmployee(int id)
+        public void AddFiredEmployee(int id)
         {
-            foreach (Employee e in employees)
-            {
-                if (e.Id == id)
-                {
-                    return e;
-                }
-                de.AddResignEmployees(e);
-            }
-            return null;
+            Employee em = GetEmpByID(id);
+            df.AddResignEmployees(em);
         }
         public void FiredEmployee(int id)
         {

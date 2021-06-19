@@ -39,23 +39,31 @@ namespace MediaBazzar
                 }
                 else if (type == "Floor Manager")
                 {
-                    MessageBox.Show("Ur in to Management form!");
+                    MessageBox.Show("Ur in to Floor Manager form!");
                     SchedulingForm sf = new SchedulingForm();
                     sf.Show();
                     this.Hide();
                 }
                 else if (type == "Warehouse Manager")
                 {
-                    //MessageBox.Show("Ur in to Warehouse form!");
-                    //StockForm sf = new StockForm();
-                    //sf.Show();
-                    //this.Hide();
+                    MessageBox.Show("Ur in to Warehouse Manager form!");
+                    AddRmvProductForm arp = new AddRmvProductForm();
+                    arp.Show();
+                    this.Hide();
                 }
                 else if (type == "Warehouse Staff")
                 {
-                    MessageBox.Show("Ur in to Stock Request form!");
-                    ProductRequestWarehouseForm prw = new ProductRequestWarehouseForm(id);
-                    prw.Show();
+                    MessageBox.Show("Ur in to Warehouse Staff form!");
+                    RestockFloorProductManagementForm rfp = new RestockFloorProductManagementForm();
+                    rfp.Show();
+                    this.Hide();
+                }
+                else if(type == "Floor Staff")
+                {
+                    MessageBox.Show("Ur in to Floor Staff form!");
+                    ProductRequestFloorForm prf = new ProductRequestFloorForm();
+                    prf.Show();
+                    this.Hide();
                 }
                 else if (type == null)
                 {

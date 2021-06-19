@@ -40,6 +40,7 @@ namespace MediaBazzar
         {
             ProductRequest r = (ProductRequest)lbxRequestStock.SelectedItem;
             wrp.PRM.RemoveRequest(r);
+            UpdateRequestStockListbox();
             MessageBox.Show("Request product has been sent to the supplier!");
         }
 

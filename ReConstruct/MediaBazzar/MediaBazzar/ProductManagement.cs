@@ -23,11 +23,8 @@ namespace MediaBazzar
         }
         public void AddObj(Object obj)
         {
-            if(obj is Product)
-            {
-                productsWarehouse.Add((Product)obj);
-                dpw.AddProduct((Product)obj);
-            }
+            productsWarehouse.Add((Product)obj);
+            dpw.AddProduct((Product)obj);
         }
         public void AddProductShop(Product product)
         {
