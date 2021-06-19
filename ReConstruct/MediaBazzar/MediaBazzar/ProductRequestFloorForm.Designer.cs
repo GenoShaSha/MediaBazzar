@@ -79,6 +79,7 @@ namespace MediaBazzar
             this.RequestBtn.TabIndex = 6;
             this.RequestBtn.Text = "Send Request";
             this.RequestBtn.UseVisualStyleBackColor = true;
+            this.RequestBtn.Click += new System.EventHandler(this.RequestBtn_Click);
             // 
             // label2
             // 

@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    public class ProductRequestFloorManagement 
+    public class ProductRequestManagement
     {
-        private List<ProductRequestFloor> requests;
-        private DbProductRequestFloor dr;
-        public ProductRequestFloorManagement()
+        private List<ProductRequest> requests;
+        private DbProductRequest dr;
+        public ProductRequestManagement()
         {
-            requests = new List<ProductRequestFloor>();
-            dr = new DbProductRequestFloor();
+            requests = new List<ProductRequest>();
+            dr = new DbProductRequest();
         }
-        public void AddRequest(ProductRequestFloor request)
+        public void AddRequest(ProductRequest request)
         {
             requests.Add(request);
             dr.AddRequest(request);
         }
-        public void RemoveRequest(ProductRequestFloor request)
+        public void RemoveRequest(ProductRequest request)
         {
             requests.Remove(request);
             dr.RemoveRequest(request);
@@ -30,7 +30,7 @@ namespace MediaBazzar
             requests = dr.ReadRequest();
         }
 
-        public List<ProductRequestFloor> GetRequest()
+        public List<ProductRequest> GetRequest()
         {
             ReadRequest();
             return requests;

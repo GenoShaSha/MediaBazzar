@@ -30,10 +30,10 @@ namespace MediaBazzar
         private void InitializeComponent()
         {
             this.lblPassword = new System.Windows.Forms.Label();
-            this.tbxArtNumb = new System.Windows.Forms.TextBox();
+            this.tbxUsername = new System.Windows.Forms.TextBox();
             this.btnSignIn = new System.Windows.Forms.Button();
             this.lblUsrName = new System.Windows.Forms.Label();
-            this.tbxProdName = new System.Windows.Forms.TextBox();
+            this.tbxPassword = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblPassword
@@ -45,12 +45,12 @@ namespace MediaBazzar
             this.lblPassword.TabIndex = 0;
             this.lblPassword.Text = "Password :";
             // 
-            // tbxArtNumb
+            // tbxUsername
             // 
-            this.tbxArtNumb.Location = new System.Drawing.Point(137, 121);
-            this.tbxArtNumb.Name = "tbxArtNumb";
-            this.tbxArtNumb.Size = new System.Drawing.Size(175, 22);
-            this.tbxArtNumb.TabIndex = 1;
+            this.tbxUsername.Location = new System.Drawing.Point(137, 121);
+            this.tbxUsername.Name = "tbxUsername";
+            this.tbxUsername.Size = new System.Drawing.Size(175, 22);
+            this.tbxUsername.TabIndex = 1;
             // 
             // btnSignIn
             // 
@@ -60,6 +60,7 @@ namespace MediaBazzar
             this.btnSignIn.TabIndex = 2;
             this.btnSignIn.Text = "SIGN IN";
             this.btnSignIn.UseVisualStyleBackColor = true;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // lblUsrName
             // 
@@ -70,22 +71,22 @@ namespace MediaBazzar
             this.lblUsrName.TabIndex = 3;
             this.lblUsrName.Text = "Username :";
             // 
-            // tbxProdName
+            // tbxPassword
             // 
-            this.tbxProdName.Location = new System.Drawing.Point(137, 149);
-            this.tbxProdName.Name = "tbxProdName";
-            this.tbxProdName.Size = new System.Drawing.Size(175, 22);
-            this.tbxProdName.TabIndex = 62;
+            this.tbxPassword.Location = new System.Drawing.Point(137, 149);
+            this.tbxPassword.Name = "tbxPassword";
+            this.tbxPassword.Size = new System.Drawing.Size(175, 22);
+            this.tbxPassword.TabIndex = 62;
             // 
             // SignInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(367, 296);
-            this.Controls.Add(this.tbxProdName);
+            this.Controls.Add(this.tbxPassword);
             this.Controls.Add(this.lblUsrName);
             this.Controls.Add(this.btnSignIn);
-            this.Controls.Add(this.tbxArtNumb);
+            this.Controls.Add(this.tbxUsername);
             this.Controls.Add(this.lblPassword);
             this.Name = "SignInForm";
             this.Text = "Form1";
@@ -97,10 +98,10 @@ namespace MediaBazzar
         #endregion
 
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.TextBox tbxArtNumb;
+        private System.Windows.Forms.TextBox tbxUsername;
         private System.Windows.Forms.Button btnSignIn;
         private System.Windows.Forms.Label lblUsrName;
-        private System.Windows.Forms.TextBox tbxProdName;
+        private System.Windows.Forms.TextBox tbxPassword;
     }
 }
 

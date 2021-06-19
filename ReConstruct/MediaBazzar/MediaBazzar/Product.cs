@@ -35,14 +35,13 @@ namespace MediaBazzar
             this.physicalDimensions = physicalDimensions;
             this.quantity = quantity;
         }
-        public void UpdateProduct(int articleNumbers, string productName, string category, decimal productPrice, string physicalDimensions, int quantity)
+        public void UpdateProductQuantity(int quantity)
         {
-            this.articleNumbers = articleNumbers;
-            this.productName = productName;
-            this.category = category;
-            this.productPrice = productPrice;
-            this.physicalDimensions = physicalDimensions;
             this.quantity = quantity;
+        }
+        public void UpdateProductPrice(decimal price)
+        {
+            this.productPrice = price;
         }
         public int ID
         {

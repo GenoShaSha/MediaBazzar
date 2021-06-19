@@ -8,49 +8,67 @@ namespace MediaBazzar
 {
     public class ProductManagement : IManager
     {
-        private List<Product> products;
-        private DbProductWarehouse dp;
+        private List<Product> productsWarehouse;
+        private List<Product> productsShop;
+        private DbProductWarehouse dpw;
+        private DbProductFloor dpf;
+        private DbDiscontinuedProduct ddp;
         public ProductManagement()
         {
-            products = new List<Product>();
-            dp = new DbProductWarehouse();
+            productsWarehouse = new List<Product>();
+            productsShop = new List<Product>();
+            dpw = new DbProductWarehouse();
+            dpf = new DbProductFloor();
+            ddp = new DbDiscontinuedProduct();
         }
         public void AddObj(Object obj)
         {
-            products.Add((Product)obj);
-            dp.AddProduct((Product)obj);
+            if(obj is Product)
+            {
+                productsWarehouse.Add((Product)obj);
+                dpw.AddProduct((Product)obj);
+            }
+        }
+        public void AddProductShop(Product product)
+        {
+            productsShop.Add(product);
+            dpf.AddProduct(product);
         }
 
         public List<Object> GetListObj()
         {
-            return products.Cast<Object>().ToList();
+            ReadProductsWarehouse();
+            return productsWarehouse.Cast<Object>().ToList();
+        }
+        public List<Product> GetListProduct()
+        {
+            ReadProductsShop();
+            return productsShop;
         }
 
         public void RemoveObj(int id)
         {
-            dp.RemoveProduct(id);
+            dpw.RemoveProduct(id);
+        }
+        public void RemoveProductShop(int id)
+        {
+            dpf.RemoveProduct(id);
         }
 
-        public Product AddDiscontinuedProduct(int id)
+        public void AddDiscontinuedProduct(int id)
         {
-            foreach (Product p in products)
-            {
-                if (p.ID == id)
-                {
-                    return p;
-                }
-                dp.AddDiscontinuedProduct(p);
-            }
-            return null;
+            Product pw = ReturnProductWarehouseByID(id);
+            ddp.AddDiscontinuedProduct(pw);
         }
         public void DiscontinuedProduct(int id)
         {
             AddDiscontinuedProduct(id);
             RemoveObj(id);
+            RemoveProductShop(id);
         }
-        public Product ReturnProductByID(int id)
+        public Product ReturnProductWarehouseByID(int id)
         {
-            foreach (Product p in products)
+            foreach (Product p in productsWarehouse)
             {
                 if (p.ID == id)
                 {
@@ -59,15 +77,45 @@ namespace MediaBazzar
             }
             return null;
         }
-        public void ReadProducts()
+        public Product ReturnProductFloorByID(int id)
         {
-            products = dp.ReadProducts();
+            foreach (Product p in productsShop)
+            {
+                if (p.ID == id)
+                {
+                    return p;
+                }
+            }
+            return null;
         }
-
-        public List<Product> GetProducts()
+        public void ReadProductsWarehouse()
         {
-            ReadProducts();
-            return products;
+            productsWarehouse = dpw.ReadProducts();
         }
+        public void ReadProductsShop()
+        {
+            productsShop = dpf.ReadProducts();
+        }
+        public void UpdateWarehouseProductQuantity(Product p, int newQuantity)
+        {
+            p.UpdateProductQuantity(newQuantity);
+            dpw.UpdateProductQuantity(p);
+            dpf.UpdateProductQuantity(p);
+        }
+        public void UpdateWarehouseProductPrice(Product p, decimal price)
+        {
+            p.UpdateProductPrice(price);
+            dpw.UpdateProductPrice(p);
+        }
+        public void UpdateFloorProductQuantity(Product p, int newQuantity)
+        {
+            p.UpdateProductQuantity(newQuantity);
+            dpw.UpdateProductQuantity(p);
+        }
+        //public List<Product> GetProducts()
+        //{
+        //    ReadProducts();
+        //    return products;
+        //}
     }
 }

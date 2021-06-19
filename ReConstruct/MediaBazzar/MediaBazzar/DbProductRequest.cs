@@ -17,17 +17,25 @@ namespace MediaBazzar
         }
 
 
-        public void AddRequest(ProductRequestWarehous request)
+        public void AddRequest(ProductRequest request)
         {
             try
             {
-                string que = "INSERT INTO stockrequest(goods_ID,Employee_ID,quantity) VALUES (@gID,@eID,@quantity)";
+                string que = "INSERT INTO stockrequest(goods_ID,Employee_ID,quantity,location) VALUES (@gID,@eID,@quantity,@location)";
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand(que, con);
 
                 cmd.Parameters.AddWithValue("@gID", request.ProductID);
                 cmd.Parameters.AddWithValue("@eID", request.EmpID);
                 cmd.Parameters.AddWithValue("@quantity", request.AmountRequest);
+                if(request.Location == "Warehouse")
+                {
+                    cmd.Parameters.AddWithValue("@location", "Warehouse");
+                }
+                else if(request.Location == "Floor")
+                {
+                    cmd.Parameters.AddWithValue("@location", "Floor");
+                }
 
                 cmd.ExecuteNonQuery();
 
@@ -65,7 +73,7 @@ namespace MediaBazzar
                             int quantity = (int)objReader["quantity"];
                             string location = objReader["location"].ToString();
 
-                            ProductRequest request = new ProductRequest(quantity, goodID, empID);
+                            ProductRequest request = new ProductRequest(quantity, goodID, empID, location);
                             requests.Add(request);
                         }
                     }
@@ -90,13 +98,21 @@ namespace MediaBazzar
         {
             try
             {
-                string que = "DELETE FROM stockrequest WHERE goods_ID = @gID AND Employee_ID = @eID AND quantity = @amount";
+                string que = "DELETE FROM stockrequest WHERE goods_ID = @gID AND Employee_ID = @eID AND quantity = @amount AND location = @location";
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand(que, con);
 
                 cmd.Parameters.AddWithValue("@gID", request.ProductID);
                 cmd.Parameters.AddWithValue("@eID", request.EmpID);
                 cmd.Parameters.AddWithValue("@amount", request.AmountRequest);
+                if (request.Location == "Warehouse")
+                {
+                    cmd.Parameters.AddWithValue("@location", "Warehouse");
+                }
+                else if (request.Location == "Floor")
+                {
+                    cmd.Parameters.AddWithValue("@location", "Floor");
+                }
 
                 cmd.ExecuteNonQuery();
 

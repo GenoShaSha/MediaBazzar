@@ -45,33 +45,6 @@ namespace MediaBazzar
                 }
             }
         }
-        public void AddDiscontinuedProduct(Product product)
-        {
-            try
-            {
-                string que = "INSERT INTO goodsshop(articleNumbers,productName) VALUES (@artNumbs,@pName)";
-                con.Open();
-                MySqlCommand cmd = new MySqlCommand(que, con);
-
-                cmd.Parameters.AddWithValue("@artNumbs", product.ArticleNumbers);
-                cmd.Parameters.AddWithValue("@pName", product.ProductName);
-
-                cmd.ExecuteNonQuery();
-
-                con.Close();
-            }
-            catch (MySqlException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                if (con != null)
-                {
-                    con.Close();
-                }
-            }
-        }
         public bool RemoveProduct(int id)
         {
             try
@@ -188,21 +161,45 @@ namespace MediaBazzar
             }
             return null;
         }
-        public bool UpdateProduct(Product product)
+        public bool UpdateProductPrice(Product product)
         {
             try
             {
-                string que = "UPDATE goodsshop SET articleNumbers= @artNumbs, productName= @pName, category= @category, productPrice= @pPrice, physicalDimensions= @pDimensions, quantity = @quantity WHERE goods_ID= @gID";
+                string que = "UPDATE goodsshop SET productPrice= @pPrice WHERE goods_ID= @gID";
 
                 MySqlCommand cmd = new MySqlCommand(que, con);
                 con.Open();
 
                 cmd.Parameters.AddWithValue("@gID", product.ID);
-                cmd.Parameters.AddWithValue("@artNumbs", product.ArticleNumbers);
-                cmd.Parameters.AddWithValue("@pName", product.ProductName);
-                cmd.Parameters.AddWithValue("@category", product.Category);
                 cmd.Parameters.AddWithValue("@pPrice", product.ProductPrice);
-                cmd.Parameters.AddWithValue("@pDimensions", product.PhysicalDimensions);
+
+                cmd.ExecuteNonQuery();
+
+                con.Close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if (con != null)
+                {
+                    con.Close();
+                }
+            }
+            return false;
+        }
+        public bool UpdateProductQuantity(Product product)
+        {
+            try
+            {
+                string que = "UPDATE goodsshop SET quantity = @quantity WHERE goods_ID= @gID";
+
+                MySqlCommand cmd = new MySqlCommand(que, con);
+                con.Open();
+
+                cmd.Parameters.AddWithValue("@gID", product.ID);
                 cmd.Parameters.AddWithValue("@quantity", product.Quantity);
 
                 cmd.ExecuteNonQuery();
@@ -222,6 +219,7 @@ namespace MediaBazzar
             }
             return false;
         }
+
     }
 
 }

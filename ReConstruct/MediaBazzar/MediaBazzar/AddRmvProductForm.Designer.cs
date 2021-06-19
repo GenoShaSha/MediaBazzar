@@ -62,6 +62,7 @@ namespace MediaBazzar
             this.StockIdSearchTB.Name = "StockIdSearchTB";
             this.StockIdSearchTB.Size = new System.Drawing.Size(168, 22);
             this.StockIdSearchTB.TabIndex = 65;
+            this.StockIdSearchTB.TextChanged += new System.EventHandler(this.StockIdSearchTB_TextChanged);
             // 
             // label9
             // 
@@ -85,6 +86,7 @@ namespace MediaBazzar
             this.CategoryCB.Size = new System.Drawing.Size(243, 24);
             this.CategoryCB.TabIndex = 67;
             this.CategoryCB.Text = "Select Category";
+            this.CategoryCB.SelectedIndexChanged += new System.EventHandler(this.CategoryCB_SelectedIndexChanged);
             // 
             // lblStocks
             // 
@@ -166,6 +168,7 @@ namespace MediaBazzar
             this.btnAddStock.TabIndex = 0;
             this.btnAddStock.Text = "ADD";
             this.btnAddStock.UseVisualStyleBackColor = true;
+            this.btnAddStock.Click += new System.EventHandler(this.btnAddStock_Click);
             // 
             // tbxProductName
             // 
@@ -246,16 +249,17 @@ namespace MediaBazzar
             this.groupBox3.Size = new System.Drawing.Size(341, 126);
             this.groupBox3.TabIndex = 69;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Remove Stock";
+            this.groupBox3.Text = " Discontinue Stock";
             // 
             // btnRemoveStock
             // 
-            this.btnRemoveStock.Location = new System.Drawing.Point(216, 69);
+            this.btnRemoveStock.Location = new System.Drawing.Point(173, 69);
             this.btnRemoveStock.Name = "btnRemoveStock";
-            this.btnRemoveStock.Size = new System.Drawing.Size(95, 39);
+            this.btnRemoveStock.Size = new System.Drawing.Size(138, 39);
             this.btnRemoveStock.TabIndex = 15;
-            this.btnRemoveStock.Text = "REMOVE";
+            this.btnRemoveStock.Text = "DISCONTINUE";
             this.btnRemoveStock.UseVisualStyleBackColor = true;
+            this.btnRemoveStock.Click += new System.EventHandler(this.btnRemoveStock_Click);
             // 
             // tbxRmvID
             // 
