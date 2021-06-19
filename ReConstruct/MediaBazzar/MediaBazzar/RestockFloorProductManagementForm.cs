@@ -29,7 +29,10 @@ namespace MediaBazzar
             {
                 if (item != null)
                 {
-                    lbxRequestStock.Items.Add(item);
+                    if(item.Location == "Floor")
+                    {
+                        lbxRequestStock.Items.Add(item);
+                    }
                 }
             }
         }
@@ -43,7 +46,7 @@ namespace MediaBazzar
                 Product pf = wrp.PM.ReturnProductFloorByID(r.ProductID);
                 if (r.AmountRequest <= pw.Quantity)
                 {
-                    wrp.PM.UpdateFloorProductQuantity(pw, (pw.Quantity + r.AmountRequest));
+                    wrp.PM.UpdateFloorProductQuantity(pf, (pf.Quantity + r.AmountRequest));
                     wrp.PM.UpdateWarehouseProductQuantity(pw,(pw.Quantity - r.AmountRequest));
                     MessageBox.Show("The request has been approved!");
                     wrp.PRM.RemoveRequest(r);
@@ -72,6 +75,13 @@ namespace MediaBazzar
         {
             ProductRequestWarehouseForm prw = new ProductRequestWarehouseForm();
             prw.Show();
+            this.Hide();
+        }
+
+        private void btnAddNewProd_Click(object sender, EventArgs e)
+        {
+            AddProductToFloor apf = new AddProductToFloor();
+            apf.Show();
             this.Hide();
         }
     }

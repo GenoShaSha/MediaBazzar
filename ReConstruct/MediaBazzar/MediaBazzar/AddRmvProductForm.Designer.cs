@@ -52,13 +52,15 @@ namespace MediaBazzar
             this.btnRemoveStock = new System.Windows.Forms.Button();
             this.tbxRmvID = new System.Windows.Forms.TextBox();
             this.lblRmvID = new System.Windows.Forms.Label();
+            this.btnProdRequest = new System.Windows.Forms.Button();
+            this.btnUpdatePrice = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // StockIdSearchTB
             // 
-            this.StockIdSearchTB.Location = new System.Drawing.Point(777, 64);
+            this.StockIdSearchTB.Location = new System.Drawing.Point(778, 109);
             this.StockIdSearchTB.Name = "StockIdSearchTB";
             this.StockIdSearchTB.Size = new System.Drawing.Size(168, 22);
             this.StockIdSearchTB.TabIndex = 65;
@@ -67,7 +69,7 @@ namespace MediaBazzar
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(672, 67);
+            this.label9.Location = new System.Drawing.Point(673, 112);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(89, 17);
             this.label9.TabIndex = 68;
@@ -81,7 +83,7 @@ namespace MediaBazzar
             "Household",
             "Computer & Electronics",
             "Kitchen"});
-            this.CategoryCB.Location = new System.Drawing.Point(394, 66);
+            this.CategoryCB.Location = new System.Drawing.Point(395, 111);
             this.CategoryCB.Name = "CategoryCB";
             this.CategoryCB.Size = new System.Drawing.Size(243, 24);
             this.CategoryCB.TabIndex = 67;
@@ -91,7 +93,7 @@ namespace MediaBazzar
             // lblStocks
             // 
             this.lblStocks.AutoSize = true;
-            this.lblStocks.Location = new System.Drawing.Point(394, 46);
+            this.lblStocks.Location = new System.Drawing.Point(395, 91);
             this.lblStocks.Name = "lblStocks";
             this.lblStocks.Size = new System.Drawing.Size(85, 17);
             this.lblStocks.TabIndex = 66;
@@ -101,7 +103,7 @@ namespace MediaBazzar
             // 
             this.lbxStock.FormattingEnabled = true;
             this.lbxStock.ItemHeight = 16;
-            this.lbxStock.Location = new System.Drawing.Point(394, 111);
+            this.lbxStock.Location = new System.Drawing.Point(395, 156);
             this.lbxStock.Name = "lbxStock";
             this.lbxStock.Size = new System.Drawing.Size(551, 356);
             this.lbxStock.TabIndex = 64;
@@ -121,7 +123,7 @@ namespace MediaBazzar
             this.groupBox1.Controls.Add(this.cbxCategory);
             this.groupBox1.Controls.Add(this.lblArtNumb);
             this.groupBox1.Controls.Add(this.tbxProductPrice);
-            this.groupBox1.Location = new System.Drawing.Point(38, 39);
+            this.groupBox1.Location = new System.Drawing.Point(38, 60);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(341, 282);
             this.groupBox1.TabIndex = 63;
@@ -244,7 +246,7 @@ namespace MediaBazzar
             this.groupBox3.Controls.Add(this.btnRemoveStock);
             this.groupBox3.Controls.Add(this.tbxRmvID);
             this.groupBox3.Controls.Add(this.lblRmvID);
-            this.groupBox3.Location = new System.Drawing.Point(38, 342);
+            this.groupBox3.Location = new System.Drawing.Point(38, 372);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(341, 126);
             this.groupBox3.TabIndex = 69;
@@ -277,11 +279,33 @@ namespace MediaBazzar
             this.lblRmvID.TabIndex = 15;
             this.lblRmvID.Text = "ID :";
             // 
+            // btnProdRequest
+            // 
+            this.btnProdRequest.Location = new System.Drawing.Point(774, 34);
+            this.btnProdRequest.Name = "btnProdRequest";
+            this.btnProdRequest.Size = new System.Drawing.Size(172, 39);
+            this.btnProdRequest.TabIndex = 49;
+            this.btnProdRequest.Text = "PRODUCT REQUEST";
+            this.btnProdRequest.UseVisualStyleBackColor = true;
+            this.btnProdRequest.Click += new System.EventHandler(this.btnProdRequest_Click);
+            // 
+            // btnUpdatePrice
+            // 
+            this.btnUpdatePrice.Location = new System.Drawing.Point(629, 34);
+            this.btnUpdatePrice.Name = "btnUpdatePrice";
+            this.btnUpdatePrice.Size = new System.Drawing.Size(133, 39);
+            this.btnUpdatePrice.TabIndex = 70;
+            this.btnUpdatePrice.Text = "UPDATE PRICE";
+            this.btnUpdatePrice.UseVisualStyleBackColor = true;
+            this.btnUpdatePrice.Click += new System.EventHandler(this.btnUpdatePrice_Click);
+            // 
             // AddRmvProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(968, 480);
+            this.ClientSize = new System.Drawing.Size(968, 543);
+            this.Controls.Add(this.btnUpdatePrice);
+            this.Controls.Add(this.btnProdRequest);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.StockIdSearchTB);
             this.Controls.Add(this.label9);
@@ -325,5 +349,7 @@ namespace MediaBazzar
         private System.Windows.Forms.Button btnRemoveStock;
         private System.Windows.Forms.TextBox tbxRmvID;
         private System.Windows.Forms.Label lblRmvID;
+        private System.Windows.Forms.Button btnProdRequest;
+        private System.Windows.Forms.Button btnUpdatePrice;
     }
 }

@@ -56,7 +56,15 @@ namespace MediaBazzar
         {
             GetProduct(ProductID);
             GetName(EmpID);
-            return $"Requested by: {emp_name} ({EmpID}), Product :{product.ProductName} ({ProductID}), Quantity :{amountRequest} units, Location :Warehouse.";
+            if(Location == "Warehouse")
+            {
+                return $"Requested by: {emp_name} ({EmpID}), Product :{product.ProductName} ({ProductID}), Quantity :{amountRequest} units, Location :Warehouse.";
+            }
+            else if(Location == "Floor")
+            {
+                return $"Requested by: {emp_name} ({EmpID}), Product :{product.ProductName} ({ProductID}), Quantity :{amountRequest} units, Location :Floor.";
+            }
+            return null;
         }
 
     }

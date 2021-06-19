@@ -75,6 +75,7 @@ namespace MediaBazzar
             {
                 int newID = Convert.ToInt32(tbxRmvID.Text);
                 wrp.PM.DiscontinuedProduct(newID);
+                wrp.PRM.RemoveRequest(wrp.PRM.GetRequestByID(newID));
                 UpdateStockListbox();
                 MessageBox.Show("Stock has been discontinued!");
             }
@@ -130,6 +131,20 @@ namespace MediaBazzar
                 UpdateStockListbox();
             }
 
+        }
+
+        private void btnProdRequest_Click(object sender, EventArgs e)
+        {
+            RestockWarehouseProductManagementForm rwp = new RestockWarehouseProductManagementForm();
+            rwp.Show();
+            this.Hide();
+        }
+
+        private void btnUpdatePrice_Click(object sender, EventArgs e)
+        {
+            UpdateProductPrice upp = new UpdateProductPrice();
+            upp.Show();
+            this.Hide();
         }
     }
 }

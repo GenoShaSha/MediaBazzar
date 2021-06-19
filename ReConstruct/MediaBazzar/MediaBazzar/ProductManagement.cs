@@ -100,22 +100,19 @@ namespace MediaBazzar
         {
             p.UpdateProductQuantity(newQuantity);
             dpw.UpdateProductQuantity(p);
-            dpf.UpdateProductQuantity(p);
         }
-        public void UpdateWarehouseProductPrice(Product p, decimal price)
-        {
-            p.UpdateProductPrice(price);
-            dpw.UpdateProductPrice(p);
-        }
+
         public void UpdateFloorProductQuantity(Product p, int newQuantity)
         {
             p.UpdateProductQuantity(newQuantity);
-            dpw.UpdateProductQuantity(p);
+            dpf.UpdateProductQuantity(p);
         }
-        //public List<Product> GetProducts()
-        //{
-        //    ReadProducts();
-        //    return products;
-        //}
+        public void UpdateProductPrice(Product p, decimal price)
+        {
+            p.UpdateProductPrice(price);
+            dpw.UpdateProductPrice(p);
+            dpf.UpdateProductPrice(p);
+        }
+
     }
 }

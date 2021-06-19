@@ -21,6 +21,8 @@ namespace MediaBazzar
             InitializeComponent();
             wrp = new Wrappers();
             pm = new ProductManagement();
+            EmployeeIDOutLbl.Text = user_id.ToString();
+            UpdateStockListbox();
         }
         public ProductRequestFloorForm(int user_id)
         {

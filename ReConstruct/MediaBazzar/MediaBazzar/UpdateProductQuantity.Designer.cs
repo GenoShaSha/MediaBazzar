@@ -85,7 +85,7 @@ namespace MediaBazzar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 582);
+            this.ClientSize = new System.Drawing.Size(382, 529);
             this.Controls.Add(this.lbxStock);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.tbxUpdateQuantity);

@@ -249,5 +249,15 @@ namespace Waterfall_PRJ
                 UpdateStockListbox();
             }
         }
+
+        private void lblReqStock_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbxRequestStock_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

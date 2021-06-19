@@ -30,59 +30,41 @@ namespace MediaBazzar
         private void InitializeComponent()
         {
             this.btnBack = new System.Windows.Forms.Button();
-            this.tbxProdName = new System.Windows.Forms.TextBox();
             this.tbxUpdatePrice = new System.Windows.Forms.TextBox();
             this.lblProdPrice = new System.Windows.Forms.Label();
-            this.lblProdArtNumber = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.tbxArtNumb = new System.Windows.Forms.TextBox();
-            this.lblProdName = new System.Windows.Forms.Label();
+            this.lbxStock = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(25, 22);
+            this.btnBack.Location = new System.Drawing.Point(40, 35);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(96, 36);
             this.btnBack.TabIndex = 83;
             this.btnBack.Text = "BACK";
             this.btnBack.UseVisualStyleBackColor = true;
-            // 
-            // tbxProdName
-            // 
-            this.tbxProdName.Location = new System.Drawing.Point(127, 139);
-            this.tbxProdName.Name = "tbxProdName";
-            this.tbxProdName.Size = new System.Drawing.Size(153, 22);
-            this.tbxProdName.TabIndex = 82;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // tbxUpdatePrice
             // 
-            this.tbxUpdatePrice.Location = new System.Drawing.Point(110, 171);
+            this.tbxUpdatePrice.Location = new System.Drawing.Point(91, 95);
             this.tbxUpdatePrice.Name = "tbxUpdatePrice";
-            this.tbxUpdatePrice.Size = new System.Drawing.Size(170, 22);
+            this.tbxUpdatePrice.Size = new System.Drawing.Size(214, 22);
             this.tbxUpdatePrice.TabIndex = 80;
             // 
             // lblProdPrice
             // 
             this.lblProdPrice.AutoSize = true;
-            this.lblProdPrice.Location = new System.Drawing.Point(56, 173);
+            this.lblProdPrice.Location = new System.Drawing.Point(37, 97);
             this.lblProdPrice.Name = "lblProdPrice";
             this.lblProdPrice.Size = new System.Drawing.Size(48, 17);
             this.lblProdPrice.TabIndex = 78;
             this.lblProdPrice.Text = "Price :";
             // 
-            // lblProdArtNumber
-            // 
-            this.lblProdArtNumber.AutoSize = true;
-            this.lblProdArtNumber.Location = new System.Drawing.Point(56, 114);
-            this.lblProdArtNumber.Name = "lblProdArtNumber";
-            this.lblProdArtNumber.Size = new System.Drawing.Size(99, 17);
-            this.lblProdArtNumber.TabIndex = 77;
-            this.lblProdArtNumber.Text = "Art. Numbers :";
-            // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(180, 214);
+            this.btnUpdate.Location = new System.Drawing.Point(205, 443);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 37);
             this.btnUpdate.TabIndex = 76;
@@ -90,35 +72,25 @@ namespace MediaBazzar
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // tbxArtNumb
+            // lbxStock
             // 
-            this.tbxArtNumb.Location = new System.Drawing.Point(161, 111);
-            this.tbxArtNumb.Name = "tbxArtNumb";
-            this.tbxArtNumb.Size = new System.Drawing.Size(119, 22);
-            this.tbxArtNumb.TabIndex = 75;
-            // 
-            // lblProdName
-            // 
-            this.lblProdName.AutoSize = true;
-            this.lblProdName.Location = new System.Drawing.Point(56, 142);
-            this.lblProdName.Name = "lblProdName";
-            this.lblProdName.Size = new System.Drawing.Size(65, 17);
-            this.lblProdName.TabIndex = 74;
-            this.lblProdName.Text = "Product :";
+            this.lbxStock.FormattingEnabled = true;
+            this.lbxStock.ItemHeight = 16;
+            this.lbxStock.Location = new System.Drawing.Point(40, 123);
+            this.lbxStock.Name = "lbxStock";
+            this.lbxStock.Size = new System.Drawing.Size(275, 308);
+            this.lbxStock.TabIndex = 88;
             // 
             // UpdateProductPrice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 294);
+            this.ClientSize = new System.Drawing.Size(363, 501);
+            this.Controls.Add(this.lbxStock);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.tbxProdName);
             this.Controls.Add(this.tbxUpdatePrice);
             this.Controls.Add(this.lblProdPrice);
-            this.Controls.Add(this.lblProdArtNumber);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.tbxArtNumb);
-            this.Controls.Add(this.lblProdName);
             this.Name = "UpdateProductPrice";
             this.Text = "UpdateProductPrice";
             this.ResumeLayout(false);
@@ -129,12 +101,9 @@ namespace MediaBazzar
         #endregion
 
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.TextBox tbxProdName;
         private System.Windows.Forms.TextBox tbxUpdatePrice;
         private System.Windows.Forms.Label lblProdPrice;
-        private System.Windows.Forms.Label lblProdArtNumber;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.TextBox tbxArtNumb;
-        private System.Windows.Forms.Label lblProdName;
+        private System.Windows.Forms.ListBox lbxStock;
     }
 }

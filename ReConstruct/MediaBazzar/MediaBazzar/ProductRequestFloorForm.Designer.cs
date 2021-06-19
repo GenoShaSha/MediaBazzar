@@ -57,7 +57,7 @@ namespace MediaBazzar
             // EmployeeIDOutLbl
             // 
             this.EmployeeIDOutLbl.AutoSize = true;
-            this.EmployeeIDOutLbl.Location = new System.Drawing.Point(124, 382);
+            this.EmployeeIDOutLbl.Location = new System.Drawing.Point(124, 284);
             this.EmployeeIDOutLbl.Name = "EmployeeIDOutLbl";
             this.EmployeeIDOutLbl.Size = new System.Drawing.Size(0, 17);
             this.EmployeeIDOutLbl.TabIndex = 9;

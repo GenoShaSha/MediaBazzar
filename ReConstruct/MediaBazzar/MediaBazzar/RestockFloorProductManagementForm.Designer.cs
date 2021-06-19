@@ -34,6 +34,7 @@ namespace MediaBazzar
             this.btnApproved = new System.Windows.Forms.Button();
             this.btnWarehouseRequest = new System.Windows.Forms.Button();
             this.btnUpdateProd = new System.Windows.Forms.Button();
+            this.btnAddNewProd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblReqStock
@@ -84,11 +85,22 @@ namespace MediaBazzar
             this.btnUpdateProd.UseVisualStyleBackColor = true;
             this.btnUpdateProd.Click += new System.EventHandler(this.btnUpdateProd_Click);
             // 
+            // btnAddNewProd
+            // 
+            this.btnAddNewProd.Location = new System.Drawing.Point(26, 353);
+            this.btnAddNewProd.Name = "btnAddNewProd";
+            this.btnAddNewProd.Size = new System.Drawing.Size(432, 28);
+            this.btnAddNewProd.TabIndex = 72;
+            this.btnAddNewProd.Text = "ADD NEW PRODUCT TO THE FLOOR";
+            this.btnAddNewProd.UseVisualStyleBackColor = true;
+            this.btnAddNewProd.Click += new System.EventHandler(this.btnAddNewProd_Click);
+            // 
             // RestockFloorProductManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(504, 381);
+            this.ClientSize = new System.Drawing.Size(504, 414);
+            this.Controls.Add(this.btnAddNewProd);
             this.Controls.Add(this.btnWarehouseRequest);
             this.Controls.Add(this.btnUpdateProd);
             this.Controls.Add(this.btnApproved);
@@ -108,5 +120,6 @@ namespace MediaBazzar
         private System.Windows.Forms.Button btnApproved;
         private System.Windows.Forms.Button btnWarehouseRequest;
         private System.Windows.Forms.Button btnUpdateProd;
+        private System.Windows.Forms.Button btnAddNewProd;
     }
 }

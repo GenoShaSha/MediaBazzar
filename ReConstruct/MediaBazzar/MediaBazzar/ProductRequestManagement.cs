@@ -25,6 +25,18 @@ namespace MediaBazzar
             requests.Remove(request);
             dr.RemoveRequest(request);
         }
+        public ProductRequest GetRequestByID(int id)
+        {
+            foreach (ProductRequest p in requests)
+            {
+                if (p.ProductID == id)
+                {
+                    return p;
+                }
+            }
+            return null;
+
+        }
         public void ReadRequest()
         {
             requests = dr.ReadRequest();

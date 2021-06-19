@@ -46,6 +46,7 @@ namespace MediaBazzar
             this.lblRsltPrice = new System.Windows.Forms.Label();
             this.lblRsltCategory = new System.Windows.Forms.Label();
             this.lblRsltDimention = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbxProductWarehouse
@@ -196,11 +197,22 @@ namespace MediaBazzar
             this.lblRsltDimention.Size = new System.Drawing.Size(0, 17);
             this.lblRsltDimention.TabIndex = 58;
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(43, 26);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(82, 28);
+            this.btnBack.TabIndex = 59;
+            this.btnBack.Text = "BACK";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // AddProductToFloor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(640, 526);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblRsltDimention);
             this.Controls.Add(this.lblRsltCategory);
             this.Controls.Add(this.lblRsltPrice);
@@ -244,5 +256,6 @@ namespace MediaBazzar
         private System.Windows.Forms.Label lblRsltPrice;
         private System.Windows.Forms.Label lblRsltCategory;
         private System.Windows.Forms.Label lblRsltDimention;
+        private System.Windows.Forms.Button btnBack;
     }
 }

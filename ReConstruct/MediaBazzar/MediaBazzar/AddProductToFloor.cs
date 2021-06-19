@@ -75,5 +75,12 @@ namespace MediaBazzar
             lblRsltCategory.Text = p.Category;
             lblRsltDimention.Text = p.PhysicalDimensions;
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            SchedulingForm sf = new SchedulingForm();
+            sf.Show();
+            this.Hide();
+        }
     }
 }
