@@ -50,7 +50,7 @@ $db = new dbConnection();
     <h1> Your Workweek </h1>
     <table class="styled-table">
         <?php $workShift -> GetShifts(); ?> 
-</table>
+    </table>
 <br>
 <hr>
 <br>
@@ -124,6 +124,7 @@ $db = new dbConnection();
 <input id="PreferenceValue" name="PreferenceValue" type="hidden">
 <br>
 <button type="submit" name="UpdatePreference" class="btn container">Update your Preference!</button>
+<br>
 </form>
 
     <br>
@@ -138,15 +139,6 @@ $db = new dbConnection();
     </div>
     <?php } ?>
     
-    <!-- <input id="userName" type="hidden" name="name" value="<?php echo "".$_SESSION["sess_user_name"]?>"> -->
-
-    <?php 
-    if( $_SESSION['sess_role'] == "Administrator")
-    {
-        echo "<h1>Employee List</h1>";
-        $employeeList ->ShowEmployees();
-    }
-    ?>
- </body>
+    </body>
  </html>
 <script src="js/main.js" type="text/javascript"></script>

@@ -26,7 +26,9 @@ $user = new user();
             <input type="text" placeholder="Search...">
             <a href="viewProfile.php">PERSONAL INFO</a>
         </div>
-        <div class="centerProfile" style = "position: absolute; top: 600px">
+        <br>
+        <hr>
+        <div class="centerProfile" style = "position: absolute; top: 650px">
             <h1><?php echo  $_SESSION['sess_first_name'] ?> (<?php echo  $_SESSION['sess_role'] ?>) </h1>
             <div class = "txt_field"> 
                 <p> First Name: <?php echo $_SESSION['sess_first_name'] ?> </p> 
@@ -70,6 +72,7 @@ $user = new user();
             <div class = "txt_field"> 
                 <a href = "editProfile.php"> Edit profile</a>
             </div>
+            
         </div>
     </body>
 </html>     
