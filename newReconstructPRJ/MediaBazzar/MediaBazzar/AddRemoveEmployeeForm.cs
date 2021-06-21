@@ -105,7 +105,7 @@ namespace MediaBazzar
 
         private void btnRmv_Click(object sender, EventArgs e)
         {
-            wrp.EM.RemoveObj(Convert.ToInt32(tbxRmv.Text));
+            wrp.EM.FiredEmployee(Convert.ToInt32(tbxRmv.Text));
         }
     }
 }
