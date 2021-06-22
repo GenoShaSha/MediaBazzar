@@ -18,9 +18,20 @@ namespace MediaBazzar
             InitializeComponent();
             wrp = new Wrappers();
             UpdateStockListbox();
+            UpdateCbxDepartment();
         }
 
 
+
+        public void UpdateCbxDepartment()
+        {
+            List<Object> DepartmentList = wrp.DM.GetListObj();
+            foreach (var item in DepartmentList)
+            {
+                cbxCategory.Items.Add(item);
+                CategoryCB.Items.Add(item);
+            }
+        }
         public void UpdateStockListbox()
         {
             lbxStock.Items.Clear();
@@ -89,27 +100,7 @@ namespace MediaBazzar
 
         private void CategoryCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CategoryCB.SelectedIndex == 0)
-            {
-                UpdateStockListbox();
-            }
-            else if (CategoryCB.SelectedIndex == 1)
-            {
-                UpdateStockListboxCategory("Household");
-            }
-            else if (CategoryCB.SelectedIndex == 2)
-            {
-                UpdateStockListboxCategory("Computer & Electronics");
-            }
-            else if (CategoryCB.SelectedIndex == 3)
-            {
-                UpdateStockListboxCategory("Kitchen");
-            }
-            else
-            {
-                UpdateStockListbox();
-            }
-
+                UpdateStockListboxCategory(CategoryCB.Text);
         }
 
         private void StockIdSearchTB_TextChanged(object sender, EventArgs e)

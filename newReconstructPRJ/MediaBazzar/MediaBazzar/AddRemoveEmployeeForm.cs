@@ -22,7 +22,16 @@ namespace MediaBazzar
             ContractCB.SelectedIndex = 0;
             GenderCB.SelectedIndex = 0;
             relationshipStatusCB.SelectedIndex = 0;
-            cbxDepartment.Items.Add(wrp.DM.GetListObj());
+            UpdateCbxDepartment();
+        }
+
+        public void UpdateCbxDepartment()
+        {
+            List<Object> DepartmentList = wrp.DM.GetListObj();
+            foreach (var item in DepartmentList)
+            {
+                cbxDepartment.Items.Add(item);
+            }
         }
         public void UpdateEmployeeManagementListbox()
         {
@@ -148,6 +157,11 @@ namespace MediaBazzar
             {
                 ContractCB.Enabled = true;
             }
+        }
+
+        private void cbxDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

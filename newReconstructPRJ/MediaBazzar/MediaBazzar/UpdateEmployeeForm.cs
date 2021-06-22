@@ -19,7 +19,16 @@ namespace MediaBazzar
             InitializeComponent();
             wrp = new Wrappers();
             UpdateEmployeeManagementListbox();
-            cbxDepartment.Items.Add(wrp.DM.GetListObj());
+            UpdateCbxDepartment();
+        }
+
+        public void UpdateCbxDepartment()
+        {
+            List<Object> DepartmentList = wrp.DM.GetListObj();
+            foreach (var item in DepartmentList)
+            {
+                cbxDepartment.Items.Add(item);
+            }
         }
 
         public void UpdateEmployeeManagementListbox()

@@ -16,7 +16,7 @@ namespace MediaBazzar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CRUDdepartment());
+            Application.Run(new AddRmvProductForm());
         }
     }
 }

@@ -36,7 +36,7 @@ namespace MediaBazzar
         }
         public override string ToString()
         {
-            return $"{id} : {departmentName}";
+            return $"{departmentName}";
         }
     }
 }
