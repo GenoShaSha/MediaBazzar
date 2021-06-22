@@ -45,7 +45,11 @@ $employeeList = new employeeList();
     {
         echo "<h1>Employee List</h1>";
         $employeeList ->ShowEmployees();
+
+        echo "<h1>Fired/Retired Employee List</h1>";
+        $employeeList ->ShowFiredEmployees();
     }
     ?>
+    <br>
  </body>
 </html>

@@ -3,9 +3,8 @@ session_start();
 include 'classes/dbConnection.Class.php';
 include 'classes/user.Class.php';
 include 'classes/workShift.Class.php';
-$user = new user();
 $workShift = new workShift();
-$workShift -> GetShifts();
+$workShift -> UpdatePreference();
 ?>
 
 <!DOCTYPE html>
@@ -15,8 +14,7 @@ $workShift -> GetShifts();
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>TagsPage</title>
     <link rel="stylesheet" href="styles\mainstyles.css">
-    <link href="helpers/v2/main.css?v=2021.1.248" type="text/css" rel="stylesheet"/>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <div class="navigation">
         <a href="floorEmployees.php?signedIn">HOME</a>
@@ -24,21 +22,121 @@ $workShift -> GetShifts();
         <a href="RetrieveInfo.php">PERSONAL INFO</a>             
     </div>
 <body>
-
+    <?php 
+    if (isset($_GET['signedIn'])) { 
+    ?>
+    <div class="topnav">
+        <a href="signOut.php">Sign Out</a>
+        <a><?php echo "WELCOME ".$_SESSION["sess_user_name"]?></a>
+    </div>               
+    <?php } ?>
+ 
     <div class="header">
         <h1> MediaBazaar </h1>
     </div>
+    <hr>
+    <br>
+    <br>
+    <form method="POST">
+    <div class="container">
+    <button type="submit" name="PreviousWeek" class="btn">Last Week</button>
+    <button type="submit" name="CurrentWeek" class="btn">Current Week</button>
+    <button type="submit" name="NextWeek" class="btn">Next Week</button>
+    </div>
+    </form>
+       <br>
+    <h1> Your Workweek </h1>
+    <table class="styled-table">
+        <?php $workShift -> GetShifts(); ?> 
+    </table>
+<br>
+<hr>
+<br>
+<h1>Set Your Preference </h1>
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Morning1">Morning</td>
+                <input id="Morning1Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Morning2">Morning</td>
+                <input id="Morning2Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Morning3">Morning</td>
+                <input id="Morning3Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Morning4">Morning</td>
+                <input id="Morning4Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Morning5">Morning</td>
+                <input id="Morning5Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Morning6">Morning</td>
+                <input id="Morning6Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Morning7">Morning</td>
+                <input id="Morning7Value" type="hidden" value="0">
+        </tr>
+        <tr>
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Evening1">Evening</td>
+                <input id="Evening1Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Evening2">Evening</td>
+                <input id="Evening2Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Evening3">Evening</td>
+                <input id="Evening3Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Evening4">Evening</td>
+                <input id="Evening4Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Evening5">Evening</td>
+                <input id="Evening5Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Evening6">Evening</td>
+                <input id="Evening6Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Evening7">Evening</td>
+                <input id="Evening7Value" type="hidden" value="0">
+        </tr>
+        <tr>
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Afternoon1">Afternoon</td>
+                <input id="Afternoon1Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Afternoon2">Afternoon</td>
+                <input id="Afternoon2Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Afternoon3">Afternoon</td>
+                <input id="Afternoon3Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Afternoon4">Afternoon</td>
+                <input id="Afternoon4Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Afternoon5">Afternoon</td>
+                <input id="Afternoon5Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Afternoon6">Afternoon</td>
+                <input id="Afternoon6Value" type="hidden" value="0">
+                <td onclick="changeColor(this,this.id)" class="DayTime" id="Afternoon7">Afternoon</td>
+                <input id="Afternoon7Value" type="hidden" value="0">
+        </tr>   
+    </tbody>
+</table>
+<br>
+
+<form  method="POST">
+<input id="PreferenceValue" name="PreferenceValue" type="hidden">
+<br>
+<button type="submit" name="UpdatePreference" class="btn container">Update your Preference!</button>
+<br>
+</form>
 
     <br>
-    <div id="dp"></div>
-    <br>
-
-    <input id="userName" type="hidden" value="<?php echo "".$_SESSION["sess_email"]?>">
-    <input id="userShiftDate" type="hidden" value="<?php echo "".$_SESSION["sess_date"]?>">
-    <input id="userShiftType" type="hidden" value="<?php echo "".$_SESSION["sess_type"]?>">
-
-
- </body>
+    <?php 
+    if (isset($_GET['signedIn'])) { 
+    ?>
+    <div class="navigation">
+        <a href="#">HOME</a>
+        <a href="#">SCHEDULE</a>
+        <input type="text" placeholder="Search...">
+        <a href="RetrieveInfo.php">PERSONAL INFO</a>             
+    </div>
+    <?php } ?>
+    
+    </body>
  </html>
-     <script src="js/daypilot-all.min.js"></script>
-    <script src="js/main.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/javascript"></script>
