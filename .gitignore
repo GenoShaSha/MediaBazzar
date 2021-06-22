@@ -382,3 +382,5 @@ Project/Waterfall PRJ/bin/Debug/Waterfall PRJ.exe
 *.pdb
 *.exe
 *.pdb
+*.exe
+*.pdb

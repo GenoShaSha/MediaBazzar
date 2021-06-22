@@ -290,9 +290,9 @@ namespace Waterfall_PRJ
         }
         private void ReturnShiftEmployeesLB(DateTime returndate)
         {
-            MorningShiftLB.Items.Clear();
-            AfternoonShiftLB.Items.Clear();
-            NightShiftLB.Items.Clear();
+            //MorningShiftLB.Items.Clear();
+            //AfternoonShiftLB.Items.Clear();
+            //NightShiftLB.Items.Clear();
            if (shifts.ShiftList.Count > 0)
             {
                 List<FloorStaff> morningEmps = shifts.ReturnAssignedEmployees(returndate, ShiftType.Morning);
@@ -325,7 +325,9 @@ namespace Waterfall_PRJ
         {
             returnedDate = Convert.ToDateTime(sundayBtn.Text);
             dateLbl.Text = returnedDate.ToShortDateString();
+            UpdateWorkshiftsListbox();
             ReturnShiftEmployeesLB(returnedDate);
+            
             UpdateWorkshiftManagementListbox();
         }
 
@@ -364,42 +366,54 @@ namespace Waterfall_PRJ
         {
             returnedDate = Convert.ToDateTime(mondayBtn.Text);
             dateLbl.Text = returnedDate.ToShortDateString();
+            UpdateWorkshiftsListbox();
             ReturnShiftEmployeesLB(returnedDate);
+         
             UpdateWorkshiftManagementListbox();
         }
         private void tuesdayBtn_Click(object sender, EventArgs e)
         {
             returnedDate = Convert.ToDateTime(tuesdayBtn.Text);
             dateLbl.Text = returnedDate.ToShortDateString();
+            UpdateWorkshiftsListbox();
             ReturnShiftEmployeesLB(returnedDate);
+            
             UpdateWorkshiftManagementListbox();
         }
         private void wednesdayBtn_Click(object sender, EventArgs e)
         {
             returnedDate = Convert.ToDateTime(wednesdayBtn.Text);
             dateLbl.Text = returnedDate.ToShortDateString();
+            UpdateWorkshiftsListbox();
             ReturnShiftEmployeesLB(returnedDate);
+           
             UpdateWorkshiftManagementListbox();
         }
         private void thursdayBtn_Click(object sender, EventArgs e)
         {
             returnedDate = Convert.ToDateTime(thursdayBtn.Text);
             dateLbl.Text = returnedDate.ToShortDateString();
+            UpdateWorkshiftsListbox();
             ReturnShiftEmployeesLB(returnedDate);
+          
             UpdateWorkshiftManagementListbox();
         }
         private void fridayBtn_Click(object sender, EventArgs e)
         {
             returnedDate = Convert.ToDateTime(fridayBtn.Text);
             dateLbl.Text = returnedDate.ToShortDateString();
+            UpdateWorkshiftsListbox();
             ReturnShiftEmployeesLB(returnedDate);
+           
             UpdateWorkshiftManagementListbox();
         }
         private void saturdayBtn_Click(object sender, EventArgs e)
         {
             returnedDate = Convert.ToDateTime(saturdayBtn.Text);
             dateLbl.Text = returnedDate.ToShortDateString();
+            UpdateWorkshiftsListbox();
             ReturnShiftEmployeesLB(returnedDate);
+            
             UpdateWorkshiftManagementListbox();
         }
         private void BackBtn_Click(object sender, EventArgs e)
