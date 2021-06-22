@@ -16,7 +16,7 @@ namespace MediaBazzar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ProductRequestFloorForm());
+            Application.Run(new UpdateEmployeeForm());
         }
     }
 }

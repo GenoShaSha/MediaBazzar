@@ -20,6 +20,8 @@ namespace MediaBazzar
             dpw = new DbProductWarehouse();
             dpf = new DbProductFloor();
             ddp = new DbDiscontinuedProduct();
+            ReadProductsShop();
+            ReadProductsWarehouse();
         }
         public void AddObj(object obj)
         {

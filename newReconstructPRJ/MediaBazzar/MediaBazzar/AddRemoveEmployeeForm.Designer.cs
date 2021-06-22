@@ -103,10 +103,10 @@ namespace MediaBazzar
             // btnRmv
             // 
             this.btnRmv.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnRmv.Location = new System.Drawing.Point(168, 89);
+            this.btnRmv.Location = new System.Drawing.Point(160, 89);
             this.btnRmv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRmv.Name = "btnRmv";
-            this.btnRmv.Size = new System.Drawing.Size(128, 37);
+            this.btnRmv.Size = new System.Drawing.Size(136, 37);
             this.btnRmv.TabIndex = 34;
             this.btnRmv.Text = "DISCONTINUE";
             this.btnRmv.UseVisualStyleBackColor = true;
@@ -454,6 +454,7 @@ namespace MediaBazzar
             this.RoleCB.Name = "RoleCB";
             this.RoleCB.Size = new System.Drawing.Size(252, 24);
             this.RoleCB.TabIndex = 38;
+            this.RoleCB.SelectedIndexChanged += new System.EventHandler(this.RoleCB_SelectedIndexChanged);
             // 
             // label10
             // 

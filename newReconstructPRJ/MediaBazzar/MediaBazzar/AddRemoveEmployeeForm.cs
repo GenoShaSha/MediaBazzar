@@ -17,7 +17,25 @@ namespace MediaBazzar
         {
             InitializeComponent();
             wrp = new Wrappers();
+            UpdateEmployeeManagementListbox();
+            RoleCB.SelectedIndex = 0;
+            ContractCB.SelectedIndex = 0;
+            GenderCB.SelectedIndex = 0;
+            relationshipStatusCB.SelectedIndex = 0;
         }
+        public void UpdateEmployeeManagementListbox()
+        {
+            lbxEmployeeList.Items.Clear();
+            List<Object> employeeList = wrp.EM.GetListObj();
+            foreach (var item in employeeList)
+            {
+                if (item != null)
+                {
+                    lbxEmployeeList.Items.Add(item);
+                }
+            }
+        }
+
 
         private void addBTN_Click(object sender, EventArgs e)
         {
@@ -84,6 +102,7 @@ namespace MediaBazzar
                     cityTB.Text = string.Empty;
                     countryTB.Text = string.Empty;
                 }
+                UpdateEmployeeManagementListbox();
             }
             catch (NullReferenceException ex)
             {
@@ -106,6 +125,28 @@ namespace MediaBazzar
         private void btnRmv_Click(object sender, EventArgs e)
         {
             wrp.EM.FiredEmployee(Convert.ToInt32(tbxRmv.Text));
+            UpdateEmployeeManagementListbox();
+            MessageBox.Show("Employee has been retire or fired!");
+        }
+
+        private void RoleCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (RoleCB.SelectedIndex == 0)
+            {
+                ContractCB.Enabled = false;
+            }
+            else if (RoleCB.SelectedIndex == 1)
+            {
+                ContractCB.Enabled = false;
+            }
+            else if (RoleCB.SelectedIndex == 3)
+            {
+                ContractCB.Enabled = false;
+            }
+            else
+            {
+                ContractCB.Enabled = true;
+            }
         }
     }
 }

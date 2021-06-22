@@ -79,13 +79,21 @@ namespace MediaBazzar
                 {
                     RoleCB.SelectedIndex = 0;
                 }
-                else if (p.GetType().ToString() == "Waterfall_PRJ.FloorManagerRole")
+                else if (p.GetType().ToString() == "Waterfall_PRJ.FloorManager")
                 {
                     RoleCB.SelectedIndex = 1;
                 }
-                else if (p.GetType().ToString() == "Waterfall_PRJ.EmployeeRole")
+                else if (p.GetType().ToString() == "Waterfall_PRJ.FloorStaff")
                 {
                     RoleCB.SelectedIndex = 2;
+                }
+                else if (p.GetType().ToString() == "Waterfall_PRJ.WarehouseManager")
+                {
+                    RoleCB.SelectedIndex = 3;
+                }
+                else if (p.GetType().ToString() == "Waterfall_PRJ.WarehouseStaff")
+                {
+                    RoleCB.SelectedIndex = 4;
                 }
             }
             catch (NullReferenceException)
@@ -99,6 +107,26 @@ namespace MediaBazzar
             AddRemoveEmployeeForm af = new AddRemoveEmployeeForm();
             this.Hide();
             af.Show();
+        }
+
+        private void RoleCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (RoleCB.SelectedIndex == 0)
+            {
+                ContractCB.Enabled = false;
+            }
+            else if (RoleCB.SelectedIndex == 1)
+            {
+                ContractCB.Enabled = false;
+            }
+            else if (RoleCB.SelectedIndex == 3)
+            {
+                ContractCB.Enabled = false;
+            }
+            else
+            {
+                ContractCB.Enabled = true;
+            }
         }
     }
 }

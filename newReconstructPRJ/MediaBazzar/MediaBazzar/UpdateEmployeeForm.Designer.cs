@@ -225,6 +225,7 @@ namespace MediaBazzar
             this.RoleCB.Name = "RoleCB";
             this.RoleCB.Size = new System.Drawing.Size(160, 24);
             this.RoleCB.TabIndex = 38;
+            this.RoleCB.SelectedIndexChanged += new System.EventHandler(this.RoleCB_SelectedIndexChanged);
             // 
             // phoneNumberTB
             // 

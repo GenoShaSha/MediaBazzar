@@ -20,6 +20,7 @@ namespace MediaBazzar
             UpdateStockListbox();
         }
 
+
         public void UpdateStockListbox()
         {
             lbxStock.Items.Clear();
