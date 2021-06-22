@@ -22,11 +22,13 @@ $user = new user();
         </div>
         <div class="navigation">
             <a href="floorEmployees.php?signedIn">HOME</a>
-            <a href="scheduleBeta.php">SCHEDULE</a>
+            <a href="schedule.php">SCHEDULE</a>
             <input type="text" placeholder="Search...">
             <a href="viewProfile.php">PERSONAL INFO</a>
         </div>
-        <div class="centerProfile" style = "position: absolute; top: 600px">
+        <br>
+        <hr>
+        <div class="centerProfile" style = "position: absolute; top: 650px">
             <h1><?php echo  $_SESSION['sess_first_name'] ?> (<?php echo  $_SESSION['sess_role'] ?>) </h1>
             <div class = "txt_field"> 
                 <p> First Name: <?php echo $_SESSION['sess_first_name'] ?> </p> 
@@ -50,7 +52,7 @@ $user = new user();
                 <p> Email: <?php echo $_SESSION['sess_email'] ?> </p> 
             </div>
             <div class = "txt_field"> 
-                <p> Password: <?php echo $_SESSION['sess_password'] ?> </p> 
+                <p> Password: <?php echo $_SESSION['sess_pass'] ?> </p> 
             </div>
             <div class = "txt_field"> 
                 <p> Phone Number: <?php echo $_SESSION['sess_phone_number'] ?> </p> 
@@ -70,6 +72,7 @@ $user = new user();
             <div class = "txt_field"> 
                 <a href = "editProfile.php"> Edit profile</a>
             </div>
+            
         </div>
     </body>
 </html>     

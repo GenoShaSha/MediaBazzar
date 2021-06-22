@@ -5,60 +5,98 @@ class workShift extends dbConnection
     {
            if(isset($_SESSION['sess_user_id']))
            {          
-               try
-               {
-                   $id = $_SESSION['sess_user_id'];
-                   $queryGetShiftID = "SELECT `shift_id` FROM `assignedworkshifts` WHERE Employee_ID = $id";
-                   $stmt1 = $this -> connect() -> prepare($queryGetShiftID);
-                   $stmt1 -> execute();
-                   $resultShiftID = $stmt1 -> fetch(PDO::FETCH_ASSOC);
-             
+            try
+               {                           
+                $monday = strtotime("last monday");
+                $id = $_SESSION['sess_user_id'];
 
-                   //$shiftID = $resultShiftID['shift_id'];
-                   $queryGetShift = "SELECT * FROM `shifts` WHERE `shift_id` = 3";
-                   $stmt2 = $this -> connect() -> prepare($queryGetShift);
-                   $stmt2 -> execute();
-                   $resultShift = $stmt2 -> fetch(PDO::FETCH_ASSOC);
+                if(isset($_POST['PreviousWeek']))
+                {
+                    $monday = strtotime("last monday -1 week");
+                }
+                if(isset($_POST['CurrentWeek']))
+                {
+                    $monday = strtotime("last monday");
+                }
+                if(isset($_POST['NextWeek']))
+                {
+                    $monday = strtotime("next monday");
+                }
+                $monday = date('w', $monday)==date('w') ? $monday+7*86400 : $monday;
+                $sunday = strtotime(date("Y-m-d",$monday)." +6days");
+                $this_week_sd = date("Y-m-d",$monday);
+                $this_week_ed = date("Y-m-d",$sunday);
+       
+                $query = "SELECT * FROM `shifts` WHERE `shift_id` IN 
+                (SELECT `shift_id` FROM `assignedworkshifts` WHERE Employee_ID = $id AND `date` BETWEEN '".$this_week_sd."' AND '".$this_week_ed."')";               
+                $stmt = $this -> connect() -> query($query);
 
-                   $_SESSION['sess_date'] = $resultShift['date'];
-                   $_SESSION['sess_type'] = $resultShift['type'];
-                   $_SESSION['sess_shift_id'] = $resultShift['shift_id'];
+                echo "<h5> Current week range from $this_week_sd to $this_week_ed </h5>";
+                echo "<thead>";
+                echo "<tr>";
+                for ($i = 0; $i < 7; $i++) {
+                    $mondayWeek = strtotime(date("Y-m-d",$monday)." +".$i."days");
+                    $dayWeek = date("Y-m-d",$mondayWeek);
+                    echo "<th>".$dayWeek."</th>";
+                }
+                echo "</tr>";
+                echo "</thead>";
 
+                $rows = $stmt->fetchAll();
+
+                echo "<tbody>"; 
+
+                $this->GetRow("Morning", $rows, $monday);
+                $this->GetRow("Afternoon", $rows, $monday);
+                $this->GetRow("Night", $rows, $monday);
+                echo "</tbody>";
                }
-
                catch (PDOException $e) 
                {
                 echo "Error : ".$e->getMessage();
                }
            }
     }
-
-    public function GetAllShifts(int $id)
+    public function GetRow($input, $row, $monday)
     {
-       try
-       {
-           $emp_id = $id;
-           $query = "SELECT shifts.date, shifts.type FROM assignedworkshifts INNER JOIN shifts ON shifts.shift_id = assignedworkshifts.shift_id WHERE Employee_ID = $emp_id ORDER BY shifts.date";
-           $stmt = $this -> connect() -> query($query);
-           echo "<table border = '2'>
-           <tr>
-           <th>Date</th>
-           <th>Shift Type</th> 
-         </tr>
-                ";
-           while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
-           {
-               echo "<tr>";
-               echo "<td>" . $row['date'] . "</td>";
-               echo "<td>".$row['type']."</td>";
-               echo "</tr>";
+        echo "<tr>";                
+                    for ($i = 0; $i < 7; $i++) {
+                        echo "<td>";
+                        $mondayWeek = strtotime(date("Y-m-d",$monday)." +".$i."days");
+                        $dayWeek = date("Y-m-d",$mondayWeek); 
+                        $count = 0;
+                        foreach ($row as $shift)
+                        {             
+                            if($shift['date'] == $dayWeek && $shift['type'] == $input)
+                            {       
+                                echo $shift['type'];    
+                            }   
+                        }
+                        echo "</td>";   
+                        }
+                    echo "</tr>";
+    }
+    
+    public function UpdatePreference()
+    {
+           if(isset($_POST['UpdatePreference']))
+           {          
+               try
+               {
+                   $id = $_SESSION['sess_user_id'];
+                   $preferenceNumber = $_POST['PreferenceValue'];
+
+                   $query = "UPDATE `employees` SET `Preference` = :preference WHERE Employee_ID = $id";
+                   $stmt = $this -> connect() -> prepare($query);
+                   $stmt -> bindValue(':preference', $preferenceNumber, PDO::PARAM_STR);
+
+                   $stmt ->execute();
+                }
+               catch (PDOException $e) 
+               {
+                echo "Error : ".$e->getMessage();
+               }
            }
-           echo "</table>";
-       }
-       catch (PDOException $e) 
-       {
-        echo "Error : ".$e->getMessage();
-       }
     }
 }
 ?>

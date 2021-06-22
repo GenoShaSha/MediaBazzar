@@ -22,8 +22,8 @@ $user -> UpdateInformation();
             <h1> MediaBazaar </h1>
         </div>
         <div class="navigation">
-            <a href="index.php?loggedin">HOME</a>
-            <a href="#">SCHEDULE</a>
+        <a href="floorEmployees.php?signedIn">HOME</a>
+            <a href="schedule.php">SCHEDULE</a>
             <input type="text" placeholder="Search...">
             <a href="viewProfile.php">PERSONAL INFO</a>
         </div>
@@ -31,51 +31,55 @@ $user -> UpdateInformation();
             <h1>Profile</h1>
             <form method = "POST">
                 <div class="txt_field">
-                    <input type="First Name" name = "first_name" id = "first_name" value = "">
+                    <input type="First Name" name = "first_name" id = "first_name" value="<?php echo $_SESSION['sess_first_name'] ?>" required>
                     <label>First Name</label>
                 </div>
                 <div class="txt_field">
-                    <input type="Last Name" name = "last_name" id = "last_name" value = "">
+                    <input type="Last Name" name = "last_name" id = "last_name" value="<?php echo $_SESSION['sess_last_name'] ?>" required>
                     <label>Last Name</label>
                 </div>
                 <div class="txt_field">
-                    <input type="BSN" name = "bsn" id = "bsn" value = "">
+                    <input type="Date of Birth" name = "date_of_birth" id = "date_of_birth" value="<?php echo $_SESSION['sess_date_of_birth'] ?>" required>
+                    <label>Date of Birth</label>
+                </div>
+                <div class="txt_field">
+                    <input type="BSN" name = "bsn" id = "bsn" value="<?php echo $_SESSION['sess_BSN'] ?>" required>
                     <label>BSN</label>
                 </div>
                 <div class="txt_field">
-                    <input type="Gender" name = "gender" id = "gender" value = "">
+                    <input type="Gender" name = "gender" id = "gender" value="<?php echo $_SESSION['sess_gender'] ?>" required>
                     <label>Gender</label>
                 </div>
                 <div class="txt_field">
-                    <input type="Relationsip" name = "relationship" id = "relationship" value = "">
+                    <input type="Relationsip" name = "relationship" id = "relationship" value="<?php echo $_SESSION['sess_relationship'] ?>" required>
                     <label>Relationship</label>
                 </div>
                 <div class="txt_field">
-                    <input type="Email" name = "email" id = "email" value = "">
+                    <input type="Email" name = "email" id = "email" value="<?php echo $_SESSION['sess_email'] ?>" required>
                     <label>Email</label>
                 </div>
                 <div class="txt_field">
-                    <input type="Password" name = "password" id = "password" value = "">
+                    <input type="Password" name = "password" id = "password" required>
                     <label>Password</label>
                 </div>
                 <div class="txt_field">
-                    <input type="Phone Number" name = "phone_number" id = "phone_number" value = "">
+                    <input type="Phone Number" name = "phone_number" id = "phone_number" value="<?php echo $_SESSION['sess_phone_number'] ?>" required>
                     <label>Phone Number</label>
                 </div>
                 <div class="txt_field">
-                    <input type="Address" name = "address" id = "address" value = "">
+                    <input type="Address" name = "address" id = "address" value="<?php echo $_SESSION['sess_address'] ?>" required>
                     <label>Address</label>
                 </div>
                 <div class="txt_field">
-                    <input type="Postal Code" name = "postal_code" id = "postal_code" value = "">
+                    <input type="Postal Code" name = "postal_code" id = "postal_code" value="<?php echo $_SESSION['sess_postal_code'] ?>" required>
                     <label>Postal Code</label>
                 </div>
                 <div class="txt_field">
-                    <input type="City" name = "city" id = "city" value = "">
+                    <input type="City" name = "city" id = "city" value="<?php echo $_SESSION['sess_city'] ?>" required>
                     <label>City</label>
                 </div>
                 <div class="txt_field">
-                    <input type="Country" name = "country" id = "country" value = "">
+                    <input type="Country" name = "country" id = "country" value="<?php echo $_SESSION['sess_country'] ?>" required>
                     <label>Country</label>
                 </div>
                 <input type="submit" name = "updateBtn" id = "updateBtn" value = "Submit">

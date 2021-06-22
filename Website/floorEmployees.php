@@ -34,9 +34,9 @@ $employeeList = new employeeList();
     ?>
     <div class="navigation">
         <a href="#">HOME</a>
-        <a href="scheduleBeta.php">SCHEDULE</a>
+        <a href="schedule.php">SCHEDULE</a>
         <input type="text" placeholder="Search...">
-        <a href="viewProfile.php">PERSONAL INFO</a>             
+        <a href="RetrieveInfo.php">PERSONAL INFO</a>             
     </div>
     <?php } ?>
 
@@ -45,7 +45,11 @@ $employeeList = new employeeList();
     {
         echo "<h1>Employee List</h1>";
         $employeeList ->ShowEmployees();
+
+        echo "<h1>Fired/Retired Employee List</h1>";
+        $employeeList ->ShowFiredEmployees();
     }
     ?>
+    <br>
  </body>
 </html>

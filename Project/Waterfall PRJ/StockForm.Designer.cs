@@ -431,7 +431,6 @@ namespace Waterfall_PRJ
             this.lbxRequestStock.Name = "lbxRequestStock";
             this.lbxRequestStock.Size = new System.Drawing.Size(551, 196);
             this.lbxRequestStock.TabIndex = 57;
-            this.lbxRequestStock.SelectedIndexChanged += new System.EventHandler(this.lbxRequestStock_SelectedIndexChanged);
             // 
             // lblStocks
             // 
@@ -450,7 +449,6 @@ namespace Waterfall_PRJ
             this.lblReqStock.Size = new System.Drawing.Size(142, 17);
             this.lblReqStock.TabIndex = 59;
             this.lblReqStock.Text = "List of Request Stock";
-            this.lblReqStock.Click += new System.EventHandler(this.lblReqStock_Click);
             // 
             // btnDisapproved
             // 
