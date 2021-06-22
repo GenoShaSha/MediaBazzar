@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    class DepartmentManagement : IManager
+    public class DepartmentManagement : IManager
     {
         private List<Department> departments;
         private DbDepartment dd;
@@ -36,6 +36,10 @@ namespace MediaBazzar
         {
             departments = dd.ReadDepartments();
         }
-
+        public void UpdateDepartment(Department d, string name)
+        {
+            d.Update(name);
+            dd.UpdateDepartment(d);
+        }
     }
 }

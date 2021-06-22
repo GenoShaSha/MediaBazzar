@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    class Department
+    public class Department
     {
         private int id;
         private string departmentName;
@@ -36,7 +36,7 @@ namespace MediaBazzar
         }
         public override string ToString()
         {
-            return $"{departmentName})";
+            return $"{departmentName}";
         }
     }
 }

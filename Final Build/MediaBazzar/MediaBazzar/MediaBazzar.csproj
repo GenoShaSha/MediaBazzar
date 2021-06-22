@@ -109,6 +109,12 @@
     </Compile>
     <Compile Include="Administrator.cs" />
     <Compile Include="BirthOfDateException.cs" />
+    <Compile Include="CRUDdepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDdepartment.Designer.cs">
+      <DependentUpon>CRUDdepartment.cs</DependentUpon>
+    </Compile>
     <Compile Include="DbDepartment.cs" />
     <Compile Include="DbDiscontinuedProduct.cs" />
     <Compile Include="DbFiredEmployee.cs" />
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddRmvProductForm.resx">
       <DependentUpon>AddRmvProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUDdepartment.resx">
+      <DependentUpon>CRUDdepartment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductRequestFloorForm.resx">
       <DependentUpon>ProductRequestFloorForm.cs</DependentUpon>
