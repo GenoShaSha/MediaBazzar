@@ -67,6 +67,8 @@ namespace MediaBazzar
             this.addressTB = new System.Windows.Forms.TextBox();
             this.RoleCB = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.lblDepartment = new System.Windows.Forms.Label();
+            this.cbxDepartment = new System.Windows.Forms.ComboBox();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -136,6 +138,8 @@ namespace MediaBazzar
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbxDepartment);
+            this.groupBox1.Controls.Add(this.lblDepartment);
             this.groupBox1.Controls.Add(this.addBTN);
             this.groupBox1.Controls.Add(this.GenderCB);
             this.groupBox1.Controls.Add(this.lblPswd);
@@ -171,14 +175,14 @@ namespace MediaBazzar
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(350, 524);
+            this.groupBox1.Size = new System.Drawing.Size(350, 563);
             this.groupBox1.TabIndex = 46;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Essential Information";
             // 
             // addBTN
             // 
-            this.addBTN.Location = new System.Drawing.Point(199, 462);
+            this.addBTN.Location = new System.Drawing.Point(199, 501);
             this.addBTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addBTN.Name = "addBTN";
             this.addBTN.Size = new System.Drawing.Size(116, 43);
@@ -465,11 +469,33 @@ namespace MediaBazzar
             this.label10.TabIndex = 30;
             this.label10.Text = "Country :";
             // 
+            // lblDepartment
+            // 
+            this.lblDepartment.AutoSize = true;
+            this.lblDepartment.Location = new System.Drawing.Point(13, 457);
+            this.lblDepartment.Name = "lblDepartment";
+            this.lblDepartment.Size = new System.Drawing.Size(86, 17);
+            this.lblDepartment.TabIndex = 47;
+            this.lblDepartment.Text = "Department:";
+            // 
+            // cbxDepartment
+            // 
+            this.cbxDepartment.FormattingEnabled = true;
+            this.cbxDepartment.Items.AddRange(new object[] {
+            "Household",
+            "Computer & Electronics",
+            "Kitchen"});
+            this.cbxDepartment.Location = new System.Drawing.Point(105, 457);
+            this.cbxDepartment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxDepartment.Name = "cbxDepartment";
+            this.cbxDepartment.Size = new System.Drawing.Size(210, 24);
+            this.cbxDepartment.TabIndex = 48;
+            // 
             // AddRemoveEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 576);
+            this.ClientSize = new System.Drawing.Size(756, 603);
             this.Controls.Add(this.lbxEmployeeList);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.CloseBtn);
@@ -524,5 +550,7 @@ namespace MediaBazzar
         private System.Windows.Forms.TextBox addressTB;
         private System.Windows.Forms.ComboBox RoleCB;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cbxDepartment;
+        private System.Windows.Forms.Label lblDepartment;
     }
 }

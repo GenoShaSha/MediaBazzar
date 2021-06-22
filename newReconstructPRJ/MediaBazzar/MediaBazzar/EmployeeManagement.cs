@@ -58,9 +58,9 @@ namespace MediaBazzar
             return null;
         }
 
-        public void UpdateEmployee(Employee employee, string newFName, string newLName, string newGender, DateTime newDoB, string newBSN, string newRelationship, string newEmail, string newPass, string newPNumb, string newAddress, string newPCode, string newCity, string newCountry)
+        public void UpdateEmployee(Employee employee, string newFName, string newLName, string newGender, DateTime newDoB, string newBSN, string newRelationship, string newEmail, string newPass, string newPNumb, string newAddress, string newPCode, string newCity, string newCountry, string newDepartment)
         {
-            employee.UpdatePeople(newFName, newLName, newGender, newDoB, newBSN, newRelationship, newEmail, newPass, newPNumb, newAddress, newPCode, newCity, newCountry);
+            employee.UpdatePeople(newFName, newLName, newGender, newDoB, newBSN, newRelationship, newEmail, newPass, newPNumb, newAddress, newPCode, newCity, newCountry, newDepartment);
             de.UpdateEmployee(employee);
         }
     }

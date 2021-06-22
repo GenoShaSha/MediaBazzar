@@ -44,7 +44,7 @@ namespace MediaBazzar
                     throw new BirthOfDateException();
                 }
                 wrp.EM.UpdateEmployee(p, firstNameTB.Text, lastNameTB.Text, GenderCB.SelectedItem.ToString(), DOBPicker.Value, BSN_TB.Text, relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text
-                    , phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text);
+                    , phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, cbxDepartment.SelectedItem.ToString());
                 MessageBox.Show($"User ID information updated!");
                 UpdateEmployeeManagementListbox();
             }

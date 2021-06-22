@@ -109,12 +109,15 @@
     </Compile>
     <Compile Include="Administrator.cs" />
     <Compile Include="BirthOfDateException.cs" />
+    <Compile Include="DbDepartment.cs" />
     <Compile Include="DbDiscontinuedProduct.cs" />
     <Compile Include="DbFiredEmployee.cs" />
     <Compile Include="DbProductWarehouse.cs" />
     <Compile Include="DbProductRequest.cs" />
     <Compile Include="DbProductFloor.cs" />
     <Compile Include="DbShift.cs" />
+    <Compile Include="Department.cs" />
+    <Compile Include="DepartmentManagement.cs" />
     <Compile Include="ProductRequest.cs" />
     <Compile Include="ProductRequestManagement.cs" />
     <Compile Include="RestockFloorProductManagementForm.cs">

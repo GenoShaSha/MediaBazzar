@@ -66,6 +66,8 @@ namespace MediaBazzar
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbxDepartment = new System.Windows.Forms.ComboBox();
+            this.lblDepartment = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -83,7 +85,7 @@ namespace MediaBazzar
             // 
             // updateBTN
             // 
-            this.updateBTN.Location = new System.Drawing.Point(44, 584);
+            this.updateBTN.Location = new System.Drawing.Point(44, 602);
             this.updateBTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.updateBTN.Name = "updateBTN";
             this.updateBTN.Size = new System.Drawing.Size(303, 38);
@@ -99,12 +101,14 @@ namespace MediaBazzar
             this.employeesLB.Location = new System.Drawing.Point(391, 102);
             this.employeesLB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.employeesLB.Name = "employeesLB";
-            this.employeesLB.Size = new System.Drawing.Size(355, 516);
+            this.employeesLB.Size = new System.Drawing.Size(355, 532);
             this.employeesLB.TabIndex = 46;
             this.employeesLB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.employeesLB_MouseClick);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbxDepartment);
+            this.groupBox2.Controls.Add(this.lblDepartment);
             this.groupBox2.Controls.Add(this.tbxPswd);
             this.groupBox2.Controls.Add(this.lblPswd);
             this.groupBox2.Controls.Add(this.ContractCB);
@@ -127,7 +131,7 @@ namespace MediaBazzar
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(336, 281);
+            this.groupBox2.Size = new System.Drawing.Size(336, 308);
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
             // 
@@ -451,6 +455,28 @@ namespace MediaBazzar
             this.label1.TabIndex = 22;
             this.label1.Text = "First Name :";
             // 
+            // cbxDepartment
+            // 
+            this.cbxDepartment.FormattingEnabled = true;
+            this.cbxDepartment.Items.AddRange(new object[] {
+            "Household",
+            "Computer & Electronics",
+            "Kitchen"});
+            this.cbxDepartment.Location = new System.Drawing.Point(111, 270);
+            this.cbxDepartment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxDepartment.Name = "cbxDepartment";
+            this.cbxDepartment.Size = new System.Drawing.Size(203, 24);
+            this.cbxDepartment.TabIndex = 50;
+            // 
+            // lblDepartment
+            // 
+            this.lblDepartment.AutoSize = true;
+            this.lblDepartment.Location = new System.Drawing.Point(19, 270);
+            this.lblDepartment.Name = "lblDepartment";
+            this.lblDepartment.Size = new System.Drawing.Size(86, 17);
+            this.lblDepartment.TabIndex = 49;
+            this.lblDepartment.Text = "Department:";
+            // 
             // UpdateEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -510,5 +536,7 @@ namespace MediaBazzar
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbxDepartment;
+        private System.Windows.Forms.Label lblDepartment;
     }
 }

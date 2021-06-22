@@ -19,7 +19,7 @@ namespace MediaBazzar
         {
             try
             {
-                string que = "INSERT INTO employees(FirstName,LastName,DateOfBirth,BSN,Gender,Relationship,Email,Password,PhoneNumber,Address,PostalCode,City,Country,EmployeeType,WorkHours,ContractType,Preference) VALUES (@fName,@lName,@dob,@bsn,@gender,@relationship,@email,@pswd,@pNumber,@address,@pCode,@city,@country,@role,@wHours,@cType,@pref)";
+                string que = "INSERT INTO employees(FirstName,LastName,DateOfBirth,BSN,Gender,Relationship,Email,Password,PhoneNumber,Address,PostalCode,City,Country,EmployeeType,WorkHours,ContractType,Preference,Department) VALUES (@fName,@lName,@dob,@bsn,@gender,@relationship,@email,@pswd,@pNumber,@address,@pCode,@city,@country,@role,@wHours,@cType,@pref,@department)";
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand(que, con);
 
@@ -37,6 +37,7 @@ namespace MediaBazzar
                 cmd.Parameters.AddWithValue("@city", person.City);
                 cmd.Parameters.AddWithValue("@country", person.Country);
                 cmd.Parameters.AddWithValue("@pref", "900000009000000090000000");
+                cmd.Parameters.AddWithValue("@department", person.Department);
                 if (person is FloorStaff)
                 {
                     person.EmployeeType = "Floor Staff";
@@ -146,27 +147,28 @@ namespace MediaBazzar
                             string EmployeeType = objReader["EmployeeType"].ToString();
                             int WorkHours = (int)objReader["WorkHours"];
                             string ContractType = objReader["ContractType"].ToString();
+                            string Department = objReader["Department"].ToString();
 
                             Employee person = null;
                             if (EmployeeType == "Administrator")
                             {
-                                person = new Administrator(empID, FirstName, LastName, DateOfBirth, BSN, Gender, Relationship, Email, Password, PhoneNumber, Address, PostalCode, City, Country);
+                                person = new Administrator(empID, FirstName, LastName, DateOfBirth, BSN, Gender, Relationship, Email, Password, PhoneNumber, Address, PostalCode, City, Country, Department);
                             }
                             else if (EmployeeType == "Floor Manager")
                             {
-                                person = new FloorManager(empID, FirstName, LastName, DateOfBirth, BSN, Gender, Relationship, Email, Password, PhoneNumber, Address, PostalCode, City, Country);
+                                person = new FloorManager(empID, FirstName, LastName, DateOfBirth, BSN, Gender, Relationship, Email, Password, PhoneNumber, Address, PostalCode, City, Country, Department);
                             }
                             else if (EmployeeType == "Warehouse Manager")
                             {
-                                person = new FloorManager(empID, FirstName, LastName, DateOfBirth, BSN, Gender, Relationship, Email, Password, PhoneNumber, Address, PostalCode, City, Country);
+                                person = new FloorManager(empID, FirstName, LastName, DateOfBirth, BSN, Gender, Relationship, Email, Password, PhoneNumber, Address, PostalCode, City, Country, Department);
                             }
                             else if (EmployeeType == "Floor Staff")
                             {
-                                person = new FloorStaff(empID, FirstName, LastName, DateOfBirth, BSN, Gender, Relationship, Email, Password, PhoneNumber, Address, PostalCode, City, Country, WorkHours, ContractType);
+                                person = new FloorStaff(empID, FirstName, LastName, DateOfBirth, BSN, Gender, Relationship, Email, Password, PhoneNumber, Address, PostalCode, City, Country, Department, WorkHours, ContractType);
                             }
                             else if (EmployeeType == "Warehouse Staff")
                             {
-                                person = new FloorStaff(empID, FirstName, LastName, DateOfBirth, BSN, Gender, Relationship, Email, Password, PhoneNumber, Address, PostalCode, City, Country, WorkHours, ContractType);
+                                person = new FloorStaff(empID, FirstName, LastName, DateOfBirth, BSN, Gender, Relationship, Email, Password, PhoneNumber, Address, PostalCode, City, Country, Department, WorkHours, ContractType);
                             }
                             employees.Add(person);
                         }
@@ -232,7 +234,7 @@ namespace MediaBazzar
         {
             try
             {
-                string que = "UPDATE employees SET FirstName= @fName, LastName= @lName, DateOfBirth= @dob, BSN= @bsn, Gender= @gender, Relationship= @relationship, Email= @email, Password= @pswd, PhoneNumber= @pNumber, Address= @address, PostalCode= @pCode, City= @city, Country= @country, EmployeeType= @role,WorkHours= @wHours, ContractType=@cType WHERE Employee_ID= @eID";
+                string que = "UPDATE employees SET FirstName= @fName, LastName= @lName, DateOfBirth= @dob, BSN= @bsn, Gender= @gender, Relationship= @relationship, Email= @email, Password= @pswd, PhoneNumber= @pNumber, Address= @address, PostalCode= @pCode, City= @city, Country= @country, Department= @department, EmployeeType= @role,WorkHours= @wHours, ContractType=@cType WHERE Employee_ID= @eID";
 
                 MySqlCommand cmd = new MySqlCommand(que, con);
                 con.Open();
@@ -251,6 +253,7 @@ namespace MediaBazzar
                 cmd.Parameters.AddWithValue("@pCode", person.PostalCode);
                 cmd.Parameters.AddWithValue("@city", person.City);
                 cmd.Parameters.AddWithValue("@country", person.Country);
+                cmd.Parameters.AddWithValue("@department", person.Department);
                 if (person is FloorStaff)
                 {
                     person.EmployeeType = "Floor Staff";

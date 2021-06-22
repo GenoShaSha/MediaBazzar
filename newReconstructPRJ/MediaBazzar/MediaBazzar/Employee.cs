@@ -25,8 +25,9 @@ namespace MediaBazzar
         protected string employeeType = string.Empty;
         protected DateTime dateOfJoin;
         protected string status = string.Empty;
+        protected string department;
 
-        public Employee(string firstName, string lastName, DateTime dateOfBirth, string bsn, string gender, string relationship, string email, string password, string phoneNumber, string address, string postalCode, string city, string country)
+        public Employee(string firstName, string lastName, DateTime dateOfBirth, string bsn, string gender, string relationship, string email, string password, string phoneNumber, string address, string postalCode, string city, string country, string department)
         {
             this.firstName = firstName;
             this.lastName = lastName;
@@ -41,8 +42,9 @@ namespace MediaBazzar
             this.postalCode = postalCode;
             this.city = city;
             this.country = country;
+            this.department = department;
         }
-        public Employee(int id, string firstName, string lastName, DateTime dateOfBirth, string bsn, string gender, string relationship, string email, string password, string phoneNumber, string address, string postalCode, string city, string country)
+        public Employee(int id, string firstName, string lastName, DateTime dateOfBirth, string bsn, string gender, string relationship, string email, string password, string phoneNumber, string address, string postalCode, string city, string country, string department)
         {
             this.id = id;
             this.firstName = firstName;
@@ -58,8 +60,9 @@ namespace MediaBazzar
             this.postalCode = postalCode;
             this.city = city;
             this.country = country;
+            this.department = department;
         }
-        public void UpdatePeople(string fName, string lName, string gender, DateTime bod, string bsn, string relationship, string email, string pswd, string pNumb, string address, string pCode, string city, string country)
+        public void UpdatePeople(string fName, string lName, string gender, DateTime bod, string bsn, string relationship, string email, string pswd, string pNumb, string address, string pCode, string city, string country, string department)
         {
             this.firstName = fName;
             this.lastName = lName;
@@ -74,6 +77,7 @@ namespace MediaBazzar
             this.postalCode = pCode;
             this.city = city;
             this.country = country;
+            this.department = department;
         }
 
         public int Id
@@ -151,7 +155,11 @@ namespace MediaBazzar
             get { return this.employeeType; }
             set { this.employeeType = value; }
         }
-
+        public string Department
+        {
+            get { return this.department; }
+            set { this.department = value; }
+        }
         public override string ToString()
         {
             if (this.status == string.Empty)

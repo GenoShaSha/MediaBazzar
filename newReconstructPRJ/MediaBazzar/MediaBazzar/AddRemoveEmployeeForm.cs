@@ -48,44 +48,44 @@ namespace MediaBazzar
                 }
                 if (RoleCB.SelectedIndex == 0)
                 {
-                    wrp.EM.AddObj(new Administrator(firstNameTB.Text, lastNameTB.Text, DOBPicker.Value, BSN_TB.Text, GenderCB.SelectedItem.ToString(), relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text));
+                    wrp.EM.AddObj(new Administrator(firstNameTB.Text, lastNameTB.Text, DOBPicker.Value, BSN_TB.Text, GenderCB.SelectedItem.ToString(), relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, cbxDepartment.SelectedItem.ToString()));
                 }
                 else if (RoleCB.SelectedIndex == 1)
                 {
-                    wrp.EM.AddObj(new FloorManager(firstNameTB.Text, lastNameTB.Text, DOBPicker.Value, BSN_TB.Text, GenderCB.SelectedItem.ToString(), relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text));
+                    wrp.EM.AddObj(new FloorManager(firstNameTB.Text, lastNameTB.Text, DOBPicker.Value, BSN_TB.Text, GenderCB.SelectedItem.ToString(), relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, cbxDepartment.SelectedItem.ToString()));
                 }
                 else if (RoleCB.SelectedIndex == 2)
                 {
                     if (ContractCB.SelectedIndex == 0)
                     {
-                        wrp.EM.AddObj(new FloorStaff(firstNameTB.Text, lastNameTB.Text, DOBPicker.Value, BSN_TB.Text, GenderCB.SelectedItem.ToString(), relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, 40, "full"));
+                        wrp.EM.AddObj(new FloorStaff(firstNameTB.Text, lastNameTB.Text, DOBPicker.Value, BSN_TB.Text, GenderCB.SelectedItem.ToString(), relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text,cbxDepartment.SelectedItem.ToString(), 40, "full"));
                     }
                     else if (ContractCB.SelectedIndex == 1)
                     {
-                        wrp.EM.AddObj(new FloorStaff(firstNameTB.Text, lastNameTB.Text, DOBPicker.Value, BSN_TB.Text, GenderCB.SelectedItem.ToString(), relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, 30, "middle"));
+                        wrp.EM.AddObj(new FloorStaff(firstNameTB.Text, lastNameTB.Text, DOBPicker.Value, BSN_TB.Text, GenderCB.SelectedItem.ToString(), relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, cbxDepartment.SelectedItem.ToString(), 30, "middle"));
                     }
                     else
                     {
-                        wrp.EM.AddObj(new FloorStaff(firstNameTB.Text, lastNameTB.Text, DOBPicker.Value, BSN_TB.Text, GenderCB.SelectedItem.ToString(), relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, 20, "part"));
+                        wrp.EM.AddObj(new FloorStaff(firstNameTB.Text, lastNameTB.Text, DOBPicker.Value, BSN_TB.Text, GenderCB.SelectedItem.ToString(), relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, cbxDepartment.SelectedItem.ToString(), 20, "part"));
                     }
                 }
                 else if (RoleCB.SelectedIndex == 3)
                 {
-                    wrp.EM.AddObj(new WarehouseManager(firstNameTB.Text, lastNameTB.Text, DOBPicker.Value, BSN_TB.Text, GenderCB.SelectedItem.ToString(), relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text));
+                    wrp.EM.AddObj(new WarehouseManager(firstNameTB.Text, lastNameTB.Text, DOBPicker.Value, BSN_TB.Text, GenderCB.SelectedItem.ToString(), relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, cbxDepartment.SelectedItem.ToString()));
                 }
                 else if (RoleCB.SelectedIndex == 4)
                 {
                     if (ContractCB.SelectedIndex == 0)
                     {
-                        wrp.EM.AddObj(new WarehouseStaff(firstNameTB.Text, lastNameTB.Text, DOBPicker.Value, BSN_TB.Text, GenderCB.SelectedItem.ToString(), relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, 40, "full"));
+                        wrp.EM.AddObj(new WarehouseStaff(firstNameTB.Text, lastNameTB.Text, DOBPicker.Value, BSN_TB.Text, GenderCB.SelectedItem.ToString(), relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, cbxDepartment.SelectedItem.ToString(),40, "full"));
                     }
                     else if (ContractCB.SelectedIndex == 1)
                     {
-                        wrp.EM.AddObj(new WarehouseStaff(firstNameTB.Text, lastNameTB.Text, DOBPicker.Value, BSN_TB.Text, GenderCB.SelectedItem.ToString(), relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, 30, "middle"));
+                        wrp.EM.AddObj(new WarehouseStaff(firstNameTB.Text, lastNameTB.Text, DOBPicker.Value, BSN_TB.Text, GenderCB.SelectedItem.ToString(), relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, cbxDepartment.SelectedItem.ToString(), 30, "middle"));
                     }
                     else
                     {
-                        wrp.EM.AddObj(new WarehouseStaff(firstNameTB.Text, lastNameTB.Text, DOBPicker.Value, BSN_TB.Text, GenderCB.SelectedItem.ToString(), relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, 20, "part"));
+                        wrp.EM.AddObj(new WarehouseStaff(firstNameTB.Text, lastNameTB.Text, DOBPicker.Value, BSN_TB.Text, GenderCB.SelectedItem.ToString(), relationshipStatusCB.SelectedItem.ToString(), emailTB.Text, tbxPswd.Text, phoneNumberTB.Text, addressTB.Text, postalCodeTB.Text, cityTB.Text, countryTB.Text, cbxDepartment.SelectedItem.ToString(), 20, "part"));
                     }
                 }
                 DialogResult result = MessageBox.Show("User added!");
