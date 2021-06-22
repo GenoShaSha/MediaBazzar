@@ -128,7 +128,6 @@ namespace Waterfall_PRJ
         {
             try
             {
-                lbxRequestStock.SelectedIndex = -1;
                 Good g = (Good)lbxStock.SelectedItem;
                 tbxUpdateArtNr.Text = g.ArticleNumbers.ToString();
                 tbxUpdateName.Text = g.ProductName;
@@ -136,7 +135,6 @@ namespace Waterfall_PRJ
                 cbxCategory.SelectedItem = g.Category;
                 tbxUpdateDim.Text = g.PhysicalDimensions;
                 tbxUpdateQuantity.Text = g.Quantity.ToString();
-                tbxRmvID.Text = g.ID.ToString();
             }
             catch(NullReferenceException)
             {
@@ -252,32 +250,14 @@ namespace Waterfall_PRJ
             }
         }
 
-        private void panel1_MouseClick(object sender, MouseEventArgs e)
+        private void lblReqStock_Click(object sender, EventArgs e)
         {
-            lbxStock.SelectedIndex = -1;
-            lbxRequestStock.SelectedIndex = -1;
-            tbxUpdateArtNr.Text = string.Empty;
-            tbxUpdateName.Text = string.Empty;
-            tbxUpdatePrice.Text = string.Empty;
-            tbxUpdateDim.Text = string.Empty;
-            tbxUpdateQuantity.Text = string.Empty;
+
         }
 
-        private void lbxRequestStock_Click(object sender, EventArgs e)
+        private void lbxRequestStock_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lbxStock.SelectedIndex = -1;
-            tbxUpdateArtNr.Text = string.Empty;
-            tbxUpdateName.Text = string.Empty;
-            tbxUpdatePrice.Text = string.Empty;
-            tbxUpdateDim.Text = string.Empty;
-            tbxUpdateQuantity.Text = string.Empty;
-        }
 
-        private void LogOutBtn_Click(object sender, EventArgs e)
-        {
-            LoginForm lf = new LoginForm();
-            lf.Show();
-            this.Hide();
         }
     }
 }
