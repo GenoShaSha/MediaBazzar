@@ -22,6 +22,7 @@ namespace MediaBazzar
             ContractCB.SelectedIndex = 0;
             GenderCB.SelectedIndex = 0;
             relationshipStatusCB.SelectedIndex = 0;
+            cbxDepartment.Items.Add(wrp.DM.GetListObj());
         }
         public void UpdateEmployeeManagementListbox()
         {
