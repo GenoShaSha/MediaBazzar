@@ -86,5 +86,12 @@ namespace MediaBazzar
             apf.Show();
             this.Hide();
         }
+
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+            SignInForm sf = new SignInForm();
+            sf.Show();
+            this.Hide();
+        }
     }
 }

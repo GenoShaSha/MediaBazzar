@@ -35,6 +35,7 @@ namespace MediaBazzar
             this.btnWarehouseRequest = new System.Windows.Forms.Button();
             this.btnUpdateProd = new System.Windows.Forms.Button();
             this.btnAddNewProd = new System.Windows.Forms.Button();
+            this.btnSignOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblReqStock
@@ -95,11 +96,23 @@ namespace MediaBazzar
             this.btnAddNewProd.UseVisualStyleBackColor = true;
             this.btnAddNewProd.Click += new System.EventHandler(this.btnAddNewProd_Click);
             // 
+            // btnSignOut
+            // 
+            this.btnSignOut.Location = new System.Drawing.Point(349, 11);
+            this.btnSignOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Size = new System.Drawing.Size(109, 38);
+            this.btnSignOut.TabIndex = 100;
+            this.btnSignOut.Text = "SIGN OUT";
+            this.btnSignOut.UseVisualStyleBackColor = true;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
+            // 
             // RestockFloorProductManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(504, 414);
+            this.Controls.Add(this.btnSignOut);
             this.Controls.Add(this.btnAddNewProd);
             this.Controls.Add(this.btnWarehouseRequest);
             this.Controls.Add(this.btnUpdateProd);
@@ -121,5 +134,6 @@ namespace MediaBazzar
         private System.Windows.Forms.Button btnWarehouseRequest;
         private System.Windows.Forms.Button btnUpdateProd;
         private System.Windows.Forms.Button btnAddNewProd;
+        private System.Windows.Forms.Button btnSignOut;
     }
 }

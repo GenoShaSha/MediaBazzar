@@ -33,6 +33,8 @@ namespace MediaBazzar
             this.updateBTN = new System.Windows.Forms.Button();
             this.employeesLB = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbxDepartment = new System.Windows.Forms.ComboBox();
+            this.lblDepartment = new System.Windows.Forms.Label();
             this.tbxPswd = new System.Windows.Forms.TextBox();
             this.lblPswd = new System.Windows.Forms.Label();
             this.ContractCB = new System.Windows.Forms.ComboBox();
@@ -66,8 +68,7 @@ namespace MediaBazzar
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbxDepartment = new System.Windows.Forms.ComboBox();
-            this.lblDepartment = new System.Windows.Forms.Label();
+            this.btnSignOut = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -134,6 +135,28 @@ namespace MediaBazzar
             this.groupBox2.Size = new System.Drawing.Size(336, 308);
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
+            // 
+            // cbxDepartment
+            // 
+            this.cbxDepartment.FormattingEnabled = true;
+            this.cbxDepartment.Items.AddRange(new object[] {
+            "Household",
+            "Computer & Electronics",
+            "Kitchen"});
+            this.cbxDepartment.Location = new System.Drawing.Point(111, 270);
+            this.cbxDepartment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbxDepartment.Name = "cbxDepartment";
+            this.cbxDepartment.Size = new System.Drawing.Size(203, 24);
+            this.cbxDepartment.TabIndex = 50;
+            // 
+            // lblDepartment
+            // 
+            this.lblDepartment.AutoSize = true;
+            this.lblDepartment.Location = new System.Drawing.Point(19, 270);
+            this.lblDepartment.Name = "lblDepartment";
+            this.lblDepartment.Size = new System.Drawing.Size(86, 17);
+            this.lblDepartment.TabIndex = 49;
+            this.lblDepartment.Text = "Department:";
             // 
             // tbxPswd
             // 
@@ -455,33 +478,23 @@ namespace MediaBazzar
             this.label1.TabIndex = 22;
             this.label1.Text = "First Name :";
             // 
-            // cbxDepartment
+            // btnSignOut
             // 
-            this.cbxDepartment.FormattingEnabled = true;
-            this.cbxDepartment.Items.AddRange(new object[] {
-            "Household",
-            "Computer & Electronics",
-            "Kitchen"});
-            this.cbxDepartment.Location = new System.Drawing.Point(111, 270);
-            this.cbxDepartment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbxDepartment.Name = "cbxDepartment";
-            this.cbxDepartment.Size = new System.Drawing.Size(203, 24);
-            this.cbxDepartment.TabIndex = 50;
-            // 
-            // lblDepartment
-            // 
-            this.lblDepartment.AutoSize = true;
-            this.lblDepartment.Location = new System.Drawing.Point(19, 270);
-            this.lblDepartment.Name = "lblDepartment";
-            this.lblDepartment.Size = new System.Drawing.Size(86, 17);
-            this.lblDepartment.TabIndex = 49;
-            this.lblDepartment.Text = "Department:";
+            this.btnSignOut.Location = new System.Drawing.Point(452, 48);
+            this.btnSignOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Size = new System.Drawing.Size(109, 38);
+            this.btnSignOut.TabIndex = 49;
+            this.btnSignOut.Text = "SIGN OUT";
+            this.btnSignOut.UseVisualStyleBackColor = true;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
             // 
             // UpdateEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 663);
+            this.Controls.Add(this.btnSignOut);
             this.Controls.Add(this.addBTN);
             this.Controls.Add(this.updateBTN);
             this.Controls.Add(this.employeesLB);
@@ -538,5 +551,6 @@ namespace MediaBazzar
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbxDepartment;
         private System.Windows.Forms.Label lblDepartment;
+        private System.Windows.Forms.Button btnSignOut;
     }
 }

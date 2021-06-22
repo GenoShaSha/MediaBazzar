@@ -69,6 +69,9 @@ namespace MediaBazzar
             this.btnProdRequest = new System.Windows.Forms.Button();
             this.schedulingTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.listBox2 = new System.Windows.Forms.ListBox();
             this.AvailableEmployeesOverviewLB = new System.Windows.Forms.ListBox();
             this.SundayEveningBtn = new System.Windows.Forms.Button();
             this.SaturdayEveningBtn = new System.Windows.Forms.Button();
@@ -91,9 +94,7 @@ namespace MediaBazzar
             this.WednesdayMorningBtn = new System.Windows.Forms.Button();
             this.TuesdayMorningBtn = new System.Windows.Forms.Button();
             this.MondayMorningBtn = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSignOut = new System.Windows.Forms.Button();
             this.scheduleTab.SuspendLayout();
             this.schedulingTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -120,6 +121,7 @@ namespace MediaBazzar
             // 
             // scheduleTab
             // 
+            this.scheduleTab.Controls.Add(this.btnSignOut);
             this.scheduleTab.Controls.Add(this.BackBtn);
             this.scheduleTab.Controls.Add(this.lblMonday);
             this.scheduleTab.Controls.Add(this.label27);
@@ -566,6 +568,35 @@ namespace MediaBazzar
             this.tabPage1.Text = "Overview Tab";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(861, 532);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 109;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label2.Location = new System.Drawing.Point(58, 484);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(129, 24);
+            this.label2.TabIndex = 108;
+            this.label2.Text = "Preference list";
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 16;
+            this.listBox2.Location = new System.Drawing.Point(62, 511);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(282, 132);
+            this.listBox2.TabIndex = 107;
+            // 
             // AvailableEmployeesOverviewLB
             // 
             this.AvailableEmployeesOverviewLB.FormattingEnabled = true;
@@ -744,34 +775,16 @@ namespace MediaBazzar
             this.MondayMorningBtn.TabIndex = 42;
             this.MondayMorningBtn.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // btnSignOut
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label2.Location = new System.Drawing.Point(58, 484);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 24);
-            this.label2.TabIndex = 108;
-            this.label2.Text = "Preference list";
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 16;
-            this.listBox2.Location = new System.Drawing.Point(62, 511);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(282, 132);
-            this.listBox2.TabIndex = 107;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(861, 532);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 109;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSignOut.Location = new System.Drawing.Point(803, 17);
+            this.btnSignOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Size = new System.Drawing.Size(109, 38);
+            this.btnSignOut.TabIndex = 99;
+            this.btnSignOut.Text = "SIGN OUT";
+            this.btnSignOut.UseVisualStyleBackColor = true;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
             // 
             // SchedulingForm
             // 
@@ -856,5 +869,6 @@ namespace MediaBazzar
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSignOut;
     }
 }

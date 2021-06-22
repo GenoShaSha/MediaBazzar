@@ -664,5 +664,12 @@ namespace MediaBazzar
             }
             ReturnShiftEmployeesLB(returnedDate);
         }
+
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+            SignInForm sf = new SignInForm();
+            sf.Show();
+            this.Hide();
+        }
     }
 }

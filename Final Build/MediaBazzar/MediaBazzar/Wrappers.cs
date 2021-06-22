@@ -12,6 +12,7 @@ namespace MediaBazzar
         private ProductManagement pm;
         private ProductRequestManagement prm;
         private ShiftManagement sm;
+        private DepartmentManagement dm;
 
         public Wrappers()
         {
@@ -19,6 +20,11 @@ namespace MediaBazzar
             pm = new ProductManagement();
             prm = new ProductRequestManagement();
             sm = new ShiftManagement();
+            dm = new DepartmentManagement();
+        }
+        public DepartmentManagement DM
+        {
+            get { return this.dm; }
         }
         public EmployeeManagement EM
         {
