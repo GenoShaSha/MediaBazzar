@@ -32,15 +32,6 @@ class workShift extends dbConnection
                 $stmt = $this -> connect() -> query($query);
 
                 echo "<h5> Current week range from $this_week_sd to $this_week_ed </h5>";
-
-                // while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
-                // {
-                //     echo "<tr>
-                //             <td>".$row['date']."</td>              
-                //             <td>".$row['type']."</td>
-                //         </tr>";           
-                // }
-
                 echo "<thead>";
                 echo "<tr>";
                 for ($i = 0; $i < 7; $i++) {
@@ -51,33 +42,39 @@ class workShift extends dbConnection
                 echo "</tr>";
                 echo "</thead>";
 
-                $row = $stmt->fetchAll();
+                $rows = $stmt->fetchAll();
 
                 echo "<tbody>"; 
-                echo "<tr>"; 
-                foreach ($row as $shift) 
-                {         
-                    for ($i = 0; $i < 7; $i++) {
-                        $mondayWeek = strtotime(date("Y-m-d",$monday)." +".$i."days");
-                        $dayWeek = date("Y-m-d",$mondayWeek);
 
-
-                        if($shift['date'] == $dayWeek)
-                        {                  
-                            echo "<td>".$shift['type']."</td>";
-                        }            
-                    } 
-                }
-                echo "<tr>";                             
+                $this->GetRow("Morning", $rows, $monday);
+                $this->GetRow("Afternoon", $rows, $monday);
+                $this->GetRow("Night", $rows, $monday);
                 echo "</tbody>";
-
                }
-
                catch (PDOException $e) 
                {
                 echo "Error : ".$e->getMessage();
                }
            }
+    }
+    public function GetRow($input, $row, $monday)
+    {
+        echo "<tr>";                
+                    for ($i = 0; $i < 7; $i++) {
+                        echo "<td>";
+                        $mondayWeek = strtotime(date("Y-m-d",$monday)." +".$i."days");
+                        $dayWeek = date("Y-m-d",$mondayWeek); 
+                        $count = 0;
+                        foreach ($row as $shift)
+                        {             
+                            if($shift['date'] == $dayWeek && $shift['type'] == $input)
+                            {       
+                                echo $shift['type'];    
+                            }   
+                        }
+                        echo "</td>";   
+                        }
+                    echo "</tr>";
     }
     
     public function UpdatePreference()
@@ -89,10 +86,9 @@ class workShift extends dbConnection
                    $id = $_SESSION['sess_user_id'];
                    $preferenceNumber = $_POST['PreferenceValue'];
 
-                   $query = "UPDATE `employees` SET `Preference` = :preference WHERE Employee_ID = :id";
+                   $query = "UPDATE `employees` SET `Preference` = :preference WHERE Employee_ID = $id";
                    $stmt = $this -> connect() -> prepare($query);
                    $stmt -> bindValue(':preference', $preferenceNumber, PDO::PARAM_STR);
-                   $stmt -> bindValue(':id', $id, PDO::PARAM_INT);
 
                    $stmt ->execute();
                 }

@@ -5,8 +5,6 @@ include 'classes/user.Class.php';
 include 'classes/workShift.Class.php';
 $workShift = new workShift();
 $workShift -> UpdatePreference();
-$db = new dbConnection();
-
 ?>
 
 <!DOCTYPE html>
