@@ -84,5 +84,12 @@ namespace MediaBazzar
                 MessageBox.Show("Please insert department ID!");
             }
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            UpdateEmployeeForm ue = new UpdateEmployeeForm();
+            ue.Show();
+            this.Hide();
+        }
     }
 }

@@ -22,6 +22,8 @@ namespace MediaBazzar
         private ShiftManagement shifts;
         private EmployeeManagement em;
         private List<Object> employeelist;
+        private Wrappers wrp;
+
         public SchedulingForm()
         {
             InitializeComponent();
@@ -32,10 +34,23 @@ namespace MediaBazzar
             em = new EmployeeManagement();
             de = new DbEmployee();
             ds = new DbShift();
+            wrp = new Wrappers();
             UpdateWorkshiftManagementListbox();
             MorningRB.Checked = true;
             UpdateShiftButtonValues();
             employeelist = em.GetListObj();
+            UpdateCbxDepartment();
+        }
+
+
+        public void UpdateCbxDepartment()
+        {
+            List<Object> DepartmentList = wrp.DM.GetListObj();
+            foreach (var item in DepartmentList)
+            {
+                cbxDepartments.Items.Add(item);
+                
+            }
         }
         public void UpdateShiftButtonValues()
         {
@@ -110,6 +125,23 @@ namespace MediaBazzar
                 }
             }
         }
+
+        private void UpdateAvailableEmployeeByDepartment()
+        {
+            AvailableEmployeesLB.Items.Clear();
+            List<Object> employeeList = em.GetListObj();
+            foreach (Employee p in employeeList)
+            {
+                if (p is FloorStaff)
+                {
+                    if (p.Department == cbxDepartments.Text)
+                    {
+                        AvailableEmployeesLB.Items.Add((FloorStaff)p);
+                        
+                    }
+                }
+            }
+        }
         private void UpdateWorkshiftsListbox()
         {
             List<Shift> shiftss = new List<Shift>();
@@ -146,21 +178,68 @@ namespace MediaBazzar
                 {
                     foreach (FloorStaff e in morningEmps)
                     {
-                        MorningShiftLB.Items.Add(e.FirstName + " " + e.LastName);
+                        //MorningShiftLB.Items.Add(e.FirstName + " " + e.LastName);
+                        MorningShiftLB.Items.Add(e);
                     }
                 }
                 if (afternooonEmps != null)
                 {
                     foreach (FloorStaff e in afternooonEmps)
                     {
-                        AfternoonShiftLB.Items.Add(e.FirstName + " " + e.LastName);
+                        AfternoonShiftLB.Items.Add(e);
                     }
                 }
                 if (nightEmps != null)
                 {
                     foreach (FloorStaff e in nightEmps)
                     {
-                        NightShiftLB.Items.Add(e.FirstName + " " + e.LastName);
+                        NightShiftLB.Items.Add(e);
+                    }
+                }
+            }
+        }
+
+
+
+        private void ReturnShiftEmployeesLBbasedOnDepartment(DateTime returndate)
+        {
+            //MorningShiftLB.Items.Clear();
+            //AfternoonShiftLB.Items.Clear();
+            //NightShiftLB.Items.Clear();
+            if (shifts.ShiftList.Count > 0)
+            {
+                List<FloorStaff> morningEmps = shifts.ReturnAssignedEmployees(returndate, ShiftType.Morning);
+                List<FloorStaff> afternooonEmps = shifts.ReturnAssignedEmployees(returndate, ShiftType.Afternoon);
+                List<FloorStaff> nightEmps = shifts.ReturnAssignedEmployees(returndate, ShiftType.Night);
+                
+                if (morningEmps != null)
+                {
+                    foreach (FloorStaff e in morningEmps)
+                    {
+                        if (e.Department == cbxDepartments.Text)
+                        {
+                            MorningShiftLB.Items.Add(e);
+                        }
+                    }
+                }
+                if (afternooonEmps != null)
+                {
+                    foreach (FloorStaff e in afternooonEmps)
+                    {
+                        if (e.Department == cbxDepartments.Text)
+                        {
+                            AfternoonShiftLB.Items.Add(e);
+                        }
+                    }
+                }
+                if (nightEmps != null)
+                {
+                    foreach (FloorStaff e in nightEmps)
+                    {
+                        if (e.Department == cbxDepartments.Text)
+                        {
+                            NightShiftLB.Items.Add(e);
+                        }
                     }
                 }
             }
@@ -170,9 +249,16 @@ namespace MediaBazzar
             returnedDate = Convert.ToDateTime(sundayBtn.Text);
             dateLbl.Text = returnedDate.ToShortDateString();
             UpdateWorkshiftsListbox();
-            ReturnShiftEmployeesLB(returnedDate);
-
-            UpdateWorkshiftManagementListbox();
+            
+            if (cbxDepartments.Text != string.Empty)
+            {
+                ReturnShiftEmployeesLBbasedOnDepartment(returnedDate);
+            }
+            else
+            {
+                ReturnShiftEmployeesLB(returnedDate);
+            }
+        //    UpdateWorkshiftManagementListbox();
         }
 
         private void saturdayBtn_Click_1(object sender, EventArgs e)
@@ -180,9 +266,16 @@ namespace MediaBazzar
             returnedDate = Convert.ToDateTime(saturdayBtn.Text);
             dateLbl.Text = returnedDate.ToShortDateString();
             UpdateWorkshiftsListbox();
-            ReturnShiftEmployeesLB(returnedDate);
-
-            UpdateWorkshiftManagementListbox();
+            
+            if (cbxDepartments.Text != string.Empty)
+            {
+                ReturnShiftEmployeesLBbasedOnDepartment(returnedDate);
+            }
+            else
+            {
+                ReturnShiftEmployeesLB(returnedDate);
+            }
+         //   UpdateWorkshiftManagementListbox();
         }
 
         private void fridayBtn_Click_1(object sender, EventArgs e)
@@ -190,9 +283,16 @@ namespace MediaBazzar
             returnedDate = Convert.ToDateTime(fridayBtn.Text);
             dateLbl.Text = returnedDate.ToShortDateString();
             UpdateWorkshiftsListbox();
-            ReturnShiftEmployeesLB(returnedDate);
-
-            UpdateWorkshiftManagementListbox();
+        
+            if (cbxDepartments.Text != string.Empty)
+            {
+                ReturnShiftEmployeesLBbasedOnDepartment(returnedDate);
+            }
+            else
+            {
+                ReturnShiftEmployeesLB(returnedDate);
+            }
+         //   UpdateWorkshiftManagementListbox();
         }
 
         private void thursdayBtn_Click_1(object sender, EventArgs e)
@@ -200,9 +300,16 @@ namespace MediaBazzar
             returnedDate = Convert.ToDateTime(thursdayBtn.Text);
             dateLbl.Text = returnedDate.ToShortDateString();
             UpdateWorkshiftsListbox();
-            ReturnShiftEmployeesLB(returnedDate);
-
-            UpdateWorkshiftManagementListbox();
+          
+            if (cbxDepartments.Text != string.Empty)
+            {
+                ReturnShiftEmployeesLBbasedOnDepartment(returnedDate);
+            }
+            else
+            {
+                ReturnShiftEmployeesLB(returnedDate);
+            }
+          //  UpdateWorkshiftManagementListbox();
         }
 
         private void wednesdayBtn_Click_1(object sender, EventArgs e)
@@ -210,9 +317,16 @@ namespace MediaBazzar
             returnedDate = Convert.ToDateTime(wednesdayBtn.Text);
             dateLbl.Text = returnedDate.ToShortDateString();
             UpdateWorkshiftsListbox();
-            ReturnShiftEmployeesLB(returnedDate);
-
-            UpdateWorkshiftManagementListbox();
+            
+            if (cbxDepartments.Text != string.Empty)
+            {
+                ReturnShiftEmployeesLBbasedOnDepartment(returnedDate);
+            }
+            else
+            {
+                ReturnShiftEmployeesLB(returnedDate);
+            }
+           // UpdateWorkshiftManagementListbox();
         }
 
         private void tuesdayBtn_Click_1(object sender, EventArgs e)
@@ -220,9 +334,16 @@ namespace MediaBazzar
             returnedDate = Convert.ToDateTime(tuesdayBtn.Text);
             dateLbl.Text = returnedDate.ToShortDateString();
             UpdateWorkshiftsListbox();
-            ReturnShiftEmployeesLB(returnedDate);
-
-            UpdateWorkshiftManagementListbox();
+            
+            if (cbxDepartments.Text != string.Empty)
+            {
+                ReturnShiftEmployeesLBbasedOnDepartment(returnedDate);
+            }
+            else
+            {
+                ReturnShiftEmployeesLB(returnedDate);
+            }
+           // UpdateWorkshiftManagementListbox();
         }
 
         private void mondayBtn_Click_1(object sender, EventArgs e)
@@ -230,9 +351,16 @@ namespace MediaBazzar
             returnedDate = Convert.ToDateTime(mondayBtn.Text);
             dateLbl.Text = returnedDate.ToShortDateString();
             UpdateWorkshiftsListbox();
-            ReturnShiftEmployeesLB(returnedDate);
-
-            UpdateWorkshiftManagementListbox();
+           
+            if (cbxDepartments.Text != string.Empty)
+            {
+                ReturnShiftEmployeesLBbasedOnDepartment(returnedDate);
+            }
+            else
+            {
+                ReturnShiftEmployeesLB(returnedDate);
+            }
+            //UpdateWorkshiftManagementListbox();
         }
 
         private void BackBtn_Click(object sender, EventArgs e)
@@ -648,28 +776,255 @@ namespace MediaBazzar
         {
             shifts.ReadShifts();
             Employee emp = (Employee)AvailableEmployeesLB.SelectedItem;
+            
             if (ds.ReturnShift(new Shift(returnedDate, type)) == false)
             {
                 ds.AddShift(new Shift(returnedDate, type));
+                
             }
+            
             shifts.ReadShifts();
             foreach (Shift s in shifts.ShiftList)
             {
                 if (s.Type == type && s.ShiftDate == returnedDate)
                 {
-                    s.AddEmployeeToShift((FloorStaff)emp);
-                    ds.AddAssignments(((FloorStaff)emp).Id, s.ID);
-                    MessageBox.Show("Adding to shift succesfull.");
+                    if (s.Type == ShiftType.Morning)
+                    {
+                        if (cbxDepartments.Text != string.Empty)
+                        {
+
+
+                            if (MorningShiftLB.Items.Count >= 3)
+                            {
+                                MessageBox.Show("This shift is full");
+                            }
+                            else
+                            {
+                                if (MorningShiftLB.Items.Count == 0)
+                                {
+                                    if (NightShiftLB.Items.Count == 0)
+                                    {
+                                        ds.AddAssignments(((FloorStaff)emp).Id, s.ID);
+                                        MessageBox.Show("Adding to shift succesfull.");
+                                    }
+                                    else
+                                    {
+                                        foreach (FloorStaff fstaffNight in NightShiftLB.Items)
+                                        {
+                                            if (emp.FirstName == fstaffNight.FirstName)
+                                            {
+                                                MessageBox.Show("Employee can't be scheduled for morning, try diffrent shift");
+
+                                            }
+
+                                            else
+                                            {
+                                                ds.AddAssignments(((FloorStaff)emp).Id, s.ID);
+                                                MessageBox.Show("Adding to shift succesfull.");
+
+                                            }
+
+                                        }
+                                    }
+
+                                }
+                                else
+                                {
+
+
+                                    foreach (FloorStaff fstaff in MorningShiftLB.Items)
+                                    {
+
+                                        if (emp.FirstName == fstaff.FirstName)
+                                        {
+
+                                            MessageBox.Show("This employee is already assigned");
+
+                                            goto afterloop;
+                                        }
+                                        else if (emp.FirstName != fstaff.FirstName)
+                                        {
+                                            foreach(FloorStaff fstaffNight in NightShiftLB.Items)
+                                            {
+                                                if (emp.FirstName == fstaffNight.FirstName)
+                                                {
+                                                    MessageBox.Show("Employee can't be scheduled for morning, try diffrent shift");
+                                                    goto afterloop;
+                                                }
+                                                else
+                                                {
+                                                    ds.AddAssignments(((FloorStaff)emp).Id, s.ID);
+                                                    MessageBox.Show("Adding to shift succesfull.");
+
+                                                    goto afterloop;
+                                                }
+                                            }
+                                            
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please select a Department");
+                        }
+                        
+                    }
+                    if (s.Type == ShiftType.Afternoon)
+                    {
+                        if(cbxDepartments.Text != string.Empty)
+                        {
+                            if (AfternoonShiftLB.Items.Count >= 3)
+                            {
+                                MessageBox.Show("This shift is full");
+                            }
+                            else
+                            {
+                                if (AfternoonShiftLB.Items.Count == 0)
+                                {
+
+                                    ds.AddAssignments(((FloorStaff)emp).Id, s.ID);
+                                    MessageBox.Show("Adding to shift succesfull.");
+                                }
+                                else
+                                {
+
+
+                                    foreach (FloorStaff fstaff in AfternoonShiftLB.Items)
+                                    {
+
+                                        if (emp.FirstName == fstaff.FirstName)
+                                        {
+
+                                            MessageBox.Show("This employee is already assigned");
+
+                                            goto afterloop;
+                                        }
+                                        else if (emp.FirstName != fstaff.FirstName)
+                                        {
+                                            ds.AddAssignments(((FloorStaff)emp).Id, s.ID);
+                                            MessageBox.Show("Adding to shift succesfull.");
+
+                                            goto afterloop;
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please select a Department");
+                        }
+                    }
+                    if (s.Type == ShiftType.Night)
+                    {
+                        if(cbxDepartments.Text != string.Empty)
+                        {
+                            if (NightShiftLB.Items.Count >= 3)
+                            {
+                                MessageBox.Show("This shift is full");
+                            }
+                            else
+                            {
+                                if (NightShiftLB.Items.Count == 0)
+                                {
+                                    if (MorningShiftLB.Items.Count == 0)
+                                    {
+                                        ds.AddAssignments(((FloorStaff)emp).Id, s.ID);
+                                        MessageBox.Show("Adding to shift succesfull.");
+                                    }
+                                    else
+                                    {
+                                        foreach (FloorStaff fstaffMorning in MorningShiftLB.Items)
+                                        {
+                                            if (emp.FirstName == fstaffMorning.FirstName)
+                                            {
+                                                MessageBox.Show("Employee can't be scheduled for Night, try diffrent shift");
+                                                goto afterloop;
+                                            }
+                                            else
+                                            {
+                                                ds.AddAssignments(((FloorStaff)emp).Id, s.ID);
+                                                MessageBox.Show("Adding to shift succesfull.");
+
+
+                                            }
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    if (NightShiftLB.Items.Count == 0)
+                                    {
+                                        ds.AddAssignments(((FloorStaff)emp).Id, s.ID);
+                                        MessageBox.Show("Adding to shift succesfull.");
+                                    }
+                                    foreach (FloorStaff fstaff in NightShiftLB.Items)
+                                    {
+
+                                        if (emp.FirstName == fstaff.FirstName)
+                                        {
+
+                                            MessageBox.Show("This employee is already assigned");
+
+                                            goto afterloop;
+                                        }
+                                        else if (emp.FirstName != fstaff.FirstName)
+                                        {
+                                            foreach (FloorStaff fstaffMorning in MorningShiftLB.Items)
+                                            {
+                                                if (emp.FirstName == fstaffMorning.FirstName)
+                                                {
+                                                    MessageBox.Show("Employee can't be scheduled for night, try diffrent shift");
+                                                    goto afterloop;
+                                                }
+                                                else
+                                                {
+                                                    ds.AddAssignments(((FloorStaff)emp).Id, s.ID);
+                                                    MessageBox.Show("Adding to shift succesfull.");
+
+                                                    goto afterloop;
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please select a Department");
+                        }
+
+                    }
                 }
             }
+            afterloop:
             ReturnShiftEmployeesLB(returnedDate);
-        }
+            
 
+
+        }
+        
         private void btnSignOut_Click(object sender, EventArgs e)
         {
             SignInForm sf = new SignInForm();
             sf.Show();
             this.Hide();
         }
+
+        private void cbxDepartments_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            
+            
+            UpdateAvailableEmployeeByDepartment();
+        }
+
+       
     }
 }

@@ -145,5 +145,12 @@ namespace MediaBazzar
             sf.Show();
             this.Hide();
         }
+
+        private void btnDepartment_Click(object sender, EventArgs e)
+        {
+            CRUDdepartment cd = new CRUDdepartment();
+            cd.Show();
+            this.Hide();
+        }
     }
 }
